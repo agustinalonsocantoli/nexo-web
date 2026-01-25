@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Colores y fuentes personalizadas para Tailwind v4 */
+@theme {
+  --color-nexo-orange: #E94F1D;
+  --color-nexo-dark: #1E1E1E;
+  --color-nexo-gray: #99A1AF;
+  --color-nexo-light-gray: #E5E7EB;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --font-heading: "Druk Wide", system-ui, sans-serif;
+  --font-body: "PP Mori", Inter, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Clases de fuentes personalizadas */
+.font-heading {
+  font-family: "Druk Wide", system-ui, sans-serif;
+}
+
+.font-body {
+  font-family: "PP Mori", Inter, system-ui, sans-serif;
+}
+
+/* Mobile Menu Toggle Styles - Menu expansion */
+.navbar-container:has(#mobile-menu-toggle:checked) .mobile-menu {
+  height: calc(100vh - 72px);
+}
+
+/* Hamburger to X animation */
+.navbar-container:has(#mobile-menu-toggle:checked) .hamburger-line-1 {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.navbar-container:has(#mobile-menu-toggle:checked) .hamburger-line-2 {
+  opacity: 0;
+}
+
+.navbar-container:has(#mobile-menu-toggle:checked) .hamburger-line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+  margin-bottom: 1px;
+  margin-right: 1px;
+}
+
+/* Training Cards - Mobile: toggle behavior, Desktop: always expanded */
+
+/* Mobile: collapsed by default */
+@media (max-width: 767px) {
+  .training-card {
+    position: relative;
+  }
+
+  .training-card .collapsed-state {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0s;
+  }
+
+  .training-card .expanded-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0.2s;
+    pointer-events: none;
+  }
+
+  .training-card input:checked ~ .collapsed-state {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0.2s;
+    pointer-events: none;
+  }
+
+  .training-card input:checked ~ .expanded-state {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.2s ease 0.1s, transform 0.3s ease 0.1s, visibility 0s linear 0s;
+    pointer-events: auto;
+  }
+}
+
+/* Desktop: always show expanded state */
+@media (min-width: 768px) {
+  .training-card .collapsed-state {
+    display: none;
+  }
+
+  .training-card .expanded-state {
+    display: block !important;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fuentes personalizadas Druk Wide */
+@font-face {
+  font-family: 'Druk Wide';
+  src: url('/fonts/DrukWide-Bold-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Druk Wide';
+  src: url('/fonts/DrukWide-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Druk Wide';
+  src: url('/fonts/DrukWide-Heavy-Trial.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Druk Wide';
+  src: url('/fonts/DrukWide-Super-Trial.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fuentes personalizadas PP Mori */
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mori';
+  src: url('/fonts/PPMori-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
 }
