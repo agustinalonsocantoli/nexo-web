@@ -187,3 +187,127 @@ body {
   font-style: italic;
   font-display: swap;
 }
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 235px;
+}
+
+.carousel-radio {
+  display: none;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+  will-change: transform;
+  height: 235px;
+}
+
+.carousel-slide {
+  width: 33.333333%;
+  flex-shrink: 0;
+  max-width: 100%;
+  height: 235px;
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Mostrar la primera imagen por defecto */
+.carousel-container:has(#carousel-1:checked) .carousel-wrapper {
+  transform: translateX(0%);
+}
+
+/* Mostrar la segunda imagen */
+.carousel-container:has(#carousel-2:checked) .carousel-wrapper {
+  transform: translateX(-33.333333%);
+}
+
+/* Mostrar la tercera imagen */
+.carousel-container:has(#carousel-3:checked) .carousel-wrapper {
+  transform: translateX(-66.666666%);
+}
+
+/* Flechas de navegación */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.carousel-nav svg {
+  background: transparent;
+  fill: none;
+}
+
+.carousel-prev {
+  left: 16px;
+}
+
+.carousel-next {
+  right: 16px;
+}
+
+/* Mostrar/ocultar flechas según el slide activo */
+.carousel-container:has(#carousel-1:checked) .carousel-prev-1,
+.carousel-container:has(#carousel-1:checked) .carousel-next-1 {
+  display: flex;
+}
+
+.carousel-container:has(#carousel-2:checked) .carousel-prev-2,
+.carousel-container:has(#carousel-2:checked) .carousel-next-2 {
+  display: flex;
+}
+
+.carousel-container:has(#carousel-3:checked) .carousel-prev-3,
+.carousel-container:has(#carousel-3:checked) .carousel-next-3 {
+  display: flex;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-container:has(#carousel-1:checked) .carousel-indicators label[for="carousel-1"],
+.carousel-container:has(#carousel-2:checked) .carousel-indicators label[for="carousel-2"],
+.carousel-container:has(#carousel-3:checked) .carousel-indicators label[for="carousel-3"] {
+  background-color: rgba(255, 255, 255, 1);
+}
