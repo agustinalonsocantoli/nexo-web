@@ -6,9 +6,6 @@
   --color-nexo-dark: #1E1E1E;
   --color-nexo-gray: #99A1AF;
   --color-nexo-light-gray: #E5E7EB;
-}
-
-@theme {
   --font-heading: "Druk Wide", system-ui, sans-serif;
   --font-body: "PP Mori", Inter, system-ui, sans-serif;
 }
@@ -47,64 +44,6 @@ body {
   margin-right: 1px;
 }
 
-/* Training Cards - Mobile: toggle behavior, Desktop: always expanded */
-
-/* Mobile: collapsed by default */
-@media (max-width: 767px) {
-  .training-card {
-    position: relative;
-  }
-
-  .training-card .collapsed-state {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0s;
-  }
-
-  .training-card .expanded-state {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.95);
-    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0.2s;
-    pointer-events: none;
-  }
-
-  .training-card input:checked ~ .collapsed-state {
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.95);
-    transition: opacity 0.2s ease, transform 0.3s ease, visibility 0s linear 0.2s;
-    pointer-events: none;
-  }
-
-  .training-card input:checked ~ .expanded-state {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    transition: opacity 0.2s ease 0.1s, transform 0.3s ease 0.1s, visibility 0s linear 0s;
-    pointer-events: auto;
-  }
-}
-
-/* Desktop: always show expanded state */
-@media (min-width: 768px) {
-  .training-card .collapsed-state {
-    display: none;
-  }
-
-  .training-card .expanded-state {
-    display: block !important;
-    max-height: none;
-    opacity: 1;
-    transform: none;
-  }
-}
 
 /* Fuentes personalizadas Druk Wide */
 @font-face {
@@ -310,4 +249,16 @@ body {
 .carousel-container:has(#carousel-2:checked) .carousel-indicators label[for="carousel-2"],
 .carousel-container:has(#carousel-3:checked) .carousel-indicators label[for="carousel-3"] {
   background-color: rgba(255, 255, 255, 1);
+}
+
+/* Team Cards - Mobile: exclusive accordion via <details>, Desktop: always expanded */
+@media (max-width: 767px) {
+  /* When any card is open, show mini buttons for non-open cards in the same container */
+  .team-cards-container:has(.team-details[open]) .team-details:not([open]) .team-card-normal {
+    display: none;
+  }
+
+  .team-cards-container:has(.team-details[open]) .team-details:not([open]) .team-card-button {
+    display: flex;
+  }
 }

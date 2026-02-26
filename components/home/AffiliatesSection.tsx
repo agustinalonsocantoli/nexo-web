@@ -2,17 +2,18 @@ import OptimizedImage from '../OptimizedImage';
 
 export default function AffiliatesSection() {
   return (
-    <section className="relative bg-nexo-dark h-[176px] border-b border-white">
+    <section className="relative bg-nexo-dark h-[176px] border-b border-[#878787]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 h-[176px]">
         <OptimizedImage
           src="/afiliados-bg.webp"
           alt="Background"
           className="h-full w-full object-cover"
+          sizes="100vw"
           width={1920}
           height={176}
         />
-        <div className="absolute inset-0 bg-nexo-dark/20" />
+        <div className="absolute inset-0 bg-[rgba(30,30,30,0.63)]" />
       </div>
 
       {/* Content */}

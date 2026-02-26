@@ -7,19 +7,19 @@ interface OptimizedImageProps {
     height: number
     priority?: boolean
     className?: string
+    sizes?: string
 }
 
-export default function OptimizedImage({ src, alt, width, height, priority, className }: OptimizedImageProps) {
+export default function OptimizedImage({ src, alt, width, height, priority, className, sizes }: OptimizedImageProps) {
     return (
         <Image
             src={src}
             alt={alt}
-            loading={priority ? 'eager' : 'lazy'}
-            fetchPriority={priority ? 'high' : 'auto'}
-            decoding="async"
+            priority={priority}
             className={className}
             width={width}
             height={height}
+            sizes={sizes}
         />
     )
 }
