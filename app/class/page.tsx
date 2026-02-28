@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     title: "Reserva tu Clase de Prueba | Nexo CrossFit Valencia",
     description:
       "Prueba CrossFit o HYROX en Valencia con coaches certificados. Sin compromiso, adaptado a tu nivel.",
-    url: "https://nexocrossfit.es//class",
+    url: "https://nexocrossfit.es/class",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//class",
+    canonical: "https://nexocrossfit.es/class",
   },
 };
 

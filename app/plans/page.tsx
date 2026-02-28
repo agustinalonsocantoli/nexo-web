@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Tarifas y Horarios | Nexo CrossFit Valencia",
     description:
       "Cuota mensual CrossFit 110€, HYROX 75€, bonos y descuentos. Horarios de lunes a sábado en Valencia.",
-    url: "https://nexocrossfit.es//plans",
+    url: "https://nexocrossfit.es/plans",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//plans",
+    canonical: "https://nexocrossfit.es/plans",
   },
 };
 

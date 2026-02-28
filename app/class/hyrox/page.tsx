@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Clases de HYROX en Valencia | Nexo CrossFit",
     description:
       "HYROX en Valencia para todos los niveles. Coaches especializados, clases adaptadas y comunidad motivadora. Desde 75€/mes.",
-    url: "https://nexocrossfit.es//class/hyrox",
+    url: "https://nexocrossfit.es/class/hyrox",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//class/hyrox",
+    canonical: "https://nexocrossfit.es/class/hyrox",
   },
 };
 
@@ -63,7 +63,7 @@ export default function HyroxPage() {
         title="Clases HYROX"
         description="No hace falta tener experiencia previa para unirte a las clases de HYROX. Nuestros entrenamientos se adaptan a todos los niveles, desde principiantes hasta los más avanzados. Cada sesión está diseñada para que disfrutes, avances y te superes a tu propio ritmo."
         faqs={FAQS}
-        redirectTo="/booking/confirm"
+        redirectTo="/class/hyrox/confirm"
       />
     </main>
   );

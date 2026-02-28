@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://nexocrossfit.es//sitemap.xml",
+    sitemap: "https://nexocrossfit.es/sitemap.xml",
   };
 }

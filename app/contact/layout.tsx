@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: "Contacto | Nexo CrossFit Valencia",
     description:
       "Contacta con Nexo CrossFit. C/ Arzobispo Fabián y Fuero 21, Valencia. WhatsApp: 661 388 984.",
-    url: "https://nexocrossfit.es//contact",
+    url: "https://nexocrossfit.es/contact",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//contact",
+    canonical: "https://nexocrossfit.es/contact",
   },
 };
 

@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CloseDetailsOnOutsideClick from "@/components/CloseDetailsOnOutsideClick";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexocrossfit.es/"),
@@ -54,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={dmSans.variable}>
       <body className="font-body antialiased flex min-h-screen flex-col">
         <CloseDetailsOnOutsideClick />
         <Navbar />

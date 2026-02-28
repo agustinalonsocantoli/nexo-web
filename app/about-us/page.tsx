@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Quiénes Somos | Nexo CrossFit Valencia",
     description:
       "Conoce la historia de Nexo CrossFit Valencia. Desde 2017 somos un box afiliado con coaches apasionados y una comunidad única.",
-    url: "https://nexocrossfit.es//about-us",
+    url: "https://nexocrossfit.es/about-us",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//about-us",
+    canonical: "https://nexocrossfit.es/about-us",
   },
 };
 

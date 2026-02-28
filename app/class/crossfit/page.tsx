@@ -86,7 +86,7 @@ export default function CrossfitPage() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!privacyAccepted || !firstTime) return;
-    router.push("/booking/confirm");
+    router.push("/class/crossfit/confirm");
   }
 
   const activeFaqs = firstTime === "si" ? ON_RAMP_FAQS : CROSSFIT_FAQS;

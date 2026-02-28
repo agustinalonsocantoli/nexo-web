@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     title: "Clases de CrossFit en Valencia | Nexo CrossFit",
     description:
       "CrossFit en Valencia con coaches certificados. WODs diarios, atención personalizada y curso On Ramp para empezar desde cero.",
-    url: "https://nexocrossfit.es//class/crossfit",
+    url: "https://nexocrossfit.es/class/crossfit",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es//class/crossfit",
+    canonical: "https://nexocrossfit.es/class/crossfit",
   },
 };
 
