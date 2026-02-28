@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import React from 'react'
 
 interface OptimizedImageProps {
     src: string
@@ -8,9 +9,10 @@ interface OptimizedImageProps {
     priority?: boolean
     className?: string
     sizes?: string
+    style?: React.CSSProperties
 }
 
-export default function OptimizedImage({ src, alt, width, height, priority, className, sizes }: OptimizedImageProps) {
+export default function OptimizedImage({ src, alt, width, height, priority, className, sizes, style }: OptimizedImageProps) {
     return (
         <Image
             src={src}
@@ -20,6 +22,7 @@ export default function OptimizedImage({ src, alt, width, height, priority, clas
             width={width}
             height={height}
             sizes={sizes}
+            style={style}
         />
     )
 }

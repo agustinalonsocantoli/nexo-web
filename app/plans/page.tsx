@@ -3,8 +3,18 @@ import Link from "next/link";
 import OptimizedImage from "@/components/OptimizedImage";
 
 export const metadata: Metadata = {
-  title: "Tarifas y Horarios - Nexo CrossFit",
-  description: "Encuentra la tarifa ideal para ti: cuota mensual, bonos, HYROX y más. Consulta también nuestros horarios de clases.",
+  title: "Tarifas y Horarios",
+  description:
+    "Tarifas de CrossFit y HYROX en Valencia: cuota mensual 110€, HYROX 75€, bono 20 clases 180€ y descuentos por trimestre, semestre y anual. Consulta nuestros horarios de lunes a sábado.",
+  openGraph: {
+    title: "Tarifas y Horarios | Nexo CrossFit Valencia",
+    description:
+      "Cuota mensual CrossFit 110€, HYROX 75€, bonos y descuentos. Horarios de lunes a sábado en Valencia.",
+    url: "https://nexocrossfit.es//plans",
+  },
+  alternates: {
+    canonical: "https://nexocrossfit.es//plans",
+  },
 };
 
 type ClassType = "crossfit" | "hyrox" | "strength" | "wlgym" | null;
@@ -187,11 +197,14 @@ function cellStyle(type: ClassType): string {
 }
 
 function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
-  if (!cell) return <td className="border border-gray-200 p-[3px]" />;
+  if (!cell)
+    return (
+      <td className="border border-gray-200 p-[3px] lg:p-1.5" />
+    );
   return (
-    <td className="border border-gray-200 p-[3px]">
+    <td className="border border-gray-200 p-[3px] lg:p-1.5">
       <div
-        className={`rounded-[3px] px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight ${cellStyle(cell.type)}`}
+        className={`rounded-[3px] px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight lg:rounded lg:px-2 lg:py-1.5 lg:text-[11px] ${cellStyle(cell.type)}`}
       >
         {cell.name}
       </div>
@@ -203,31 +216,41 @@ export default function PlansPage() {
   return (
     <main className="bg-[#fbfbfb]">
       {/* Hero */}
-      <section className="relative h-[50vh] pt-16 md:h-[60vh]">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[179px] overflow-hidden lg:h-[341px]">
+        <div className="absolute inset-0 z-0 block md:hidden">
           <OptimizedImage
             src="/hero-plans.webp"
             alt="Tarifas y Horarios - Nexo CrossFit"
-            className="h-full w-full object-cover opacity-60"
+            className="h-full w-full object-cover object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
             priority={true}
             sizes="100vw"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-nexo-dark/40 to-nexo-dark" />
+          <div className="absolute inset-0 bg-nexo-dark/60" />
         </div>
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <h1 className="mb-4 font-heading text-4xl font-bold leading-tight tracking-[0.03em] text-white uppercase md:text-6xl">
-            Tarifas y Horarios
+
+        <div className="absolute inset-0 z-0 hidden md:block">
+          <OptimizedImage
+            src="/hero-sn-desktop.webp"
+            alt="Tarifas y Horarios - Nexo CrossFit"
+            className="h-full w-full object-cover object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
+            priority={true}
+            sizes="100vw"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-nexo-dark/60" />
+        </div>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center">
+          <h1 className="font-heading text-[26px] font-bold leading-tight tracking-[0.03em] text-white uppercase lg:text-[48px]">
+            Encuentra la tarifa ideal para ti
           </h1>
-          <p className="max-w-lg font-body text-lg font-normal leading-relaxed text-white">
-            Encuentra la tarifa ideal para ti.
-          </p>
         </div>
       </section>
 
       {/* Main content */}
-      <div className="flex flex-col gap-8 px-8 py-8">
+      <div className="flex flex-col gap-8 px-8 py-8 lg:mx-auto lg:max-w-7xl lg:gap-12 lg:px-30 lg:py-16">
 
         {/* ── TARIFAS ── */}
         <section className="flex flex-col items-center gap-4">
@@ -235,7 +258,7 @@ export default function PlansPage() {
             TARIFAS
           </span>
 
-          <div className="flex w-full flex-col gap-4">
+          <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
             {/* Cuota mensual */}
             <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
               <div className="flex items-center justify-between">
@@ -265,7 +288,7 @@ export default function PlansPage() {
                   <p className="font-body text-[15px] font-semibold text-white">BONO DE 20 CLASES</p>
                   <p className="font-body text-[12px] text-white/70">| VÁLIDO PARA 2 MESES |</p>
                 </div>
-                <p className="font-heading text-[28px] font-bold leading-none text-white shrink-0">180 €</p>
+                <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">180 €</p>
               </div>
               <p className="mt-1 font-body text-[10px] text-white/60">
                 Perfecto si tienes pensado venir{" "}
@@ -307,13 +330,13 @@ export default function PlansPage() {
             DESCUENTOS
           </span>
 
-          <div className="grid w-full grid-cols-2 gap-2">
+          <div className="grid w-full grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-4">
             {/* Cuota trimestral */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md">
+            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
               <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
                 CUOTA TRIMESTRAL
               </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626]">10%</p>
+              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
               <p className="mt-1 font-body text-[9px] text-[#878787]">
                 3 MESES ADELANTADO{" "}
                 <span className="font-semibold">297 €</span>
@@ -321,11 +344,11 @@ export default function PlansPage() {
             </div>
 
             {/* Cuota semestral */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md">
+            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
               <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
                 CUOTA SEMESTRAL
               </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626]">15%</p>
+              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">15%</p>
               <p className="mt-1 font-body text-[9px] text-[#878787]">
                 6 MESES ADELANTADO{" "}
                 <span className="font-semibold">561 €</span>
@@ -333,11 +356,11 @@ export default function PlansPage() {
             </div>
 
             {/* Cuota anual */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md">
+            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
               <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
                 CUOTA ANUAL
               </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626]">20%</p>
+              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">20%</p>
               <p className="mt-1 font-body text-[9px] text-[#878787]">
                 1 AÑO ADELANTADO{" "}
                 <span className="font-semibold">1056 €</span>
@@ -345,11 +368,11 @@ export default function PlansPage() {
             </div>
 
             {/* Cuota mensual pareja */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md">
+            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
               <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
                 CUOTA MENSUAL
               </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626]">10%</p>
+              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
               <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
                 Parejas o Familias
               </p>
@@ -364,14 +387,14 @@ export default function PlansPage() {
           </span>
 
           <div className="w-full overflow-x-auto rounded-lg">
-            <table className="w-full border-collapse text-[7px]">
+            <table className="w-full border-collapse text-[7px] lg:text-[11px]">
               <thead>
                 <tr>
-                  <th className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626]" />
+                  <th className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2.5" />
                   {["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"].map((day) => (
                     <th
                       key={day}
-                      className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626]"
+                      className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2.5"
                     >
                       {day}
                     </th>
@@ -381,7 +404,7 @@ export default function PlansPage() {
               <tbody>
                 {scheduleData.map((row, i) => (
                   <tr key={i}>
-                    <td className="border border-gray-200 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] whitespace-nowrap">
+                    <td className="whitespace-nowrap border border-gray-200 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2">
                       {row.time}
                     </td>
                     <ScheduleCell cell={row.L} />
@@ -391,8 +414,8 @@ export default function PlansPage() {
                     <ScheduleCell cell={row.V} />
                     {/* Sábado */}
                     {typeof row.S === "string" ? (
-                      <td className="border border-gray-200 p-[3px]">
-                        <div className="rounded-[3px] px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight bg-nexo-dark text-white">
+                      <td className="border border-gray-200 p-[3px] lg:p-1.5">
+                        <div className="rounded-[3px] bg-nexo-dark px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight text-white lg:rounded lg:px-2 lg:py-1.5 lg:text-[11px]">
                           CF {row.S}
                         </div>
                       </td>
@@ -418,7 +441,7 @@ export default function PlansPage() {
         {/* ── CTA ── */}
         <Link
           href="/clase-prueba"
-          className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90"
+          className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
         >
           Clase de Prueba
           <svg

@@ -2,24 +2,19 @@ import OptimizedImage from '../OptimizedImage';
 
 export default function AboutBody() {
   return (
-    <div className="w-full px-[21px] bg-white">
+    <div className="w-full bg-white px-[21px] lg:px-0">
       {/* Nuestro Espacio */}
-      <section className="py-6 text-nexo-dark md:py-8">
-        <div className="mx-auto max-w-7xl">
-          {/* Header */}
-          <div className="mb-6 md:mb-8">
-            <h2
-              className="mb-6 font-heading text-xl leading-[100%] font-bold tracking-normal text-nexo-dark uppercase"
-            >
-              Nuestro Espacio
-            </h2>
-          </div>
+      <section className="py-6 text-nexo-dark lg:py-16">
+        <div className="mx-auto lg:max-w-[1044px]">
+          <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
+            Nuestro Espacio
+          </h2>
 
-          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black">
+          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
             Esto es mucho más que un gimnasio: es un box donde encontrarás una auténtica comunidad y adoptarás un estilo de vida enfocado en la mejora constante mientras disfrutas del camino.
           </p>
 
-          {/* Carousel de imágenes */}
+          {/* Carousel de imágenes (solo móvil) */}
           <div className="carousel-container relative mb-6 w-full md:hidden">
             {/* Radio buttons para controlar el carousel */}
             <input type="radio" name="carousel" id="carousel-1" className="carousel-radio" defaultChecked />
@@ -42,6 +37,7 @@ export default function AboutBody() {
                   src="/n-e-2.webp"
                   alt="Equipamiento CrossFit"
                   className="h-[235px] w-full object-cover"
+                  style={{ objectPosition: 'center 100%' }}
                   width={351}
                   height={235}
                 />
@@ -51,6 +47,7 @@ export default function AboutBody() {
                   src="/n-e-3.webp"
                   alt="Área de entrenamiento"
                   className="h-[235px] w-full object-cover"
+                  style={{ objectPosition: 'center 70%' }}
                   width={351}
                   height={235}
                 />
@@ -92,108 +89,135 @@ export default function AboutBody() {
             </label>
           </div>
 
-          <p className="font-body text-sm leading-[20px] tracking-normal text-nexo-dark">
+          <p className="font-body text-sm leading-[20px] tracking-normal text-nexo-dark lg:text-base lg:leading-6 lg:mb-10">
             Nuestras instalaciones de más de 500 m² te ofrecen espacios amplios equipados con tecnología de vanguardia, máquinas Concept y todos los recursos necesarios para tu entrenamiento. Disponemos de áreas especializadas en CrossFit y HYROX, pensadas para que cada sesión represente un reto que te impulse a superar tus propios límites.
           </p>
 
-          {/* Grid de imágenes secundarias (solo desktop) */}
-          <div className="mt-8 hidden gap-6 md:grid md:grid-cols-3">
-            <div className="overflow-hidden rounded-lg">
-              <OptimizedImage
-                src="/n-e-1.webp"
-                alt="Zona de descanso"
-                className="h-64 w-full object-cover"
-                width={400}
-                height={300}
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg">
+          {/* Imagen grande (solo desktop) */}
+          <div className="mt-10 hidden lg:block">
+            <OptimizedImage
+              src="/n-e-1.webp"
+              alt="Nuestro Espacio Nexo CrossFit"
+              className="h-[485px] w-full object-cover"
+              width={1044}
+              height={485}
+            />
+          </div>
+
+          {/* Grid de imágenes (desktop) */}
+          <div className="mt-6 hidden gap-[10px] md:grid md:grid-cols-3 lg:mt-[10px]">
+            <div className="overflow-hidden">
               <OptimizedImage
                 src="/n-e-2.webp"
-                alt="Equipamiento CrossFit"
-                className="h-64 w-full object-cover"
-                width={400}
-                height={300}
+                alt="Zona de descanso"
+                className="h-64 w-full object-cover lg:h-[394px]"
+                width={341}
+                height={394}
               />
             </div>
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden">
               <OptimizedImage
                 src="/n-e-3.webp"
+                alt="Equipamiento CrossFit"
+                className="h-64 w-full object-cover lg:h-[394px]"
+                width={341}
+                height={394}
+              />
+            </div>
+            <div className="overflow-hidden">
+              <OptimizedImage
+                src="/n-e-4.webp"
                 alt="Área de entrenamiento"
-                className="h-64 w-full object-cover"
-                width={400}
-                height={300}
+                className="h-64 w-full object-cover lg:h-[394px]"
+                width={341}
+                height={394}
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="text-nexo-dark">
-        <div className="mx-auto max-w-7xl">
-          {/* Header */}
-          <div className="mb-6 md:mb-8">
-            <h2
-              className="mb-6 font-heading text-xl leading-[100%] font-bold tracking-normal text-nexo-dark uppercase"
-            >
-              Nuestra Filosofía
-            </h2>
-          </div>
+      {/* Nuestra Filosofía */}
+      <section className="text-nexo-dark lg:py-16">
+        <div className="mx-auto lg:max-w-[1044px]">
+          <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
+            Nuestra Filosofía
+          </h2>
 
-          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black">
+          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
             Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness.
           </p>
 
-          <div className="h-[235px] w-full">
-            <OptimizedImage
-              src="/coaches.webp"
-              alt="Área de entrenamiento"
-              className="h-[235px] w-full object-cover object-[center_35%]"
-              width={351}
-              height={235}
-            />
+          {/* Móvil: coaches plain + párrafo 2 + n-f con quote */}
+          <div className="lg:hidden">
+            <div className="h-[235px] w-full">
+              <OptimizedImage
+                src="/coaches.webp"
+                alt="Coaches Nexo CrossFit"
+                className="h-[235px] w-full object-cover object-[center_35%]"
+                width={351}
+                height={235}
+              />
+            </div>
+
+            <p className="my-6 font-body text-sm leading-[20px] tracking-normal text-nexo-dark">
+              Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
+            </p>
+
+            <div className="relative h-[185px] w-full">
+              <OptimizedImage
+                src="/n-f.webp"
+                alt="Nuestra Filosofía"
+                className="h-[185px] w-full object-cover"
+                width={351}
+                height={185}
+              />
+              <div className="absolute inset-0 flex items-center justify-center px-4">
+                <p className="text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase">
+                  &quot;MÁS NO ES MEJOR,<br />
+                  MEJOR ES MEJOR&quot;
+                </p>
+              </div>
+            </div>
           </div>
 
-          <p className="my-6 font-body text-sm leading-[20px] tracking-normal text-nexo-dark">
-            Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
-          </p>
+          {/* Desktop: párrafo 2 + coaches con quote overlay */}
+          <div className="hidden lg:block">
+            <p className="mb-8 font-body text-base leading-6 tracking-normal text-nexo-dark">
+              Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
+            </p>
 
-          <div className="relative w-full h-[185px]">
-            <OptimizedImage
-              src="/n-f.webp"
-              alt="Nuestra Filosofía"
-              className="w-full h-[185px] object-cover"
-              width={351}
-              height={185}
-            />
-
-            {/* Texto sobrepuesto */}
-            <div className="absolute inset-0 flex items-center justify-center px-4">
-              <p className="text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase md:text-3xl">
-                &quot;MÁS NO ES MEJOR,<br />
-                MEJOR ES MEJOR&quot;
-              </p>
+            <div className="relative h-[359px] w-full">
+              <OptimizedImage
+                src="/n-f.webp"
+                alt="Coaches Nexo CrossFit"
+                className="h-[359px] w-full object-cover object-[center_35%]"
+                width={1044}
+                height={359}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
+                  &quot;MÁS NO ES MEJOR,<br />
+                  MEJOR ES MEJOR&quot;
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="text-nexo-dark py-6">
-        <div className="mx-auto max-w-7xl">
-          {/* Header */}
-          <div className="mb-6 md:mb-8">
-            <h2
-              className="mb-6 font-heading text-xl leading-[100%] font-bold tracking-normal text-nexo-dark uppercase"
-            >
-              NUESTRA HISTORIA
-            </h2>
-          </div>
+      {/* Nuestra Historia */}
+      <section className="py-6 text-nexo-dark lg:py-16">
+        <div className="mx-auto lg:max-w-[1044px]">
+          <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
+            NUESTRA HISTORIA
+          </h2>
 
-          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black">
+          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
             Desde que abrimos en 2017 y hasta la actualidad, en Nexo nos gusta definirnos como el espacio donde interaccionan las ganas de aprender y mejorar junto con la capacidad de esfuerzo. Y todo ello, en un ambiente, no sólo respetuoso, sino que favorece los lazos de amistad duraderos.
           </p>
 
-          <p className="font-body text-sm leading-[20px] tracking-normal text-black">
+          <p className="font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
             No queremos ser un box de CrossFit más. Hemos adaptado nuestra manera de planificar y entender el entrenamiento para que, si confías en nosotros, podamos acompañarte en tu proceso de mejora durante mucho tiempo.
           </p>
         </div>

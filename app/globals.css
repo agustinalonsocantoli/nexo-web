@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 
 /* Colores y fuentes personalizadas para Tailwind v4 */
@@ -6,7 +7,7 @@
   --color-nexo-dark: #1E1E1E;
   --color-nexo-gray: #99A1AF;
   --color-nexo-light-gray: #E5E7EB;
-  --font-heading: "Druk Wide", system-ui, sans-serif;
+  --font-heading: "DM Sans", system-ui, sans-serif;
   --font-body: "PP Mori", Inter, system-ui, sans-serif;
 }
 
@@ -17,7 +18,7 @@ body {
 
 /* Clases de fuentes personalizadas */
 .font-heading {
-  font-family: "Druk Wide", system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
 }
 
 .font-body {
@@ -45,38 +46,6 @@ body {
 }
 
 
-/* Fuentes personalizadas Druk Wide */
-@font-face {
-  font-family: 'Druk Wide';
-  src: url('/fonts/DrukWide-Bold-Trial.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Druk Wide';
-  src: url('/fonts/DrukWide-Medium-Trial.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Druk Wide';
-  src: url('/fonts/DrukWide-Heavy-Trial.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Druk Wide';
-  src: url('/fonts/DrukWide-Super-Trial.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Fuentes personalizadas PP Mori */
 @font-face {
@@ -159,7 +128,6 @@ body {
   width: 100%;
   height: 235px;
   object-fit: cover;
-  object-position: top;
 }
 
 /* Mostrar la primera imagen por defecto */
@@ -250,6 +218,63 @@ body {
 .carousel-container:has(#carousel-3:checked) .carousel-indicators label[for="carousel-3"] {
   background-color: rgba(255, 255, 255, 1);
 }
+
+/* Sessions Cards Carousel - Mobile */
+.sessions-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sessions-carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+  will-change: transform;
+}
+
+.sessions-carousel-slide {
+  width: 33.333333%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 8px;
+}
+
+.sessions-carousel:has(#ses-1:checked) .sessions-carousel-wrapper {
+  transform: translateX(0%);
+}
+
+.sessions-carousel:has(#ses-2:checked) .sessions-carousel-wrapper {
+  transform: translateX(-33.333333%);
+}
+
+.sessions-carousel:has(#ses-3:checked) .sessions-carousel-wrapper {
+  transform: translateX(-66.666666%);
+}
+
+.sessions-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.sessions-nav-prev { left: 0; }
+.sessions-nav-next { right: 0; }
+
+.sessions-carousel:has(#ses-1:checked) .sessions-prev-1,
+.sessions-carousel:has(#ses-1:checked) .sessions-next-1 { display: flex; }
+
+.sessions-carousel:has(#ses-2:checked) .sessions-prev-2,
+.sessions-carousel:has(#ses-2:checked) .sessions-next-2 { display: flex; }
+
+.sessions-carousel:has(#ses-3:checked) .sessions-prev-3,
+.sessions-carousel:has(#ses-3:checked) .sessions-next-3 { display: flex; }
 
 /* Team Cards - Mobile: exclusive accordion via <details>, Desktop: always expanded */
 @media (max-width: 767px) {

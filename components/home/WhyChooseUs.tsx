@@ -66,15 +66,15 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-nexo-dark py-8 text-white">
-      <div className="mx-auto max-w-7xl px-8">
-        <div className="mb-8 text-center">
+    <section className="bg-nexo-dark py-8 text-white lg:py-16">
+      <div className="mx-auto max-w-7xl px-8 lg:px-[72px]">
+        <div className="mb-8 text-center lg:mb-10">
           <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.03em] text-white uppercase">
-            ¿POR QUÉ<br />ELEGIRNOS?
+            ¿POR QUÉ<br className="lg:hidden" /> ELEGIRNOS?
           </h2>
         </div>
 
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-3">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -84,10 +84,10 @@ export default function WhyChooseUs() {
                 {benefit.icon}
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="font-body text-base font-semibold leading-6 text-[#fbfbfb]">
+                <h3 className="font-body text-base font-semibold leading-6 text-[#fbfbfb] lg:text-[22px] lg:leading-7">
                   {benefit.title}
                 </h3>
-                <p className="font-body text-sm leading-normal text-[#878787]">
+                <p className="font-body text-sm leading-normal text-[#878787] lg:text-[16px]">
                   {benefit.description}
                 </p>
               </div>

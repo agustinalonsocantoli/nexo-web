@@ -1,4 +1,5 @@
 import { Card, TeamCardType } from "./Card";
+import TeamBodyDesktop from "./TeamBodyDesktop";
 
 const coaches: TeamCardType[] = [
   {
@@ -66,33 +67,41 @@ const services: TeamCardType[] = [
 
 export default function TeamBody() {
   return (
-    <section className="bg-[#fbfbfb] py-8 text-nexo-dark">
-      <div className="mx-auto max-w-7xl px-8">
-        <div className="flex flex-col items-center gap-4">
-          <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-            COACHES
-          </span>
+    <section className="bg-[#fbfbfb] py-8 text-nexo-dark lg:py-16">
+      {/* Mobile */}
+      <div className="lg:hidden">
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="flex flex-col items-center gap-4">
+            <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
+              COACHES
+            </span>
 
-          <div className="team-cards-container flex w-full flex-col gap-4 md:grid md:grid-cols-3">
-            {coaches?.map((team) => (
-              <Card key={team.id} team={team} />
-            ))}
+            <div className="team-cards-container flex w-full flex-col gap-4">
+              {coaches?.map((team) => (
+                <Card key={team.id} team={team} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-7xl px-8">
+          <div className="flex flex-col items-center gap-4">
+            <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
+              FISIOTERAPEUTA
+            </span>
+
+            <div className="team-cards-container flex w-full flex-col gap-4">
+              {services?.map((team) => (
+                <Card key={team.id} team={team} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-8 max-w-7xl px-8">
-        <div className="flex flex-col items-center gap-4">
-          <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-            FISIOTERAPEUTA
-          </span>
-
-          <div className="team-cards-container flex w-full flex-col gap-4 md:grid md:grid-cols-3">
-            {services?.map((team) => (
-              <Card key={team.id} team={team} />
-            ))}
-          </div>
-        </div>
+      {/* Desktop */}
+      <div className="hidden lg:block mx-auto max-w-7xl px-[118px]">
+        <TeamBodyDesktop coaches={coaches} services={services} />
       </div>
     </section>
   );

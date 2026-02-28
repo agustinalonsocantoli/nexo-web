@@ -4,20 +4,20 @@ import Link from 'next/link';
 export default function TeamSection() {
   return (
     <section className="bg-nexo-dark">
-      <div className="relative w-full h-[179px] overflow-hidden">
+      <div className="relative w-full h-[179px] overflow-hidden lg:h-[469px]">
         <OptimizedImage
           src="/equipo-home.webp"
           alt="Equipo Nexo"
-          className="h-full w-full object-cover max-h-[179px]"
+          className="h-full w-full object-cover object-center lg:object-[center_35%]"
           sizes="100vw"
           width={1920}
-          height={179}
+          height={369}
         />
-        
-          <div className="absolute inset-0 bg-black/40" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-between px-6 py-6 text-center">
-          <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.72px] text-[#fbfbfb] uppercase">
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-end gap-2 px-6 py-6 text-center lg:justify-end lg:mb-14  lg:gap-4 lg:py-0">
+          <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.72px] text-[#fbfbfb] uppercase lg:text-[48px] lg:tracking-[1.44px]">
             <span className="block">Conoce</span>
             <span className="block">al equipo</span>
           </h2>

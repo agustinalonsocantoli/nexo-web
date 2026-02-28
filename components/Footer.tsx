@@ -13,10 +13,10 @@ const NAV_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-nexo-dark px-4 pt-12 pb-8">
-      <div className="flex flex-col gap-6">
+    <footer className="bg-nexo-dark px-4 pt-12 pb-8 lg:px-[118px] lg:pt-16">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-0">
 
-        {/* Logo + tagline */}
+        {/* Col 1: Logo + tagline + CrossFit Journal (desktop) */}
         <div className="flex flex-col gap-4">
           <OptimizedImage
             src="/logo-nexo.webp"
@@ -28,9 +28,17 @@ export default function Footer() {
           <p className="font-body text-sm leading-5 text-[#878787]">
             Transformando vidas a través del deporte desde 2017.
           </p>
+          {/* CrossFit Journal — solo desktop */}
+          <OptimizedImage
+            src="/crossfit-journal.webp"
+            alt="CrossFit Journal"
+            width={89}
+            height={50}
+            className="hidden h-[50px] w-[89px] object-contain lg:block"
+          />
         </div>
 
-        {/* Enlaces Rápidos */}
+        {/* Col 2: Enlaces Rápidos */}
         <div className="flex flex-col gap-4">
           <h3 className="font-body text-base leading-6 text-white">
             Enlaces Rápidos
@@ -49,8 +57,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Síguenos + CrossFit Journal */}
-        <div className="flex w-full items-center justify-between">
+        {/* Col 3: Síguenos + CrossFit Journal (móvil) */}
+        <div className="flex w-full items-center justify-between lg:w-auto lg:flex-col lg:items-start lg:gap-4">
           <div className="flex flex-col gap-4">
             <h3 className="font-body text-base leading-6 text-white">
               Síguenos
@@ -73,13 +81,13 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* CrossFit Journal logo */}
+          {/* CrossFit Journal — solo móvil */}
           <OptimizedImage
             src="/crossfit-journal.webp"
             alt="CrossFit Journal"
             width={89}
             height={50}
-            className="h-[50px] w-[89px] object-contain"
+            className="h-[50px] w-[89px] object-contain lg:hidden"
           />
         </div>
       </div>
