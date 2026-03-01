@@ -41,7 +41,7 @@ export default function Hero({ backgroundImage = '/hero-home.webp' }: HeroProps)
             ¡Conoce nuestras Tarifas!
           </Link>
           <Link
-            href="/registrate"
+            href="/class"
             className="order-1 flex items-center justify-center rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90 lg:order-2 lg:px-10"
           >
             Apúntate
