@@ -31,7 +31,7 @@ interface ScheduleRow {
   X: ScheduleCell | null;
   J: ScheduleCell | null;
   V: ScheduleCell | null;
-  S: ScheduleCell | string | null;
+  S: ScheduleCell | null;
 }
 
 const scheduleData: ScheduleRow[] = [
@@ -41,7 +41,7 @@ const scheduleData: ScheduleRow[] = [
     M: null,
     X: { name: "HYROX", type: "hyrox" },
     J: null,
-    V: null,
+    V: { name: "HYROX", type: "hyrox" },
     S: null,
   },
   {
@@ -54,20 +54,29 @@ const scheduleData: ScheduleRow[] = [
     S: null,
   },
   {
+    time: "",
+    L: null,
+    M: null,
+    X: null,
+    J: null,
+    V: null,
+    S: { name: "CROSSFIT 9:30", type: "crossfit" },
+  },
+  {
     time: "11:00",
     L: { name: "CROSSFIT", type: "crossfit" },
     M: { name: "CROSSFIT", type: "crossfit" },
     X: { name: "CROSSFIT", type: "crossfit" },
     J: { name: "CROSSFIT", type: "crossfit" },
     V: { name: "CROSSFIT", type: "crossfit" },
-    S: "9:30 / 10:30",
+    S: { name: "CROSSFIT 10:30", type: "crossfit" },
   },
   {
     time: "",
     L: null,
     M: null,
     X: null,
-    J: { name: "WL/GYM", type: "wlgym" },
+    J: { name: "WL / GYM", type: "wlgym" },
     V: null,
     S: null,
   },
@@ -96,6 +105,15 @@ const scheduleData: ScheduleRow[] = [
     X: { name: "CROSSFIT", type: "crossfit" },
     J: { name: "CROSSFIT", type: "crossfit" },
     V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "",
+    L: null,
+    M: null,
+    X: null,
+    J: null,
+    V: null,
     S: null,
   },
   {
@@ -130,7 +148,7 @@ const scheduleData: ScheduleRow[] = [
     L: { name: "HYROX", type: "hyrox" },
     M: null,
     X: { name: "HYROX", type: "hyrox" },
-    J: { name: "WL/GYM", type: "wlgym" },
+    J: { name: "WL / GYM", type: "wlgym" },
     V: null,
     S: null,
   },
@@ -145,29 +163,29 @@ const scheduleData: ScheduleRow[] = [
   },
   {
     time: "19:00",
-    L: null,
-    M: { name: "HYROX", type: "hyrox" },
-    X: null,
-    J: { name: "HYROX", type: "hyrox" },
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "STRENGTH", type: "strength" },
     V: { name: "CROSSFIT", type: "crossfit" },
     S: null,
   },
   {
     time: "19:15",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "STRENGTH", type: "strength" },
+    L: { name: "HYROX", type: "hyrox" },
+    M: null,
+    X: { name: "HYROX", type: "hyrox" },
+    J: null,
     V: null,
     S: null,
   },
   {
     time: "19:30",
-    L: { name: "HYROX", type: "hyrox" },
-    M: null,
-    X: { name: "HYROX", type: "hyrox" },
-    J: null,
-    V: { name: "CROSSFIT", type: "crossfit" },
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: null,
     S: null,
   },
   {
@@ -184,13 +202,13 @@ const scheduleData: ScheduleRow[] = [
 function cellStyle(type: ClassType): string {
   switch (type) {
     case "hyrox":
-      return "bg-nexo-orange text-white";
+      return "bg-[#ffbe96] text-[#1e1e1e]";
     case "crossfit":
-      return "bg-nexo-dark text-white";
+      return "bg-[#ff731c] text-[#1e1e1e]";
     case "strength":
-      return "bg-[#262626] text-white";
+      return "bg-[#903700] text-white";
     case "wlgym":
-      return "bg-[#3a3a3a] text-white";
+      return "bg-[#262626] text-white";
     default:
       return "";
   }
@@ -198,16 +216,12 @@ function cellStyle(type: ClassType): string {
 
 function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
   if (!cell)
-    return (
-      <td className="border border-gray-200 p-[3px] lg:p-1.5" />
-    );
+    return <td className="border border-black bg-white" />;
   return (
-    <td className="border border-gray-200 p-[3px] lg:p-1.5">
-      <div
-        className={`rounded-[3px] px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight lg:rounded lg:px-2 lg:py-1.5 lg:text-[11px] ${cellStyle(cell.type)}`}
-      >
-        {cell.name}
-      </div>
+    <td
+      className={`border border-black px-1 py-1.5 text-center font-body text-[7px] font-semibold leading-tight lg:px-2 lg:py-2 lg:text-[11px] ${cellStyle(cell.type)}`}
+    >
+      {cell.name}
     </td>
   );
 }
@@ -386,15 +400,16 @@ export default function PlansPage() {
             HORARIOS
           </span>
 
-          <div className="w-full overflow-x-auto rounded-lg">
-            <table className="w-full border-collapse text-[7px] lg:text-[11px]">
+          <div className="w-full overflow-x-auto">
+            <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2.5" />
+                  {/* Celda top-left: vacía, sin borde ni fondo */}
+                  <th className="border-0 bg-transparent p-0" />
                   {["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"].map((day) => (
                     <th
                       key={day}
-                      className="border border-gray-300 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2.5"
+                      className="border border-black bg-[#757575] px-1 py-1.5 text-center font-body text-[7px] font-semibold text-white lg:px-3 lg:py-2.5 lg:text-[11px]"
                     >
                       {day}
                     </th>
@@ -404,7 +419,7 @@ export default function PlansPage() {
               <tbody>
                 {scheduleData.map((row, i) => (
                   <tr key={i}>
-                    <td className="whitespace-nowrap border border-gray-200 bg-white px-1 py-[3px] text-center font-semibold text-[#262626] lg:px-3 lg:py-2">
+                    <td className="whitespace-nowrap border border-black bg-[#757575] px-1 py-1.5 text-center font-body text-[7px] font-semibold text-white lg:px-3 lg:py-2.5 lg:text-[11px]">
                       {row.time}
                     </td>
                     <ScheduleCell cell={row.L} />
@@ -412,16 +427,7 @@ export default function PlansPage() {
                     <ScheduleCell cell={row.X} />
                     <ScheduleCell cell={row.J} />
                     <ScheduleCell cell={row.V} />
-                    {/* Sábado */}
-                    {typeof row.S === "string" ? (
-                      <td className="border border-gray-200 p-[3px] lg:p-1.5">
-                        <div className="rounded-[3px] bg-nexo-dark px-[3px] py-[2px] text-center text-[7px] font-semibold leading-tight text-white lg:rounded lg:px-2 lg:py-1.5 lg:text-[11px]">
-                          CF {row.S}
-                        </div>
-                      </td>
-                    ) : (
-                      <ScheduleCell cell={row.S as ScheduleCell | null} />
-                    )}
+                    <ScheduleCell cell={row.S} />
                   </tr>
                 ))}
               </tbody>
