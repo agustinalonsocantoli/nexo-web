@@ -9,15 +9,8 @@ export const metadata: Metadata = {
 export default function ClassConfirmPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div
-        className="block md:hidden"
-      >
-        <PageHero title="Reserva tu clase de prueba" />
-      </div>
 
-      <div className="hidden md:block">
-        <PageHero title="Reserva tu clase de prueba" imageSrc="/bg-form-des.webp" />
-      </div>
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-form-des.webp" />
 
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-[72px] lg:py-20">
         <div className="flex flex-col items-center gap-5 text-center">

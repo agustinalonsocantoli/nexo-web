@@ -45,15 +45,7 @@ const classes: TrainingCardType[] = [
 export default function ClassPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div
-        className="block md:hidden"
-      >
-        <PageHero title="Reserva tu clase de prueba" />
-      </div>
-
-      <div className="hidden md:block">
-        <PageHero title="Reserva tu clase de prueba" imageSrc="/bg-contacto-des.webp" />
-      </div>
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/clase-prueba-bg.webp" imageClass="object-[center_25%]" />
 
       {/* Contenido */}
       <div className="flex flex-col gap-4 px-6 py-6 lg:mx-auto lg:max-w-7xl lg:gap-10 lg:px-30 lg:py-16">

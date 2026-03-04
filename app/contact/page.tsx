@@ -4,13 +4,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export default function ContactPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div className="block md:hidden">
-        <PageHero title="Contacta con nosotros" />
-      </div>
-
-      <div className="hidden md:block">
-        <PageHero title="Contacta con nosotros" imageSrc="/bg-contacto-des.webp" />
-      </div>
+      <PageHero title="Contacta con" titlePart2="nosotros" imageSrc="/bg-contacto-des.webp" />
 
       {/* Main content — mobile: columna | desktop: dos columnas (form izq, info der) */}
       <div className="flex flex-col gap-6 px-6 py-6 lg:flex-row lg:items-start lg:gap-12 lg:px-[118px] lg:py-16">

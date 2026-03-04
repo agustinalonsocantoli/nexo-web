@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Zalando_Sans_Expanded, Public_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CloseDetailsOnOutsideClick from "@/components/CloseDetailsOnOutsideClick";
+import Image from "next/image";
 
-const dmSans = DM_Sans({
+const zalandoSans = Zalando_Sans_Expanded({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  weight: ["400", "600", "700"],
+  variable: "--font-zalando",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  weight: ["200", "400", "600"],
+  variable: "--font-public-sans",
   display: "swap",
 });
 
@@ -61,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={dmSans.variable}>
+    <html lang="es" className={`${zalandoSans.variable} ${publicSans.variable}`}>
       <body className="font-body antialiased flex min-h-screen flex-col">
         <CloseDetailsOnOutsideClick />
         <Navbar />
@@ -69,6 +79,15 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <a
+          href="https://wa.me/34661388984"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp"
+          className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 drop-shadow-lg transition-transform hover:scale-110"
+        >
+          <Image src="/whatsapp.svg" alt="WhatsApp" width={28} height={28} className="w-[28px] md:w-[36px] h-[28px] md:h-[36px]" />
+        </a>
       </body>
     </html>
   );

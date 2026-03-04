@@ -18,7 +18,7 @@ export default function Hero({ backgroundImage = '/hero-home.webp' }: HeroProps)
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-nexo-dark/70" />
+        <div className="absolute inset-0 bg-nexo-dark/40" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 px-8 text-center">

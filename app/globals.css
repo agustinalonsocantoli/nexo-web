@@ -6,8 +6,8 @@
   --color-nexo-dark: #1E1E1E;
   --color-nexo-gray: #99A1AF;
   --color-nexo-light-gray: #E5E7EB;
-  --font-heading: var(--font-dm-sans), system-ui, sans-serif;
-  --font-body: "PP Mori", Inter, system-ui, sans-serif;
+  --font-heading: var(--font-zalando), system-ui, sans-serif;
+  --font-body: var(--font-public-sans), Inter, system-ui, sans-serif;
 }
 
 body {
@@ -17,11 +17,11 @@ body {
 
 /* Clases de fuentes personalizadas */
 .font-heading {
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-zalando), system-ui, sans-serif;
 }
 
 .font-body {
-  font-family: "PP Mori", Inter, system-ui, sans-serif;
+  font-family: var(--font-public-sans), Inter, system-ui, sans-serif;
 }
 
 /* Mobile Menu Toggle Styles - Menu expansion */
@@ -46,54 +46,6 @@ body {
 
 
 
-/* Fuentes personalizadas PP Mori */
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Extralight.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-RegularItalic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-SemiBoldItalic.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'PP Mori';
-  src: url('/fonts/PPMori-ExtralightItalic.otf') format('opentype');
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* Carousel Styles */
 .carousel-container {

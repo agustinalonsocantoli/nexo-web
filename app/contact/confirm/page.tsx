@@ -9,15 +9,7 @@ export const metadata: Metadata = {
 export default function ContactConfirmPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div
-        className="block md:hidden"
-      >
-        <PageHero title="Contacta con nosotros" />
-      </div>
-
-      <div className="hidden md:block">
-        <PageHero title="Contacta con nosotros" imageSrc="/bg-contacto-des.webp" />
-      </div>
+      <PageHero title="Contacta con" titlePart2="nosotros" imageSrc="/bg-contacto-des.webp" />
 
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-[72px] lg:py-20">
         <div className="flex flex-col items-center gap-5 text-center">

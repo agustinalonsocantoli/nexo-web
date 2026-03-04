@@ -48,15 +48,7 @@ const FAQS = [
 export default function HyroxPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div
-        className="block md:hidden"
-      >
-        <PageHero title="Reserva tu clase de prueba" />
-      </div>
-
-      <div className="hidden md:block">
-        <PageHero title="Reserva tu clase de prueba" imageSrc="/bg-hyrox-des.webp" />
-      </div>
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-hyrox-des.webp" />
 
       {/* Info + formulario */}
       <ClassBookingForm
@@ -64,6 +56,7 @@ export default function HyroxPage() {
         description="No hace falta tener experiencia previa para unirte a las clases de HYROX. Nuestros entrenamientos se adaptan a todos los niveles, desde principiantes hasta los más avanzados. Cada sesión está diseñada para que disfrutes, avances y te superes a tu propio ritmo."
         faqs={FAQS}
         redirectTo="/class/hyrox/confirm"
+        tipo="Clases HYROX"
       />
     </main>
   );

@@ -96,19 +96,13 @@ function SessionCard({ session, className = "" }: { session: typeof sessions[0];
 export default function OnRampPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <div
-        className="block md:hidden"
-      >
-        <PageHero title="¡Empieza hoy tu nuevo estilo de vida!" />
-      </div>
 
-      <div className="hidden md:block">
-        <PageHero
-          title="¡Empieza hoy tu nuevo estilo de vida!"
-          imageSrc="/bg-or-des.webp"
-          imageClass="object-[center_45%]"
-        />
-      </div>
+      <PageHero
+        title="¡Empieza hoy tu"
+        titlePart2="nuevo estilo de vida!"
+        imageSrc="/bg-or-des.webp"
+        imageClass="object-[center_45%]"
+      />
 
       <div className="mx-auto max-w-7xl flex flex-col gap-10 px-6 py-8 lg:gap-12 lg:px-[72px] lg:py-12">
 

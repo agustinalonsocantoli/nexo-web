@@ -231,20 +231,7 @@ export default function PlansPage() {
     <main className="bg-[#fbfbfb]">
       {/* Hero */}
       <section className="relative h-[179px] overflow-hidden lg:h-[341px]">
-        <div className="absolute inset-0 z-0 block md:hidden">
-          <OptimizedImage
-            src="/hero-plans.webp"
-            alt="Tarifas y Horarios - Nexo CrossFit"
-            className="h-full w-full object-cover object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
-            priority={true}
-            sizes="100vw"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-nexo-dark/60" />
-        </div>
-
-        <div className="absolute inset-0 z-0 hidden md:block">
+        <div className="absolute inset-0 z-0">
           <OptimizedImage
             src="/hero-sn-desktop.webp"
             alt="Tarifas y Horarios - Nexo CrossFit"

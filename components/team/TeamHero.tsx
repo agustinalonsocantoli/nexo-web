@@ -13,7 +13,7 @@ export default function TeamHero() {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-nexo-dark/40" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-end px-4 py-6 text-center lg:justify-center lg:gap-16 lg:py-0">
