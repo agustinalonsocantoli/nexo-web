@@ -29,13 +29,21 @@ export default function Footer() {
             Transformando vidas a través del deporte desde 2017.
           </p>
           {/* CrossFit Journal — solo desktop */}
-          <OptimizedImage
-            src="/crossfit-journal.webp"
-            alt="CrossFit Journal"
-            width={89}
-            height={50}
-            className="hidden h-[50px] w-[89px] object-contain lg:block"
-          />
+          <a
+            href="https://journal.crossfit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CrossFit Journal"
+            className="hidden lg:block"
+          >
+            <OptimizedImage
+              src="/crossfit-journal.webp"
+              alt="CrossFit Journal"
+              width={89}
+              height={50}
+              className="h-[50px] w-[89px] object-contain"
+            />
+          </a>
         </div>
 
         {/* Col 2: Enlaces Rápidos */}
@@ -82,13 +90,21 @@ export default function Footer() {
           </div>
 
           {/* CrossFit Journal — solo móvil */}
-          <OptimizedImage
-            src="/crossfit-journal.webp"
-            alt="CrossFit Journal"
-            width={89}
-            height={50}
-            className="h-[50px] w-[89px] object-contain lg:hidden"
-          />
+          <a
+            href="https://journal.crossfit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CrossFit Journal"
+            className="lg:hidden"
+          >
+            <OptimizedImage
+              src="/crossfit-journal.webp"
+              alt="CrossFit Journal"
+              width={89}
+              height={50}
+              className="h-[50px] w-[89px] object-contain"
+            />
+          </a>
         </div>
       </div>
 

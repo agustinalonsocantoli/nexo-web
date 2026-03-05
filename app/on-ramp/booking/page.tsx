@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -39,6 +39,8 @@ const labelClass = "font-body text-base leading-5 text-nexo-dark";
 
 export default function OnRampBookingPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const fechaParam = searchParams.get("fecha") ?? "";
   const [apiError, setApiError] = useState<string | null>(null);
 
   const {
@@ -49,7 +51,7 @@ export default function OnRampBookingPage() {
     formState: { errors, isSubmitting, isSubmitted },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { privacidad: false },
+    defaultValues: { privacidad: false, fecha: fechaParam },
   });
 
   const privacidad = watch("privacidad");
@@ -239,17 +241,83 @@ export default function OnRampBookingPage() {
               {apiError && <p className="font-body text-sm text-red-500">{apiError}</p>}
             </div>
 
-            {/* ── Columna derecha: método de pago ── */}
-            <div className="flex flex-col gap-4 rounded-lg bg-[#262626] p-6 lg:w-[480px] lg:shrink-0">
+            {/* ── Mobile: método de pago ── */}
+            <div className="flex flex-col gap-4 lg:hidden">
+              <h2 className="font-body text-[20px] font-semibold text-nexo-dark">
+                Método de pago
+              </h2>
+              <p className="font-body text-base leading-5 text-nexo-dark">
+                Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
+              </p>
+
+              {/* Bloque oscuro solo con datos bancarios */}
+              <div className="flex flex-col gap-2 rounded-lg bg-[#262626] p-[10px]">
+                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                  <span className="font-semibold">IBAN: </span>
+                  ES92 0081 0297 1800 0179 5488
+                </p>
+                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                  <span className="font-semibold">Nombre: </span>
+                  TURIA BOX SOCIEDAD LIMITADA
+                </p>
+                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                  <span className="font-semibold">Swift: </span>
+                  BSAB ESBB
+                </p>
+                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                  <span className="font-semibold">Concepto: </span>
+                  On Ramp – mes elegido
+                </p>
+              </div>
+
+              {/* Upload comprobante */}
+              <div className="flex flex-col gap-2">
+                <p className="font-body text-base leading-5 text-nexo-dark">
+                  Adjunta el comprobante de pago
+                </p>
+                <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#cac4d0]"}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                  </svg>
+                  <span className="truncate font-body text-sm text-[#878787]">
+                    {fileName || "JPG o PNG"}
+                  </span>
+                  <input
+                    type="file"
+                    accept=".jpg,.jpeg,.png"
+                    className="sr-only"
+                    {...register("comprobante")}
+                  />
+                </label>
+                {errors.comprobante && (
+                  <p className="font-body text-sm text-red-500">
+                    {errors.comprobante.message as string}
+                  </p>
+                )}
+              </div>
+
+              <p className="font-body text-sm leading-5 text-nexo-dark">
+                Si tienes cualquier duda durante el proceso, escríbenos a{" "}
+                <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">
+                  info@nexocrossfit.es
+                </a>{" "}
+                o háblanos por WhatsApp{" "}
+                <a href="tel:+34661388984" className="underline decoration-solid">
+                  661 388 984
+                </a>{" "}
+                y te ayudaremos lo antes posible.
+              </p>
+            </div>
+
+            {/* ── Desktop: método de pago (dark card) ── */}
+            <div className="hidden lg:flex flex-col gap-4 rounded-lg bg-[#262626] p-6 lg:w-[480px] lg:shrink-0">
               <div className="flex flex-col gap-4">
                 <h2 className="font-heading text-[24px] font-bold uppercase tracking-[0.72px] text-nexo-orange">
                   Método de pago
                 </h2>
-
                 <p className="font-body text-base leading-5 text-[#fbfbfb]">
                   Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
                 </p>
-
                 <div className="flex flex-col gap-2">
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
                     <span className="font-semibold">IBAN: </span>
@@ -323,6 +391,20 @@ export default function OnRampBookingPage() {
             </div>
 
           </div>
+
+          {/* ── Mobile: botón submit ── */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="lg:hidden mt-6 flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {isSubmitting ? "Enviando..." : "Enviar"}
+            {!isSubmitting && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            )}
+          </button>
         </form>
       </div>
     </main>

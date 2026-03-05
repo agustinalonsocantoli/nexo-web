@@ -23,10 +23,10 @@ export default function TeamSection() {
           </h2>
 
           <Link
-            href="/clase-prueba"
+            href="/team"
             className="flex items-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
-            Clase de Prueba
+            Ver más
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

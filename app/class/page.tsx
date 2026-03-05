@@ -74,7 +74,7 @@ export default function ClassPage() {
         {/* Mobile: accordion cards */}
         <div className="flex flex-col gap-4 lg:hidden">
           {classes.map((c) => (
-            <TrainingCard key={c.title} training={c} />
+            <TrainingCard key={c.title} training={c} testClass={true} />
           ))}
         </div>
 

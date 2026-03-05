@@ -138,19 +138,20 @@ export default function AboutBody() {
       </section>
 
       {/* Nuestra Filosofía */}
-      <section className="text-nexo-dark lg:py-16">
+      <section className="text-nexo-dark">
         <div className="mx-auto lg:max-w-[1044px]">
           <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
             Nuestra Filosofía
           </h2>
 
-          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
+          {/* Párrafo 1 — solo mobile (en desktop va fusionado con párrafo 2) */}
+          <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:hidden">
             Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness.
           </p>
 
-          {/* Móvil: coaches plain + párrafo 2 + n-f con quote */}
+          {/* Móvil: coaches plain + párrafo 2 + quote con overlay */}
           <div className="lg:hidden">
-            <div className="h-[235px] w-full">
+            <div className="h-[235px] w-full overflow-hidden">
               <OptimizedImage
                 src="/coaches.webp"
                 alt="Coaches Nexo CrossFit"
@@ -164,14 +165,15 @@ export default function AboutBody() {
               Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
             </p>
 
-            <div className="relative h-[185px] w-full">
+            <div className="relative h-[185px] w-full overflow-hidden">
               <OptimizedImage
-                src="/n-f.webp"
+                src="/team-movil.webp"
                 alt="Nuestra Filosofía"
-                className="h-[185px] w-full object-cover"
+                className="h-full w-full object-cover object-[center_35%]"
                 width={351}
                 height={185}
               />
+              <div className="absolute inset-0 bg-black/20" />
               <div className="absolute inset-0 flex items-center justify-center px-4">
                 <p className="text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase">
                   &quot;MÁS NO ES MEJOR,<br />
@@ -181,20 +183,21 @@ export default function AboutBody() {
             </div>
           </div>
 
-          {/* Desktop: párrafo 2 + coaches con quote overlay */}
+          {/* Desktop: párrafos fusionados + coaches con quote overlay */}
           <div className="hidden lg:block">
             <p className="mb-8 font-body text-base leading-6 tracking-normal text-nexo-dark">
-              Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
+              Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness. Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
             </p>
 
-            <div className="relative h-[359px] w-full">
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '1232/424' }}>
               <OptimizedImage
-                src="/n-f.webp"
+                src="/team-desktop.webp"
                 alt="Coaches Nexo CrossFit"
-                className="h-[359px] w-full object-cover object-[center_35%]"
+                className="h-full w-full object-cover object-[center_35%]"
                 width={1044}
                 height={359}
               />
+              
               <div className="absolute inset-0 flex items-center justify-center">
                 <p className="text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
                   &quot;MÁS NO ES MEJOR,<br />

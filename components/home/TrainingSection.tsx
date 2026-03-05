@@ -87,10 +87,10 @@ export default function TrainingSection() {
 
         <div className="mt-6 lg:mt-8 lg:flex lg:justify-center">
           <Link
-            href="/class"
+            href="/plans"
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange py-2 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-[261px]"
           >
-            Clase de Prueba
+            ¡Conoce nuestras tarifas!
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -104,9 +104,11 @@ export default function TrainingSection() {
 export function TrainingCard({
   training,
   groupName = "training-accordion",
+  testClass = false,
 }: {
   training: TrainingCardType;
   groupName?: string;
+  testClass?: boolean;
 }) {
   const ref = useRef<HTMLDetailsElement>(null);
 
@@ -123,7 +125,7 @@ export function TrainingCard({
       ref={ref}
       name={groupName}
       onToggle={handleToggle}
-      style={{ scrollMarginTop: '70px' }}
+      style={{ scrollMarginTop: '100px' }}
       className="group open:rounded-2xl open:border open:border-nexo-dark open:bg-[#fbfbfb]"
     >
       {/* SUMMARY (solo mobile) */}
@@ -141,7 +143,7 @@ export function TrainingCard({
           />
           <div className="absolute inset-0 bg-nexo-dark/60" />
           <div className="absolute inset-0 flex items-center justify-between px-4">
-            <h3 className="font-body text-[36px] font-normal leading-none text-white uppercase">
+            <h3 className="font-body text-[28px] font-normal leading-none text-white uppercase">
               {training.title}
             </h3>
             <svg
@@ -198,7 +200,7 @@ export function TrainingCard({
           href={training.href ?? "/class"}
           className="flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90"
         >
-          Clase de prueba
+          {testClass ? 'Clase de prueba' : 'Ver más'}
           <svg
             className="h-4 w-4"
             fill="none"

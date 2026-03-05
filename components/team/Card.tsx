@@ -44,7 +44,9 @@ function ExpandedCard({ team }: { team: TeamCardType }) {
 
         {team.button && (
           <Link
-            href="/tarifas"
+            href="https://wa.me/34651594523"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm leading-5 text-white transition-opacity hover:opacity-90"
           >
             Ver mas
@@ -76,7 +78,7 @@ export function Card({ team }: { team: TeamCardType }) {
   }
 
   return (
-    <details ref={ref} name="team-accordion" onToggle={handleToggle} style={{ scrollMarginTop: '70px' }} className="team-details group">
+    <details ref={ref} name="team-accordion" onToggle={handleToggle} style={{ scrollMarginTop: '100px' }} className="team-details group">
       {/* Mobile: summary acts as the full card — collapsed or expanded */}
       <summary className="list-none cursor-pointer select-none md:hidden">
         {/* Normal card — hidden when this card is open */}

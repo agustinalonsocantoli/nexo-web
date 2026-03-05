@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 };
 
 const sessions = [
-  { month: "FEBRERO", dates: "16/02 al 11/03 del 2026", spots: 6 },
-  { month: "MARZO", dates: "23/03 al 16/04 del 2026", spots: 6 },
-  { month: "ABRIL", dates: "20/04 al 13/05 del 2026", spots: 6 },
+  { month: "FEBRERO", dates: "16/02 al 11/03 del 2026", spots: 6, value: "febrero" },
+  { month: "MARZO", dates: "23/03 al 16/04 del 2026", spots: 6, value: "marzo" },
+  { month: "ABRIL", dates: "20/04 al 13/05 del 2026", spots: 6, value: "abril" },
 ];
 
 const ArrowIcon = () => (
@@ -83,7 +83,7 @@ function SessionCard({ session, className = "" }: { session: typeof sessions[0];
         </p>
       </div>
       <Link
-        href="/on-ramp/booking"
+        href={`/on-ramp/booking?fecha=${session.value}`}
         className="mt-1 flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
       >
         Reserva tu plaza

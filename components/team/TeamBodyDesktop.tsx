@@ -223,7 +223,9 @@ function JaviCardDesktop({
             ))}
           </div>
           <Link
-            href="/tarifas"
+            href="https://wa.me/34651594523"
+              target="_blank"
+              rel="noopener noreferrer"
             className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
             Pedir Cita
