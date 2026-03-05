@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 import { TeamCardType } from './Card';
@@ -182,56 +182,56 @@ function JaviCardDesktop({
   }
 
   return (
-    <div
-      className="flex flex-col overflow-hidden rounded-[16px] bg-nexo-dark"
-      style={{ width: '336px' }}
-    >
-      {/* Foto */}
-      <div className="relative overflow-hidden rounded-[14px]" style={{ height: '179px' }}>
-        <OptimizedImage
-          src={coach.image}
-          alt={coach.title}
-          className={`h-full w-full object-cover ${coach.extraClass ?? 'object-center'}`}
-          sizes="336px"
-          width={336}
-          height={179}
-        />
+    <div className="flex w-full flex-col gap-4 rounded-[16px] bg-nexo-dark p-4">
+      <div className="flex gap-4 items-start">
+        {/* Foto */}
         <div
-          className="absolute inset-0"
-          style={{ backgroundImage: 'linear-gradient(179.97deg, rgba(0,0,0,0) 26.6%, rgba(0,0,0,0.8) 95.5%)' }}
-        />
-      </div>
-
-      {/* Contenido */}
-      <div className="flex flex-col gap-3 px-6 py-5">
-        <div className="flex items-center justify-between">
-          <h3 className="font-heading text-[24px] font-bold leading-none text-white uppercase">
-            {coach.title}
-          </h3>
-          <button
-            onClick={onToggle}
-            className="shrink-0 text-white transition-opacity hover:opacity-70"
-            aria-label="Cerrar"
-          >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        {coach.descriptions.map((desc, i) => (
-          <p key={i} className="font-body text-sm leading-5 text-white">
-            {desc}
-          </p>
-        ))}
-        <Link
-          href="/tarifas"
-          className="mt-2 flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
+          className="relative shrink-0 overflow-hidden rounded-[16px]"
+          style={{ width: '354px', height: '288px' }}
         >
-          Pedir Cita
-          <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
+          <OptimizedImage
+            src={coach.image}
+            alt={coach.title}
+            className={`h-full w-full object-cover ${coach.extraClass ?? 'object-center'}`}
+            sizes="354px"
+            width={354}
+            height={288}
+          />
+        </div>
+
+        {/* Contenido */}
+        <div className="flex flex-1 flex-col gap-4 px-4">
+          <div className="flex items-center gap-6">
+            <h3 className="flex-1 font-heading text-[24px] font-bold leading-none text-white uppercase">
+              {coach.title}
+            </h3>
+            <button
+              onClick={onToggle}
+              className="shrink-0 text-white transition-opacity hover:opacity-70"
+              aria-label="Cerrar"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex flex-col gap-3">
+            {coach.descriptions.map((desc, i) => (
+              <p key={i} className="font-body text-sm leading-5 text-white">
+                {desc}
+              </p>
+            ))}
+          </div>
+          <Link
+            href="/tarifas"
+            className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
+          >
+            Pedir Cita
+            <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -244,32 +244,11 @@ export default function TeamBodyDesktop({
   coaches: TeamCardType[];
   services: TeamCardType[];
 }) {
-  const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [javiOpen, setJaviOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState<number | null>(1);
+  const [javiOpen, setJaviOpen] = useState(true);
 
   const coachesRef = useRef<HTMLDivElement>(null);
   const javiRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (
-        selectedId !== null &&
-        coachesRef.current &&
-        !coachesRef.current.contains(e.target as Node)
-      ) {
-        setSelectedId(null);
-      }
-      if (
-        javiOpen &&
-        javiRef.current &&
-        !javiRef.current.contains(e.target as Node)
-      ) {
-        setJaviOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [selectedId, javiOpen]);
 
   const selectedCoach =
     selectedId !== null ? (coaches.find((c) => c.id === selectedId) ?? null) : null;

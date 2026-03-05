@@ -84,9 +84,9 @@ export default function RootLayout({
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"
-          className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 drop-shadow-lg transition-transform hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 drop-shadow-lg transition-transform hover:scale-110"
         >
-          <Image src="/whatsapp.svg" alt="WhatsApp" width={28} height={28} className="w-[28px] md:w-[36px] h-[28px] md:h-[36px]" />
+          <Image src="/whatsapp.svg" alt="WhatsApp" width={28} height={28} className="w-[36px] md:w-[46px] h-[36px] md:h-[46px]" />
         </a>
       </body>
     </html>

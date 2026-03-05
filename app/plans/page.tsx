@@ -433,7 +433,7 @@ export default function PlansPage() {
 
         {/* ── CTA ── */}
         <Link
-          href="/clase-prueba"
+          href="/class"
           className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
         >
           Clase de Prueba

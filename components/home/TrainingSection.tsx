@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 
@@ -105,9 +108,22 @@ export function TrainingCard({
   training: TrainingCardType;
   groupName?: string;
 }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+
+  function handleToggle(e: React.SyntheticEvent<HTMLDetailsElement>) {
+    if (e.currentTarget.open) {
+      setTimeout(() => {
+        ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    }
+  }
+
   return (
     <details
+      ref={ref}
       name={groupName}
+      onToggle={handleToggle}
+      style={{ scrollMarginTop: '70px' }}
       className="group open:rounded-2xl open:border open:border-nexo-dark open:bg-[#fbfbfb]"
     >
       {/* SUMMARY (solo mobile) */}

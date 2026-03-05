@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 
@@ -62,8 +65,18 @@ function ExpandedCard({ team }: { team: TeamCardType }) {
 }
 
 export function Card({ team }: { team: TeamCardType }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+
+  function handleToggle(e: React.SyntheticEvent<HTMLDetailsElement>) {
+    if (e.currentTarget.open) {
+      setTimeout(() => {
+        ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    }
+  }
+
   return (
-    <details name="team-accordion" className="team-details group">
+    <details ref={ref} name="team-accordion" onToggle={handleToggle} style={{ scrollMarginTop: '70px' }} className="team-details group">
       {/* Mobile: summary acts as the full card — collapsed or expanded */}
       <summary className="list-none cursor-pointer select-none md:hidden">
         {/* Normal card — hidden when this card is open */}
