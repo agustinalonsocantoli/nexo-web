@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OptimizedImage from "@/components/OptimizedImage";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "Tarifas y Horarios",
@@ -254,134 +255,139 @@ export default function PlansPage() {
       <div className="flex flex-col gap-8 px-8 py-8 lg:mx-auto lg:max-w-7xl lg:gap-12 lg:px-30 lg:py-16">
 
         {/* ── TARIFAS ── */}
-        <section className="flex flex-col items-center gap-4">
-          <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
-            TARIFAS
-          </span>
+        <AnimateOnScroll>
+          <section className="flex flex-col items-center gap-4">
+            <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              TARIFAS
+            </span>
 
-          <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
-            {/* Cuota mensual */}
-            <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
-              <div className="flex items-center justify-between">
-                <p className="font-body text-base text-white">CUOTA MENSUAL</p>
-                <p className="font-heading text-[28px] font-bold leading-none text-white">110 €</p>
-              </div>
-              <p className="mt-1 font-body text-[11px] text-white/70">
-                | ACCESO ILIMITADO A TODAS LAS ACTIVIDADES |
-              </p>
-            </div>
-
-            {/* Hyrox */}
-            <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
-              <div className="flex items-center justify-between">
-                <p className="font-body text-base text-white">HYROX</p>
-                <p className="font-heading text-[28px] font-bold leading-none text-white">75 €</p>
-              </div>
-              <p className="mt-1 font-body text-[11px] text-white/70">
-                | ACCESO ILIMITADO A TODAS LAS CLASES DE HYROX |
-              </p>
-            </div>
-
-            {/* Bono 20 clases */}
-            <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <p className="font-body text-[15px] font-semibold text-white">BONO DE 20 CLASES</p>
-                  <p className="font-body text-[12px] text-white/70">| VÁLIDO PARA 2 MESES |</p>
+            <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
+              {/* Cuota mensual */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <p className="font-body text-base text-white">CUOTA MENSUAL</p>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">110 €</p>
                 </div>
-                <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">180 €</p>
+                <p className="mt-1 font-body text-[11px] text-white/70">
+                  | ACCESO ILIMITADO A TODAS LAS ACTIVIDADES |
+                </p>
               </div>
-              <p className="mt-1 font-body text-[10px] text-white/60">
-                Perfecto si tienes pensado venir{" "}
-                <span className="font-semibold">2/3 veces por semana</span>.
-              </p>
-            </div>
 
-            {/* Bono 10 clases */}
-            <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
-              <div>
-                <p className="font-body text-base text-white">BONO DE 10 CLASES</p>
-                <p className="font-body text-[12px] text-white/70">| 3 MESES |</p>
-              </div>
-              <p className="font-heading text-[28px] font-bold leading-none text-white">120 €</p>
-            </div>
-
-            {/* On Ramp */}
-            <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-body text-base text-white">ON RAMP</p>
-                  <p className="font-body text-[11px] text-white/70">| CURSO DE INICIACIÓN |</p>
+              {/* Hyrox */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <p className="font-body text-base text-white">HYROX</p>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">75 €</p>
                 </div>
-                <p className="font-heading text-[28px] font-bold leading-none text-white">165 €</p>
+                <p className="mt-1 font-body text-[11px] text-white/70">
+                  | ACCESO ILIMITADO A TODAS LAS CLASES DE HYROX |
+                </p>
+              </div>
+
+              {/* Bono 20 clases */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <p className="font-body text-[15px] font-semibold text-white">BONO DE 20 CLASES</p>
+                    <p className="font-body text-[12px] text-white/70">| VÁLIDO PARA 2 MESES |</p>
+                  </div>
+                  <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">180 €</p>
+                </div>
+                <p className="mt-1 font-body text-[10px] text-white/60">
+                  Perfecto si tienes pensado venir{" "}
+                  <span className="font-semibold">2/3 veces por semana</span>.
+                </p>
+              </div>
+
+              {/* Bono 10 clases */}
+              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div>
+                  <p className="font-body text-base text-white">BONO DE 10 CLASES</p>
+                  <p className="font-body text-[12px] text-white/70">| 3 MESES |</p>
+                </div>
+                <p className="font-heading text-[28px] font-bold leading-none text-white">120 €</p>
+              </div>
+
+              {/* On Ramp */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-body text-base text-white">ON RAMP</p>
+                    <p className="font-body text-[11px] text-white/70">| CURSO DE INICIACIÓN |</p>
+                  </div>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">165 €</p>
+                </div>
+              </div>
+
+              {/* Drop In */}
+              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-6 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <p className="font-body text-base text-white">DROP IN</p>
+                <p className="font-heading text-[28px] font-bold leading-none text-white">15 €</p>
               </div>
             </div>
-
-            {/* Drop In */}
-            <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-6 py-4 shadow-lg">
-              <p className="font-body text-base text-white">DROP IN</p>
-              <p className="font-heading text-[28px] font-bold leading-none text-white">15 €</p>
-            </div>
-          </div>
-        </section>
+          </section>
+        </AnimateOnScroll>
 
         {/* ── DESCUENTOS ── */}
-        <section className="flex flex-col items-center gap-4">
-          <span className="rounded-full border-[1.5px] border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
-            DESCUENTOS
-          </span>
+        <AnimateOnScroll delay={100}>
+          <section className="flex flex-col items-center gap-4">
+            <span className="rounded-full border-[1.5px] border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              DESCUENTOS
+            </span>
 
-          <div className="grid w-full grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-4">
-            {/* Cuota trimestral */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
-              <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                CUOTA TRIMESTRAL
-              </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
-              <p className="mt-1 font-body text-[9px] text-[#878787]">
-                3 MESES ADELANTADO{" "}
-                <span className="font-semibold">297 €</span>
-              </p>
-            </div>
+            <div className="grid w-full grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-4">
+              {/* Cuota trimestral */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  CUOTA TRIMESTRAL
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  3 MESES ADELANTADO{" "}
+                  <span className="font-semibold">297 €</span>
+                </p>
+              </div>
 
-            {/* Cuota semestral */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
-              <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                CUOTA SEMESTRAL
-              </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">15%</p>
-              <p className="mt-1 font-body text-[9px] text-[#878787]">
-                6 MESES ADELANTADO{" "}
-                <span className="font-semibold">561 €</span>
-              </p>
-            </div>
+              {/* Cuota semestral */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  CUOTA SEMESTRAL
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">15%</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  6 MESES ADELANTADO{" "}
+                  <span className="font-semibold">561 €</span>
+                </p>
+              </div>
 
-            {/* Cuota anual */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
-              <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                CUOTA ANUAL
-              </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">20%</p>
-              <p className="mt-1 font-body text-[9px] text-[#878787]">
-                1 AÑO ADELANTADO{" "}
-                <span className="font-semibold">1056 €</span>
-              </p>
-            </div>
+              {/* Cuota anual */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  CUOTA ANUAL
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">20%</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  1 AÑO ADELANTADO{" "}
+                  <span className="font-semibold">1056 €</span>
+                </p>
+              </div>
 
-            {/* Cuota mensual pareja */}
-            <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4">
-              <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                CUOTA MENSUAL
-              </p>
-              <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
-              <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
-                Parejas o Familias
-              </p>
+              {/* Cuota mensual pareja */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  CUOTA MENSUAL
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
+                <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
+                  Parejas o Familias
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </AnimateOnScroll>
 
         {/* ── HORARIOS ── */}
+        <AnimateOnScroll delay={100}>
         <section className="flex flex-col items-center gap-3">
           <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
             HORARIOS
@@ -430,8 +436,10 @@ export default function PlansPage() {
             </p>
           </div>
         </section>
+        </AnimateOnScroll>
 
         {/* ── CTA ── */}
+        <AnimateOnScroll delay={100}>
         <Link
           href="/class"
           className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
@@ -451,6 +459,7 @@ export default function PlansPage() {
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </Link>
+        </AnimateOnScroll>
       </div>
     </main>
   );

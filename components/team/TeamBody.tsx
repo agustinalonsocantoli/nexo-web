@@ -1,5 +1,6 @@
 import { Card, TeamCardType } from "./Card";
 import TeamBodyDesktop from "./TeamBodyDesktop";
+import AnimateOnScroll from "../AnimateOnScroll";
 
 const coaches: TeamCardType[] = [
   {
@@ -70,6 +71,7 @@ export default function TeamBody() {
     <section className="bg-[#fbfbfb] py-8 text-nexo-dark lg:py-16">
       {/* Mobile */}
       <div className="lg:hidden">
+        <AnimateOnScroll>
         <div className="mx-auto max-w-7xl px-8">
           <div className="flex flex-col items-center gap-4">
             <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
@@ -83,7 +85,9 @@ export default function TeamBody() {
             </div>
           </div>
         </div>
+        </AnimateOnScroll>
 
+        <AnimateOnScroll delay={100}>
         <div className="mx-auto mt-8 max-w-7xl px-8">
           <div className="flex flex-col items-center gap-4">
             <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
@@ -97,12 +101,15 @@ export default function TeamBody() {
             </div>
           </div>
         </div>
+        </AnimateOnScroll>
       </div>
 
       {/* Desktop */}
+      <AnimateOnScroll>
       <div className="hidden lg:block mx-auto max-w-7xl px-[118px]">
         <TeamBodyDesktop coaches={coaches} services={services} />
       </div>
+      </AnimateOnScroll>
     </section>
   );
 }

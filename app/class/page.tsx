@@ -3,6 +3,7 @@ import Link from "next/link";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageHero from "@/components/PageHero";
 import { TrainingCard, TrainingCardType } from "@/components/home/TrainingSection";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "Reserva tu Clase de Prueba",
@@ -51,25 +52,29 @@ export default function ClassPage() {
       <div className="flex flex-col gap-4 px-6 py-6 lg:mx-auto lg:max-w-7xl lg:gap-10 lg:px-30 lg:py-16">
 
         {/* Título de sección — solo desktop */}
-        <h2 className="hidden font-heading text-[28px] font-bold uppercase leading-tight tracking-[0.03em] text-nexo-dark lg:block lg:text-[32px]">
-          A un paso de empezar tu nuevo estilo de vida
-        </h2>
+        <AnimateOnScroll>
+          <h2 className="hidden font-heading text-[28px] font-bold uppercase leading-tight tracking-[0.03em] text-nexo-dark lg:block lg:text-[32px]">
+            A un paso de empezar tu nuevo estilo de vida
+          </h2>
+        </AnimateOnScroll>
 
         {/* Párrafo intro */}
-        <p className="font-body text-sm leading-5 text-nexo-dark lg:text-base lg:leading-6">
-          <span className="lg:hidden">
-            Reserva tu clase de prueba y vive una sesión real de CrossFit o
-            HYROX. Nos adaptamos a tu nivel y entrenarás en un ambiente
-            motivador, junto a coaches que cuidan tu técnica y tu progreso.
-          </span>
-          <span className="hidden lg:inline">
-            Reserva tu clase de prueba y experimenta una auténtica sesión de
-            CrossFit o HYROX en nuestro box. Sea cual sea tu nivel, nos
-            adaptamos a ti. Entrenarás en un ambiente que motiva, conecta y
-            empuja a dar lo mejor de ti, siempre acompañado por nuestros
-            coaches, atentos a tu técnica y a tu progreso.
-          </span>
-        </p>
+        <AnimateOnScroll delay={100}>
+          <p className="font-body text-sm leading-5 text-nexo-dark lg:text-base lg:leading-6">
+            <span className="lg:hidden">
+              Reserva tu clase de prueba y vive una sesión real de CrossFit o
+              HYROX. Nos adaptamos a tu nivel y entrenarás en un ambiente
+              motivador, junto a coaches que cuidan tu técnica y tu progreso.
+            </span>
+            <span className="hidden lg:inline">
+              Reserva tu clase de prueba y experimenta una auténtica sesión de
+              CrossFit o HYROX en nuestro box. Sea cual sea tu nivel, nos
+              adaptamos a ti. Entrenarás en un ambiente que motiva, conecta y
+              empuja a dar lo mejor de ti, siempre acompañado por nuestros
+              coaches, atentos a tu técnica y a tu progreso.
+            </span>
+          </p>
+        </AnimateOnScroll>
 
         {/* Mobile: accordion cards */}
         <div className="flex flex-col gap-4 lg:hidden">
@@ -81,9 +86,9 @@ export default function ClassPage() {
         {/* Desktop: horizontal cards en grid 2 columnas */}
         <div className="hidden lg:grid lg:grid-cols-2 lg:gap-6">
           {classes.map((c) => (
+            <AnimateOnScroll key={c.title} delay={100}>
             <div
-              key={c.title}
-              className="flex overflow-hidden rounded-2xl border border-nexo-dark"
+              className="flex overflow-hidden rounded-2xl border border-nexo-dark transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"
             >
               {/* Imagen izquierda */}
               <div className="relative w-[210px] shrink-0">
@@ -128,6 +133,7 @@ export default function ClassPage() {
                 </Link>
               </div>
             </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

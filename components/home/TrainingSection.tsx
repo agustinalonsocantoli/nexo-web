@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
+import AnimateOnScroll from '../AnimateOnScroll';
 
 export interface TrainingCardType {
   title: string;
@@ -58,17 +59,23 @@ export default function TrainingSection() {
     <section className="bg-[#fbfbfb] py-8 text-nexo-dark lg:py-16">
       <div className="mx-auto max-w-7xl px-8 lg:px-[72px]">
         <div className="mb-6 flex flex-col items-center gap-4 text-center lg:mb-10 lg:gap-6">
-          <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-            NUESTRAS CLASES
-          </span>
+          <AnimateOnScroll from="fade">
+            <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
+              NUESTRAS CLASES
+            </span>
+          </AnimateOnScroll>
 
-          <h2 className="font-heading text-[20px] font-bold leading-[100%] tracking-[0.03em] text-nexo-orange uppercase lg:text-[36px] lg:tracking-[1.08px]">
-            ENTRENAMIENTOS PENSADOS PARA TI
-          </h2>
+          <AnimateOnScroll from="up" delay={100}>
+            <h2 className="font-heading text-[20px] font-bold leading-[100%] tracking-[0.03em] text-nexo-orange uppercase lg:text-[36px] lg:tracking-[1.08px]">
+              ENTRENAMIENTOS PENSADOS PARA TI
+            </h2>
+          </AnimateOnScroll>
 
-          <p className="font-body text-[14px] leading-[20px] text-nexo-dark lg:text-[16px] lg:max-w-[1040px]">
-            En nuestro box encontrarás una gran variedad de clases y entrenamientos adaptados a tu nivel, para que superes tus límites, progreses paso a paso y consigas tus metas.
-          </p>
+          <AnimateOnScroll from="up" delay={200}>
+            <p className="font-body text-[14px] leading-[20px] text-nexo-dark lg:text-[16px] lg:max-w-[1040px]">
+              En nuestro box encontrarás una gran variedad de clases y entrenamientos adaptados a tu nivel, para que superes tus límites, progreses paso a paso y consigas tus metas.
+            </p>
+          </AnimateOnScroll>
         </div>
 
         {/* Mobile: accordion cards */}
@@ -81,11 +88,13 @@ export default function TrainingSection() {
         {/* Desktop: always-open cards */}
         <div className="hidden lg:flex lg:items-stretch lg:justify-between lg:gap-6">
           {trainings.map((training, index) => (
-            <TrainingCardDesktop key={index} training={training} />
+            <AnimateOnScroll key={index} from="up" delay={index * 120} className="flex flex-1">
+              <TrainingCardDesktop training={training} />
+            </AnimateOnScroll>
           ))}
         </div>
 
-        <div className="mt-6 lg:mt-8 lg:flex lg:justify-center">
+        <AnimateOnScroll from="up" delay={200} className="mt-6 lg:mt-8 lg:flex lg:justify-center">
           <Link
             href="/plans"
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange py-2 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-[261px]"
@@ -95,7 +104,7 @@ export default function TrainingSection() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
@@ -218,7 +227,7 @@ export function TrainingCard({
 
 export function TrainingCardDesktop({ training }: { training: TrainingCardType }) {
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-hidden rounded-2xl border border-nexo-dark bg-[#fbfbfb] px-4 py-6">
+    <div className="flex flex-1 flex-col gap-4 overflow-hidden rounded-2xl border border-nexo-dark bg-[#fbfbfb] px-4 py-6 transition-all duration-200 hover:shadow-lg hover:border-nexo-orange/60">
       {/* Imagen */}
       <div className="relative h-[131px] w-full overflow-hidden rounded-lg">
         <OptimizedImage

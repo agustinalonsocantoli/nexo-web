@@ -1,5 +1,6 @@
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
+import AnimateOnScroll from '../AnimateOnScroll';
 
 export default function TeamSection() {
   return (
@@ -17,20 +18,24 @@ export default function TeamSection() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-end gap-2 px-6 py-6 text-center lg:justify-end lg:mb-14  lg:gap-4 lg:py-0">
-          <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.72px] text-[#fbfbfb] uppercase lg:text-[48px] lg:tracking-[1.44px]">
-            <span className="block">Conoce</span>
-            <span className="block">al equipo</span>
-          </h2>
+          <AnimateOnScroll from="up">
+            <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.72px] text-[#fbfbfb] uppercase lg:text-[48px] lg:tracking-[1.44px]">
+              <span className="block">Conoce</span>
+              <span className="block">al equipo</span>
+            </h2>
+          </AnimateOnScroll>
 
-          <Link
-            href="/team"
-            className="flex items-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
-          >
-            Ver más
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
+          <AnimateOnScroll from="up" delay={150}>
+            <Link
+              href="/team"
+              className="flex items-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
+            >
+              Ver más
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

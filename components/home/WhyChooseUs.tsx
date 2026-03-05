@@ -64,34 +64,37 @@ const benefits = [
   }
 ];
 
+import AnimateOnScroll from '../AnimateOnScroll';
+
 export default function WhyChooseUs() {
   return (
     <section className="bg-nexo-dark py-8 text-white lg:py-16">
       <div className="mx-auto max-w-7xl px-8 lg:px-[72px]">
-        <div className="mb-8 text-center lg:mb-10">
+        <AnimateOnScroll from="fade" className="mb-8 text-center lg:mb-10">
           <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.03em] text-white uppercase">
             ¿POR QUÉ<br className="lg:hidden" /> ELEGIRNOS?
           </h2>
-        </div>
+        </AnimateOnScroll>
 
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-3 rounded-[14px] border border-nexo-orange p-6 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]"
-            >
-              <div className="flex">
-                {benefit.icon}
+            <AnimateOnScroll key={index} from="up" delay={index * 100} className="h-full">
+              <div
+                className="flex h-full flex-col gap-3 rounded-[14px] border border-nexo-orange p-6 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] transition-all duration-200 hover:scale-[1.02] hover:shadow-xl"
+              >
+                <div className="flex">
+                  {benefit.icon}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-body text-base font-semibold leading-6 text-[#fbfbfb] lg:text-[22px] lg:leading-7">
+                    {benefit.title}
+                  </h3>
+                  <p className="font-body text-sm leading-normal text-[#878787] lg:text-[16px]">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-body text-base font-semibold leading-6 text-[#fbfbfb] lg:text-[22px] lg:leading-7">
-                  {benefit.title}
-                </h3>
-                <p className="font-body text-sm leading-normal text-[#878787] lg:text-[16px]">
-                  {benefit.description}
-                </p>
-              </div>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

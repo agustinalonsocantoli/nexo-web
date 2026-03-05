@@ -1,4 +1,5 @@
 import OptimizedImage from '../OptimizedImage';
+import AnimateOnScroll from '../AnimateOnScroll';
 
 export default function AffiliatesSection() {
   return (
@@ -18,26 +19,32 @@ export default function AffiliatesSection() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center py-5 lg:py-8">
-        <h3 className="mb-8 w-fit rounded-3xl border border-nexo-orange px-10 py-1 text-center text-xs font-semibold tracking-wider text-white uppercase lg:mb-10">
-          Afiliados
-        </h3>
+        <AnimateOnScroll from="fade">
+          <h3 className="mb-8 w-fit rounded-3xl border border-nexo-orange px-10 py-1 text-center text-xs font-semibold tracking-wider text-white uppercase lg:mb-10">
+            Afiliados
+          </h3>
+        </AnimateOnScroll>
 
         <div className="flex items-center justify-center gap-4 px-5 lg:gap-14">
-          <OptimizedImage
-            src="/logo-crossfit.webp"
-            alt="crossfit"
-            className="h-auto w-[135px] lg:w-[280px]"
-            width={280}
-            height={84}
-          />
+          <AnimateOnScroll from="left" delay={100}>
+            <OptimizedImage
+              src="/logo-crossfit.webp"
+              alt="crossfit"
+              className="h-auto w-[135px] lg:w-[280px]"
+              width={280}
+              height={84}
+            />
+          </AnimateOnScroll>
 
-          <OptimizedImage
-            src="/logo-hyrox.webp"
-            alt="hyrox"
-            className="h-[33px] w-[122px] lg:h-[70px] lg:w-[240px]"
-            width={240}
-            height={70}
-          />
+          <AnimateOnScroll from="right" delay={100}>
+            <OptimizedImage
+              src="/logo-hyrox.webp"
+              alt="hyrox"
+              className="h-[33px] w-[122px] lg:h-[70px] lg:w-[240px]"
+              width={240}
+              height={70}
+            />
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

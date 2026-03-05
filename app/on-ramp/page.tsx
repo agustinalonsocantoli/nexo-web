@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "Curso On Ramp CrossFit en Valencia",
@@ -68,7 +69,7 @@ const ChevronRight = () => (
 function SessionCard({ session, className = "" }: { session: typeof sessions[0]; className?: string }) {
   return (
     <div
-      className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 ${className}`}
+      className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
     >
       <p className="font-heading text-[28px] font-bold leading-[100%] text-[#262626] text-center">
         {session.month}
@@ -108,9 +109,11 @@ export default function OnRampPage() {
 
         {/* ── PRÓXIMAS FECHAS DE INICIO ── */}
         <section className="flex flex-col gap-4 lg:gap-6">
+          <AnimateOnScroll from="left">
           <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
             Próximas fechas<br className="md:hidden" /> On Ramp
           </h2>
+          </AnimateOnScroll>
 
           {/* Mobile: CSS-only carousel */}
           <div className="sessions-carousel md:hidden">
@@ -143,63 +146,77 @@ export default function OnRampPage() {
 
           {/* Desktop: grid */}
           <div className="hidden md:grid grid-cols-2 gap-4 lg:grid-cols-3">
-            {sessions.map((session) => (
-              <SessionCard key={session.month} session={session} />
+            {sessions.map((session, i) => (
+              <AnimateOnScroll key={session.month} from="up" delay={i * 100}>
+                <SessionCard session={session} />
+              </AnimateOnScroll>
             ))}
           </div>
         </section>
 
         {/* ── ¿CUÁNTO CUESTA? ── */}
         <section className="flex flex-col gap-2">
-          <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
-            ¿Cuánto cuesta?
-          </h2>
-          <p className="font-body text-base leading-5 text-nexo-dark">
-            El precio del curso es de{" "}
-            <span className="font-semibold">165 euros</span>.
-          </p>
+          <AnimateOnScroll from="left">
+            <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
+              ¿Cuánto cuesta?
+            </h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll from="up" delay={100}>
+            <p className="font-body text-base leading-5 text-nexo-dark">
+              El precio del curso es de{" "}
+              <span className="font-semibold">165 euros</span>.
+            </p>
+          </AnimateOnScroll>
         </section>
 
         {/* ── DETALLES ADICIONALES ── */}
         <section className="flex flex-col gap-2">
-          <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
-            Detalles adicionales
-          </h2>
-          <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
-            <li>4 semanas, 2 días por semana (lunes y miércoles) de 20:15 a 21:15.</li>
-            <li>
-              Curso de 2 a 6 personas, con una duración de 4 semanas. En total
-              son 8 clases, 2 por semana.
-            </li>
-            <li>Sin restricciones de edad, todos son bienvenidos.</li>
-            <li>
-              Atención personalizada de nuestros entrenadores para garantizar
-              seguridad y aprendizaje efectivo.
-            </li>
-            <li>
-              Asistencia obligatoria a todas las clases, ya que no son
-              recuperables.
-            </li>
-          </ul>
+          <AnimateOnScroll from="left">
+            <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
+              Detalles adicionales
+            </h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll from="up" delay={100}>
+            <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
+              <li>4 semanas, 2 días por semana (lunes y miércoles) de 20:15 a 21:15.</li>
+              <li>
+                Curso de 2 a 6 personas, con una duración de 4 semanas. En total
+                son 8 clases, 2 por semana.
+              </li>
+              <li>Sin restricciones de edad, todos son bienvenidos.</li>
+              <li>
+                Atención personalizada de nuestros entrenadores para garantizar
+                seguridad y aprendizaje efectivo.
+              </li>
+              <li>
+                Asistencia obligatoria a todas las clases, ya que no son
+                recuperables.
+              </li>
+            </ul>
+          </AnimateOnScroll>
         </section>
 
         {/* ── HORARIO ALTERNATIVO ── */}
         <section className="flex flex-col gap-2">
-          <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px] lg:max-w-[860px]">
-            ¿No puedes asistir al horario establecido para el próximo curso de iniciación?
-          </h2>
-          <p className="font-body text-base leading-5 text-nexo-dark">
-            No te preocupes, te ofrecemos la opción de realizar el curso de
-            forma semiprivada o totalmente personalizada: consiste en 8 sesiones
-            de 1 hora, programadas según tu disponibilidad y conveniencia.
-          </p>
-          <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
-            <li>
-              El semiprivado (2 personas) tiene un coste de 190 euros por
-              persona.
-            </li>
-            <li>El privado (1 persona) de 250 euros.</li>
-          </ul>
+          <AnimateOnScroll from="left">
+            <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px] lg:max-w-[860px]">
+              ¿No puedes asistir al horario establecido para el próximo curso de iniciación?
+            </h2>
+          </AnimateOnScroll>
+          <AnimateOnScroll from="up" delay={100}>
+            <p className="font-body text-base leading-5 text-nexo-dark">
+              No te preocupes, te ofrecemos la opción de realizar el curso de
+              forma semiprivada o totalmente personalizada: consiste en 8 sesiones
+              de 1 hora, programadas según tu disponibilidad y conveniencia.
+            </p>
+            <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
+              <li>
+                El semiprivado (2 personas) tiene un coste de 190 euros por
+                persona.
+              </li>
+              <li>El privado (1 persona) de 250 euros.</li>
+            </ul>
+          </AnimateOnScroll>
         </section>
 
       </div>
