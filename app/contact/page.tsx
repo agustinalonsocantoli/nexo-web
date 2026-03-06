@@ -7,7 +7,7 @@ export default function ContactPage() {
       <PageHero title="Contacta con" titlePart2="nosotros" imageSrc="/bg-contacto-des.jpg" />
 
       {/* Main content — mobile: columna | desktop: dos columnas (form izq, info der) */}
-      <div className="flex flex-col gap-6 px-6 py-6 lg:flex-row lg:items-start lg:gap-12 lg:px-[118px] lg:py-16">
+      <div className="mx-auto max-w-7xl flex flex-col gap-6 px-6 py-8 lg:flex-row lg:items-start lg:gap-12 lg:px-[72px] lg:py-12">
 
         {/* Columna derecha en desktop (intro + info card) — en mobile aparece primero */}
         <div className="flex flex-col gap-4 lg:order-last lg:flex-1">

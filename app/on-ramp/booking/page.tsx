@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -37,7 +37,7 @@ const inputBase =
 
 const labelClass = "font-body text-base leading-5 text-nexo-dark";
 
-function OnRampBookingForm() {
+export default function OnRampBookingPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const fechaParam = searchParams.get("fecha") ?? "";
@@ -96,7 +96,7 @@ function OnRampBookingForm() {
 
   return (
     <main className="bg-[#fbfbfb]">
-      <PageHero title="Reserva tu" titlePart2="plaza curso On Ramp" imageSrc="/reserva-onramp.jpg" />
+      <PageHero title="Reserva tu" titlePart2="plaza curso On Ramp" imageSrc="/reserva-onramp.webp" />
 
       <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -408,13 +408,5 @@ function OnRampBookingForm() {
         </form>
       </div>
     </main>
-  );
-}
-
-export default function OnRampBookingPage() {
-  return (
-    <Suspense fallback={null}>
-      <OnRampBookingForm />
-    </Suspense>
   );
 }

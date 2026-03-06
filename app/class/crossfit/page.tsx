@@ -307,7 +307,7 @@ export default function CrossfitPage() {
     <main className="bg-[#fbfbfb]">
       <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-form-des.jpg" />
 
-      <div className="px-6 py-6 lg:px-16 lg:py-12">
+      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_1fr] lg:grid-rows-[auto_1fr] lg:gap-x-12 lg:gap-y-0 lg:items-start"
