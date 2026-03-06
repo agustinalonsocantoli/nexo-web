@@ -104,14 +104,14 @@ export default function Navbar() {
                         onClick={closeMenu}
                         className="font-body text-base font-normal text-white transition-colors hover:text-nexo-orange"
                     >
-                        Quiénes Somos
+                        Sobre Nosotros
                     </Link>
                     <Link
                         href="/team"
                         onClick={closeMenu}
                         className="font-body text-base font-normal text-white transition-colors hover:text-nexo-orange"
                     >
-                        Nuestros Coaches
+                        Nuestro Equipo
                     </Link>
                     <Link
                         href="/contact"

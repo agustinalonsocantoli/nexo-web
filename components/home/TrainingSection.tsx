@@ -39,7 +39,7 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Clases de 60 minutos donde cada sesión tiene un propósito.\nCalentamiento técnico, desarrollo de fuerza y wods escalables a tu nivel.\n\nEn Nexo llevamos una programación diseñada para que progreses semana a semana, priorizando la técnica y evitando lesiones.',
-    image: "/crossfit-new.jpg",
+    image: "/crossfit-new.png",
     href: '/class/crossfit',
     id: 2,
   },
@@ -76,7 +76,7 @@ export default function TrainingSection() {
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={200}>
-            <p className="font-body text-[14px] leading-[20px] text-nexo-dark lg:text-[16px] lg:max-w-[1040px]">
+            <p className="font-body text-[14px] leading-5 text-nexo-dark lg:text-[16px] lg:max-w-260">
               En nuestro box encontrarás una gran variedad de clases y entrenamientos adaptados a tu nivel, para que superes tus límites, progreses paso a paso y consigas tus metas.
             </p>
           </AnimateOnScroll>
@@ -238,7 +238,7 @@ export function TrainingCardDesktop({ training }: { training: TrainingCardType }
           <OptimizedImage
             src={training.image}
             alt={training.title}
-            className="h-full w-full object-cover object-[center_37%]"
+            className={`h-full w-full object-cover object-[center_37%] ${training.id === 1 ? 'object-[center_37%]' : training.id === 2 ? 'object-[center_65%]' : 'object-[center_40%]'}`}
             sizes="33vw"
             width={600}
             height={131}

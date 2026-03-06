@@ -28,7 +28,7 @@ const classes: TrainingCardType[] = [
       "Clases de 60 minutos con enfoque en tu progreso semanal, cuidando la técnica y evitando lesiones.",
       "Comunidad, energía y un box preparado para cada WOD.",
     ],
-    image: "/crossfit-new.jpg",
+    image: "/crossfit-new.png",
     href: "/class/crossfit",
     id: 2,
   },
