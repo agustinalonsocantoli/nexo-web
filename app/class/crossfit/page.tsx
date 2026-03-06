@@ -479,12 +479,14 @@ export default function CrossfitPage() {
             {firstTime === "si" && (
               <div className="flex flex-col gap-2">
                 <label htmlFor="fechaNacimiento" className="font-body text-base leading-5 text-nexo-dark">Fecha de nacimiento</label>
-                <input
-                  id="fechaNacimiento"
-                  type="date"
-                  {...register("fechaNacimiento")}
-                  className={`max-w-full ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
-                />
+                <div className="w-full overflow-hidden">
+                  <input
+                    id="fechaNacimiento"
+                    type="date"
+                    {...register("fechaNacimiento")}
+                    className={`${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
+                  />
+                </div>
                 {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
               </div>
             )}

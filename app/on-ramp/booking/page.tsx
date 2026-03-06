@@ -191,12 +191,14 @@ function OnRampBookingContent() {
               {/* Fecha de nacimiento */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="fechaNacimiento" className={labelClass}>Fecha de nacimiento</label>
-                <input
-                  id="fechaNacimiento"
-                  type="date"
-                  {...register("fechaNacimiento")}
-                  className={`max-w-full ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
-                />
+                <div className="w-full overflow-hidden">
+                  <input
+                    id="fechaNacimiento"
+                    type="date"
+                    {...register("fechaNacimiento")}
+                    className={`${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
+                  />
+                </div>
                 {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
               </div>
 
