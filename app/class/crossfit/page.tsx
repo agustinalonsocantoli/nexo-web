@@ -240,7 +240,7 @@ export default function CrossfitPage() {
 
       {firstTime === "si" && (
         <div className="hidden lg:flex flex-col gap-4 rounded-lg border border-[#262626] bg-white p-6">
-          <h3 className="font-heading text-[20px] font-bold uppercase tracking-wide text-nexo-orange">
+          <h3 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
             Método de pago
           </h3>
           <p className="font-body text-base leading-5 text-nexo-dark">

@@ -16,7 +16,7 @@ export default function PageHero({
   subtitle,
   imageSrc = '/hero-general.png',
   lgHeightClass = 'lg:h-[341px]',
-  lgTitleClass = 'lg:text-[36px]',
+  lgTitleClass = 'lg:text-[48px]',
   imageClass = '',
 }: PageHeroProps) {
   return (

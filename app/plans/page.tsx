@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import OptimizedImage from "@/components/OptimizedImage";
+import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
@@ -230,26 +230,12 @@ function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
 export default function PlansPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      {/* Hero */}
-      <section className="relative h-[179px] overflow-hidden lg:h-[341px]">
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage
-            src="/hero-sn-desktop.jpg"
-            alt="Tarifas y Horarios - Nexo CrossFit"
-            className="h-full w-full object-cover object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
-            priority={true}
-            sizes="100vw"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-nexo-dark/60" />
-        </div>
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center">
-          <h1 className="font-heading text-[26px] font-bold leading-tight tracking-[0.03em] text-white uppercase lg:text-[48px]">
-            Encuentra la tarifa ideal para ti
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        title="Encuentra la tarifa"
+        titlePart2="ideal para ti"
+        imageSrc="/hero-sn-desktop.jpg"
+        imageClass="object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
+      />
 
       {/* Main content */}
       <div className="flex flex-col gap-8 px-8 py-8 lg:mx-auto lg:max-w-7xl lg:gap-12 lg:px-30 lg:py-16">

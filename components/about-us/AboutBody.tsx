@@ -193,9 +193,9 @@ export default function AboutBody() {
                   width={351}
                   height={185}
                 />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 flex items-center justify-center px-4">
-                  <p className="text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase">
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex items-end justify-center px-4">
+                  <p className=" mb-6 relative text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase">
                     &quot;MÁS NO ES MEJOR,<br />
                     MEJOR ES MEJOR&quot;
                   </p>
@@ -223,7 +223,7 @@ export default function AboutBody() {
                 />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-end justify-center">
-                  <p className="relative text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
+                  <p className=" mb-8 relative text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
                     &quot;MÁS NO ES MEJOR,<br />
                     MEJOR ES MEJOR&quot;
                   </p>

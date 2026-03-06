@@ -244,7 +244,7 @@ function OnRampBookingContent() {
 
             {/* ── Mobile: método de pago ── */}
             <div className="flex flex-col gap-4 lg:hidden">
-              <h2 className="font-body text-[20px] font-semibold text-nexo-dark">
+              <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
                 Método de pago
               </h2>
               <p className="font-body text-base leading-5 text-nexo-dark">
@@ -313,7 +313,7 @@ function OnRampBookingContent() {
             {/* ── Desktop: método de pago (dark card) ── */}
             <div className="hidden lg:flex flex-col gap-4 rounded-lg border border-[#262626] bg-white p-6 lg:w-[480px] lg:shrink-0">
               <div className="flex flex-col gap-4">
-                <h2 className="font-heading text-[24px] font-bold uppercase tracking-[0.72px] text-nexo-orange">
+                <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
                   Método de pago
                 </h2>
                 <p className="font-body text-base leading-5 text-nexo-dark">
