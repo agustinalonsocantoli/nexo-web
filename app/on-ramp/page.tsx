@@ -19,9 +19,8 @@ export const metadata: Metadata = {
 };
 
 const sessions = [
-  { month: "FEBRERO", dates: "16/02 al 11/03 del 2026", spots: 6, value: "febrero" },
-  { month: "MARZO", dates: "23/03 al 16/04 del 2026", spots: 6, value: "marzo" },
-  { month: "ABRIL", dates: "20/04 al 13/05 del 2026", spots: 6, value: "abril" },
+  { month: "ABRIL", dates: "30/03 al 22/04 del 2026", spots: 6, value: "abril" },
+  { month: "MAYO", dates: "27/04 al 24/05 del 2026", spots: 6, value: "mayo" },
 ];
 
 const ArrowIcon = () => (
@@ -72,19 +71,19 @@ function SessionCard({ session, className = "" }: { session: typeof sessions[0];
       className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
     >
       <p className="font-heading text-[28px] font-bold leading-[100%] text-[#262626] text-center">
-        {session.month}
+        {session?.month}
       </p>
       <p className="font-body text-base leading-5 text-[#262626] text-center">
-        {session.dates}
+        {session?.dates}
       </p>
       <div className="flex items-center gap-1.5 justify-center">
         <PersonIcon />
         <p className="font-body text-base leading-5 text-[#1e1e1e] text-center">
-          {session.spots} plazas disponibles
+          {session?.spots} plazas disponibles
         </p>
       </div>
       <Link
-        href={`/on-ramp/booking?fecha=${session.value}`}
+        href={`/on-ramp/booking?fecha=${session?.value}`}
         className="mt-1 flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
       >
         Reserva tu plaza
@@ -119,7 +118,6 @@ export default function OnRampPage() {
           <div className="sessions-carousel md:hidden">
             <input type="radio" name="sessions" id="ses-1" className="carousel-radio" defaultChecked />
             <input type="radio" name="sessions" id="ses-2" className="carousel-radio" />
-            <input type="radio" name="sessions" id="ses-3" className="carousel-radio" />
 
             <div className="sessions-carousel-wrapper">
               <div className="sessions-carousel-slide">
@@ -128,24 +126,19 @@ export default function OnRampPage() {
               <div className="sessions-carousel-slide">
                 <SessionCard session={sessions[1]} className="w-[270px]" />
               </div>
-              <div className="sessions-carousel-slide">
-                <SessionCard session={sessions[2]} className="w-[270px]" />
-              </div>
             </div>
 
             {/* Prev arrows (wrap: 1→3, 2→1, 3→2) */}
-            <label htmlFor="ses-3" className="sessions-nav sessions-nav-prev sessions-prev-1"><ChevronLeft /></label>
             <label htmlFor="ses-1" className="sessions-nav sessions-nav-prev sessions-prev-2"><ChevronLeft /></label>
-            <label htmlFor="ses-2" className="sessions-nav sessions-nav-prev sessions-prev-3"><ChevronLeft /></label>
+            <label htmlFor="ses-2" className="sessions-nav sessions-nav-prev sessions-prev-1"><ChevronLeft /></label>
 
             {/* Next arrows (wrap: 1→2, 2→3, 3→1) */}
             <label htmlFor="ses-2" className="sessions-nav sessions-nav-next sessions-next-1"><ChevronRight /></label>
-            <label htmlFor="ses-3" className="sessions-nav sessions-nav-next sessions-next-2"><ChevronRight /></label>
-            <label htmlFor="ses-1" className="sessions-nav sessions-nav-next sessions-next-3"><ChevronRight /></label>
+            <label htmlFor="ses-1" className="sessions-nav sessions-nav-next sessions-next-2"><ChevronRight /></label>
           </div>
 
           {/* Desktop: grid */}
-          <div className="hidden md:grid grid-cols-2 gap-4 lg:grid-cols-3">
+          <div className="hidden md:grid grid-cols-2 gap-4 lg:grid-cols-2">
             {sessions.map((session, i) => (
               <AnimateOnScroll key={session.month} from="up" delay={i * 100}>
                 <SessionCard session={session} />

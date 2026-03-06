@@ -76,9 +76,8 @@ const CROSSFIT_FAQS = [
 ];
 
 const FECHAS_ON_RAMP = [
-  { value: "febrero", label: "Febrero (16/02 - 11/03)" },
-  { value: "marzo", label: "Marzo (23/03 - 16/04)" },
-  { value: "abril", label: "Abril (20/04 - 13/05)" },
+  { value: "abril", label: "Abril (30/03 - 22/04)" },
+  { value: "mayo", label: "Mayo (27/04 - 24/05)" },
 ];
 
 const inputBase =
