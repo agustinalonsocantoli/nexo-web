@@ -119,6 +119,7 @@ function OnRampBookingContent() {
                   <select
                     id="fecha"
                     {...register("fecha")}
+                    suppressHydrationWarning
                     className={`w-full appearance-none rounded-lg border bg-white py-2 pl-10 pr-10 font-body text-sm text-nexo-dark focus:border-nexo-orange focus:outline-none ${errors.fecha ? "border-red-500" : "border-[#cac4d0]"
                       }`}
                   >
@@ -191,14 +192,12 @@ function OnRampBookingContent() {
               {/* Fecha de nacimiento */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="fechaNacimiento" className={labelClass}>Fecha de nacimiento</label>
-                <div className="w-full overflow-hidden">
-                  <input
-                    id="fechaNacimiento"
-                    type="date"
-                    {...register("fechaNacimiento")}
-                    className={`${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
-                  />
-                </div>
+                <input
+                  id="fechaNacimiento"
+                  type="date"
+                  {...register("fechaNacimiento")}
+                  className={`appearance-none ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
+                />
                 {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
               </div>
 
