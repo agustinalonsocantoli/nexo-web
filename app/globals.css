@@ -227,20 +227,44 @@ body {
 .sessions-carousel:has(#ses-3:checked) .sessions-prev-3,
 .sessions-carousel:has(#ses-3:checked) .sessions-next-3 { display: flex; }
 
-/* Team expanded card fade-in animation */
+/* Team expanded card animations */
 @keyframes coach-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coach-slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes coach-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 .coach-fade-in {
   animation: coach-fade-in 0.28s ease;
+}
+
+.coach-slide-in-right {
+  animation: coach-slide-in-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.coach-scale-in {
+  animation: coach-scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.coach-exit-slide {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.coach-exit-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /* Team Cards - Mobile: exclusive accordion via <details>, Desktop: always expanded */

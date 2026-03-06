@@ -322,7 +322,7 @@ export default function CrossfitPage() {
                   className="flex items-center gap-2"
                 >
                   <span className="font-body text-[17px] leading-none text-[#232a34]">
-                    {val === "si" ? "Si" : "No"}
+                    {val === "si" ? "Sí" : "No"}
                   </span>
                   <span className="relative flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-nexo-orange">
                     {firstTime === val && (

@@ -67,31 +67,36 @@ function CoachMiniCard({ coach, onClick }: { coach: TeamCardType; onClick: () =>
   );
 }
 
+type AnimPhase = 'visible' | 'exiting' | 'entering';
+
 function CoachExpandedCard({
   coach,
   others,
   onClose,
   onSelect,
-  contentVisible,
+  phase,
 }: {
   coach: TeamCardType;
   others: TeamCardType[];
   onClose: () => void;
   onSelect: (id: number) => void;
-  contentVisible: boolean;
+  phase: AnimPhase;
 }) {
-  const fadeStyle: React.CSSProperties = {
-    opacity: contentVisible ? 1 : 0,
-    transition: contentVisible ? 'opacity 0.45s ease' : 'opacity 0.18s ease',
-  };
+  const imageClass =
+    phase === 'exiting' ? 'coach-exit-scale' :
+    phase === 'entering' ? 'coach-scale-in' : '';
+
+  const contentClass =
+    phase === 'exiting' ? 'coach-exit-slide' :
+    phase === 'entering' ? 'coach-slide-in-right' : '';
 
   return (
     <div className="flex w-full flex-col gap-4 rounded-[16px] bg-nexo-dark p-4">
       {/* Fila superior: foto izquierda + texto derecha */}
-      <div className="flex gap-4 items-start" style={fadeStyle}>
+      <div className="flex gap-4 items-start">
         {/* Foto */}
         <div
-          className="relative shrink-0 overflow-hidden rounded-[16px]"
+          className={`relative shrink-0 overflow-hidden rounded-[16px] ${imageClass}`}
           style={{ width: '354px', height: '288px' }}
         >
           <OptimizedImage
@@ -105,7 +110,7 @@ function CoachExpandedCard({
         </div>
 
         {/* Contenido */}
-        <div className="flex flex-1 flex-col gap-4 px-4">
+        <div className={`flex flex-1 flex-col gap-4 px-4 ${contentClass}`}>
           {/* Nombre + botón cerrar */}
           <div className="flex items-center gap-6">
             <h3 className="flex-1 font-heading text-[24px] font-bold leading-none text-white uppercase">
@@ -134,7 +139,7 @@ function CoachExpandedCard({
       </div>
 
       {/* Mini cards de los demás coaches */}
-      <div className="flex gap-5" style={fadeStyle}>
+      <div className={`flex gap-5 ${contentClass}`}>
         {others.map((other) => (
           <CoachMiniCard
             key={other.id}
@@ -245,7 +250,7 @@ export default function TeamBodyDesktop({
   services: TeamCardType[];
 }) {
   const [shownId, setShownId] = useState<number | null>(1);
-  const [contentVisible, setContentVisible] = useState(true);
+  const [phase, setPhase] = useState<AnimPhase>('visible');
   const pendingId = useRef<number | null | undefined>(undefined);
   const [javiOpen, setJaviOpen] = useState(true);
 
@@ -256,11 +261,12 @@ export default function TeamBodyDesktop({
   function switchCoach(id: number | null) {
     if (id === shownId) return;
     pendingId.current = id;
-    setContentVisible(false);
+    setPhase('exiting');
     setTimeout(() => {
       setShownId(id);
       pendingId.current = undefined;
-      setContentVisible(true);
+      setPhase('entering');
+      setTimeout(() => setPhase('visible'), 500);
     }, 200);
   }
 
@@ -277,7 +283,7 @@ export default function TeamBodyDesktop({
             <CoachExpandedCard
               coach={shownCoach}
               others={otherCoaches}
-              contentVisible={contentVisible}
+              phase={phase}
               onClose={() => switchCoach(null)}
               onSelect={(id) => switchCoach(id)}
             />

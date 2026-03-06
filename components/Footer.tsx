@@ -111,7 +111,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="mt-8 border-t border-[#878787] pt-8 text-center">
         <p className="font-body text-sm leading-5 text-[#99a1af]">
-          © 2025 NEXO CrossFit. Todos los derechos reservados.
+          © 2026 NEXO CrossFit. Todos los derechos reservados.
         </p>
       </div>
     </footer>

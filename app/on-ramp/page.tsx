@@ -185,6 +185,9 @@ export default function OnRampPage() {
                 Asistencia obligatoria a todas las clases, ya que no son
                 recuperables.
               </li>
+              <li>
+                En caso de que una clase coincida con un día festivo, se desplazará al día siguiente o se acordará un horario alternativo.
+              </li>
             </ul>
           </AnimateOnScroll>
         </section>
@@ -202,7 +205,7 @@ export default function OnRampPage() {
               forma semiprivada o totalmente personalizada: consiste en 8 sesiones
               de 1 hora, programadas según tu disponibilidad y conveniencia.
             </p>
-            <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
+            <ul className="mt-2 list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
               <li>
                 El semiprivado (2 personas) tiene un coste de 190 euros por
                 persona.
