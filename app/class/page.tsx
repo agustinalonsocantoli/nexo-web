@@ -28,8 +28,9 @@ const classes: TrainingCardType[] = [
       "Clases de 60 minutos con enfoque en tu progreso semanal, cuidando la técnica y evitando lesiones.",
       "Comunidad, energía y un box preparado para cada WOD.",
     ],
-    image: "/crossfit-img.webp",
+    image: "/crossfit-img.jpg",
     href: "/class/crossfit",
+    id: 2,
   },
   {
     title: "HYROX",
@@ -38,15 +39,16 @@ const classes: TrainingCardType[] = [
       "Clases de 45 minutos para fortalecer tu resistencia, aumentar tu potencia y poner a prueba tu cuerpo y mente.",
       "Comunidad, energía y un box preparado superar tus límites.",
     ],
-    image: "/hyrox-img.webp",
+    image: "/hyrox-img.jpg",
     href: "/class/hyrox",
+    id: 3,
   },
 ];
 
 export default function ClassPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/clase-prueba-bg.webp" imageClass="object-[center_25%]" />
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/clase-prueba-bg.png" imageClass="object-[center_25%]" />
 
       {/* Contenido */}
       <div className="flex flex-col gap-4 px-6 py-6 lg:mx-auto lg:max-w-7xl lg:gap-10 lg:px-30 lg:py-16">
@@ -88,7 +90,7 @@ export default function ClassPage() {
           {classes.map((c) => (
             <AnimateOnScroll key={c.title} delay={100}>
             <div
-              className="flex overflow-hidden rounded-2xl border border-nexo-dark transition-all duration-200 hover:shadow-lg hover:scale-[1.01]"
+              className="flex overflow-hidden rounded-2xl border border-nexo-dark transition-all duration-200 hover:shadow-lg hover:scale-[1.01] h-full"
             >
               {/* Imagen izquierda */}
               <div className="relative w-[210px] shrink-0">
@@ -103,7 +105,7 @@ export default function ClassPage() {
               </div>
 
               {/* Contenido derecha */}
-              <div className="flex flex-col gap-4 px-5 py-6">
+              <div className="flex flex-col gap-4 px-5 py-6 h-full">
                 <h3 className="font-body text-[36px] font-normal leading-none text-nexo-dark uppercase">
                   {c.title}
                 </h3>

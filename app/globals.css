@@ -227,6 +227,22 @@ body {
 .sessions-carousel:has(#ses-3:checked) .sessions-prev-3,
 .sessions-carousel:has(#ses-3:checked) .sessions-next-3 { display: flex; }
 
+/* Team expanded card fade-in animation */
+@keyframes coach-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coach-fade-in {
+  animation: coach-fade-in 0.28s ease;
+}
+
 /* Team Cards - Mobile: exclusive accordion via <details>, Desktop: always expanded */
 @media (max-width: 767px) {
   /* When any card is open, show mini buttons for non-open cards in the same container */

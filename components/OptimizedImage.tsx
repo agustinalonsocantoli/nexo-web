@@ -23,6 +23,7 @@ export default function OptimizedImage({ src, alt, width, height, priority, clas
             height={height}
             sizes={sizes}
             style={style}
+            loading='eager'
         />
     )
 }

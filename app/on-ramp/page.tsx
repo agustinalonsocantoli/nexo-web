@@ -101,7 +101,7 @@ export default function OnRampPage() {
       <PageHero
         title="¡Empieza hoy tu"
         titlePart2="nuevo estilo de vida!"
-        imageSrc="/bg-or-des.webp"
+        imageSrc="/bg-or-des.jpg"
         imageClass="object-[center_45%]"
       />
 

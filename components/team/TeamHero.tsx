@@ -5,7 +5,7 @@ export default function TeamHero() {
     <section className="relative h-[179px] overflow-hidden lg:h-[341px]">
       <div className="absolute inset-0 z-0">
         <OptimizedImage
-          src="/equipo-home.webp"
+          src="/equipo-home.jpg"
           alt="Equipo Nexo"
           className="h-full w-full object-cover object-center lg:object-[center_35%]"
           priority={true}

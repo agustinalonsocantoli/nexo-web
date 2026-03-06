@@ -12,6 +12,7 @@ export interface TrainingCardType {
   image: string;
   href?: string;
   verMasHref?: string;
+  id: number;
 }
 
 const trainings: TrainingCardType[] = [
@@ -24,9 +25,10 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Gimnásticos, halterofilia, cardio y fuerza. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
-    image: '/onramp-img.webp',
+    image: '/onramp-img.jpg',
     href: '/on-ramp',
     verMasHref: '/on-ramp',
+    id: 1,
   },
   {
     title: 'CROSSFIT',
@@ -37,8 +39,9 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Clases de 60 minutos donde cada sesión tiene un propósito.\nCalentamiento técnico, desarrollo de fuerza y wods escalables a tu nivel.\n\nEn Nexo llevamos una programación diseñada para que progreses semana a semana, priorizando la técnica y evitando lesiones.',
-    image: '/crossfit-img.webp',
+    image: '/crossfit-img.jpg',
     href: '/class/crossfit',
+    id: 2,
   },
   {
     title: 'HYROX',
@@ -49,8 +52,9 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Entrenamientos específicos para la competición más exigente.\n\nTrabajamos resistencia, potencia y transiciones entre estaciones. Simulamos condiciones de carrera, optimizamos tu estrategia y te preparamos física y mentalmente para la competición.',
-    image: '/hyrox-img.webp',
+    image: '/hyrox-img.jpg',
     href: '/class/hyrox',
+    id: 3,
   },
 ];
 
@@ -145,7 +149,7 @@ export function TrainingCard({
           <OptimizedImage
             src={training.image}
             alt={training.title}
-            className="h-full w-full object-cover object-[center_37%]"
+            className={`h-full w-full object-cover object-[center_37%] ${training.id === 1 ? 'object-[center_37%]' : training.id === 2 ? 'object-[center_50%]' : 'object-[center_40%]'}`}
             sizes="100vw"
             width={600}
             height={112}
@@ -227,46 +231,40 @@ export function TrainingCard({
 
 export function TrainingCardDesktop({ training }: { training: TrainingCardType }) {
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-hidden rounded-2xl border border-nexo-dark bg-[#fbfbfb] px-4 py-6 transition-all duration-200 hover:shadow-lg hover:border-nexo-orange/60">
-      {/* Imagen */}
-      <div className="relative h-[131px] w-full overflow-hidden rounded-lg">
-        <OptimizedImage
-          src={training.image}
-          alt={training.title}
-          className="h-full w-full object-cover object-[center_37%]"
-          sizes="33vw"
-          width={600}
-          height={131}
-        />
-      </div>
+    <a href={training.href ?? "/class"}>
+      <div className="flex flex-1 flex-col gap-4 overflow-hidden rounded-2xl border border-nexo-dark bg-[#fbfbfb] px-4 py-6 transition-all duration-200 hover:shadow-lg hover:border-nexo-orange/80 h-full">
+        {/* Imagen */}
+        <div className="relative h-[131px] w-full overflow-hidden rounded-lg">
+          <OptimizedImage
+            src={training.image}
+            alt={training.title}
+            className="h-full w-full object-cover object-[center_37%]"
+            sizes="33vw"
+            width={600}
+            height={131}
+          />
+        </div>
 
-      {/* Título + Ver más */}
-      <div className="flex items-center justify-between">
-        <h3 className="font-body text-[36px] font-normal leading-none text-nexo-dark uppercase">
-          {training.title}
-        </h3>
-        {training.verMasHref && (
-          <Link
-            href={training.verMasHref}
-            className="font-body text-base text-nexo-orange underline decoration-solid whitespace-nowrap"
-          >
-            Ver más
-          </Link>
+        {/* Título + Ver más */}
+        <div className="flex items-center justify-between">
+          <h3 className="font-body text-[36px] font-normal leading-none text-nexo-dark uppercase">
+            {training.title}
+          </h3>
+        </div>
+
+        {/* Descripción */}
+        {training.desktopDescription ? (
+          <p className="font-body text-sm leading-5 text-black whitespace-pre-line">
+            {training.desktopDescription}
+          </p>
+        ) : (
+          <ul className="list-disc space-y-1 pl-5 font-body text-sm leading-5 text-black">
+            {training.bullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))}
+          </ul>
         )}
       </div>
-
-      {/* Descripción */}
-      {training.desktopDescription ? (
-        <p className="font-body text-sm leading-5 text-black whitespace-pre-line">
-          {training.desktopDescription}
-        </p>
-      ) : (
-        <ul className="list-disc space-y-1 pl-5 font-body text-sm leading-5 text-black">
-          {training.bullets.map((bullet, i) => (
-            <li key={i}>{bullet}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+    </a>
   );
 }

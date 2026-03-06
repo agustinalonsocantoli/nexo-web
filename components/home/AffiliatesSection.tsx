@@ -3,49 +3,46 @@ import AnimateOnScroll from '../AnimateOnScroll';
 
 export default function AffiliatesSection() {
   return (
-    <section className="relative bg-nexo-dark h-[176px] border-b border-[#878787] lg:h-[258px]">
+    <section className="relative bg-nexo-dark h-[176px] lg:h-[258px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <OptimizedImage
-          src="/afiliados-bg.webp"
+          src="/afiliates-bg.jpg"
           alt="Background"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-20  object-center lg:object-[center_55%]"
           sizes="100vw"
           width={1920}
           height={258}
         />
-        <div className="absolute inset-0 bg-[rgba(30,30,30,0.63)]" />
+        <div className="absolute inset-0 bg-[rgba(30,30,30,0.2)]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center py-5 lg:py-8">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 py-4 lg:gap-[51px] lg:py-4">
         <AnimateOnScroll from="fade">
-          <h3 className="mb-8 w-fit rounded-3xl border border-nexo-orange px-10 py-1 text-center text-xs font-semibold tracking-wider text-white uppercase lg:mb-10">
-            Afiliados
-          </h3>
+          <span className="w-fit rounded-full border border-nexo-orange px-4 py-1.5 font-body text-xs font-semibold text-white uppercase">
+            AFILIADOS
+          </span>
         </AnimateOnScroll>
 
-        <div className="flex items-center justify-center gap-4 px-5 lg:gap-14">
-          <AnimateOnScroll from="left" delay={100}>
+        <AnimateOnScroll from="fade" delay={100}>
+          <div className="flex items-center justify-center gap-8 lg:gap-14">
             <OptimizedImage
               src="/logo-crossfit.webp"
-              alt="crossfit"
-              className="h-auto w-[135px] lg:w-[280px]"
-              width={280}
+              alt="CrossFit"
+              className="h-auto w-[140px] lg:w-[382px]"
+              width={382}
               height={84}
             />
-          </AnimateOnScroll>
-
-          <AnimateOnScroll from="right" delay={100}>
             <OptimizedImage
               src="/logo-hyrox.webp"
-              alt="hyrox"
-              className="h-[33px] w-[122px] lg:h-[70px] lg:w-[240px]"
-              width={240}
-              height={70}
+              alt="Hyrox Gym Oficial"
+              className="h-[35px] w-auto lg:h-[88px] lg:w-[326px]"
+              width={326}
+              height={88}
             />
-          </AnimateOnScroll>
-        </div>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

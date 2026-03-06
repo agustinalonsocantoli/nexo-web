@@ -15,52 +15,56 @@ export interface TeamCardType {
 
 function ExpandedCard({ team }: { team: TeamCardType }) {
   return (
-    <div className="flex flex-col gap-4 rounded-[16px] bg-nexo-dark px-6 py-6 shadow-sm">
-      <div className="relative h-[167px] w-full overflow-hidden rounded-[16px]">
+    <div className="flex flex-col overflow-hidden rounded-[16px] bg-nexo-dark">
+      {/* Imagen con gradiente suave hacia el fondo oscuro */}
+      <div className="relative h-[200px] w-full shrink-0">
         <OptimizedImage
           src={team.image}
           alt={team.title}
           className={`h-full w-full object-cover ${team.extraClass ?? 'object-center'}`}
           sizes="(max-width: 768px) 100vw, 33vw"
           width={600}
-          height={167}
+          height={200}
         />
         <div
           className="absolute inset-0"
-          style={{ backgroundImage: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, #1b1b1b 92%)' }}
+          style={{ background: 'linear-gradient(to bottom, transparent 30%, #1e1e1e 100%)' }}
         />
       </div>
 
-      <h3 className="font-heading text-[22px] font-bold leading-[100%] tracking-normal text-white uppercase">
-        {team.title}
-      </h3>
+      {/* Contenido: mt-[-2px] para cubrir cualquier artefacto en el borde inferior de la imagen */}
+      <div className="flex flex-col gap-3 px-6 pt-4 pb-8 mt-[-2px] bg-nexo-dark z-10">
+        <h3 className="font-heading text-[22px] font-bold leading-[100%] tracking-normal text-white uppercase">
+          {team.title}
+        </h3>
 
-      <div className="flex flex-col gap-4">
-        {team.descriptions.map((description, i) => (
-          <p key={i} className="font-body text-sm leading-[20px] text-white">
-            {description}
-          </p>
-        ))}
+        <div className="flex flex-col gap-4">
+          {team.descriptions.map((description, i) => (
+            <p key={i} className="font-body text-sm leading-[20px] text-white">
+              {description}
+            </p>
+          ))}
 
-        {team.button && (
-          <Link
-            href="https://wa.me/34651594523"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm leading-5 text-white transition-opacity hover:opacity-90"
-          >
-            Ver mas
-            <svg
-              className="h-4 w-4 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
+          {team.button && (
+            <Link
+              href="https://wa.me/34651594523"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm leading-5 text-white transition-opacity hover:opacity-90"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        )}
+              ¡Pide tu cita!
+              <svg
+                className="h-4 w-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -217,10 +217,10 @@ function cellStyle(type: ClassType): string {
 
 function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
   if (!cell)
-    return <td className="border border-black bg-white" />;
+    return <td className="h-7 border border-black bg-white lg:h-9" />;
   return (
     <td
-      className={`border border-black px-1 py-1.5 text-center font-body text-[7px] font-semibold leading-tight lg:px-2 lg:py-2 lg:text-[11px] ${cellStyle(cell.type)}`}
+      className={`h-7 border border-black px-1 text-center font-body text-[7px] font-semibold leading-tight lg:h-9 lg:px-2 lg:text-[11px] ${cellStyle(cell.type)}`}
     >
       {cell.name}
     </td>
@@ -234,7 +234,7 @@ export default function PlansPage() {
       <section className="relative h-[179px] overflow-hidden lg:h-[341px]">
         <div className="absolute inset-0 z-0">
           <OptimizedImage
-            src="/hero-sn-desktop.webp"
+            src="/hero-sn-desktop.jpg"
             alt="Tarifas y Horarios - Nexo CrossFit"
             className="h-full w-full object-cover object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
             priority={true}
@@ -388,77 +388,84 @@ export default function PlansPage() {
 
         {/* ── HORARIOS ── */}
         <AnimateOnScroll delay={100}>
-        <section className="flex flex-col items-center gap-3">
-          <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
-            HORARIOS
-          </span>
+          <section className="flex flex-col items-center gap-3">
+            <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              HORARIOS
+            </span>
 
-          <div className="w-full overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  {/* Celda top-left: vacía, sin borde ni fondo */}
-                  <th className="border-0 bg-transparent p-0" />
-                  {["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"].map((day) => (
-                    <th
-                      key={day}
-                      className="border border-black bg-[#757575] px-1 py-1.5 text-center font-body text-[7px] font-semibold text-white lg:px-3 lg:py-2.5 lg:text-[11px]"
-                    >
-                      {day}
-                    </th>
+            <div className="w-full overflow-x-auto">
+              <table className="w-full table-fixed border-collapse">
+                <colgroup>
+                  {Array.from({ length: 7 }).map((_, i) => (
+                    <col key={i} style={{ width: '14.285%' }} />
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {scheduleData.map((row, i) => (
-                  <tr key={i}>
-                    <td className="whitespace-nowrap border border-black bg-[#757575] px-1 py-1.5 text-center font-body text-[7px] font-semibold text-white lg:px-3 lg:py-2.5 lg:text-[11px]">
-                      {row.time}
-                    </td>
-                    <ScheduleCell cell={row.L} />
-                    <ScheduleCell cell={row.M} />
-                    <ScheduleCell cell={row.X} />
-                    <ScheduleCell cell={row.J} />
-                    <ScheduleCell cell={row.V} />
-                    <ScheduleCell cell={row.S} />
+                </colgroup>
+                <thead>
+                  <tr>
+                    {/* Celda top-left: vacía, sin borde ni fondo */}
+                    <th className="border-0 bg-transparent p-0" />
+                    {["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"].map((day) => (
+                      <th
+                        key={day}
+                        className="h-7 border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]"
+                      >
+                        {day}
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {scheduleData.map((row, i) => (
+                    <tr key={i}>
+                      <td className="h-7 whitespace-nowrap border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]">
+                        {row.time}
+                      </td>
+                      <ScheduleCell cell={row.L} />
+                      <ScheduleCell cell={row.M} />
+                      <ScheduleCell cell={row.X} />
+                      <ScheduleCell cell={row.J} />
+                      <ScheduleCell cell={row.V} />
+                      <ScheduleCell cell={row.S} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-          {/* Leyenda */}
-          <div className="flex w-full items-start gap-3 pt-1">
-            <div className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full bg-nexo-dark" />
-            <p className="font-body text-[12px] text-nexo-dark">
-              WL / GYM: Entrenamientos específicos de técnica de halterofilia y
-              gimnásticos, alternando una disciplina cada semana.
-            </p>
-          </div>
-        </section>
+            {/* Leyenda */}
+            <div className="flex w-full items-start gap-3 pt-1">
+              <div className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full bg-nexo-dark" />
+              <p className="font-body text-[12px] text-nexo-dark">
+                WL / GYM: Entrenamientos específicos de técnica de halterofilia y
+                gimnásticos, alternando una disciplina cada semana.
+              </p>
+            </div>
+          </section>
         </AnimateOnScroll>
 
         {/* ── CTA ── */}
         <AnimateOnScroll delay={100}>
-        <Link
-          href="/class"
-          className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
-        >
-          Clase de Prueba
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
+          <div className="flex flex-col items-center gap-4">
+            <Link
+              href="/class"
+              className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
+            >
+              Clase de Prueba
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </AnimateOnScroll>
       </div>
     </main>

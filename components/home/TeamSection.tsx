@@ -7,7 +7,7 @@ export default function TeamSection() {
     <section className="bg-nexo-dark">
       <div className="relative w-full h-[179px] overflow-hidden lg:h-[469px]">
         <OptimizedImage
-          src="/equipo-home.webp"
+          src="/equipo-home.jpg"
           alt="Equipo Nexo"
           className="h-full w-full object-cover object-center lg:object-[center_35%]"
           sizes="100vw"

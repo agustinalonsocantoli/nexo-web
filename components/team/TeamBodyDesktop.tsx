@@ -228,7 +228,7 @@ function JaviCardDesktop({
               rel="noopener noreferrer"
             className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
-            Pedir Cita
+            ¡Pide tu cita!
             <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -246,15 +246,42 @@ export default function TeamBodyDesktop({
   coaches: TeamCardType[];
   services: TeamCardType[];
 }) {
-  const [selectedId, setSelectedId] = useState<number | null>(1);
+  const [shownId, setShownId] = useState<number | null>(1);
+  const [cardOpacity, setCardOpacity] = useState(1);
   const [javiOpen, setJaviOpen] = useState(true);
+  const [javiOpacity, setJaviOpacity] = useState(1);
 
   const coachesRef = useRef<HTMLDivElement>(null);
   const javiRef = useRef<HTMLDivElement>(null);
 
-  const selectedCoach =
-    selectedId !== null ? (coaches.find((c) => c.id === selectedId) ?? null) : null;
-  const otherCoaches = selectedId !== null ? coaches.filter((c) => c.id !== selectedId) : [];
+  const shownCoach =
+    shownId !== null ? (coaches.find((c) => c.id === shownId) ?? null) : null;
+  const otherCoaches = shownId !== null ? coaches.filter((c) => c.id !== shownId) : [];
+
+  function handleSelect(id: number) {
+    if (id === shownId) return;
+    setCardOpacity(0.15);
+    setTimeout(() => {
+      setShownId(id);
+      setCardOpacity(1);
+    }, 200);
+  }
+
+  function handleClose() {
+    setCardOpacity(0.15);
+    setTimeout(() => {
+      setShownId(null);
+      setCardOpacity(1);
+    }, 200);
+  }
+
+  function handleOpen(id: number) {
+    setCardOpacity(0.15);
+    setTimeout(() => {
+      setShownId(id);
+      setCardOpacity(1);
+    }, 200);
+  }
 
   return (
     <div className="flex flex-col gap-12">
@@ -264,24 +291,33 @@ export default function TeamBodyDesktop({
           COACHES
         </span>
 
-        {selectedCoach ? (
-          <CoachExpandedCard
-            coach={selectedCoach}
-            others={otherCoaches}
-            onClose={() => setSelectedId(null)}
-            onSelect={(id) => setSelectedId(id)}
-          />
-        ) : (
-          <div className="grid w-full grid-cols-2 gap-5">
-            {coaches.map((coach) => (
-              <CoachGridCard
-                key={coach.id}
-                coach={coach}
-                onClick={() => setSelectedId(coach.id)}
-              />
-            ))}
-          </div>
-        )}
+        <div
+          className="w-full"
+          style={{
+            opacity: cardOpacity,
+            transform: cardOpacity < 1 ? 'scale(0.99)' : 'scale(1)',
+            transition: 'opacity 0.2s ease, transform 0.2s ease',
+          }}
+        >
+          {shownCoach ? (
+            <CoachExpandedCard
+              coach={shownCoach}
+              others={otherCoaches}
+              onClose={handleClose}
+              onSelect={handleSelect}
+            />
+          ) : (
+            <div className="grid w-full grid-cols-2 gap-5">
+              {coaches.map((coach) => (
+                <CoachGridCard
+                  key={coach.id}
+                  coach={coach}
+                  onClick={() => handleOpen(coach.id)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* FISIOTERAPEUTA */}
@@ -289,14 +325,29 @@ export default function TeamBodyDesktop({
         <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
           FISIOTERAPEUTA
         </span>
-        {services.map((service) => (
-          <JaviCardDesktop
-            key={service.id}
-            coach={service}
-            isOpen={javiOpen}
-            onToggle={() => setJaviOpen((v) => !v)}
-          />
-        ))}
+        <div
+          className="w-full"
+          style={{
+            opacity: javiOpacity,
+            transform: javiOpacity < 1 ? 'scale(0.99)' : 'scale(1)',
+            transition: 'opacity 0.2s ease, transform 0.2s ease',
+          }}
+        >
+          {services.map((service) => (
+            <JaviCardDesktop
+              key={service.id}
+              coach={service}
+              isOpen={javiOpen}
+              onToggle={() => {
+                setJaviOpacity(0.15);
+                setTimeout(() => {
+                  setJaviOpen((v) => !v);
+                  setJaviOpacity(1);
+                }, 200);
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const FAQS = [
 export default function HyroxPage() {
   return (
     <main className="bg-[#fbfbfb]">
-      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-hyrox-des.webp" />
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-hyrox-des.jpg" />
 
       {/* Info + formulario */}
       <ClassBookingForm

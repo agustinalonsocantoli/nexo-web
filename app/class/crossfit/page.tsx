@@ -305,7 +305,7 @@ export default function CrossfitPage() {
 
   return (
     <main className="bg-[#fbfbfb]">
-      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-form-des.webp" />
+      <PageHero title="Reserva tu" titlePart2="clase de prueba" imageSrc="/bg-form-des.jpg" />
 
       <div className="px-6 py-6 lg:px-16 lg:py-12">
         <form

@@ -14,7 +14,7 @@ export default function PageHero({
   title,
   titlePart2,
   subtitle,
-  imageSrc = '/hero-general.webp',
+  imageSrc = '/hero-general.png',
   lgHeightClass = 'lg:h-[341px]',
   lgTitleClass = 'lg:text-[36px]',
   imageClass = '',

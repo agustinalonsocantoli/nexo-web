@@ -29,7 +29,7 @@ export default function AboutBody() {
               <div className="carousel-wrapper flex">
                 <div className="carousel-slide shrink-0">
                   <OptimizedImage
-                    src="/n-e-1.webp"
+                    src="/Instalaciones_Movil.png"
                     alt="Zona de descanso"
                     className="h-[235px] w-full object-cover"
                     width={351}
@@ -38,7 +38,7 @@ export default function AboutBody() {
                 </div>
                 <div className="carousel-slide shrink-0">
                   <OptimizedImage
-                    src="/n-e-2.webp"
+                    src="/n-e-2.jpg"
                     alt="Equipamiento CrossFit"
                     className="h-[235px] w-full object-cover"
                     style={{ objectPosition: 'center 100%' }}
@@ -48,7 +48,7 @@ export default function AboutBody() {
                 </div>
                 <div className="carousel-slide shrink-0">
                   <OptimizedImage
-                    src="/n-e-3.webp"
+                    src="/n-e-3.jpg"
                     alt="Área de entrenamiento"
                     className="h-[235px] w-full object-cover"
                     style={{ objectPosition: 'center 70%' }}
@@ -101,7 +101,7 @@ export default function AboutBody() {
           {/* Imagen grande (solo desktop) */}
           <AnimateOnScroll from="up" delay={150} className="mt-10 hidden lg:block">
             <OptimizedImage
-              src="/n-e-1.webp"
+              src="/Instalaciones_Desk.png"
               alt="Nuestro Espacio Nexo CrossFit"
               className="h-[485px] w-full object-cover"
               width={1044}
@@ -114,7 +114,7 @@ export default function AboutBody() {
             <AnimateOnScroll from="up" delay={0}>
               <div className="overflow-hidden">
                 <OptimizedImage
-                  src="/n-e-2.webp"
+                  src="/n-e-2.jpg"
                   alt="Zona de descanso"
                   className="h-64 w-full object-cover lg:h-[394px]"
                   width={341}
@@ -125,7 +125,7 @@ export default function AboutBody() {
             <AnimateOnScroll from="up" delay={100}>
               <div className="overflow-hidden">
                 <OptimizedImage
-                  src="/n-e-3.webp"
+                  src="/n-e-3.jpg"
                   alt="Equipamiento CrossFit"
                   className="h-64 w-full object-cover lg:h-[394px]"
                   width={341}
@@ -136,7 +136,7 @@ export default function AboutBody() {
             <AnimateOnScroll from="up" delay={200}>
               <div className="overflow-hidden">
                 <OptimizedImage
-                  src="/n-e-4.webp"
+                  src="/n-e-4.jpg"
                   alt="Área de entrenamiento"
                   className="h-64 w-full object-cover lg:h-[394px]"
                   width={341}
@@ -187,7 +187,7 @@ export default function AboutBody() {
             <AnimateOnScroll from="up" delay={100}>
               <div className="relative h-[185px] w-full overflow-hidden">
                 <OptimizedImage
-                  src="/team-movil.webp"
+                  src="/Coaches-Movil.png"
                   alt="Nuestra Filosofía"
                   className="h-full w-full object-cover object-[center_35%]"
                   width={351}
@@ -215,7 +215,7 @@ export default function AboutBody() {
             <AnimateOnScroll from="up" delay={150}>
               <div className="relative w-full overflow-hidden" style={{ aspectRatio: '1232/424' }}>
                 <OptimizedImage
-                  src="/team-desktop.webp"
+                  src="/Coaches-Deskl.png"
                   alt="Coaches Nexo CrossFit"
                   className="h-full w-full object-cover object-[center_35%]"
                   width={1044}

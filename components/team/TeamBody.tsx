@@ -11,7 +11,8 @@ const coaches: TeamCardType[] = [
       'Junto a mi equipo, trabajamos para transformar vidas. Cada persona que cruza nuestras puertas recibe atención física y mental, porque sabemos que el cambio va más allá del entrenamiento.',
       'Nexo me representa completamente. Cada detalle está cuidado con precisión y pasión. Detrás hay un equipo basado en la humildad, que entiende que esto no va de nosotros, va de vosotros.'
     ],
-    image: '/zoltan.webp',
+    image: '/zoltan.jpg',
+    extraClass: 'object-[center_43%]',
     button: false
   },
   {
@@ -20,8 +21,8 @@ const coaches: TeamCardType[] = [
     descriptions: [
       'Empecé CrossFit en 2017. Para mí CrossFit no es solo deporte, es disciplina, comunidad y superación.  Comencé ayudando en clases cada vez que podía, y ahí descubrí que quería dedicarme a esto: contagiar la misma motivación que me trajo hasta aquí. Años después comence gimnasia artística para mejorar mis gimnásticos. Ahí conocí a  Zoltan quien me presentó Nexo y su metodología, y supe desde el primer día que era mi sitio. Un lugar donde puedo seguir creciendo como entrenador y como atleta.'
     ],
-    image: '/alan.webp',
-    extraClass: 'object-[center_37%]',
+    image: '/alan.jpg',
+    extraClass: 'object-[center_29%]',
     button: false
   },
   {
@@ -33,7 +34,7 @@ const coaches: TeamCardType[] = [
       'Hoy sé que esto es lo que quiero hacer: aprender, mejorar y ayudar a que otros también lo hagan.',
       'Nos vemos en el box para seguir creciendo, mejorando cada día y, sobre todo, pasándolo bien.'
     ],
-    image: '/dilian.webp',
+    image: '/dilian.jpg',
     extraClass: 'object-[center_37%]',
     button: false
   },
@@ -47,7 +48,7 @@ const coaches: TeamCardType[] = [
       'Hace unos años llegué a Nexo CrossFit, y aquí he podido seguir creciendo profesional y deportivamente. Pero lo que más valoro es el vínculo con los compañeros y atletas.',
       'Imagino que por eso se llama "Nexo”.'
     ],
-    image: '/toni.webp',
+    image: '/toni.jpg',
     extraClass: 'object-[center_37%]',
     button: false
   },
@@ -60,7 +61,7 @@ const services: TeamCardType[] = [
     descriptions: [
       'Soy fisioterapeuta deportivo (nº colegiado 5456), graduado en Fisioterapia y con Máster en Fisioterapia Deportiva. Con amplia experiencia en deporte, especialmente en fútbol (Levante UD), trabaja en prevención, tratamiento y rehabilitación de lesiones para optimizar el rendimiento del deportista mediante diversas técnicas de fisioterapia.'
     ],
-    image: '/javi.webp',
+    image: '/javi.jpg',
     extraClass: 'object-[center_30%]',
     button: true
   },
