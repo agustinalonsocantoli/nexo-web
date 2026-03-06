@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -37,7 +37,7 @@ const inputBase =
 
 const labelClass = "font-body text-base leading-5 text-nexo-dark";
 
-export default function OnRampBookingPage() {
+function OnRampBookingContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const fechaParam = searchParams.get("fecha") ?? "";
@@ -408,5 +408,13 @@ export default function OnRampBookingPage() {
         </form>
       </div>
     </main>
+  );
+}
+
+export default function OnRampBookingPage() {
+  return (
+    <Suspense>
+      <OnRampBookingContent />
+    </Suspense>
   );
 }
