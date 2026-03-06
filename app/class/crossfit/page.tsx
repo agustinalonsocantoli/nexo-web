@@ -483,7 +483,7 @@ export default function CrossfitPage() {
                   id="fechaNacimiento"
                   type="date"
                   {...register("fechaNacimiento")}
-                  className={`${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
+                  className={`max-w-full ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
                 />
                 {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
               </div>
