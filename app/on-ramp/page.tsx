@@ -100,7 +100,7 @@ export default function OnRampPage() {
       <PageHero
         title="¡Empieza hoy tu"
         titlePart2="nuevo estilo de vida!"
-        imageSrc="/bg-or-des.jpg"
+        imageSrc="/new-onramp.jpg"
         imageClass="object-[center_45%]"
       />
 
@@ -108,10 +108,29 @@ export default function OnRampPage() {
 
         {/* ── PRÓXIMAS FECHAS DE INICIO ── */}
         <section className="flex flex-col gap-4 lg:gap-6">
+          <div className="flex flex-col gap-2 mb-4">
+            <AnimateOnScroll from="left">
+              <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
+                ¿Qué es el On Ramp?
+              </h2>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll from="up" delay={100}>
+              <p className="font-body text-base leading-6 text-nexo-dark">
+                En Nexo siempre damos prioridad a la técnica y el cuidado,
+                por eso si nunca has hecho CrossFit, empezarás con nuestro
+                curso de iniciación. El ON RAMP es para que aprendas los
+                fundamentos del CrossFit sin prisa. Al terminar el curso
+                podrás empezar a hacer clases regulares sabiendo exactamente
+                qué haces y por qué lo haces.
+              </p>
+            </AnimateOnScroll>
+          </div>
+
           <AnimateOnScroll from="left">
-          <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
-            Próximas fechas<br className="md:hidden" /> On Ramp
-          </h2>
+            <h2 className="font-heading text-[20px] font-bold uppercase text-nexo-dark leading-[100%] tracking-[0.6px]">
+              Próximas fechas<br className="md:hidden" /> On Ramp
+            </h2>
           </AnimateOnScroll>
 
           {/* Mobile: CSS-only carousel */}

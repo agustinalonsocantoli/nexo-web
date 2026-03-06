@@ -267,6 +267,98 @@ body {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+/* Phone number input — mismo estilo que inputBase */
+.nexo-phone-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #cac4d0;
+  background-color: white;
+  overflow: hidden;
+}
+
+.nexo-phone-input.PhoneInput--focus {
+  border-color: #E94F1D;
+}
+
+.nexo-phone-input.nexo-phone-input--error {
+  border-color: #ef4444;
+}
+
+/* País: bandera + flecha */
+.nexo-phone-input .PhoneInputCountry {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 0 0.75rem;
+  gap: 4px;
+  margin-right: 0;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Bandera */
+.nexo-phone-input .PhoneInputCountryIcon {
+  width: 22px;
+  height: 16px;
+  flex-shrink: 0;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.nexo-phone-input .PhoneInputCountryIconImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Select invisible encima de la bandera */
+.nexo-phone-input .PhoneInputCountrySelect {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+
+/* Flecha pequeña */
+.nexo-phone-input .PhoneInputCountrySelectArrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4.5px solid #99A1AF;
+  opacity: 1;
+  transform: none;
+  border-bottom: none;
+}
+
+/* Input de número — idéntico al resto de inputs del formulario */
+.nexo-phone-input .PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-public-sans), Inter, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #1E1E1E;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.nexo-phone-input .PhoneInputInput::placeholder {
+  color: #cac4d0;
+}
+
 /* Team Cards - Mobile: exclusive accordion via <details>, Desktop: always expanded */
 @media (max-width: 767px) {
   /* When any card is open, show mini buttons for non-open cards in the same container */

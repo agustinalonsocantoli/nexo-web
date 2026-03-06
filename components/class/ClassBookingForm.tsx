@@ -5,11 +5,13 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneField from "@/components/PhoneField";
 
 const schema = z.object({
   nombre: z.string().min(2, "Nombre demasiado corto"),
   email: z.string().email("Email inválido"),
-  telefono: z.string().min(9, "Teléfono inválido"),
+  telefono: z.string().min(1, "Introduce tu teléfono").refine(isValidPhoneNumber, "Teléfono inválido"),
   mensaje: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
   privacidad: z.boolean().refine((v) => v, "Debes aceptar la política de privacidad"),
 });
@@ -45,6 +47,7 @@ export default function ClassBookingForm({
 
   const {
     register,
+    control,
     handleSubmit,
     setValue,
     watch,
@@ -103,13 +106,7 @@ export default function ClassBookingForm({
             <label htmlFor="telefono" className="font-body text-base leading-5 text-nexo-dark">
               Teléfono
             </label>
-            <input
-              id="telefono"
-              type="tel"
-              placeholder="(+34) 000 000 000"
-              {...register("telefono")}
-              className={`${inputBase} ${errors.telefono ? "border-red-500" : "border-[#cac4d0]"}`}
-            />
+            <PhoneField control={control} name="telefono" error={errors.telefono} id="telefono" />
             {errors.telefono && <p className="font-body text-sm text-red-500">{errors.telefono.message}</p>}
           </div>
 
@@ -137,6 +134,7 @@ export default function ClassBookingForm({
               id="mensaje"
               rows={4}
               placeholder="Escribe tu mensaje aquí..."
+              suppressHydrationWarning
               {...register("mensaje")}
               className={`w-full resize-none rounded-lg border bg-white px-4 py-2 font-body text-sm text-nexo-dark placeholder:text-[#cac4d0] focus:border-nexo-orange focus:outline-none ${
                 errors.mensaje ? "border-red-500" : "border-[#cac4d0]"

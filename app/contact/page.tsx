@@ -59,8 +59,8 @@ export default function ContactPage() {
             </div>
 
             {/* Dirección */}
-            <a href="https://share.google/omq0WqGpVln99Kluf" target="_blank" rel="noopener noreferrer" className="font-body text-base leading-5 text-[#fbfbfb] transition-opacity hover:opacity-75">
-              Dirección: <span className="font-semibold underline underline-offset-2">Arzobispo Fabián y Fuero, 21. Valencia, 46009.</span>
+            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd604f5651fcf9db:0x5f81e13cf272fac9?sa=X&ved=1t:8290&hl=es-419&ictx=111&cshid=1772821693809793" target="_blank" rel="noopener noreferrer" className="font-body text-base leading-5 text-[#fbfbfb] underline underline-offset-2 transition-opacity hover:opacity-75">
+              Dirección: <span className="font-semibold">Arzobispo Fabián y Fuero, 21. Valencia, 46009.</span>
             </a>
           </div>
         </div>

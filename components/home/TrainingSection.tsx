@@ -39,7 +39,7 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Clases de 60 minutos donde cada sesión tiene un propósito.\nCalentamiento técnico, desarrollo de fuerza y wods escalables a tu nivel.\n\nEn Nexo llevamos una programación diseñada para que progreses semana a semana, priorizando la técnica y evitando lesiones.',
-    image: '/crossfit-img.jpg',
+    image: "/crossfit-new.jpg",
     href: '/class/crossfit',
     id: 2,
   },
@@ -52,7 +52,7 @@ const trainings: TrainingCardType[] = [
     ],
     desktopDescription:
       'Entrenamientos específicos para la competición más exigente.\n\nTrabajamos resistencia, potencia y transiciones entre estaciones. Simulamos condiciones de carrera, optimizamos tu estrategia y te preparamos física y mentalmente para la competición.',
-    image: '/hyrox-img.jpg',
+    image: "/new-hyrox.jpg",
     href: '/class/hyrox',
     id: 3,
   },
@@ -177,7 +177,7 @@ export function TrainingCard({
             <OptimizedImage
               src={training.image}
               alt={training.title}
-              className="h-full w-full object-cover object-[center_37%]"
+              className={`h-full w-full object-cover object-[center_37%] ${training.id === 1 ? 'object-[center_37%]' : training.id === 2 ? 'object-[center_60%]' : 'object-[center_40%]'}`}
               width={600}
               height={131}
             />

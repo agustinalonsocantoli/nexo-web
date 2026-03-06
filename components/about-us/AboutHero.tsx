@@ -5,7 +5,7 @@ export default function AboutHero() {
     <PageHero
       title="Sobre Nosotros"
       subtitle="Tu lugar para crecer con dedicación y en comunidad."
-      imageSrc="/hero-about-us.jpg"
+      imageSrc="/about-us-new.jpg"
     />
   );
 }
