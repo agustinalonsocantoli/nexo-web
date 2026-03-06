@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useState, useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 import { TeamCardType } from './Card';
@@ -72,16 +72,23 @@ function CoachExpandedCard({
   others,
   onClose,
   onSelect,
+  contentVisible,
 }: {
   coach: TeamCardType;
   others: TeamCardType[];
   onClose: () => void;
   onSelect: (id: number) => void;
+  contentVisible: boolean;
 }) {
+  const fadeStyle: React.CSSProperties = {
+    opacity: contentVisible ? 1 : 0,
+    transition: contentVisible ? 'opacity 0.45s ease' : 'opacity 0.18s ease',
+  };
+
   return (
     <div className="flex w-full flex-col gap-4 rounded-[16px] bg-nexo-dark p-4">
       {/* Fila superior: foto izquierda + texto derecha */}
-      <div className="flex gap-4 items-start">
+      <div className="flex gap-4 items-start" style={fadeStyle}>
         {/* Foto */}
         <div
           className="relative shrink-0 overflow-hidden rounded-[16px]"
@@ -127,7 +134,7 @@ function CoachExpandedCard({
       </div>
 
       {/* Mini cards de los demás coaches */}
-      <div className="flex gap-5">
+      <div className="flex gap-5" style={fadeStyle}>
         {others.map((other) => (
           <CoachMiniCard
             key={other.id}
@@ -205,15 +212,6 @@ function JaviCardDesktop({
             <h3 className="flex-1 font-heading text-[24px] font-bold leading-none text-white uppercase">
               {coach.title}
             </h3>
-            <button
-              onClick={onToggle}
-              className="shrink-0 text-white transition-opacity hover:opacity-70"
-              aria-label="Cerrar"
-            >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
           </div>
           <div className="flex flex-col gap-3">
             {coach.descriptions.map((desc, i) => (
@@ -228,7 +226,7 @@ function JaviCardDesktop({
               rel="noopener noreferrer"
             className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
-            ¡Pide tu cita!
+            Pide tu cita
             <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -247,64 +245,41 @@ export default function TeamBodyDesktop({
   services: TeamCardType[];
 }) {
   const [shownId, setShownId] = useState<number | null>(1);
-  const [cardOpacity, setCardOpacity] = useState(1);
+  const [contentVisible, setContentVisible] = useState(true);
+  const pendingId = useRef<number | null | undefined>(undefined);
   const [javiOpen, setJaviOpen] = useState(true);
-  const [javiOpacity, setJaviOpacity] = useState(1);
-
-  const coachesRef = useRef<HTMLDivElement>(null);
-  const javiRef = useRef<HTMLDivElement>(null);
 
   const shownCoach =
     shownId !== null ? (coaches.find((c) => c.id === shownId) ?? null) : null;
   const otherCoaches = shownId !== null ? coaches.filter((c) => c.id !== shownId) : [];
 
-  function handleSelect(id: number) {
+  function switchCoach(id: number | null) {
     if (id === shownId) return;
-    setCardOpacity(0.15);
+    pendingId.current = id;
+    setContentVisible(false);
     setTimeout(() => {
       setShownId(id);
-      setCardOpacity(1);
-    }, 200);
-  }
-
-  function handleClose() {
-    setCardOpacity(0.15);
-    setTimeout(() => {
-      setShownId(null);
-      setCardOpacity(1);
-    }, 200);
-  }
-
-  function handleOpen(id: number) {
-    setCardOpacity(0.15);
-    setTimeout(() => {
-      setShownId(id);
-      setCardOpacity(1);
+      pendingId.current = undefined;
+      setContentVisible(true);
     }, 200);
   }
 
   return (
     <div className="flex flex-col gap-12">
       {/* COACHES */}
-      <div ref={coachesRef} className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6">
         <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
           COACHES
         </span>
 
-        <div
-          className="w-full"
-          style={{
-            opacity: cardOpacity,
-            transform: cardOpacity < 1 ? 'scale(0.99)' : 'scale(1)',
-            transition: 'opacity 0.2s ease, transform 0.2s ease',
-          }}
-        >
+        <div className="w-full">
           {shownCoach ? (
             <CoachExpandedCard
               coach={shownCoach}
               others={otherCoaches}
-              onClose={handleClose}
-              onSelect={handleSelect}
+              contentVisible={contentVisible}
+              onClose={() => switchCoach(null)}
+              onSelect={(id) => switchCoach(id)}
             />
           ) : (
             <div className="grid w-full grid-cols-2 gap-5">
@@ -312,7 +287,7 @@ export default function TeamBodyDesktop({
                 <CoachGridCard
                   key={coach.id}
                   coach={coach}
-                  onClick={() => handleOpen(coach.id)}
+                  onClick={() => setShownId(coach.id)}
                 />
               ))}
             </div>
@@ -321,30 +296,17 @@ export default function TeamBodyDesktop({
       </div>
 
       {/* FISIOTERAPEUTA */}
-      <div ref={javiRef} className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6">
         <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
           FISIOTERAPEUTA
         </span>
-        <div
-          className="w-full"
-          style={{
-            opacity: javiOpacity,
-            transform: javiOpacity < 1 ? 'scale(0.99)' : 'scale(1)',
-            transition: 'opacity 0.2s ease, transform 0.2s ease',
-          }}
-        >
+        <div className="w-full">
           {services.map((service) => (
             <JaviCardDesktop
               key={service.id}
               coach={service}
               isOpen={javiOpen}
-              onToggle={() => {
-                setJaviOpacity(0.15);
-                setTimeout(() => {
-                  setJaviOpen((v) => !v);
-                  setJaviOpacity(1);
-                }, 200);
-              }}
+              onToggle={() => setJaviOpen((v) => !v)}
             />
           ))}
         </div>

@@ -67,6 +67,7 @@ export default function ContactForm() {
           id="nombre"
           type="text"
           placeholder="Pedro Pérez"
+          suppressHydrationWarning
           {...register("nombre")}
           className={`${inputBase} ${errors.nombre ? "border-red-500" : "border-[#cac4d0]"}`}
         />
@@ -82,6 +83,7 @@ export default function ContactForm() {
           id="telefono"
           type="tel"
           placeholder="(+34) 000 000 000"
+          suppressHydrationWarning
           {...register("telefono")}
           className={`${inputBase} ${errors.telefono ? "border-red-500" : "border-[#cac4d0]"}`}
         />
@@ -97,6 +99,7 @@ export default function ContactForm() {
           id="email"
           type="email"
           placeholder="pedropérez@gmail.com"
+          suppressHydrationWarning
           {...register("email")}
           className={`${inputBase} ${errors.email ? "border-red-500" : "border-[#cac4d0]"}`}
         />

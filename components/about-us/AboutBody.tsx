@@ -221,8 +221,9 @@ export default function AboutBody() {
                   width={1044}
                   height={359}
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex items-end justify-center">
+                  <p className="relative text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
                     &quot;MÁS NO ES MEJOR,<br />
                     MEJOR ES MEJOR&quot;
                   </p>

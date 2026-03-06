@@ -46,10 +46,10 @@ export default function Navbar() {
                         Horarios y Tarifas
                     </Link>
                     <Link href="/about-us" className="font-body text-sm font-medium text-white transition-colors hover:text-nexo-orange">
-                        Quiénes somos
+                        Sobre Nosotros
                     </Link>
                     <Link href="/team" className="font-body text-sm font-medium text-white transition-colors hover:text-nexo-orange">
-                        Nuestros coaches
+                        Nuestro Equipo
                     </Link>
                     <Link href="/contact" className="font-body text-sm font-medium text-white transition-colors hover:text-nexo-orange">
                         Contacto
@@ -104,14 +104,14 @@ export default function Navbar() {
                         onClick={closeMenu}
                         className="font-body text-base font-normal text-white transition-colors hover:text-nexo-orange"
                     >
-                        Quiénes somos
+                        Quiénes Somos
                     </Link>
                     <Link
                         href="/team"
                         onClick={closeMenu}
                         className="font-body text-base font-normal text-white transition-colors hover:text-nexo-orange"
                     >
-                        Nuestros coaches
+                        Nuestros Coaches
                     </Link>
                     <Link
                         href="/contact"

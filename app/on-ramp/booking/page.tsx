@@ -299,11 +299,11 @@ function OnRampBookingContent() {
 
               <p className="font-body text-sm leading-5 text-nexo-dark">
                 Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-                <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">
+                <a href="mailto:info@nexocrossfit.es" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
                   info@nexocrossfit.es
                 </a>{" "}
                 o háblanos por WhatsApp{" "}
-                <a href="tel:+34661388984" className="underline decoration-solid">
+                <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
                   661 388 984
                 </a>{" "}
                 y te ayudaremos lo antes posible.
@@ -311,15 +311,15 @@ function OnRampBookingContent() {
             </div>
 
             {/* ── Desktop: método de pago (dark card) ── */}
-            <div className="hidden lg:flex flex-col gap-4 rounded-lg bg-[#262626] p-6 lg:w-[480px] lg:shrink-0">
+            <div className="hidden lg:flex flex-col gap-4 rounded-lg border border-[#262626] bg-white p-6 lg:w-[480px] lg:shrink-0">
               <div className="flex flex-col gap-4">
                 <h2 className="font-heading text-[24px] font-bold uppercase tracking-[0.72px] text-nexo-orange">
                   Método de pago
                 </h2>
-                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                <p className="font-body text-base leading-5 text-nexo-dark">
                   Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
                 </p>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 rounded-lg bg-[#262626] p-[10px]">
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
                     <span className="font-semibold">IBAN: </span>
                     ES92 0081 0297 1800 0179 5488
@@ -340,10 +340,10 @@ function OnRampBookingContent() {
 
                 {/* Upload comprobante */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-body text-base font-semibold leading-6 text-[#fbfbfb]">
+                  <p className="font-body text-base font-semibold leading-6 text-nexo-dark">
                     Adjunta el comprobante de pago
                   </p>
-                  <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#fbfbfb]"}`}>
+                  <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#878787]"}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                     </svg>
@@ -364,13 +364,13 @@ function OnRampBookingContent() {
                   )}
                 </div>
 
-                <p className="font-body text-base leading-5 text-[#fbfbfb]">
+                <p className="font-body text-base leading-5 text-nexo-dark">
                   Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-                  <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">
+                  <a href="mailto:info@nexocrossfit.es" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
                     info@nexocrossfit.es
                   </a>{" "}
                   o háblanos por WhatsApp{" "}
-                  <a href="tel:+34661388984" className="underline decoration-solid">
+                  <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
                     661 388 984
                   </a>{" "}
                   y te ayudaremos lo antes posible.

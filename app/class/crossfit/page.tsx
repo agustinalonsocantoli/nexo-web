@@ -51,11 +51,6 @@ type FormData = z.infer<typeof schema>;
 
 const ON_RAMP_FAQS = [
   {
-    question: "¿Cuando comienza el próximo curso?",
-    answer:
-      "El próximo curso On Ramp comienza en enero (12/01 al 04/02) y en febrero (16/02 al 11/03). Son 8 clases en 4 semanas, 2 por semana.",
-  },
-  {
     question: "¿Cuánto cuesta?",
     answer:
       "El precio del curso On Ramp es de 165 euros. Incluye todas las sesiones con atención personalizada de nuestros coaches.",
@@ -91,7 +86,7 @@ const inputBase =
 
 export default function CrossfitPage() {
   const router = useRouter();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [apiError, setApiError] = useState<string | null>(null);
 
   const {
@@ -114,7 +109,7 @@ export default function CrossfitPage() {
   function selectFirstTime(val: "si" | "no") {
     setValue("firstTime", val, { shouldValidate: isSubmitted });
     clearErrors(["fechaCurso", "dni", "fechaNacimiento", "comprobante", "boxEntrenado", "tiempoEntrenado"]);
-    setOpenFaq(0);
+    setOpenFaq(null);
   }
 
   function toggleFaq(i: number) {
@@ -158,7 +153,7 @@ export default function CrossfitPage() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            tipo: "CrossFit – Clase de prueba",
+            tipo: "CrossFit - Clase de prueba",
             nombre: data.nombre,
             email: data.email,
             telefono: data.telefono,
@@ -179,77 +174,79 @@ export default function CrossfitPage() {
   const activeFaqs = firstTime === "si" ? ON_RAMP_FAQS : CROSSFIT_FAQS;
 
   const card = firstTime != null ? (
-    <div className="flex flex-col gap-4 rounded-lg bg-[#262626] p-4 lg:p-6">
-      <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
-        {firstTime === "si" ? "Curso On Ramp" : "Clases CrossFit"}
-      </h2>
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 rounded-lg bg-[#262626] p-4 lg:p-6">
+        <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
+          {firstTime === "si" ? "Curso On Ramp" : "Clases CrossFit"}
+        </h2>
 
-      <p className="font-body text-base leading-5 text-[#fbfbfb]">
-        {firstTime === "si" ? (
-          <>
-            En Nexo siempre damos prioridad a la técnica y el cuidado,
-            por eso si nunca has hecho CrossFit, empezarás con nuestro
-            curso de iniciación. El ON RAMP es para que aprendas los
-            fundamentos del CrossFit sin prisa. Al terminar el curso
-            podrás empezar a hacer clases regulares sabiendo exactamente
-            qué haces y por qué lo haces.
-          </>
-        ) : (
-          <>
-            Si ya{" "}
-            <span className="font-semibold">tienes experiencia </span>
-            en CrossFit, este es tu sitio para seguir superándote.
-            Nuestros entrenamientos están{" "}
-            <span className="font-semibold">
-              diseñados para desafiarte, mejorar tu técnica y llevar tu
-              rendimiento al siguiente nivel.{" "}
-            </span>
-            Sé parte de nuestro box y convierte cada sesión en un
-            desafío que te lleva más lejos.
-          </>
-        )}
-      </p>
-
-      <div className="flex flex-col divide-y divide-white/10">
-        {activeFaqs.map((faq, i) => (
-          <div key={i} className="py-3">
-            <button
-              type="button"
-              onClick={() => toggleFaq(i)}
-              className="flex w-full items-start justify-between gap-3 text-left"
-            >
-              <span className="font-body text-[20px] font-semibold leading-6 text-[#fbfbfb]">
-                {faq.question}
+        <p className="font-body text-base leading-5 text-[#fbfbfb]">
+          {firstTime === "si" ? (
+            <>
+              En Nexo siempre damos prioridad a la técnica y el cuidado,
+              por eso si nunca has hecho CrossFit, empezarás con nuestro
+              curso de iniciación. El ON RAMP es para que aprendas los
+              fundamentos del CrossFit sin prisa. Al terminar el curso
+              podrás empezar a hacer clases regulares sabiendo exactamente
+              qué haces y por qué lo haces.
+            </>
+          ) : (
+            <>
+              Si ya{" "}
+              <span className="font-semibold">tienes experiencia </span>
+              en CrossFit, este es tu sitio para seguir superándote.
+              Nuestros entrenamientos están{" "}
+              <span className="font-semibold">
+                diseñados para desafiarte, mejorar tu técnica y llevar tu
+                rendimiento al siguiente nivel.{" "}
               </span>
-              <svg
-                className={`mt-1 h-6 w-6 shrink-0 text-nexo-orange transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""
-                  }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
+              Sé parte de nuestro box y convierte cada sesión en un
+              desafío que te lleva más lejos.
+            </>
+          )}
+        </p>
+
+        <div className="flex flex-col divide-y divide-white/10">
+          {activeFaqs.map((faq, i) => (
+            <div key={i} className="py-3">
+              <button
+                type="button"
+                onClick={() => toggleFaq(i)}
+                className="flex w-full items-start justify-between gap-3 text-left"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {openFaq === i && (
-              <p className="mt-2 font-body text-base leading-6 text-[#fbfbfb]">
-                {faq.answer}
-              </p>
-            )}
-          </div>
-        ))}
+                <span className="font-body text-[20px] font-semibold leading-6 text-[#fbfbfb]">
+                  {faq.question}
+                </span>
+                <svg
+                  className={`mt-1 h-6 w-6 shrink-0 text-nexo-orange transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""
+                    }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {openFaq === i && (
+                <p className="mt-2 font-body text-base leading-6 text-[#fbfbfb]">
+                  {faq.answer}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {firstTime === "si" && (
-        <div className="hidden lg:flex flex-col gap-4 border-t border-white/10 pt-4">
+        <div className="hidden lg:flex flex-col gap-4 rounded-lg border border-[#262626] bg-white p-6">
           <h3 className="font-heading text-[20px] font-bold uppercase tracking-wide text-nexo-orange">
             Método de pago
           </h3>
-          <p className="font-body text-base leading-5 text-[#fbfbfb]">
+          <p className="font-body text-base leading-5 text-nexo-dark">
             Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
           </p>
-          <div className="flex flex-col gap-2 rounded-lg bg-black/30 p-3">
+          <div className="flex flex-col gap-2 rounded-lg bg-[#262626] p-3">
             <p className="font-body text-base leading-5 text-[#fbfbfb]">
               <span className="font-semibold">IBAN: </span>ES92 0081 0297 1800 0179 5488
             </p>
@@ -264,10 +261,10 @@ export default function CrossfitPage() {
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="font-body text-base font-semibold leading-6 text-[#fbfbfb]">
+            <p className="font-body text-base font-semibold leading-6 text-nexo-dark">
               Adjunta el comprobante de pago
             </p>
-            <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#fbfbfb]"}`}>
+            <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#878787]"}`}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
               </svg>
@@ -287,13 +284,13 @@ export default function CrossfitPage() {
               </p>
             )}
           </div>
-          <p className="font-body text-sm leading-5 text-[#fbfbfb]">
+          <p className="font-body text-sm leading-5 text-nexo-dark">
             Si tienes cualquier duda durante el proceso, escríbenos a{" "}
             <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">
               info@nexocrossfit.es
             </a>{" "}
             o háblanos por WhatsApp{" "}
-            <a href="tel:+34661388984" className="underline decoration-solid">
+            <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">
               661 388 984
             </a>{" "}
             y te ayudaremos lo antes posible.
@@ -549,7 +546,7 @@ export default function CrossfitPage() {
                   Si tienes cualquier duda durante el proceso, escríbenos a{" "}
                   <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">info@nexocrossfit.es</a>{" "}
                   o háblanos por WhatsApp{" "}
-                  <a href="tel:+34661388984" className="underline decoration-solid">661 388 984</a>{" "}
+                  <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">661 388 984</a>{" "}
                   y te ayudaremos lo antes posible.
                 </p>
               </div>

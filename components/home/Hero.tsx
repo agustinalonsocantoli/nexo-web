@@ -38,7 +38,7 @@ export default function Hero({ backgroundImage = '/hero-home.jpg' }: HeroProps) 
             href="/plans"
             className="order-2 flex items-center justify-center rounded-lg border border-white px-8 py-2 font-body text-sm text-white transition-all hover:bg-white hover:text-nexo-dark lg:order-1 lg:px-10"
           >
-            ¡Conoce nuestras Tarifas!
+            ¡Conoce nuestras tarifas!
           </Link>
           <Link
             href="/class"

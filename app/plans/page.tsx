@@ -279,7 +279,7 @@ export default function PlansPage() {
                   <p className="font-body text-base text-white">HYROX</p>
                   <p className="font-heading text-[28px] font-bold leading-none text-white">75 €</p>
                 </div>
-                <p className="mt-1 font-body text-[11px] text-white/70">
+                <p className="mt-1 font-body text-[11px] text-white/70 whitespace-nowrap">
                   | ACCESO ILIMITADO A TODAS LAS CLASES DE HYROX |
                 </p>
               </div>
@@ -293,9 +293,9 @@ export default function PlansPage() {
                   </div>
                   <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">180 €</p>
                 </div>
-                <p className="mt-1 font-body text-[10px] text-white/60">
-                  Perfecto si tienes pensado venir{" "}
-                  <span className="font-semibold">2/3 veces por semana</span>.
+                <p className="mt-1 font-body text-[12px] text-white font-bold">
+                  Ideal si quieres venir{" "}
+                  <span>2 o 3 veces por semana</span>.
                 </p>
               </div>
 
@@ -379,7 +379,7 @@ export default function PlansPage() {
                 </p>
                 <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">10%</p>
                 <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
-                  Parejas o Familias
+                  Parejas o Familiares
                 </p>
               </div>
             </div>
@@ -433,8 +433,8 @@ export default function PlansPage() {
             </div>
 
             {/* Leyenda */}
-            <div className="flex w-full items-start gap-3 pt-1">
-              <div className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full bg-nexo-dark" />
+            <div className="flex w-full items-center gap-3 pt-1">
+              <div className="mt-0.5 h-2.5 w-2.5 shrink-0 rounded-full bg-nexo-dark mb-0.5" />
               <p className="font-body text-[12px] text-nexo-dark">
                 WL / GYM: Entrenamientos específicos de técnica de halterofilia y
                 gimnásticos, alternando una disciplina cada semana.
@@ -450,7 +450,7 @@ export default function PlansPage() {
               href="/class"
               className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
             >
-              Clase de Prueba
+              Clase de prueba
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
