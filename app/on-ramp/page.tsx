@@ -192,8 +192,7 @@ export default function OnRampPage() {
             <ul className="list-disc space-y-1 pl-5 font-body text-base leading-5 text-nexo-dark">
               <li>4 semanas, 2 días por semana (lunes y miércoles) de 20:15 a 21:15.</li>
               <li>
-                Curso de 2 a 6 personas, con una duración de 4 semanas. En total
-                son 8 clases, 2 por semana.
+                Curso de 2 a 6 personas.
               </li>
               <li>Sin restricciones de edad, todos son bienvenidos.</li>
               <li>

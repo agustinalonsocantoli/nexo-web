@@ -49,18 +49,19 @@ const heartIcon = (
 const benefits = [
   {
     icon: certificateIcon,
-    title: 'Entrenadores Certificados',
-    description: 'Nuestros entrenadores certificados te guían en cada WOD, combinando seguridad, técnica y motivación para que logres tus objetivos.'
+    title: 'Entrenadores Cualificados',
+    description: 'Nuestros entrenadores te guían en cada WOD, combinando seguridad, técnica y motivación para que logres tus objetivos.'
   },
   {
     icon: calendarIcon,
-    title: 'Horarios Flexibles',
-    description: 'A tu ritmo, a tu hora: tenemos clases a lo largo de todo el día para que no te pierdas ni una clase.'
+  title: 'Variedad de Clases y Horarios',
+  description:
+    'Entrena a tu ritmo y en tu horario: tenemos HYROX, CrossFit, Gymnastics, seminarios, Weightlifting y más, con clases durante todo el día.'
   },
   {
     icon: heartIcon,
-    title: 'Clases especificas',
-    description: 'Ponemos el foco en la técnica para que cada clase cuente, los ejercicios sean dinámicos y progreses cada día.'
+    title: 'Gran Familia',
+    description: 'En nuestro box encontrarás una auténtica comunidad. Un lugar donde el entrenamiento crea lazos de amistad duraderos y donde cada compañero te motiva, te apoya y te impulsa a mejorar cada día.'
   }
 ];
 

@@ -43,7 +43,7 @@ export default function Navbar() {
                         On Ramp
                     </Link>
                     <Link href="/plans" className="font-body text-sm font-medium text-white transition-colors hover:text-nexo-orange">
-                        Horarios y Tarifas
+                        Tarifas y Horarios
                     </Link>
                     <Link href="/about-us" className="font-body text-sm font-medium text-white transition-colors hover:text-nexo-orange">
                         Sobre Nosotros
@@ -97,7 +97,7 @@ export default function Navbar() {
                         onClick={closeMenu}
                         className="font-body text-base font-normal text-white transition-colors hover:text-nexo-orange"
                     >
-                        Horarios y Tarifas
+                        Tarifas y Horarios
                     </Link>
                     <Link
                         href="/about-us"

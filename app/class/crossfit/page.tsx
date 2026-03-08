@@ -417,7 +417,7 @@ export default function CrossfitPage() {
             {/* Nombre */}
             <div className="flex flex-col gap-2">
               <label htmlFor="nombre" className="font-body text-base leading-5 text-nexo-dark">
-                Nombre Completo
+                Nombre completo
               </label>
               <input
                 id="nombre"
@@ -432,7 +432,7 @@ export default function CrossfitPage() {
             {/* Email */}
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="font-body text-base leading-5 text-nexo-dark">
-                {firstTime === "si" ? "Mail" : "Correo electrónico"}
+                {firstTime === "si" ? "Correo electrónico" : "Correo electrónico"}
               </label>
               <input
                 id="email"
@@ -450,7 +450,7 @@ export default function CrossfitPage() {
                 Teléfono
               </label>
               <PhoneField control={control} name="telefono" error={errors.telefono} id="telefono" />
-              {errors.telefono && <p className="font-body text-sm text-red-500">{errors.telefono.message}</p>}
+              {errors.telefono && <p className="font-body text-sm text-red-500">El teléfono debe ser válido y es obligatorio</p>}
             </div>
 
             {/* DNI — solo SI */}
@@ -509,7 +509,7 @@ export default function CrossfitPage() {
                   <span className={`absolute left-0 top-[3px] h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ${privacidad ? "translate-x-[19px]" : "translate-x-[3px]"}`} />
                 </button>
                 <p className="font-body text-base leading-5 text-nexo-dark">
-                  Al hacer clic, acepto las condiciones de privacidad
+                  Al hacer clic, acepto las condiciones de privacidad.
                 </p>
               </div>
               {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}

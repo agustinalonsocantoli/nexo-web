@@ -24,7 +24,7 @@ const trainings: TrainingCardType[] = [
       'Al terminar, entras a clases regulares sabiendo exactamente qué haces y por qué.',
     ],
     desktopDescription:
-      'Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Gimnásticos, halterofilia, cardio y fuerza. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
+      'Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Principalmente los movimientos gimnásticos y con la barra de halterofilia. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
     image: '/onramp-img.jpg',
     href: '/on-ramp',
     verMasHref: '/on-ramp',
@@ -46,12 +46,12 @@ const trainings: TrainingCardType[] = [
   {
     title: 'HYROX',
     bullets: [
-      'Entrenamientos específicos para la competición más exigente.',
-      'Trabajamos resistencia, potencia y transiciones entre estaciones.',
-      'Preparación física y mental para rendir al máximo el día de la carrera.',
+      'Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.',
+      'Trabajamos resistencia cardiovascular, fuerza y transiciones entre estaciones mediante entrenamientos dinámicos y estructurados.',
+      'Estas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.',
     ],
     desktopDescription:
-      'Entrenamientos específicos para la competición más exigente.\n\nTrabajamos resistencia, potencia y transiciones entre estaciones. Simulamos condiciones de carrera, optimizamos tu estrategia y te preparamos física y mentalmente para la competición.',
+      'Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.\n\nEstas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.',
     image: "/new-hyrox.jpg",
     href: '/class/hyrox',
     id: 3,
@@ -149,7 +149,7 @@ export function TrainingCard({
           <OptimizedImage
             src={training.image}
             alt={training.title}
-            className={`h-full w-full object-cover object-[center_37%] ${training.id === 1 ? 'object-[center_37%]' : training.id === 2 ? 'object-[center_50%]' : 'object-[center_40%]'}`}
+            className={`h-full w-full object-cover object-[center_37%] ${training.id === 1 ? 'object-[center_37%]' : training.id === 2 ? 'object-[center_60%]' : 'object-[center_40%]'}`}
             sizes="100vw"
             width={600}
             height={112}

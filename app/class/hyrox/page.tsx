@@ -43,6 +43,11 @@ const FAQS = [
       </>
     ),
   },
+  {
+    question: "¿La clase de prueba es gratis?",
+    answer:
+      <span>El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte.</span>
+  },
 ];
 
 export default function HyroxPage() {

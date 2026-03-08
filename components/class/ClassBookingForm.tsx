@@ -89,7 +89,7 @@ export default function ClassBookingForm({
           {/* Nombre */}
           <div className="flex flex-col gap-2">
             <label htmlFor="nombre" className="font-body text-base leading-5 text-nexo-dark">
-              Nombre Completo
+              Nombre completo
             </label>
             <input
               id="nombre"
@@ -107,7 +107,7 @@ export default function ClassBookingForm({
               Teléfono
             </label>
             <PhoneField control={control} name="telefono" error={errors.telefono} id="telefono" />
-            {errors.telefono && <p className="font-body text-sm text-red-500">{errors.telefono.message}</p>}
+            {errors.telefono && <p className="font-body text-sm text-red-500">El teléfono debe ser válido y es obligatorio</p>}
           </div>
 
           {/* Email */}
@@ -162,7 +162,7 @@ export default function ClassBookingForm({
                 />
               </button>
               <p className="font-body text-base leading-5 text-nexo-dark">
-                Al hacer clic, acepto las condiciones de privacidad
+                Al hacer clic, acepto las condiciones de privacidad.
               </p>
             </div>
             {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}

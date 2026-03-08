@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { label: "Inicio", href: "/" },
   { label: "Clases", href: "/class" },
   { label: "On Ramp", href: "/on-ramp" },
-  { label: "Horarios y Tarifas", href: "/plans" },
+  { label: "Tarifas y Horarios", href: "/plans" },
   { label: "Sobre Nosotros", href: "/about-us" },
   { label: "Nuestro Equipo", href: "/team" },
   { label: "Contacto", href: "/contact" },

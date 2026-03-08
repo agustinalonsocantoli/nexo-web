@@ -24,9 +24,7 @@ const classes: TrainingCardType[] = [
   {
     title: "CROSSFIT",
     bullets: [
-      "Entrena con coaches que te empujan a lograr tus objetivos.",
-      "Clases de 60 minutos con enfoque en tu progreso semanal, cuidando la técnica y evitando lesiones.",
-      "Comunidad, energía y un box preparado para cada WOD.",
+      "CrossFit es un entrenamiento que combina fuerza, resistencia y acondicionamiento a través de movimientos funcionales como empujar, levantar, saltar o correr. Además, integra disciplinas como la gimnasia y la halterofilia para desarrollar una forma física completa.",
     ],
     image: "/crossfit-new.png",
     href: "/class/crossfit",
@@ -35,9 +33,7 @@ const classes: TrainingCardType[] = [
   {
     title: "HYROX",
     bullets: [
-      "Entrena con coaches que te empujan a lograr tus objetivos.",
-      "Clases de 45 minutos para fortalecer tu resistencia, aumentar tu potencia y poner a prueba tu cuerpo y mente.",
-      "Comunidad, energía y un box preparado superar tus límites.",
+      "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física.",
     ],
     image: "/new-hyrox.jpg",
     href: "/class/hyrox",

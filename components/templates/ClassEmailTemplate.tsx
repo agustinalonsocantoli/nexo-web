@@ -9,6 +9,12 @@ interface ClassEmailTemplateProps {
   tiempoEntrenado?: string;
 }
 
+function waLink(telefono: string) {
+  const digits = telefono.replace(/\D/g, "");
+  const number = digits.startsWith("34") ? digits : `34${digits}`;
+  return `https://wa.me/${number}`;
+}
+
 export function ClassEmailTemplate({
   tipo,
   nombre,
@@ -30,7 +36,9 @@ export function ClassEmailTemplate({
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold" }}>Nombre:</td>
-            <td style={{ padding: "8px 0" }}>{nombre}</td>
+            <td style={{ padding: "8px 0" }}>
+              <a href={waLink(telefono)} style={{ color: "#1255cc" }}>{nombre}</a>
+            </td>
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold" }}>Email:</td>
