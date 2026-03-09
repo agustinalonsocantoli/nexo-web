@@ -59,7 +59,8 @@ const services: TeamCardType[] = [
     id: 5,
     title: 'JAVI MARTINEZ',
     descriptions: [
-      'Soy fisioterapeuta deportivo (nº colegiado 5456), graduado en Fisioterapia y con Máster en Fisioterapia Deportiva. Con amplia experiencia en deporte, especialmente en fútbol (Levante UD), trabaja en prevención, tratamiento y rehabilitación de lesiones para optimizar el rendimiento del deportista mediante diversas técnicas de fisioterapia.'
+      'Graduado en fisioterapia y especializado en fisioterapia deportiva (Máster en fisioterapia deportiva y preparación física en fútbol). Con amplia experiencia tanto en el ámbito profesional (Levante UD) como en el deporte en general aquí en Nexo CrossFit.',
+      'La fisioterapia y el ejercicio nos llevarán de la mano para la prevención, rehabilitación y tratamiento de las dolencias o lesiones típicas del deporte, para que no pares de moverte en ningún momento.'
     ],
     image: '/javi.jpg',
     extraClass: 'object-[center_30%]',
@@ -73,43 +74,43 @@ export default function TeamBody() {
       {/* Mobile */}
       <div className="lg:hidden">
         <AnimateOnScroll>
-        <div className="mx-auto max-w-7xl px-8">
-          <div className="flex flex-col items-center gap-4">
-            <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-              COACHES
-            </span>
+          <div className="mx-auto max-w-7xl px-8">
+            <div className="flex flex-col items-center gap-4">
+              <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
+                COACHES
+              </span>
 
-            <div className="team-cards-container flex w-full flex-col gap-4">
-              {coaches?.map((team) => (
-                <Card key={team.id} team={team} />
-              ))}
+              <div className="team-cards-container flex w-full flex-col gap-4">
+                {coaches?.map((team) => (
+                  <Card key={team.id} team={team} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={100}>
-        <div className="mx-auto mt-8 max-w-7xl px-8">
-          <div className="flex flex-col items-center gap-4">
-            <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-              FISIOTERAPEUTA
-            </span>
+          <div className="mx-auto mt-8 max-w-7xl px-8">
+            <div className="flex flex-col items-center gap-4">
+              <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
+                FISIOTERAPEUTA
+              </span>
 
-            <div className="team-cards-container flex w-full flex-col gap-4">
-              {services?.map((team) => (
-                <Card key={team.id} team={team} />
-              ))}
+              <div className="team-cards-container flex w-full flex-col gap-4">
+                {services?.map((team) => (
+                  <Card key={team.id} team={team} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
         </AnimateOnScroll>
       </div>
 
       {/* Desktop */}
       <AnimateOnScroll>
-      <div className="hidden lg:block mx-auto max-w-7xl px-[118px]">
-        <TeamBodyDesktop coaches={coaches} services={services} />
-      </div>
+        <div className="hidden lg:block mx-auto max-w-7xl px-[118px]">
+          <TeamBodyDesktop coaches={coaches} services={services} />
+        </div>
       </AnimateOnScroll>
     </section>
   );
