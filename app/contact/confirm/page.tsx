@@ -17,9 +17,7 @@ export default function ContactConfirmPage() {
             ¡Hemos recibido tu mensaje!
           </p>
           <p className="max-w-sm font-body text-base leading-5 text-nexo-dark lg:max-w-xl">
-            Gracias por ponerte en contacto con nosotros. Hemos recibido tu
-            mensaje y pronto te responderemos por mail o nos pondremos en
-            contacto contigo para ayudarte.
+            Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte.
           </p>
           <Link
             href="/"

@@ -2,8 +2,6 @@ import { Resend } from "resend";
 import { ClassEmailTemplate } from "@/components/templates/ClassEmailTemplate";
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-const FROM = `Nexo CrossFit <${process.env.NEXT_PUBLIC_EMAIL_FROM}>`;
-const TO = process.env.NEXT_PUBLIC_EMAIL_TO ?? 'agustinalonsocantoli@gmail.com';
 
 export async function POST(request: Request) {
   try {
@@ -20,8 +18,8 @@ export async function POST(request: Request) {
     };
 
     const { data, error } = await resend.emails.send({
-      from: FROM,
-      to: [TO],
+      from: `${nombre} <${process.env.NEXT_PUBLIC_EMAIL_FROM}>`,
+      to: [process.env.NEXT_PUBLIC_EMAIL_TO!],
       replyTo: email,
       subject: `Solicitud ${tipo} - ${nombre}`,
       react: ClassEmailTemplate({ tipo, nombre, email, telefono, mensaje, fechaCurso, boxEntrenado, tiempoEntrenado }),

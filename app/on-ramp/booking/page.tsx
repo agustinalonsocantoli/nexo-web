@@ -8,6 +8,7 @@ import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
+import FileUploadField from "@/components/FileUploadField";
 
 const schema = z.object({
   fecha: z.string().min(1, "Selecciona una fecha"),
@@ -272,20 +273,12 @@ function OnRampBookingContent() {
                 <p className="font-body text-base leading-5 text-nexo-dark">
                   Adjunta el comprobante de pago
                 </p>
-                <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#cac4d0]"}`}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                  </svg>
-                  <span className="truncate font-body text-sm text-[#878787]">
-                    {fileName || "JPG o PNG"}
-                  </span>
-                  <input
-                    type="file"
-                    accept=".jpg,.jpeg,.png"
-                    className="sr-only"
-                    {...register("comprobante")}
-                  />
-                </label>
+                <FileUploadField
+                  fileName={fileName}
+                  onFileSelect={(files) => setValue("comprobante", files, { shouldValidate: isSubmitted })}
+                  onFileClear={() => setValue("comprobante", undefined, { shouldValidate: isSubmitted })}
+                  hasError={!!errors.comprobante}
+                />
                 {errors.comprobante && (
                   <p className="font-body text-sm text-red-500">
                     {errors.comprobante.message as string}
@@ -339,20 +332,12 @@ function OnRampBookingContent() {
                   <p className="font-body text-base font-semibold leading-6 text-nexo-dark">
                     Adjunta el comprobante de pago
                   </p>
-                  <label className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 transition-colors hover:border-nexo-orange ${errors.comprobante ? "border-red-500" : "border-[#878787]"}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                    </svg>
-                    <span className="truncate font-body text-sm text-[#878787]">
-                      {fileName || "JPG o PNG"}
-                    </span>
-                    <input
-                      type="file"
-                      accept=".jpg,.jpeg,.png"
-                      className="sr-only"
-                      {...register("comprobante")}
-                    />
-                  </label>
+                  <FileUploadField
+                    fileName={fileName}
+                    onFileSelect={(files) => setValue("comprobante", files, { shouldValidate: isSubmitted })}
+                    onFileClear={() => setValue("comprobante", undefined, { shouldValidate: isSubmitted })}
+                    hasError={!!errors.comprobante}
+                  />
                   {errors.comprobante && (
                     <p className="font-body text-sm text-red-500">
                       {errors.comprobante.message as string}

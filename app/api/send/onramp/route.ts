@@ -2,8 +2,6 @@ import { Resend } from "resend";
 import { OnRampEmailTemplate } from "@/components/templates/OnRampEmailTemplate";
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-const FROM = `Nexo CrossFit <${process.env.NEXT_PUBLIC_EMAIL_FROM}>`;
-const TO = process.env.NEXT_PUBLIC_EMAIL_TO ?? 'agustinalonsocantoli@gmail.com';
 
 export async function POST(request: Request) {
   try {
@@ -24,8 +22,8 @@ export async function POST(request: Request) {
       : [];
 
     const { data, error } = await resend.emails.send({
-      from: FROM,
-      to: [TO],
+      from: `${nombre} <${process.env.NEXT_PUBLIC_EMAIL_FROM}>`,
+      to: [process.env.NEXT_PUBLIC_EMAIL_TO!],
       replyTo: email,
       subject: `Reserva On Ramp - ${nombre}`,
       react: OnRampEmailTemplate({ fecha, nombre, email, telefono, dni, fechaNacimiento, mensaje }),

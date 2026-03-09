@@ -17,9 +17,7 @@ export default function ClassConfirmPage() {
             ¡Hemos recibido tu formulario!
           </p>
           <p className="max-w-sm font-body text-base leading-5 text-nexo-dark lg:max-w-xl">
-            Gracias por enviar tu formulario. En breve nos pondremos en contacto
-            contigo mediante WhatsApp para confirmar los detalles de tu clase de
-            prueba.
+            Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte.
           </p>
           <Link
             href="/"

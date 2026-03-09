@@ -18,8 +18,8 @@ export default function OnRampBookingConfirmPage() {
           </p>
           <p className="max-w-sm font-body text-base leading-5 text-nexo-dark lg:max-w-xl">
             Gracias por inscribirte en el curso On Ramp. Revisaremos tu
-            comprobante de pago y muy pronto nos pondremos en contacto contigo
-            para confirmar tu plaza y los detalles del curso.
+            comprobante de pago y pronto te responderemos por mail o
+            nos pondremos en contacto contigo.
           </p>
           <Link
             href="/"

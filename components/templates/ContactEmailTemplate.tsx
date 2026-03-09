@@ -19,9 +19,7 @@ export function ContactEmailTemplate({ nombre, email, telefono, mensaje }: Conta
         <tbody>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold", width: 140 }}>Nombre:</td>
-            <td style={{ padding: "8px 0" }}>
-              <a href={waLink(telefono)} style={{ color: "#1255cc" }}>{nombre}</a>
-            </td>
+            <td style={{ padding: "8px 0" }}>{nombre}</td>
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold" }}>Email:</td>
@@ -29,7 +27,9 @@ export function ContactEmailTemplate({ nombre, email, telefono, mensaje }: Conta
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold" }}>Teléfono:</td>
-            <td style={{ padding: "8px 0" }}>{telefono}</td>
+            <td style={{ padding: "8px 0" }}>
+              <a href={waLink(telefono)} style={{ color: "#1255cc" }}>{telefono}</a>
+            </td>
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold", verticalAlign: "top" }}>Mensaje:</td>
