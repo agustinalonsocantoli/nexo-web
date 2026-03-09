@@ -19,9 +19,9 @@ const trainings: TrainingCardType[] = [
   {
     title: 'ON RAMP',
     bullets: [
-      'Tu base antes de despegar en CrossFit.',
-      'Aprende los fundamentos: gimnásticos, halterofilia, cardio y fuerza.',
-      'Al terminar, entras a clases regulares sabiendo exactamente qué haces y por qué.',
+      'Tu base antes de despegar.',
+      'En nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa.',
+      'Al terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
     ],
     desktopDescription:
       'Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Principalmente los movimientos gimnásticos y con la barra de halterofilia. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
@@ -47,7 +47,6 @@ const trainings: TrainingCardType[] = [
     title: 'HYROX',
     bullets: [
       'Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.',
-      'Trabajamos resistencia cardiovascular, fuerza y transiciones entre estaciones mediante entrenamientos dinámicos y estructurados.',
       'Estas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.',
     ],
     desktopDescription:

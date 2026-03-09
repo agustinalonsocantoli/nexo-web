@@ -110,7 +110,7 @@ function OnRampBookingContent() {
               {/* Fecha inicio */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="fecha" className={labelClass}>
-                  Fecha inicio curso On Ramp
+                  Próximas fechas del curso
                 </label>
                 <div className="relative w-full">
                   <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#878787]">

@@ -127,7 +127,7 @@ export default function Navbar() {
                         onClick={closeMenu}
                         className="mt-4 flex w-full max-w-sm items-center justify-center gap-2 rounded-lg bg-nexo-orange px-8 py-3 font-body text-sm font-semibold text-white transition-all hover:bg-nexo-orange/90"
                     >
-                        Clase de Prueba
+                        Clase de prueba
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                         </svg>

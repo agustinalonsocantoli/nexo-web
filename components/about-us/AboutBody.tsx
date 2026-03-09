@@ -15,7 +15,7 @@ export default function AboutBody() {
 
           <AnimateOnScroll from="right" delay={100}>
             <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
-              Esto es mucho más que un gimnasio: es un box donde encontrarás una auténtica comunidad y adoptarás un estilo de vida enfocado en la mejora constante mientras disfrutas del camino.
+              Esto es mucho más que un gimnasio: es un box donde encontrarás una auténtica comunidad. Un lugar donde entrenarás, mejorarás cada día y adoptarás un estilo de vida basado en la superación constante, disfrutando de cada paso del proceso.
             </p>
           </AnimateOnScroll>
 

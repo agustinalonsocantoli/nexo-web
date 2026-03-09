@@ -119,7 +119,10 @@ export default function OnRampPage() {
               <p className="font-body text-base leading-6 text-nexo-dark">
                 En Nexo siempre damos prioridad a la técnica y el cuidado,
                 por eso si nunca has hecho CrossFit, empezarás con nuestro
-                curso de iniciación. El ON RAMP es para que aprendas los
+                curso de iniciación.
+              </p>
+              <p className="font-body text-base leading-6 text-nexo-dark mt-2 md:mt-0">
+                El ON RAMP es para que aprendas los
                 fundamentos del CrossFit sin prisa. Al terminar el curso
                 podrás empezar a hacer clases regulares sabiendo exactamente
                 qué haces y por qué lo haces.
