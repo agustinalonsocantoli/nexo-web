@@ -56,7 +56,7 @@ const benefits = [
     icon: calendarIcon,
   title: 'Variedad de Clases y Horarios',
   description:
-    'Entrena a tu ritmo y en tu horario: tenemos HYROX, CrossFit, Gymnastics, seminarios, Weightlifting y más, con clases durante todo el día.'
+    'Entrena a tu ritmo y en tu horario: tenemos CrossFit, HYROX, Strength, Gymnastics, Weightlifting y seminarios, con clases durante todo el día.'
   },
   {
     icon: heartIcon,
