@@ -1,6 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/nutricion",
+        destination: "/team",
+        permanent: true,
+      },
+      {
+        source: "/fisioterapia",
+        destination: "/team",
+        permanent: true,
+      },
+    ];
+  },
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],

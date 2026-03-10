@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://nexocrossfit.es";
+const BASE_URL = "https://www.nexocrossfit.es";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

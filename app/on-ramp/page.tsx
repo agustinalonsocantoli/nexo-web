@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     title: "Curso On Ramp CrossFit en Valencia | Nexo CrossFit",
     description:
       "Inicia en CrossFit con nuestro curso On Ramp. 8 sesiones, grupos reducidos y coaches que cuidan tu técnica desde el primer día. 165€.",
-    url: "https://nexocrossfit.es/on-ramp",
+    url: "https://www.nexocrossfit.es/on-ramp",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es/on-ramp",
+    canonical: "https://www.nexocrossfit.es/on-ramp",
   },
 };
 

@@ -22,7 +22,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexocrossfit.es/"),
+  metadataBase: new URL("https://www.nexocrossfit.es/"),
   title: {
     default: "Nexo CrossFit Valencia | Box CrossFit y HYROX",
     template: "%s | Nexo CrossFit Valencia",

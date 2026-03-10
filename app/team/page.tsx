@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Nuestro Equipo | Nexo CrossFit Valencia",
     description:
       "Coaches certificados en CrossFit y HYROX. Profesionales apasionados que te guían con técnica y seguridad.",
-    url: "https://nexocrossfit.es/team",
+    url: "https://www.nexocrossfit.es/team",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es/team",
+    canonical: "https://www.nexocrossfit.es/team",
   },
 };
 

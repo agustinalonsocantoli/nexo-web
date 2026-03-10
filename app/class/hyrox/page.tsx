@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Clases de HYROX en Valencia | Nexo CrossFit",
     description:
       "HYROX en Valencia para todos los niveles. Coaches especializados, clases adaptadas y comunidad motivadora. Desde 75€/mes.",
-    url: "https://nexocrossfit.es/class/hyrox",
+    url: "https://www.nexocrossfit.es/class/hyrox",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es/class/hyrox",
+    canonical: "https://www.nexocrossfit.es/class/hyrox",
   },
 };
 

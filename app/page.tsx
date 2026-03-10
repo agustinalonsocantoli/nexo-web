@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     title: "Nexo CrossFit Valencia | Box CrossFit y HYROX",
     description:
       "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde.",
-    url: "https://nexocrossfit.es/",
+    url: "https://www.nexocrossfit.es/",
   },
   alternates: {
-    canonical: "https://nexocrossfit.es/",
+    canonical: "https://www.nexocrossfit.es/",
   },
 };
 
