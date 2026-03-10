@@ -41,7 +41,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nexo CrossFit Valencia" }],
   icons: {
-    icon: "/favicon.svg",
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     type: "website",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Nexo CrossFit Valencia",
     images: [
       {
-        url: "/hero-home.webp",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nexo CrossFit Valencia",
