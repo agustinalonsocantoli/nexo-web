@@ -18,6 +18,76 @@ const nextConfig: NextConfig = {
         destination: "/team",
         permanent: true,
       },
+      {
+        source: "/precios",
+        destination: "/plans",
+        permanent: true,
+      },
+      {
+        source: "/horario",
+        destination: "/plans",
+        permanent: true,
+      },
+      {
+        source: "/quienes-somos",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/onramp",
+        destination: "/on-ramp",
+        permanent: true,
+      },
+      {
+        source: "/contacto",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/equipo",
+        destination: "/team",
+        permanent: true,
+      },
+      {
+        source: "/eventos",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/clases",
+        destination: "/class",
+        permanent: true,
+      },
+      {
+        source: "/comunidad",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/reglas",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/box",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/clase-de-prueba",
+        destination: "/class",
+        permanent: true,
+      },
+      {
+        source: "/equipo/:path*",
+        destination: "/team",
+        permanent: true,
+      },
+      {
+        source: "/blog/:path*",
+        destination: "/team",
+        permanent: true,
+      },
     ];
   },
   poweredByHeader: false,
