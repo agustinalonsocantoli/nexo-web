@@ -19,7 +19,7 @@ const coaches: TeamCardType[] = [
     id: 2,
     title: 'ALAN CARETTA',
     descriptions: [
-      'Empecé CrossFit en 2017. Para mí CrossFit no es solo deporte, es disciplina, comunidad y superación.  Comencé ayudando en clases cada vez que podía, y ahí descubrí que quería dedicarme a esto: contagiar la misma motivación que me trajo hasta aquí. Años después comencé gimnasia artística para mejorar mis gimnásticos. Ahí conocí a  Zoltan quien me presentó Nexo y su metodología, y supe desde el primer día que era mi sitio. Un lugar donde puedo seguir creciendo como entrenador y como atleta.'
+      'Empecé CrossFit en 2017. Para mí CrossFit no es solo deporte, es disciplina, comunidad y superación.  Comencé ayudando en clases cada vez que podía, y ahí descubrí que quería dedicarme a esto: contagiar la misma motivación que me trajo hasta aquí. Años después comencé gimnasia artística para mejorar mis gimnásticos. Ahí conocí a Zoltan, quien me presentó Nexo y su metodología, y supe desde el primer día que era mi sitio. Un lugar donde puedo seguir creciendo como entrenador y como atleta.'
     ],
     image: '/alan.jpg',
     extraClass: 'object-[center_29%]',
