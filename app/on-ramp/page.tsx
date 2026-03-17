@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const sessions = [
-  { month: "ABRIL", dates: "30/03 al 22/04 del 2026", spots: 5, value: "abril" },
+  { month: "ABRIL", dates: "30/03 al 22/04 del 2026", spots: 4, value: "abril" },
   { month: "MAYO", dates: "27/04 al 24/05 del 2026", spots: 6, value: "mayo" },
 ];
 

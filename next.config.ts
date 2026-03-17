@@ -88,6 +88,26 @@ const nextConfig: NextConfig = {
         destination: "/team",
         permanent: true,
       },
+      {
+        source: "/entrenadores/:path*",
+        destination: "/team",
+        permanent: true,
+      },
+      {
+        source: "/entrenadores",
+        destination: "/team",
+        permanent: true,
+      },
+      {
+        source: "/que-es-crossfit",
+        destination: "/class/crossfit",
+        permanent: true,
+      },
+      {
+        source: "/empezar",
+        destination: "/on-ramp",
+        permanent: true,
+      },
     ];
   },
   poweredByHeader: false,
