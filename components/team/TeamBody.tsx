@@ -1,74 +1,77 @@
 import { Card, TeamCardType } from "./Card";
 import TeamBodyDesktop from "./TeamBodyDesktop";
 import AnimateOnScroll from "../AnimateOnScroll";
+import { getTranslations } from "next-intl/server";
 
-const coaches: TeamCardType[] = [
-  {
-    id: 1,
-    title: 'ZOLTAN LOVAS',
-    descriptions: [
-      'Hace años dejé mi profesión anterior para dedicarme a lo que descubrí en 2014: CrossFit. No como un hobby, sino como un estilo de vida. Algo tan necesario para mí como comer o dormir, tanto entrenar como enseñar.',
-      'Junto a mi equipo, trabajamos para transformar vidas. Cada persona que cruza nuestras puertas recibe atención física y mental, porque sabemos que el cambio va más allá del entrenamiento.',
-      'Nexo me representa completamente. Cada detalle está cuidado con precisión y pasión. Detrás hay un equipo basado en la humildad, que entiende que esto no va de nosotros, va de vosotros.'
-    ],
-    image: '/zoltan.jpg',
-    extraClass: 'object-[center_43%]',
-    button: false
-  },
-  {
-    id: 2,
-    title: 'ALAN CARETTA',
-    descriptions: [
-      'Empecé CrossFit en 2017. Para mí CrossFit no es solo deporte, es disciplina, comunidad y superación.  Comencé ayudando en clases cada vez que podía, y ahí descubrí que quería dedicarme a esto: contagiar la misma motivación que me trajo hasta aquí. Años después comencé gimnasia artística para mejorar mis gimnásticos. Ahí conocí a Zoltan, quien me presentó Nexo y su metodología, y supe desde el primer día que era mi sitio. Un lugar donde puedo seguir creciendo como entrenador y como atleta.'
-    ],
-    image: '/alan.jpg',
-    extraClass: 'object-[center_29%]',
-    button: false
-  },
-  {
-    id: 3,
-    title: 'DILIAN BURGUET',
-    descriptions: [
-      'Siempre hice deporte, pero en algún momento perdí la motivación. Alguien me recomendó CrossFit y desde la primera clase supe que era mi sitio.',
-      'Me enganchó la variedad y la mezcla de disciplinas. Pero cuando conocí Nexo entendí que lo que sabía era solo una pequeña parte de lo que realmente es CrossFit. Nunca pensé en ser coach, pero cuando algo te apasiona, quieres compartirlo.',
-      'Hoy sé que esto es lo que quiero hacer: aprender, mejorar y ayudar a que otros también lo hagan.',
-      'Nos vemos en el box para seguir creciendo, mejorando cada día y, sobre todo, pasándolo bien.'
-    ],
-    image: '/dilian.jpg',
-    extraClass: 'object-[center_37%]',
-    button: false
-  },
-  {
-    id: 4,
-    title: 'TONI ALVARADO',
-    descriptions: [
-      'Pasión por lo que hago y curiosidad por entender el porqué. Esas dos cosas me han llevado por el mundo del fitness durante más de diez años, pasando por distintas titulaciones y modelos de entrenamiento.',
-      'Hago deporte desde siempre. Deportes individuales, grupales, lo que sea. Con un único objetivo: moverme mejor cada vez y disfrutarlo.',
-      'En los últimos años me preparé como bombero, y aprendí a combinar ese rol con el de entrenador, intentando sacar lo mejor de ambos mundos.',
-      'Hace unos años llegué a Nexo CrossFit, y aquí he podido seguir creciendo profesional y deportivamente. Pero lo que más valoro es el vínculo con los compañeros y atletas.',
-      'Imagino que por eso se llama "Nexo”.'
-    ],
-    image: '/toni.jpg',
-    extraClass: 'object-[center_37%]',
-    button: false
-  },
-];
+export default async function TeamBody() {
+  const t = await getTranslations('team');
 
-const services: TeamCardType[] = [
-  {
-    id: 5,
-    title: 'JAVI MARTINEZ',
-    descriptions: [
-      'Graduado en fisioterapia y especializado en fisioterapia deportiva (Máster en fisioterapia deportiva y preparación física en fútbol). Con amplia experiencia tanto en el ámbito profesional (Levante UD) como en el deporte en general aquí en Nexo CrossFit.',
-      'La fisioterapia y el ejercicio nos llevarán de la mano para la prevención, rehabilitación y tratamiento de las dolencias o lesiones típicas del deporte, para que no pares de moverte en ningún momento.'
-    ],
-    image: '/javi.jpg',
-    extraClass: 'object-[center_30%]',
-    button: true
-  },
-];
+  const coaches: TeamCardType[] = [
+    {
+      id: 1,
+      title: 'ZOLTAN LOVAS',
+      descriptions: [
+        t('coaches.zoltan.desc0'),
+        t('coaches.zoltan.desc1'),
+        t('coaches.zoltan.desc2'),
+      ],
+      image: '/zoltan.jpg',
+      extraClass: 'object-[center_43%]',
+      button: false
+    },
+    {
+      id: 2,
+      title: 'ALAN CARETTA',
+      descriptions: [
+        t('coaches.alan.desc0'),
+      ],
+      image: '/alan.jpg',
+      extraClass: 'object-[center_29%]',
+      button: false
+    },
+    {
+      id: 3,
+      title: 'DILIAN BURGUET',
+      descriptions: [
+        t('coaches.dilian.desc0'),
+        t('coaches.dilian.desc1'),
+        t('coaches.dilian.desc2'),
+        t('coaches.dilian.desc3'),
+      ],
+      image: '/dilian.jpg',
+      extraClass: 'object-[center_37%]',
+      button: false
+    },
+    {
+      id: 4,
+      title: 'TONI ALVARADO',
+      descriptions: [
+        t('coaches.toni.desc0'),
+        t('coaches.toni.desc1'),
+        t('coaches.toni.desc2'),
+        t('coaches.toni.desc3'),
+        t('coaches.toni.desc4'),
+      ],
+      image: '/toni.jpg',
+      extraClass: 'object-[center_37%]',
+      button: false
+    },
+  ];
 
-export default function TeamBody() {
+  const services: TeamCardType[] = [
+    {
+      id: 5,
+      title: 'JAVI MARTINEZ',
+      descriptions: [
+        t('physio.javi.desc0'),
+        t('physio.javi.desc1'),
+      ],
+      image: '/javi.jpg',
+      extraClass: 'object-[center_30%]',
+      button: true
+    },
+  ];
+
   return (
     <section className="bg-[#fbfbfb] py-8 text-nexo-dark lg:py-16">
       {/* Mobile */}
@@ -77,7 +80,7 @@ export default function TeamBody() {
           <div className="mx-auto max-w-7xl px-8">
             <div className="flex flex-col items-center gap-4">
               <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-                COACHES
+                {t('coachesBadge')}
               </span>
 
               <div className="team-cards-container flex w-full flex-col gap-4">
@@ -93,7 +96,7 @@ export default function TeamBody() {
           <div className="mx-auto mt-8 max-w-7xl px-8">
             <div className="flex flex-col items-center gap-4">
               <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-                FISIOTERAPEUTA
+                {t('physioBadge')}
               </span>
 
               <div className="team-cards-container flex w-full flex-col gap-4">

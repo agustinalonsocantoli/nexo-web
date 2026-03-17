@@ -1,7 +1,10 @@
 import OptimizedImage from '../OptimizedImage';
 import AnimateOnScroll from '../AnimateOnScroll';
+import { getTranslations } from 'next-intl/server';
 
-export default function AffiliatesSection() {
+export default async function AffiliatesSection() {
+  const t = await getTranslations('home.affiliates');
+
   return (
     <section className="relative bg-nexo-dark h-[176px] lg:h-[258px]">
       {/* Background Image */}
@@ -21,7 +24,7 @@ export default function AffiliatesSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 py-4 lg:gap-[51px] lg:py-4">
         <AnimateOnScroll from="fade">
           <span className="w-fit rounded-full border border-nexo-orange px-4 py-1.5 font-body text-xs font-semibold text-white uppercase">
-            AFILIADOS
+            {t('badge')}
           </span>
         </AnimateOnScroll>
 

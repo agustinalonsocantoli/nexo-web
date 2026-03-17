@@ -1,7 +1,10 @@
 import OptimizedImage from '../OptimizedImage';
 import AnimateOnScroll from '../AnimateOnScroll';
+import { getTranslations } from 'next-intl/server';
 
-export default function AboutBody() {
+export default async function AboutBody() {
+  const t = await getTranslations('about');
+
   return (
     <div className="w-full bg-white px-[21px] lg:px-0">
       {/* Nuestro Espacio */}
@@ -9,13 +12,13 @@ export default function AboutBody() {
         <div className="mx-auto lg:max-w-[1044px]">
           <AnimateOnScroll from="left">
             <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
-              Nuestro Espacio
+              {t('spaceTitle')}
             </h2>
           </AnimateOnScroll>
 
           <AnimateOnScroll from="right" delay={100}>
             <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
-              Esto es mucho más que un gimnasio: es un box donde encontrarás una auténtica comunidad. Un lugar donde entrenarás, mejorarás cada día y adoptarás un estilo de vida basado en la superación constante, disfrutando de cada paso del proceso.
+              {t('spaceDescription1')}
             </p>
           </AnimateOnScroll>
 
@@ -94,7 +97,7 @@ export default function AboutBody() {
 
           <AnimateOnScroll from="left" delay={100}>
             <p className="font-body text-sm leading-[20px] tracking-normal text-nexo-dark lg:text-base lg:leading-6 lg:mb-10">
-              Nuestras instalaciones de más de 500 m² te ofrecen espacios amplios equipados con tecnología de vanguardia, máquinas Concept y todos los recursos necesarios para tu entrenamiento. Disponemos de áreas especializadas en CrossFit y HYROX, pensadas para que cada sesión represente un reto que te impulse a superar tus propios límites.
+              {t('spaceDescription2')}
             </p>
           </AnimateOnScroll>
 
@@ -153,14 +156,14 @@ export default function AboutBody() {
         <div className="mx-auto lg:max-w-[1044px]">
           <AnimateOnScroll from="left">
             <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
-              Nuestra Filosofía
+              {t('philosophyTitle')}
             </h2>
           </AnimateOnScroll>
 
           {/* Párrafo 1 — solo mobile */}
           <AnimateOnScroll from="right" delay={100}>
             <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:hidden">
-              Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness.
+              {t('philosophyMobile')}
             </p>
           </AnimateOnScroll>
 
@@ -180,7 +183,7 @@ export default function AboutBody() {
 
             <AnimateOnScroll from="left" delay={100}>
               <p className="my-6 font-body text-sm leading-[20px] tracking-normal text-nexo-dark">
-                Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
+                {t('philosophyGym')}
               </p>
             </AnimateOnScroll>
 
@@ -188,7 +191,7 @@ export default function AboutBody() {
               <div className="relative h-[185px] w-full overflow-hidden">
                 <OptimizedImage
                   src="/Coaches-Movil.png"
-                  alt="Nuestra Filosofía"
+                  alt={t('philosophyTitle')}
                   className="h-full w-full object-cover object-[center_35%]"
                   width={351}
                   height={185}
@@ -196,8 +199,7 @@ export default function AboutBody() {
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-end justify-center px-4">
                   <p className=" mb-6 relative text-center font-heading text-xl font-bold leading-tight tracking-wide text-white uppercase">
-                    &quot;MÁS NO ES MEJOR,<br />
-                    MEJOR ES MEJOR&quot;
+                    {t('philosophyQuote')}
                   </p>
                 </div>
               </div>
@@ -208,7 +210,7 @@ export default function AboutBody() {
           <div className="hidden lg:block">
             <AnimateOnScroll from="right" delay={100}>
               <p className="mb-8 font-body text-base leading-6 tracking-normal text-nexo-dark">
-                Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness. Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.
+                {t('philosophyDesktop')}
               </p>
             </AnimateOnScroll>
 
@@ -224,8 +226,7 @@ export default function AboutBody() {
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-end justify-center">
                   <p className=" mb-8 relative text-center font-heading text-[40px] font-bold leading-tight tracking-[0.03em] text-white uppercase">
-                    &quot;MÁS NO ES MEJOR,<br />
-                    MEJOR ES MEJOR&quot;
+                    {t('philosophyQuote')}
                   </p>
                 </div>
               </div>
@@ -239,19 +240,19 @@ export default function AboutBody() {
         <div className="mx-auto lg:max-w-[1044px]">
           <AnimateOnScroll from="left">
             <h2 className="mb-6 font-heading text-xl font-bold leading-[100%] tracking-normal text-nexo-dark uppercase lg:mb-8 lg:text-2xl">
-              NUESTRA HISTORIA
+              {t('historyTitle')}
             </h2>
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={100}>
             <p className="mb-6 font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
-              Desde que abrimos en 2017 y hasta la actualidad, en Nexo nos gusta definirnos como el espacio donde interaccionan las ganas de aprender y mejorar junto con la capacidad de esfuerzo. Y todo ello, en un ambiente, no sólo respetuoso, sino que favorece los lazos de amistad duraderos.
+              {t('historyDescription1')}
             </p>
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={200}>
             <p className="font-body text-sm leading-[20px] tracking-normal text-black lg:text-base lg:leading-6">
-              No queremos ser un box de CrossFit más. Hemos adaptado nuestra manera de planificar y entender el entrenamiento para que, si confías en nosotros, podamos acompañarte en tu proceso de mejora durante mucho tiempo.
+              {t('historyDescription2')}
             </p>
           </AnimateOnScroll>
         </div>

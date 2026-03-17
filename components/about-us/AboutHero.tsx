@@ -1,10 +1,13 @@
 import PageHero from '../PageHero';
+import { getTranslations } from 'next-intl/server';
 
-export default function AboutHero() {
+export default async function AboutHero() {
+  const t = await getTranslations('about');
+
   return (
     <PageHero
-      title="Sobre Nosotros"
-      subtitle="Tu lugar para crecer con dedicación y en comunidad."
+      title={t('heroTitle')}
+      subtitle={t('heroSubtitle')}
       imageSrc="/about-us-new.jpg"
     />
   );

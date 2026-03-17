@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export interface TeamCardType {
   id: number;
@@ -14,6 +15,8 @@ export interface TeamCardType {
 }
 
 function ExpandedCard({ team }: { team: TeamCardType }) {
+  const tc = useTranslations('common');
+
   return (
     <div className="flex flex-col overflow-hidden rounded-[16px] bg-nexo-dark">
       {/* Imagen con gradiente suave hacia el fondo oscuro */}
@@ -52,7 +55,7 @@ function ExpandedCard({ team }: { team: TeamCardType }) {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm leading-5 text-white transition-opacity hover:opacity-90"
             >
-              Pide tu cita
+              {tc('bookAppointment')}
               <svg
                 className="h-4 w-4 shrink-0"
                 fill="none"

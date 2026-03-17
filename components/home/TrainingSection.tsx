@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 import AnimateOnScroll from '../AnimateOnScroll';
+import { useTranslations } from 'next-intl';
 
 export interface TrainingCardType {
   title: string;
@@ -15,68 +16,68 @@ export interface TrainingCardType {
   id: number;
 }
 
-const trainings: TrainingCardType[] = [
-  {
-    title: 'ON RAMP',
-    bullets: [
-      'Tu base antes de despegar.',
-      'En nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa.',
-      'Al terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
-    ],
-    desktopDescription:
-      'Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Principalmente los movimientos gimnásticos y con la barra de halterofilia. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.',
-    image: '/onramp-img.jpg',
-    href: '/on-ramp',
-    verMasHref: '/on-ramp',
-    id: 1,
-  },
-  {
-    title: 'CROSSFIT',
-    bullets: [
-      'Entrena con coaches que te empujan a lograr tus objetivos.',
-      'Clases de 60 minutos con enfoque en tu progreso semanal, cuidando la técnica y evitando lesiones.',
-      'Comunidad, energía y un box preparado para cada WOD.',
-    ],
-    desktopDescription:
-      'Clases de 60 minutos donde cada sesión tiene un propósito.\nCalentamiento técnico, desarrollo de fuerza y wods escalables a tu nivel.\n\nEn Nexo llevamos una programación diseñada para que progreses semana a semana, priorizando la técnica y evitando lesiones.',
-    image: "/crossfit-new.png",
-    href: '/class/crossfit',
-    id: 2,
-  },
-  {
-    title: 'HYROX',
-    bullets: [
-      'Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.',
-      'Estas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.',
-    ],
-    desktopDescription:
-      'Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.\n\nEstas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.',
-    image: "/new-hyrox.jpg",
-    href: '/class/hyrox',
-    id: 3,
-  },
-];
-
 export default function TrainingSection() {
+  const t = useTranslations('home.training');
+  const tc = useTranslations('common');
+
+  const trainings: TrainingCardType[] = [
+    {
+      title: 'ON RAMP',
+      bullets: [
+        t('onramp.bullet0'),
+        t('onramp.bullet1'),
+        t('onramp.bullet2'),
+      ],
+      desktopDescription: t('onramp.desktopDescription'),
+      image: '/onramp-img.jpg',
+      href: '/on-ramp',
+      verMasHref: '/on-ramp',
+      id: 1,
+    },
+    {
+      title: 'CROSSFIT',
+      bullets: [
+        t('crossfit.bullet0'),
+        t('crossfit.bullet1'),
+        t('crossfit.bullet2'),
+      ],
+      desktopDescription: t('crossfit.desktopDescription'),
+      image: "/crossfit-new.png",
+      href: '/class/crossfit',
+      id: 2,
+    },
+    {
+      title: 'HYROX',
+      bullets: [
+        t('hyrox.bullet0'),
+        t('hyrox.bullet1'),
+      ],
+      desktopDescription: t('hyrox.desktopDescription'),
+      image: "/new-hyrox.jpg",
+      href: '/class/hyrox',
+      id: 3,
+    },
+  ];
+
   return (
     <section className="bg-[#fbfbfb] py-8 text-nexo-dark lg:py-16">
       <div className="mx-auto max-w-7xl px-8 lg:px-[72px]">
         <div className="mb-6 flex flex-col items-center gap-4 text-center lg:mb-10 lg:gap-6">
           <AnimateOnScroll from="fade">
             <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-              NUESTRAS CLASES
+              {t('badge')}
             </span>
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={100}>
             <h2 className="font-heading text-[20px] font-bold leading-[100%] tracking-[0.03em] text-nexo-orange uppercase lg:text-[36px] lg:tracking-[1.08px]">
-              ENTRENAMIENTOS PENSADOS PARA TI
+              {t('title')}
             </h2>
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={200}>
             <p className="font-body text-[14px] leading-5 text-nexo-dark lg:text-[16px] lg:max-w-260">
-              En nuestro box encontrarás una gran variedad de clases y entrenamientos adaptados a tu nivel, para que superes tus límites, progreses paso a paso y consigas tus metas.
+              {t('description')}
             </p>
           </AnimateOnScroll>
         </div>
@@ -102,10 +103,7 @@ export default function TrainingSection() {
             href="/plans"
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange py-2 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-[261px]"
           >
-            ¡Conoce nuestras tarifas!
-            {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg> */}
+            {tc('checkPrices')}
           </Link>
         </AnimateOnScroll>
       </div>
@@ -123,6 +121,7 @@ export function TrainingCard({
   testClass?: boolean;
 }) {
   const ref = useRef<HTMLDetailsElement>(null);
+  const tc = useTranslations('common');
 
   function handleToggle(e: React.SyntheticEvent<HTMLDetailsElement>) {
     if (e.currentTarget.open) {
@@ -212,7 +211,7 @@ export function TrainingCard({
           href={training.href ?? "/class"}
           className="flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90"
         >
-          {testClass ? 'Clase de prueba' : 'Ver más'}
+          {testClass ? tc('bookClass') : tc('viewMore')}
           <svg
             className="h-4 w-4"
             fill="none"

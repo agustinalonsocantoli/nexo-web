@@ -1,17 +1,21 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import OptimizedImage from "./OptimizedImage";
+import { getTranslations } from "next-intl/server";
 
-const NAV_LINKS = [
-  { label: "Inicio", href: "/" },
-  { label: "Clases", href: "/class" },
-  { label: "On Ramp", href: "/on-ramp" },
-  { label: "Tarifas y Horarios", href: "/plans" },
-  { label: "Sobre Nosotros", href: "/about-us" },
-  { label: "Nuestro Equipo", href: "/team" },
-  { label: "Contacto", href: "/contact" },
-];
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
 
-export default function Footer() {
+  const NAV_LINKS = [
+    { label: tNav("home"), href: "/" as const },
+    { label: tNav("classes"), href: "/class" as const },
+    { label: tNav("onramp"), href: "/on-ramp" as const },
+    { label: tNav("plans"), href: "/plans" as const },
+    { label: tNav("about"), href: "/about-us" as const },
+    { label: tNav("team"), href: "/team" as const },
+    { label: tNav("contact"), href: "/contact" as const },
+  ];
+
   return (
     <footer className="bg-nexo-dark px-4 pt-12 pb-8 lg:px-[118px] lg:pt-16">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-0">
@@ -26,7 +30,7 @@ export default function Footer() {
             className="h-[34px] w-[115px] object-contain"
           />
           <p className="font-body text-sm leading-5 text-[#878787]">
-            Transformando vidas a través del deporte desde 2017.
+            {t("tagline")}
           </p>
           {/* CrossFit Journal — solo desktop */}
           <a
@@ -49,11 +53,11 @@ export default function Footer() {
         {/* Col 2: Enlaces Rápidos */}
         <div className="flex flex-col gap-4">
           <h3 className="font-body text-base leading-6 text-white">
-            Enlaces Rápidos
+            {t("quickLinks")}
           </h3>
           <ul className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => (
-              <li key={link.label}>
+              <li key={link.href}>
                 <Link
                   href={link.href}
                   className="font-body text-sm leading-5 text-[#99a1af] transition-colors hover:text-nexo-orange"
@@ -69,13 +73,13 @@ export default function Footer() {
         <div className="flex w-full items-center justify-between lg:w-auto lg:flex-col lg:items-start lg:gap-4">
           <div className="flex flex-col gap-4">
             <h3 className="font-body text-base leading-6 text-white">
-              Síguenos
+              {t("followUs")}
             </h3>
             <a
               href="https://instagram.com/nexocrossfit"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram de Nexo CrossFit"
+              aria-label={t("instagramLabel")}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-nexo-orange transition-opacity hover:opacity-80"
             >
               <svg
@@ -111,7 +115,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="mt-8 border-t border-[#878787] pt-8 text-center">
         <p className="font-body text-sm leading-5 text-[#99a1af]">
-          © 2026 NEXO CrossFit. Todos los derechos reservados.
+          {t("copyright")}
         </p>
       </div>
     </footer>

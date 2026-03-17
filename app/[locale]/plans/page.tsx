@@ -1,0 +1,479 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
+import PageHero from "@/components/PageHero";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+
+const BASE_URL = "https://www.nexocrossfit.es";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata.plans" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: `${BASE_URL}/${locale}/plans`,
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/plans`,
+      languages: {
+        es: `${BASE_URL}/es/plans`,
+        en: `${BASE_URL}/en/plans`,
+        "x-default": `${BASE_URL}/es/plans`,
+      },
+    },
+  };
+}
+
+type ClassType = "crossfit" | "hyrox" | "strength" | "wlgym" | null;
+
+interface ScheduleCell {
+  name: string;
+  type: ClassType;
+}
+
+interface ScheduleRow {
+  time: string;
+  L: ScheduleCell | null;
+  M: ScheduleCell | null;
+  X: ScheduleCell | null;
+  J: ScheduleCell | null;
+  V: ScheduleCell | null;
+  S: ScheduleCell | null;
+}
+
+const scheduleData: ScheduleRow[] = [
+  {
+    time: "7:00",
+    L: { name: "HYROX", type: "hyrox" },
+    M: null,
+    X: { name: "HYROX", type: "hyrox" },
+    J: null,
+    V: { name: "HYROX", type: "hyrox" },
+    S: null,
+  },
+  {
+    time: "7:45",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "STRENGTH", type: "strength" },
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "",
+    L: null,
+    M: null,
+    X: null,
+    J: null,
+    V: null,
+    S: { name: "CROSSFIT 9:30", type: "crossfit" },
+  },
+  {
+    time: "11:00",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: { name: "CROSSFIT 10:30", type: "crossfit" },
+  },
+  {
+    time: "",
+    L: null,
+    M: null,
+    X: null,
+    J: { name: "WL / GYM", type: "wlgym" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "12:00",
+    L: null,
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: null,
+    J: { name: "STRENGTH", type: "strength" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "12:15",
+    L: { name: "HYROX", type: "hyrox" },
+    M: null,
+    X: { name: "HYROX", type: "hyrox" },
+    J: null,
+    V: { name: "HYROX", type: "hyrox" },
+    S: null,
+  },
+  {
+    time: "13:00",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "",
+    L: null,
+    M: null,
+    X: null,
+    J: null,
+    V: null,
+    S: null,
+  },
+  {
+    time: "17:00",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: null,
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: null,
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "17:30",
+    L: null,
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: null,
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "18:00",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "STRENGTH", type: "strength" },
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "18:15",
+    L: { name: "HYROX", type: "hyrox" },
+    M: null,
+    X: { name: "HYROX", type: "hyrox" },
+    J: { name: "WL / GYM", type: "wlgym" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "18:30",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "19:00",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "STRENGTH", type: "strength" },
+    V: { name: "CROSSFIT", type: "crossfit" },
+    S: null,
+  },
+  {
+    time: "19:15",
+    L: { name: "HYROX", type: "hyrox" },
+    M: null,
+    X: { name: "HYROX", type: "hyrox" },
+    J: null,
+    V: null,
+    S: null,
+  },
+  {
+    time: "19:30",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "CROSSFIT", type: "crossfit" },
+    V: null,
+    S: null,
+  },
+  {
+    time: "20:30",
+    L: { name: "CROSSFIT", type: "crossfit" },
+    M: { name: "CROSSFIT", type: "crossfit" },
+    X: { name: "CROSSFIT", type: "crossfit" },
+    J: { name: "STRENGTH", type: "strength" },
+    V: null,
+    S: null,
+  },
+];
+
+function cellStyle(type: ClassType): string {
+  switch (type) {
+    case "hyrox":
+      return "bg-[#ffbe96] text-[#1e1e1e]";
+    case "crossfit":
+      return "bg-[#ff731c] text-[#1e1e1e]";
+    case "strength":
+      return "bg-[#903700] text-white";
+    case "wlgym":
+      return "bg-[#262626] text-white";
+    default:
+      return "";
+  }
+}
+
+function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
+  if (!cell)
+    return <td className="h-7 border border-black bg-white lg:h-9" />;
+  return (
+    <td
+      className={`h-7 border border-black px-1 text-center font-body text-[7px] font-semibold leading-tight lg:h-9 lg:px-2 lg:text-[11px] ${cellStyle(cell.type)}`}
+    >
+      {cell.name}
+    </td>
+  );
+}
+
+export default async function PlansPage() {
+  const t = await getTranslations('plans');
+  const tc = await getTranslations('common');
+
+  const dayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const;
+  const days = dayKeys.map((k) => t(`days.${k}`));
+
+  return (
+    <main className="bg-[#fbfbfb]">
+      <PageHero
+        title={t('heroTitle')}
+        titlePart2={t('heroTitlePart2')}
+        imageSrc="/hero-sn-desktop.jpg"
+        imageClass="object-[center_60%] md:object-[center_50%] lg:object-[center_35%]"
+      />
+
+      {/* Main content */}
+      <div className="flex flex-col gap-8 px-8 py-8 lg:mx-auto lg:max-w-7xl lg:gap-12 lg:px-30 lg:py-16">
+
+        {/* ── TARIFAS ── */}
+        <AnimateOnScroll>
+          <section className="flex flex-col items-center gap-4">
+            <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              {t('ratesBadge')}
+            </span>
+
+            <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
+              {/* Cuota mensual */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <p className="font-body text-base text-white">{t('monthlyLabel')}</p>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('monthlyPrice')}</p>
+                </div>
+                <p className="mt-1 font-body text-[11px] text-white/70">
+                  {t('monthlyAccess')}
+                </p>
+              </div>
+
+              {/* Hyrox */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <p className="font-body text-base text-white">{t('hyroxLabel')}</p>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('hyroxPrice')}</p>
+                </div>
+                <p className="mt-1 font-body text-[11px] text-white/70 whitespace-nowrap">
+                  {t('hyroxAccess')}
+                </p>
+              </div>
+
+              {/* Bono 20 clases */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <p className="font-body text-[15px] font-semibold text-white">{t('pass20Label')}</p>
+                    <p className="font-body text-[12px] text-white/70">{t('pass20Validity')}</p>
+                  </div>
+                  <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">{t('pass20Price')}</p>
+                </div>
+                <p className="mt-1 font-body text-[12px] text-white font-bold">
+                  {t('pass20Ideal')}{" "}
+                  <span>{t('pass20Frequency')}</span>.
+                </p>
+              </div>
+
+              {/* Bono 10 clases */}
+              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div>
+                  <p className="font-body text-base text-white">{t('pass10Label')}</p>
+                  <p className="font-body text-[12px] text-white/70">{t('pass10Validity')}</p>
+                </div>
+                <p className="font-heading text-[28px] font-bold leading-none text-white">{t('pass10Price')}</p>
+              </div>
+
+              {/* On Ramp */}
+              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-body text-base text-white">{t('onrampLabel')}</p>
+                    <p className="font-body text-[11px] text-white/70">{t('onrampSubtitle')}</p>
+                  </div>
+                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('onrampPrice')}</p>
+                </div>
+              </div>
+
+              {/* Drop In */}
+              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-6 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                <p className="font-body text-base text-white">{t('dropinLabel')}</p>
+                <p className="font-heading text-[28px] font-bold leading-none text-white">{t('dropinPrice')}</p>
+              </div>
+            </div>
+          </section>
+        </AnimateOnScroll>
+
+        {/* ── DESCUENTOS ── */}
+        <AnimateOnScroll delay={100}>
+          <section className="flex flex-col items-center gap-4">
+            <span className="rounded-full border-[1.5px] border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              {t('discountsBadge')}
+            </span>
+
+            <div className="grid w-full grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-4">
+              {/* Cuota trimestral */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  {t('quarterlyLabel')}
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('quarterlyDiscount')}</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  {t('quarterlyDetail')}{" "}
+                  <span className="font-semibold">{t('quarterlyPrice')}</span>
+                </p>
+              </div>
+
+              {/* Cuota semestral */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  {t('semiannualLabel')}
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('semiannualDiscount')}</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  {t('semiannualDetail')}{" "}
+                  <span className="font-semibold">{t('semiannualPrice')}</span>
+                </p>
+              </div>
+
+              {/* Cuota anual */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  {t('annualLabel')}
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('annualDiscount')}</p>
+                <p className="mt-1 font-body text-[9px] text-[#878787]">
+                  {t('annualDetail')}{" "}
+                  <span className="font-semibold">{t('annualPrice')}</span>
+                </p>
+              </div>
+
+              {/* Cuota mensual pareja */}
+              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                  {t('coupleLabel')}
+                </p>
+                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('coupleDiscount')}</p>
+                <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
+                  {t('coupleDetail')}
+                </p>
+              </div>
+            </div>
+          </section>
+        </AnimateOnScroll>
+
+        {/* ── HORARIOS ── */}
+        <AnimateOnScroll delay={100}>
+          <section className="flex flex-col items-center gap-3">
+            <span className="rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark">
+              {t('scheduleBadge')}
+            </span>
+
+            <div className="w-full overflow-x-auto">
+              <table className="w-full table-fixed border-collapse">
+                <colgroup>
+                  {Array.from({ length: 7 }).map((_, i) => (
+                    <col key={i} style={{ width: '14.285%' }} />
+                  ))}
+                </colgroup>
+                <thead>
+                  <tr>
+                    {/* Celda top-left: vacía, sin borde ni fondo */}
+                    <th className="border-0 bg-transparent p-0" />
+                    {days.map((day) => (
+                      <th
+                        key={day}
+                        className="h-7 border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]"
+                      >
+                        {day}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {scheduleData.map((row, i) => (
+                    <tr key={i}>
+                      <td className="h-7 whitespace-nowrap border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]">
+                        {row.time}
+                      </td>
+                      <ScheduleCell cell={row.L} />
+                      <ScheduleCell cell={row.M} />
+                      <ScheduleCell cell={row.X} />
+                      <ScheduleCell cell={row.J} />
+                      <ScheduleCell cell={row.V} />
+                      <ScheduleCell cell={row.S} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Leyenda */}
+            <div className="flex w-full items-center gap-3 pt-1">
+              <div className="mt-0.5 h-2.5 w-2.5 shrink-0 rounded-full bg-nexo-dark mb-0.5" />
+              <p className="font-body text-[12px] text-nexo-dark">
+                {t('legend')}
+              </p>
+            </div>
+          </section>
+        </AnimateOnScroll>
+
+        {/* ── CTA ── */}
+        <AnimateOnScroll delay={100}>
+          <div className="flex flex-col items-center gap-4">
+            <Link
+              href="/class"
+              className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 lg:w-fit lg:self-center lg:px-12"
+            >
+              {tc('bookClass')}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </AnimateOnScroll>
+      </div>
+    </main>
+  );
+}

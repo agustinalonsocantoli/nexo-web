@@ -1,3 +1,6 @@
+import AnimateOnScroll from '../AnimateOnScroll';
+import { getTranslations } from 'next-intl/server';
+
 const certificateIcon = (
   <svg
     className="h-6 w-6 text-nexo-orange"
@@ -46,34 +49,23 @@ const heartIcon = (
   </svg>
 );
 
-const benefits = [
-  {
-    icon: certificateIcon,
-    title: 'Entrenadores Cualificados',
-    description: 'Nuestros entrenadores te guían en cada WOD, combinando seguridad, técnica y motivación para que logres tus objetivos.'
-  },
-  {
-    icon: calendarIcon,
-  title: 'Variedad de Clases y Horarios',
-  description:
-    'Entrena a tu ritmo y en tu horario: tenemos CrossFit, HYROX, Strength, Gymnastics, Weightlifting y seminarios, con clases durante todo el día.'
-  },
-  {
-    icon: heartIcon,
-    title: 'Gran Familia',
-    description: 'En nuestro box encontrarás una auténtica comunidad. Un lugar donde el entrenamiento crea lazos de amistad duraderos y donde cada compañero te motiva, te apoya y te impulsa a mejorar cada día.'
-  }
-];
+const icons = [certificateIcon, calendarIcon, heartIcon];
 
-import AnimateOnScroll from '../AnimateOnScroll';
+export default async function WhyChooseUs() {
+  const t = await getTranslations('home.whyChooseUs');
 
-export default function WhyChooseUs() {
+  const benefits = [0, 1, 2].map((i) => ({
+    icon: icons[i],
+    title: t(`benefits.${i}.title`),
+    description: t(`benefits.${i}.description`),
+  }));
+
   return (
     <section className="bg-nexo-dark py-8 text-white lg:py-16">
       <div className="mx-auto max-w-7xl px-8 lg:px-[72px]">
         <AnimateOnScroll from="fade" className="mb-8 text-center lg:mb-10">
           <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.03em] text-white uppercase">
-            ¿POR QUÉ<br className="lg:hidden" /> ELEGIRNOS?
+            {t('title')}
           </h2>
         </AnimateOnScroll>
 

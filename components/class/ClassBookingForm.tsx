@@ -6,17 +6,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { useTranslations } from "next-intl";
 import PhoneField from "@/components/PhoneField";
 
-const schema = z.object({
-  nombre: z.string().min(2, "Nombre demasiado corto"),
-  email: z.string().email("Email inválido"),
-  telefono: z.string().min(1, "Introduce tu teléfono").refine(isValidPhoneNumber, "Teléfono inválido"),
-  mensaje: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
-  privacidad: z.boolean().refine((v) => v, "Debes aceptar la política de privacidad"),
-});
+function createClassBookingSchema(t: (key: string) => string) {
+  return z.object({
+    nombre: z.string().min(2, t("nameMin")),
+    email: z.string().email(t("emailInvalid")),
+    telefono: z.string().min(1, t("phoneRequired")).refine(isValidPhoneNumber, t("phoneInvalid")),
+    mensaje: z.string().min(10, t("messageMin")),
+    privacidad: z.boolean().refine((v) => v, t("privacyRequired")),
+  });
+}
 
-type FormData = z.infer<typeof schema>;
+type FormData = z.infer<ReturnType<typeof createClassBookingSchema>>;
 
 interface Faq {
   question: string;
@@ -44,6 +47,10 @@ export default function ClassBookingForm({
   const router = useRouter();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [apiError, setApiError] = useState<string | null>(null);
+  const tf = useTranslations("forms");
+  const tv = useTranslations("validation");
+
+  const schema = createClassBookingSchema(tv);
 
   const {
     register,
@@ -76,7 +83,7 @@ export default function ClassBookingForm({
       if (!res.ok) throw new Error("Error al enviar");
       router.push(redirectTo);
     } catch {
-      setApiError("Ha ocurrido un error al enviar el formulario. Inténtalo de nuevo.");
+      setApiError(tf("apiError"));
     }
   }
 
@@ -89,12 +96,12 @@ export default function ClassBookingForm({
           {/* Nombre */}
           <div className="flex flex-col gap-2">
             <label htmlFor="nombre" className="font-body text-base leading-5 text-nexo-dark">
-              Nombre completo
+              {tf("name")}
             </label>
             <input
               id="nombre"
               type="text"
-              placeholder="Pedro Pérez"
+              placeholder={tf("namePlaceholder")}
               {...register("nombre")}
               className={`${inputBase} ${errors.nombre ? "border-red-500" : "border-[#cac4d0]"}`}
             />
@@ -104,21 +111,21 @@ export default function ClassBookingForm({
           {/* Teléfono */}
           <div className="flex flex-col gap-2">
             <label htmlFor="telefono" className="font-body text-base leading-5 text-nexo-dark">
-              Teléfono
+              {tf("phone")}
             </label>
             <PhoneField control={control} name="telefono" error={errors.telefono} id="telefono" />
-            {errors.telefono && <p className="font-body text-sm text-red-500">El teléfono debe ser válido y es obligatorio</p>}
+            {errors.telefono && <p className="font-body text-sm text-red-500">{tf("phoneError")}</p>}
           </div>
 
           {/* Email */}
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="font-body text-base leading-5 text-nexo-dark">
-              Correo electrónico
+              {tf("email")}
             </label>
             <input
               id="email"
               type="email"
-              placeholder="pedropérez@gmail.com"
+              placeholder={tf("emailPlaceholder")}
               {...register("email")}
               className={`${inputBase} ${errors.email ? "border-red-500" : "border-[#cac4d0]"}`}
             />
@@ -128,12 +135,12 @@ export default function ClassBookingForm({
           {/* Mensaje */}
           <div className="flex flex-col gap-2">
             <label htmlFor="mensaje" className="font-body text-base leading-5 text-nexo-dark">
-              Mensaje
+              {tf("message")}
             </label>
             <textarea
               id="mensaje"
               rows={4}
-              placeholder="Escribe tu mensaje aquí..."
+              placeholder={tf("messagePlaceholder")}
               suppressHydrationWarning
               {...register("mensaje")}
               className={`w-full resize-none rounded-lg border bg-white px-4 py-2 font-body text-sm text-nexo-dark placeholder:text-[#cac4d0] focus:border-nexo-orange focus:outline-none ${
@@ -162,7 +169,7 @@ export default function ClassBookingForm({
                 />
               </button>
               <p className="font-body text-base leading-5 text-nexo-dark">
-                Al hacer clic, acepto las condiciones de privacidad.
+                {tf("privacy")}
               </p>
             </div>
             {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}
@@ -177,7 +184,7 @@ export default function ClassBookingForm({
             disabled={isSubmitting}
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {isSubmitting ? "Enviando..." : "Enviar"}
+            {isSubmitting ? tf("submitting") : tf("submit")}
             {!isSubmitting && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

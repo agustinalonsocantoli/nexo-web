@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface FileUploadFieldProps {
   fileName: string;
@@ -11,6 +12,7 @@ interface FileUploadFieldProps {
 
 export default function FileUploadField({ fileName, onFileSelect, onFileClear, hasError }: FileUploadFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const tf = useTranslations("forms");
 
   if (fileName) {
     return (
@@ -18,7 +20,7 @@ export default function FileUploadField({ fileName, onFileSelect, onFileClear, h
         <span
           className="flex min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-nexo-orange bg-nexo-orange/5 px-3 py-2 transition-colors hover:bg-nexo-orange/10"
           onClick={() => inputRef.current?.click()}
-          title="Cambiar archivo"
+          title={tf("changeFile")}
         >
           {/* Document icon */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-nexo-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -33,7 +35,7 @@ export default function FileUploadField({ fileName, onFileSelect, onFileClear, h
             if (inputRef.current) inputRef.current.value = "";
           }}
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[#878787] transition-colors hover:bg-red-50 hover:text-red-500"
-          aria-label="Eliminar archivo"
+          aria-label={tf("removeFile")}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -55,7 +57,7 @@ export default function FileUploadField({ fileName, onFileSelect, onFileClear, h
       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-[#878787]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
       </svg>
-      <span className="truncate font-body text-sm text-[#878787]">JPG, PNG o PDF</span>
+      <span className="truncate font-body text-sm text-[#878787]">{tf("fileTypes")}</span>
       <input
         type="file"
         accept=".jpg,.jpeg,.png,.pdf"

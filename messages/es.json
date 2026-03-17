@@ -1,0 +1,413 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "classes": "Clases",
+    "onramp": "On Ramp",
+    "plans": "Tarifas y Horarios",
+    "about": "Sobre Nosotros",
+    "team": "Nuestro Equipo",
+    "contact": "Contacto",
+    "trialClass": "Clase de prueba",
+    "languageSwitcher": "Idioma"
+  },
+  "footer": {
+    "tagline": "Transformando vidas a través del deporte desde 2017.",
+    "quickLinks": "Enlaces Rápidos",
+    "followUs": "Síguenos",
+    "instagramLabel": "Instagram de Nexo CrossFit",
+    "copyright": "© 2026 NEXO CrossFit. Todos los derechos reservados."
+  },
+  "metadata": {
+    "default": {
+      "title": "Nexo CrossFit Valencia | Box CrossFit y HYROX",
+      "titleTemplate": "%s | Nexo CrossFit Valencia",
+      "description": "Box de CrossFit y HYROX en Valencia. Coaches certificados, clases para todos los niveles, horarios flexibles y comunidad. Desde 2017 transformando vidas."
+    },
+    "home": {
+      "title": "Nexo CrossFit Valencia | Box CrossFit y HYROX en Valencia",
+      "description": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde. ¡Reserva tu primera clase de prueba gratis!",
+      "ogTitle": "Nexo CrossFit Valencia | Box CrossFit y HYROX",
+      "ogDescription": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde."
+    },
+    "class": {
+      "title": "Reserva tu Clase de Prueba",
+      "description": "Reserva tu clase de prueba de CrossFit o HYROX en Valencia. Coaches certificados te guían desde el primer día, sin importar tu nivel. Ven y descubre la comunidad Nexo.",
+      "ogTitle": "Reserva tu Clase de Prueba | Nexo CrossFit Valencia",
+      "ogDescription": "Prueba CrossFit o HYROX en Valencia con coaches certificados. Sin compromiso, adaptado a tu nivel."
+    },
+    "crossfit": {
+      "title": "Clases de CrossFit en Valencia",
+      "description": "Clases de CrossFit en Valencia para todos los niveles. WODs diarios programados, coaches certificados que cuidan tu técnica, y curso On Ramp para principiantes. Únete al box Nexo.",
+      "ogTitle": "Clases de CrossFit en Valencia | Nexo CrossFit",
+      "ogDescription": "CrossFit en Valencia con coaches certificados. WODs diarios, atención personalizada y curso On Ramp para empezar desde cero."
+    },
+    "hyrox": {
+      "title": "Clases de HYROX en Valencia",
+      "description": "Clases de HYROX en Valencia para todos los niveles. Entrena resistencia y fuerza con coaches especializados. Sin experiencia previa necesaria. Cuota mensual desde 75€.",
+      "ogTitle": "Clases de HYROX en Valencia | Nexo CrossFit",
+      "ogDescription": "HYROX en Valencia para todos los niveles. Coaches especializados, clases adaptadas y comunidad motivadora. Desde 75€/mes."
+    },
+    "onramp": {
+      "title": "Curso On Ramp CrossFit en Valencia",
+      "description": "Empieza CrossFit desde cero con el curso On Ramp de Nexo en Valencia. 8 sesiones en 4 semanas, grupos reducidos (2-6 personas), atención personalizada y precio de 165€. ¡Plazas limitadas!",
+      "ogTitle": "Curso On Ramp CrossFit en Valencia | Nexo CrossFit",
+      "ogDescription": "Inicia en CrossFit con nuestro curso On Ramp. 8 sesiones, grupos reducidos y coaches que cuidan tu técnica desde el primer día. 165€."
+    },
+    "plans": {
+      "title": "Tarifas y Horarios",
+      "description": "Tarifas de CrossFit y HYROX en Valencia: cuota mensual 110€, HYROX 75€, bono 20 clases 180€ y descuentos por trimestre, semestre y anual. Consulta nuestros horarios de lunes a sábado.",
+      "ogTitle": "Tarifas y Horarios | Nexo CrossFit Valencia",
+      "ogDescription": "Cuota mensual CrossFit 110€, HYROX 75€, bonos y descuentos. Horarios de lunes a sábado en Valencia."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "description": "Conoce la historia de Nexo CrossFit Valencia. Desde 2017 somos un box afiliado a CrossFit con coaches apasionados, instalaciones de primer nivel y una comunidad que te empuja a superarte cada día.",
+      "ogTitle": "Sobre Nosotros | Nexo CrossFit Valencia",
+      "ogDescription": "Conoce la historia de Nexo CrossFit Valencia. Desde 2017 somos un box afiliado con coaches apasionados y una comunidad única."
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "description": "Conoce al equipo de coaches certificados de Nexo CrossFit Valencia. Profesionales apasionados con formación en CrossFit y HYROX que te guían con técnica, seguridad y motivación en cada sesión.",
+      "ogTitle": "Nuestro Equipo | Nexo CrossFit Valencia",
+      "ogDescription": "Coaches certificados en CrossFit y HYROX. Profesionales apasionados que te guían con técnica y seguridad."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Contacta con Nexo CrossFit Valencia. Estamos en Arzobispo Fabián y Fuero 21, Valencia 46009. Escríbenos por WhatsApp al 661 388 984, por email o a través del formulario.",
+      "ogTitle": "Contacto | Nexo CrossFit Valencia",
+      "ogDescription": "Contacta con Nexo CrossFit. C/ Arzobispo Fabián y Fuero 21, Valencia. WhatsApp: 661 388 984."
+    }
+  },
+  "common": {
+    "viewMore": "Ver más",
+    "bookClass": "Clase de prueba",
+    "bookSpot": "Reserva tu plaza",
+    "checkPrices": "¡Conoce nuestras tarifas!",
+    "signUp": "Apúntate",
+    "backHome": "Volver al inicio",
+    "bookAppointment": "Pide tu cita"
+  },
+  "home": {
+    "hero": {
+      "title": "SUPÉRATE en Nexo",
+      "subtitle1": "Donde el deporte se convierte en diversión y el esfuerzo en bienestar.",
+      "subtitle2": "Mejora tu salud física y mental rodeado de una comunidad que te impulsa.",
+      "subtitle3": "¡Únete a nosotros!"
+    },
+    "training": {
+      "badge": "NUESTRAS CLASES",
+      "title": "ENTRENAMIENTOS PENSADOS PARA TI",
+      "description": "En nuestro box encontrarás una gran variedad de clases y entrenamientos adaptados a tu nivel, para que superes tus límites, progreses paso a paso y consigas tus metas.",
+      "onramp": {
+        "bullet0": "Tu base antes de despegar.",
+        "bullet1": "En nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa.",
+        "bullet2": "Al terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces.",
+        "desktopDescription": "Tu base antes de despegar.\nEn nuestro curso de iniciación aprendes los fundamentos del CrossFit sin prisa. Principalmente los movimientos gimnásticos y con la barra de halterofilia. Cada movimiento desglosado hasta que lo sientas natural.\nAl terminar, entras a clases regulares sabiendo exactamente qué haces y por qué lo haces."
+      },
+      "crossfit": {
+        "bullet0": "Entrena con coaches que te empujan a lograr tus objetivos.",
+        "bullet1": "Clases de 60 minutos con enfoque en tu progreso semanal, cuidando la técnica y evitando lesiones.",
+        "bullet2": "Comunidad, energía y un box preparado para cada WOD.",
+        "desktopDescription": "Clases de 60 minutos donde cada sesión tiene un propósito.\nCalentamiento técnico, desarrollo de fuerza y wods escalables a tu nivel.\n\nEn Nexo llevamos una programación diseñada para que progreses semana a semana, priorizando la técnica y evitando lesiones."
+      },
+      "hyrox": {
+        "bullet0": "Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.",
+        "bullet1": "Estas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia.",
+        "desktopDescription": "Entrenamientos de resistencia y acondicionamiento inspirados en HYROX.\n\nEstas clases están pensadas tanto para quienes quieren prepararse para competiciones HYROX como para cualquier persona que busque mejorar su condición física y su capacidad de resistencia."
+      }
+    },
+    "whyChooseUs": {
+      "title": "¿POR QUÉ ELEGIRNOS?",
+      "benefits": {
+        "0": {
+          "title": "Entrenadores Cualificados",
+          "description": "Nuestros entrenadores te guían en cada WOD, combinando seguridad, técnica y motivación para que logres tus objetivos."
+        },
+        "1": {
+          "title": "Variedad de Clases y Horarios",
+          "description": "Entrena a tu ritmo y en tu horario: tenemos CrossFit, HYROX, Strength, Gymnastics, Weightlifting y seminarios, con clases durante todo el día."
+        },
+        "2": {
+          "title": "Gran Familia",
+          "description": "En nuestro box encontrarás una auténtica comunidad. Un lugar donde el entrenamiento crea lazos de amistad duraderos y donde cada compañero te motiva, te apoya y te impulsa a mejorar cada día."
+        }
+      }
+    },
+    "affiliates": {
+      "badge": "AFILIADOS"
+    },
+    "team": {
+      "title1": "Conoce",
+      "title2": "al equipo"
+    }
+  },
+  "class": {
+    "heroTitle": "Reserva tu",
+    "heroTitlePart2": "clase de prueba",
+    "sectionTitle": "A un paso de empezar tu nuevo estilo de vida",
+    "introMobile": "Reserva tu clase de prueba y vive una sesión real de CrossFit o HYROX. Nos adaptamos a tu nivel y entrenarás en un ambiente motivador, junto a coaches que cuidan tu técnica y tu progreso.",
+    "introDesktop": "Reserva tu clase de prueba y experimenta una auténtica sesión de CrossFit o HYROX en nuestro box. Sea cual sea tu nivel, nos adaptamos a ti. Entrenarás en un ambiente que motiva, conecta y empuja a dar lo mejor de ti, siempre acompañado por nuestros coaches, atentos a tu técnica y a tu progreso.",
+    "crossfitBullet": "CrossFit es un entrenamiento que combina fuerza, resistencia y acondicionamiento a través de movimientos funcionales como empujar, levantar, saltar o correr. Además, integra disciplinas como la gimnasia y la halterofilia para desarrollar una forma física completa.",
+    "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física."
+  },
+  "crossfit": {
+    "heroTitle": "Reserva tu",
+    "heroTitlePart2": "clase de prueba",
+    "onrampFaqs": {
+      "0": {
+        "question": "¿Cuánto cuesta?",
+        "answer": "El precio del curso On Ramp es de 165 euros. Incluye todas las sesiones con atención personalizada de nuestros coaches."
+      },
+      "1": {
+        "question": "¿No puedes asistir al horario establecido?",
+        "answer": "No te preocupes. Ofrecemos la opción de realizarlo de forma semiprivada (2 personas, 190 € por persona) o totalmente personalizada (1 persona, 250 €), en el horario que mejor te venga."
+      }
+    },
+    "crossfitFaqs": {
+      "0": {
+        "question": "¿Cuánto duran las clases?",
+        "answer": "Clases diarias de 60 minutos. Se repite cada hora a lo largo del día y varía diariamente. Alternamos entre entrenamientos de fuerza y trabajo metabólico (cardio) para un entrenamiento equilibrado y efectivo."
+      },
+      "1": {
+        "question": "¿La clase de prueba es gratis?",
+        "answer": "Ofrecemos una clase de prueba para quienes ya tienen experiencia en CrossFit y quieren unirse a nuestra familia. El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
+      }
+    },
+    "confirm": {
+      "heroTitle": "Reserva tu",
+      "heroTitlePart2": "clase de prueba",
+      "title": "¡Hemos recibido tu formulario!",
+      "message": "Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte."
+    }
+  },
+  "hyrox": {
+    "heroTitle": "Reserva tu",
+    "heroTitlePart2": "clase de prueba",
+    "title": "Clases HYROX",
+    "description": "No hace falta tener experiencia previa para unirte a las clases de HYROX. Nuestros entrenamientos se adaptan a todos los niveles, desde principiantes hasta los más avanzados. Cada sesión está diseñada para que disfrutes, avances y te superes a tu propio ritmo.",
+    "faqs": {
+      "0": {
+        "question": "¿Cuánto cuestan las clases?",
+        "answerPrice": "75€/mes",
+        "answerAccess": "acceso ilimitado",
+        "answerText": " únicamente a las clases de HYROX."
+      },
+      "1": {
+        "question": "¿Cuánto duran las clases?",
+        "answerIntro": "Clase de cardio de ",
+        "answerDuration": "45 minutos",
+        "answerMiddle": " que utiliza principalmente máquinas, movimientos básicos y ocasionalmente carrera. Diseñada para ",
+        "answerBenefit": "mejorar la capacidad aeróbica y la resistencia cardiovascular",
+        "answerEnd": ". Ideal también para quienes desean mejorar su condición física general sin adentrarse aún en el CrossFit."
+      },
+      "2": {
+        "question": "¿La clase de prueba es gratis?",
+        "answer": "El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
+      }
+    },
+    "tipo": "Clases HYROX",
+    "confirm": {
+      "heroTitle": "Reserva tu",
+      "heroTitlePart2": "clase de prueba",
+      "title": "¡Hemos recibido tu formulario!",
+      "message": "Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte."
+    }
+  },
+  "onramp": {
+    "heroTitle": "¡Empieza hoy tu",
+    "heroTitlePart2": "nuevo estilo de vida!",
+    "whatIsTitle": "¿Qué es el On Ramp?",
+    "whatIsDescription1": "En Nexo siempre damos prioridad a la técnica y el cuidado, por eso si nunca has hecho CrossFit, empezarás con nuestro curso de iniciación.",
+    "whatIsDescription2": "El ON RAMP es para que aprendas los fundamentos del CrossFit sin prisa. Al terminar el curso podrás empezar a hacer clases regulares sabiendo exactamente qué haces y por qué lo haces.",
+    "upcomingDatesTitle": "Próximas fechas On Ramp",
+    "spotsAvailable": "{spots} plazas disponibles",
+    "costTitle": "¿Cuánto cuesta?",
+    "costDescription": "El precio del curso es de ",
+    "costAmount": "165 euros",
+    "detailsTitle": "Detalles adicionales",
+    "detail0": "4 semanas, 2 días por semana (lunes y miércoles) de 20:15 a 21:15.",
+    "detail1": "Curso de 2 a 6 personas.",
+    "detail2": "Sin restricciones de edad, todos son bienvenidos.",
+    "detail3": "Atención personalizada de nuestros entrenadores para garantizar seguridad y aprendizaje efectivo.",
+    "detail4": "Asistencia obligatoria a todas las clases, ya que no son recuperables.",
+    "detail5": "En caso de que una clase coincida con un día festivo, se desplazará al día siguiente o se acordará un horario alternativo.",
+    "alternativeTitle": "¿No puedes asistir al horario establecido para el próximo curso de iniciación?",
+    "alternativeDescription": "No te preocupes, te ofrecemos la opción de realizar el curso de forma semiprivada o totalmente personalizada: consiste en 8 sesiones de 1 hora, programadas según tu disponibilidad y conveniencia.",
+    "alternativeSemiprivate": "El semiprivado (2 personas) tiene un coste de 190 euros por persona.",
+    "alternativePrivate": "El privado (1 persona) de 250 euros.",
+    "confirm": {
+      "heroTitle": "Reserva tu",
+      "heroTitlePart2": "plaza curso On Ramp",
+      "title": "¡Hemos recibido tu reserva!",
+      "message": "Gracias por inscribirte en el curso On Ramp. Revisaremos tu comprobante de pago y pronto te responderemos por mail o nos pondremos en contacto contigo."
+    }
+  },
+  "plans": {
+    "heroTitle": "Encuentra la tarifa",
+    "heroTitlePart2": "ideal para ti",
+    "ratesBadge": "TARIFAS",
+    "monthlyLabel": "CUOTA MENSUAL",
+    "monthlyPrice": "110 €",
+    "monthlyAccess": "| ACCESO ILIMITADO A TODAS LAS ACTIVIDADES |",
+    "hyroxLabel": "HYROX",
+    "hyroxPrice": "75 €",
+    "hyroxAccess": "| ACCESO ILIMITADO A TODAS LAS CLASES DE HYROX |",
+    "pass20Label": "BONO DE 20 CLASES",
+    "pass20Validity": "| VÁLIDO PARA 2 MESES |",
+    "pass20Price": "180 €",
+    "pass20Ideal": "Ideal si quieres venir ",
+    "pass20Frequency": "2 o 3 veces por semana",
+    "pass10Label": "BONO DE 10 CLASES",
+    "pass10Validity": "| 3 MESES |",
+    "pass10Price": "120 €",
+    "onrampLabel": "ON RAMP",
+    "onrampSubtitle": "| CURSO DE INICIACIÓN |",
+    "onrampPrice": "165 €",
+    "dropinLabel": "DROP IN",
+    "dropinPrice": "15 €",
+    "discountsBadge": "DESCUENTOS",
+    "quarterlyLabel": "CUOTA TRIMESTRAL",
+    "quarterlyDiscount": "10%",
+    "quarterlyDetail": "3 MESES ADELANTADO ",
+    "quarterlyPrice": "297 €",
+    "semiannualLabel": "CUOTA SEMESTRAL",
+    "semiannualDiscount": "15%",
+    "semiannualDetail": "6 MESES ADELANTADO ",
+    "semiannualPrice": "561 €",
+    "annualLabel": "CUOTA ANUAL",
+    "annualDiscount": "20%",
+    "annualDetail": "1 AÑO ADELANTADO ",
+    "annualPrice": "1056 €",
+    "coupleLabel": "CUOTA MENSUAL",
+    "coupleDiscount": "10%",
+    "coupleDetail": "Parejas o Familiares",
+    "scheduleBadge": "HORARIOS",
+    "days": {
+      "mon": "LUNES",
+      "tue": "MARTES",
+      "wed": "MIÉRCOLES",
+      "thu": "JUEVES",
+      "fri": "VIERNES",
+      "sat": "SÁBADO"
+    },
+    "legend": "WL / GYM: Entrenamientos específicos de técnica de halterofilia y gimnásticos, alternando una disciplina cada semana."
+  },
+  "about": {
+    "heroTitle": "Sobre Nosotros",
+    "heroSubtitle": "Tu lugar para crecer con dedicación y en comunidad.",
+    "spaceTitle": "Nuestro Espacio",
+    "spaceDescription1": "Esto es mucho más que un gimnasio: es un box donde encontrarás una auténtica comunidad. Un lugar donde entrenarás, mejorarás cada día y adoptarás un estilo de vida basado en la superación constante, disfrutando de cada paso del proceso.",
+    "spaceDescription2": "Nuestras instalaciones de más de 500 m² te ofrecen espacios amplios equipados con tecnología de vanguardia, máquinas Concept y todos los recursos necesarios para tu entrenamiento. Disponemos de áreas especializadas en CrossFit y HYROX, pensadas para que cada sesión represente un reto que te impulse a superar tus propios límites.",
+    "philosophyTitle": "Nuestra Filosofía",
+    "philosophyMobile": "Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness.",
+    "philosophyGym": "Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.",
+    "philosophyDesktop": "Nuestra metodología se fundamenta en conocimientos fisiológicos y biomecánicos y además apuesta por trabajar con un espíritu que busca alejarse de los egos sin sentido que rodean al mundo del fitness. Por esta razón, los ejercicios gimnásticos son uno de los pilares en el día a día. Los utilizamos para asentar la base de movimientos más complejos.",
+    "philosophyQuote": "\"MÁS NO ES MEJOR, MEJOR ES MEJOR\"",
+    "historyTitle": "NUESTRA HISTORIA",
+    "historyDescription1": "Desde que abrimos en 2017 y hasta la actualidad, en Nexo nos gusta definirnos como el espacio donde interaccionan las ganas de aprender y mejorar junto con la capacidad de esfuerzo. Y todo ello, en un ambiente, no sólo respetuoso, sino que favorece los lazos de amistad duraderos.",
+    "historyDescription2": "No queremos ser un box de CrossFit más. Hemos adaptado nuestra manera de planificar y entender el entrenamiento para que, si confías en nosotros, podamos acompañarte en tu proceso de mejora durante mucho tiempo."
+  },
+  "team": {
+    "heroTitle": "Conoce a",
+    "heroTitlePart2": "nuestro equipo",
+    "coachesBadge": "COACHES",
+    "physioBadge": "FISIOTERAPEUTA",
+    "coaches": {
+      "zoltan": {
+        "desc0": "Hace años dejé mi profesión anterior para dedicarme a lo que descubrí en 2014: CrossFit. No como un hobby, sino como un estilo de vida. Algo tan necesario para mí como comer o dormir, tanto entrenar como enseñar.",
+        "desc1": "Junto a mi equipo, trabajamos para transformar vidas. Cada persona que cruza nuestras puertas recibe atención física y mental, porque sabemos que el cambio va más allá del entrenamiento.",
+        "desc2": "Nexo me representa completamente. Cada detalle está cuidado con precisión y pasión. Detrás hay un equipo basado en la humildad, que entiende que esto no va de nosotros, va de vosotros."
+      },
+      "alan": {
+        "desc0": "Empecé CrossFit en 2017. Para mí CrossFit no es solo deporte, es disciplina, comunidad y superación.  Comencé ayudando en clases cada vez que podía, y ahí descubrí que quería dedicarme a esto: contagiar la misma motivación que me trajo hasta aquí. Años después comencé gimnasia artística para mejorar mis gimnásticos. Ahí conocí a Zoltan, quien me presentó Nexo y su metodología, y supe desde el primer día que era mi sitio. Un lugar donde puedo seguir creciendo como entrenador y como atleta."
+      },
+      "dilian": {
+        "desc0": "Siempre hice deporte, pero en algún momento perdí la motivación. Alguien me recomendó CrossFit y desde la primera clase supe que era mi sitio.",
+        "desc1": "Me enganchó la variedad y la mezcla de disciplinas. Pero cuando conocí Nexo entendí que lo que sabía era solo una pequeña parte de lo que realmente es CrossFit. Nunca pensé en ser coach, pero cuando algo te apasiona, quieres compartirlo.",
+        "desc2": "Hoy sé que esto es lo que quiero hacer: aprender, mejorar y ayudar a que otros también lo hagan.",
+        "desc3": "Nos vemos en el box para seguir creciendo, mejorando cada día y, sobre todo, pasándolo bien."
+      },
+      "toni": {
+        "desc0": "Pasión por lo que hago y curiosidad por entender el porqué. Esas dos cosas me han llevado por el mundo del fitness durante más de diez años, pasando por distintas titulaciones y modelos de entrenamiento.",
+        "desc1": "Hago deporte desde siempre. Deportes individuales, grupales, lo que sea. Con un único objetivo: moverme mejor cada vez y disfrutarlo.",
+        "desc2": "En los últimos años me preparé como bombero, y aprendí a combinar ese rol con el de entrenador, intentando sacar lo mejor de ambos mundos.",
+        "desc3": "Hace unos años llegué a Nexo CrossFit, y aquí he podido seguir creciendo profesional y deportivamente. Pero lo que más valoro es el vínculo con los compañeros y atletas.",
+        "desc4": "Imagino que por eso se llama \"Nexo\"."
+      }
+    },
+    "physio": {
+      "javi": {
+        "desc0": "Graduado en fisioterapia y especializado en fisioterapia deportiva (Máster en fisioterapia deportiva y preparación física en fútbol). Con amplia experiencia tanto en el ámbito profesional (Levante UD) como en el deporte en general aquí en Nexo CrossFit.",
+        "desc1": "La fisioterapia y el ejercicio nos llevarán de la mano para la prevención, rehabilitación y tratamiento de las dolencias o lesiones típicas del deporte, para que no pares de moverte en ningún momento."
+      }
+    }
+  },
+  "contact": {
+    "heroTitle": "Contacta con",
+    "heroTitlePart2": "nosotros",
+    "needHelpMobile": "¿Necesitas ayuda?",
+    "introMobile": "Escríbenos por formulario, email o WhatsApp y te contestamos lo antes posible.",
+    "introDesktop": "¿Necesitas ayuda? Puedes escribirnos a través de nuestro formulario, enviarnos un email o hablarnos directamente por WhatsApp. Elige la opción que te resulte más cómoda y te contestaremos lo antes posible.",
+    "infoTitle": "CONTACTO",
+    "addressLabel": "Dirección: ",
+    "addressValue": "Arzobispo Fabián y Fuero, 21. Valencia, 46009.",
+    "confirm": {
+      "heroTitle": "Contacta con",
+      "heroTitlePart2": "nosotros",
+      "title": "¡Hemos recibido tu mensaje!",
+      "message": "Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte."
+    }
+  },
+  "forms": {
+    "name": "Nombre completo",
+    "namePlaceholder": "Pedro Pérez",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "pedropérez@gmail.com",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "privacy": "Al hacer clic, acepto las condiciones de privacidad.",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "apiError": "Ha ocurrido un error al enviar el formulario. Inténtalo de nuevo.",
+    "firstTimeQuestion": "¿Es la primera vez que haces CrossFit?",
+    "yes": "Sí",
+    "no": "No",
+    "selectOption": "Selecciona una opción",
+    "courseDate": "Próximas fechas del curso",
+    "courseDatePlaceholder": "Selecciona una fecha",
+    "previousBox": "¿En qué box has entrenado?",
+    "previousBoxPlaceholder": "Nombre del box",
+    "trainingTime": "¿Durante cuánto tiempo?",
+    "trainingTimePlaceholder": "Ej: 2 años",
+    "dni": "DNI",
+    "dniPlaceholder": "00000000X",
+    "birthDate": "Fecha de nacimiento",
+    "uploadProof": "Adjunta el comprobante de pago",
+    "changeFile": "Cambiar archivo",
+    "removeFile": "Eliminar archivo",
+    "fileTypes": "JPG, PNG o PDF",
+    "onRampTitle": "Curso On Ramp",
+    "crossfitClassesTitle": "Clases CrossFit",
+    "paymentMethod": "Método de pago",
+    "paymentDescription": "Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.",
+    "paymentContact": "Si tienes cualquier duda durante el proceso, escríbenos a {email} o háblanos por WhatsApp {phone} y te ayudaremos lo antes posible.",
+    "onRampDescriptionSi": "En Nexo siempre damos prioridad a la técnica y el cuidado, por eso si nunca has hecho CrossFit, empezarás con nuestro curso de iniciación. El ON RAMP es para que aprendas los fundamentos del CrossFit sin prisa. Al terminar el curso podrás empezar a hacer clases regulares sabiendo exactamente qué haces y por qué lo haces.",
+    "crossfitDescriptionNo": "Si ya tienes experiencia en CrossFit, este es tu sitio para seguir superándote. Nuestros entrenamientos están diseñados para desafiarte, mejorar tu técnica y llevar tu rendimiento al siguiente nivel. Sé parte de nuestro box y convierte cada sesión en un desafío que te lleva más lejos.",
+    "phoneError": "El teléfono debe ser válido y es obligatorio"
+  },
+  "validation": {
+    "nameMin": "Nombre demasiado corto",
+    "emailInvalid": "Email inválido",
+    "phoneRequired": "Introduce tu teléfono",
+    "phoneInvalid": "Teléfono inválido",
+    "messageMin": "El mensaje debe tener al menos 10 caracteres",
+    "privacyRequired": "Debes aceptar la política de privacidad",
+    "firstTimeRequired": "Selecciona una opción",
+    "courseDateRequired": "Selecciona una fecha",
+    "dniRequired": "DNI requerido",
+    "birthDateRequired": "Fecha requerida",
+    "proofRequired": "Adjunta el comprobante de pago",
+    "fieldRequired": "Campo requerido"
+  }
+}

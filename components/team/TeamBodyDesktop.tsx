@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import Link from 'next/link';
 import { TeamCardType } from './Card';
+import { useTranslations } from 'next-intl';
 
 function CoachGridCard({ coach, onClick }: { coach: TeamCardType; onClick: () => void }) {
   return (
@@ -161,6 +162,8 @@ function JaviCardDesktop({
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const tc = useTranslations('common');
+
   if (!isOpen) {
     return (
       <button
@@ -231,7 +234,7 @@ function JaviCardDesktop({
               rel="noopener noreferrer"
             className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
-            Pide tu cita
+            {tc('bookAppointment')}
             <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -249,6 +252,7 @@ export default function TeamBodyDesktop({
   coaches: TeamCardType[];
   services: TeamCardType[];
 }) {
+  const t = useTranslations('team');
   const [shownId, setShownId] = useState<number | null>(1);
   const [phase, setPhase] = useState<AnimPhase>('visible');
   const pendingId = useRef<number | null | undefined>(undefined);
@@ -275,7 +279,7 @@ export default function TeamBodyDesktop({
       {/* COACHES */}
       <div className="flex flex-col items-center gap-6">
         <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-          COACHES
+          {t('coachesBadge')}
         </span>
 
         <div className="w-full">
@@ -304,7 +308,7 @@ export default function TeamBodyDesktop({
       {/* FISIOTERAPEUTA */}
       <div className="flex flex-col items-center gap-6">
         <span className="w-fit rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold text-nexo-dark uppercase">
-          FISIOTERAPEUTA
+          {t('physioBadge')}
         </span>
         <div className="w-full">
           {services.map((service) => (
