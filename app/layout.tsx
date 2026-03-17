@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Nexo CrossFit Valencia",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=2",
         width: 1200,
         height: 630,
         alt: "Nexo CrossFit Valencia",
