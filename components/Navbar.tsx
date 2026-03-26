@@ -66,14 +66,14 @@ export default function Navbar() {
                     <div className="flex items-center gap-1 font-body text-sm">
                         <button
                             onClick={() => switchLocale("es")}
-                            className={`px-1 transition-colors ${locale === "es" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
+                            className={`cursor-pointer px-1 transition-colors ${locale === "es" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
                         >
                             ES
                         </button>
                         <span className="text-white/40">|</span>
                         <button
                             onClick={() => switchLocale("en")}
-                            className={`px-1 transition-colors ${locale === "en" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
+                            className={`cursor-pointer px-1 transition-colors ${locale === "en" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
                         >
                             EN
                         </button>
@@ -122,14 +122,14 @@ export default function Navbar() {
                     <div className="flex items-center gap-2 font-body text-sm">
                         <button
                             onClick={() => { switchLocale("es"); closeMenu(); }}
-                            className={`px-1 transition-colors ${locale === "es" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
+                            className={`cursor-pointer px-1 transition-colors ${locale === "es" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
                         >
                             ES
                         </button>
                         <span className="text-white/40">|</span>
                         <button
                             onClick={() => { switchLocale("en"); closeMenu(); }}
-                            className={`px-1 transition-colors ${locale === "en" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
+                            className={`cursor-pointer px-1 transition-colors ${locale === "en" ? "font-semibold text-nexo-orange" : "text-white/60 hover:text-white"}`}
                         >
                             EN
                         </button>

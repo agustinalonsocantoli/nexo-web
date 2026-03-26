@@ -114,9 +114,14 @@ export default async function Footer() {
 
       {/* Copyright */}
       <div className="mt-8 border-t border-[#878787] pt-8 text-center">
-        <p className="font-body text-sm leading-5 text-[#99a1af]">
-          {t("copyright")}
-        </p>
+        <div>
+          <p className="font-body text-sm leading-5 text-[#99a1af]">
+            © 2026 NEXO CrossFit. Todos los derechos reservados.
+          </p>
+          <p className="font-body text-[12px] leading-5 text-[#99a1af]">
+            SEO by <Link href="https://snwebsolution.com/es/">SN websolution</Link>
+          </p>
+        </div>
       </div>
     </footer>
   );
