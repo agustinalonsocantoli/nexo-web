@@ -62,7 +62,7 @@ export async function generateMetadata({
       siteName: "Nexo CrossFit Valencia",
       images: [
         {
-          url: "/og-image.png",
+          url: "/og-image-old.png",
           width: 1200,
           height: 630,
           alt: "Nexo CrossFit Valencia",

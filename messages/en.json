@@ -187,7 +187,7 @@
     "description": "No prior experience is needed to join the HYROX classes. Our workouts adapt to all levels, from beginners to the most advanced. Each session is designed for you to enjoy, progress and surpass yourself at your own pace.",
     "faqs": {
       "0": {
-        "question": "How much do classes cost?",
+        "question": "How much do the classes cost?",
         "answerPrice1": "75€/month",
         "answerPrice2": "with",
         "answerAccess": "unlimited access",
@@ -283,7 +283,7 @@
     "semiannualDiscount": "15%",
     "semiannualDetail": "6 MONTHS UPFRONT ",
     "semiannualPrice": "561 €",
-    "annualLabel": "1 YEAREn ",
+    "annualLabel": "1 YEAR",
     "annualDiscount": "20%",
     "annualDetail": "1 YEAR UPFRONT ",
     "annualPrice": "1056 €",
