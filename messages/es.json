@@ -188,7 +188,8 @@
     "faqs": {
       "0": {
         "question": "¿Cuánto cuestan las clases?",
-        "answerPrice": "75€/mes",
+        "answerPrice1": "75€/mes",
+        "answerPrice2": "con",
         "answerAccess": "acceso ilimitado",
         "answerText": " únicamente a las clases de HYROX."
       },
@@ -220,6 +221,14 @@
     "whatIsDescription1": "En Nexo siempre damos prioridad a la técnica y el cuidado, por eso si nunca has hecho CrossFit, empezarás con nuestro curso de iniciación.",
     "whatIsDescription2": "El ON RAMP es para que aprendas los fundamentos del CrossFit sin prisa. Al terminar el curso podrás empezar a hacer clases regulares sabiendo exactamente qué haces y por qué lo haces.",
     "upcomingDatesTitle": "Próximas fechas On Ramp",
+    "sessions": {
+      "0": { "month": "ABRIL", "dates": "30/03 al 22/04 del 2026", "label": "Abril (30/03 - 22/04)" },
+      "1": { "month": "MAYO", "dates": "27/04 al 24/05 del 2026", "label": "Mayo (27/04 - 24/05)" }
+    },
+    "booking": {
+      "heroTitle": "Reserva tu",
+      "heroTitlePart2": "plaza curso On Ramp"
+    },
     "spotsAvailable": "{spots} plazas disponibles",
     "costTitle": "¿Cuánto cuesta?",
     "costDescription": "El precio del curso es de ",
@@ -391,10 +400,15 @@
     "crossfitClassesTitle": "Clases CrossFit",
     "paymentMethod": "Método de pago",
     "paymentDescription": "Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.",
-    "paymentContact": "Si tienes cualquier duda durante el proceso, escríbenos a {email} o háblanos por WhatsApp {phone} y te ayudaremos lo antes posible.",
+    "paymentContact": "Si tienes cualquier duda durante el proceso, escríbenos a <email>info@nexocrossfit.es</email> o háblanos por WhatsApp <phone>661 388 984</phone> y te ayudaremos lo antes posible.",
     "onRampDescriptionSi": "En Nexo siempre damos prioridad a la técnica y el cuidado, por eso si nunca has hecho CrossFit, empezarás con nuestro curso de iniciación. El ON RAMP es para que aprendas los fundamentos del CrossFit sin prisa. Al terminar el curso podrás empezar a hacer clases regulares sabiendo exactamente qué haces y por qué lo haces.",
     "crossfitDescriptionNo": "Si ya tienes experiencia en CrossFit, este es tu sitio para seguir superándote. Nuestros entrenamientos están diseñados para desafiarte, mejorar tu técnica y llevar tu rendimiento al siguiente nivel. Sé parte de nuestro box y convierte cada sesión en un desafío que te lleva más lejos.",
-    "phoneError": "El teléfono debe ser válido y es obligatorio"
+    "phoneError": "El teléfono debe ser válido y es obligatorio",
+    "paymentData": {
+      "name": "Nombre",
+      "concept": "Concepto",
+      "conceptValue": "On Ramp - mes elegido"
+    }
   },
   "validation": {
     "nameMin": "Nombre demasiado corto",
@@ -406,6 +420,7 @@
     "firstTimeRequired": "Selecciona una opción",
     "courseDateRequired": "Selecciona una fecha",
     "dniRequired": "DNI requerido",
+    "dniInvalid": "DNI inválido",
     "birthDateRequired": "Fecha requerida",
     "proofRequired": "Adjunta el comprobante de pago",
     "fieldRequired": "Campo requerido"

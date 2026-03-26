@@ -6,33 +6,33 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { useTranslations } from "next-intl";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
 import FileUploadField from "@/components/FileUploadField";
 
-const schema = z.object({
-  fecha: z.string().min(1, "Selecciona una fecha"),
-  nombre: z.string().min(2, "Nombre demasiado corto"),
-  email: z.string().email("Email inválido"),
-  telefono: z.string().min(1, "Introduce tu teléfono").refine(isValidPhoneNumber, "Teléfono inválido"),
-  dni: z.string().min(8, "DNI inválido"),
-  fechaNacimiento: z.string().min(1, "Fecha requerida"),
-  mensaje: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
-  privacidad: z.boolean().refine((v) => v, "Debes aceptar la política de privacidad"),
-  comprobante: z
-    .any()
-    .refine(
-      (files) => files instanceof FileList && files.length > 0,
-      "Adjunta el comprobante de pago"
-    ),
-});
+function createOnRampSchema(t: (key: string) => string) {
+  return z.object({
+    fecha: z.string().min(1, t("courseDateRequired")),
+    nombre: z.string().min(2, t("nameMin")),
+    email: z.string().email(t("emailInvalid")),
+    telefono: z.string().min(1, t("phoneRequired")).refine(isValidPhoneNumber, t("phoneInvalid")),
+    dni: z.string().min(8, t("dniInvalid")),
+    fechaNacimiento: z.string().min(1, t("birthDateRequired")),
+    mensaje: z.string().min(10, t("messageMin")),
+    privacidad: z.boolean().refine((v) => v, t("privacyRequired")),
+    comprobante: z
+      .any()
+      .refine(
+        (files) => files instanceof FileList && files.length > 0,
+        t("proofRequired")
+      ),
+  });
+}
 
-type FormData = z.infer<typeof schema>;
+type FormData = z.infer<ReturnType<typeof createOnRampSchema>>;
 
-const FECHAS = [
-  { value: "abril", label: "Abril (30/03 - 22/04)" },
-  { value: "mayo", label: "Mayo (27/04 - 24/05)" },
-];
+const FECHAS_VALUES = ["abril", "mayo"];
 
 const inputBase =
   "w-full rounded-lg border bg-white px-4 py-2 font-body text-sm text-nexo-dark placeholder:text-[#cac4d0] focus:border-nexo-orange focus:outline-none";
@@ -44,6 +44,11 @@ function OnRampBookingContent() {
   const searchParams = useSearchParams();
   const fechaParam = searchParams.get("fecha") ?? "";
   const [apiError, setApiError] = useState<string | null>(null);
+  const tf = useTranslations("forms");
+  const tv = useTranslations("validation");
+  const to = useTranslations("onramp");
+
+  const schema = createOnRampSchema(tv);
 
   const {
     register,
@@ -69,7 +74,6 @@ function OnRampBookingContent() {
         const reader = new FileReader();
         reader.onload = () => {
           const result = reader.result as string;
-          // Remove the data URL prefix (e.g. "data:image/jpeg;base64,")
           resolve(result.split(",")[1]);
         };
         reader.onerror = reject;
@@ -93,13 +97,18 @@ function OnRampBookingContent() {
       if (!res.ok) throw new Error("Error al enviar");
       router.push("/on-ramp/booking/confirm");
     } catch {
-      setApiError("Ha ocurrido un error al enviar el formulario. Inténtalo de nuevo.");
+      setApiError(tf("apiError"));
     }
   }
 
+  const paymentContactRich = tf.rich("paymentContact", {
+    email: (chunks) => <a href="mailto:info@nexocrossfit.es" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">{chunks}</a>,
+    phone: (chunks) => <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">{chunks}</a>,
+  });
+
   return (
     <main className="bg-[#fbfbfb]">
-      <PageHero title="Reserva tu" titlePart2="plaza curso On Ramp" imageSrc="/reserva-onramp.webp" />
+      <PageHero title={to('booking.heroTitle')} titlePart2={to('booking.heroTitlePart2')} imageSrc="/reserva-onramp.webp" />
 
       <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,7 +120,7 @@ function OnRampBookingContent() {
               {/* Fecha inicio */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="fecha" className={labelClass}>
-                  Próximas fechas del curso
+                  {tf("courseDate")}
                 </label>
                 <div className="relative w-full">
                   <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#878787]">
@@ -126,9 +135,9 @@ function OnRampBookingContent() {
                     className={`w-full appearance-none rounded-lg border bg-white py-2 pl-10 pr-10 font-body text-sm text-nexo-dark focus:border-nexo-orange focus:outline-none ${errors.fecha ? "border-red-500" : "border-[#cac4d0]"
                       }`}
                   >
-                    <option value="">Selecciona una fecha</option>
-                    {FECHAS.map((f) => (
-                      <option key={f.value} value={f.value}>{f.label}</option>
+                    <option value="">{tf("courseDatePlaceholder")}</option>
+                    {FECHAS_VALUES.map((value, i) => (
+                      <option key={value} value={value}>{to(`sessions.${i}.label`)}</option>
                     ))}
                   </select>
                   <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#878787]">
@@ -142,11 +151,11 @@ function OnRampBookingContent() {
 
               {/* Nombre */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="nombre" className={labelClass}>Nombre completo</label>
+                <label htmlFor="nombre" className={labelClass}>{tf("name")}</label>
                 <input
                   id="nombre"
                   type="text"
-                  placeholder="Pedro Pérez"
+                  placeholder={tf("namePlaceholder")}
                   {...register("nombre")}
                   className={`${inputBase} ${errors.nombre ? "border-red-500" : "border-[#cac4d0]"}`}
                 />
@@ -154,11 +163,11 @@ function OnRampBookingContent() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className={labelClass}>Correo electrónico</label>
+                <label htmlFor="email" className={labelClass}>{tf("email")}</label>
                 <input
                   id="email"
                   type="email"
-                  placeholder="pedropérez@gmail.com"
+                  placeholder={tf("emailPlaceholder")}
                   {...register("email")}
                   className={`${inputBase} ${errors.email ? "border-red-500" : "border-[#cac4d0]"}`}
                 />
@@ -167,18 +176,18 @@ function OnRampBookingContent() {
 
               {/* Teléfono */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="telefono" className={labelClass}>Teléfono</label>
+                <label htmlFor="telefono" className={labelClass}>{tf("phone")}</label>
                 <PhoneField control={control} name="telefono" error={errors.telefono} id="telefono" />
-                {errors.telefono && <p className="font-body text-sm text-red-500">El teléfono debe ser válido y es obligatorio</p>}
+                {errors.telefono && <p className="font-body text-sm text-red-500">{tf("phoneError")}</p>}
               </div>
 
               {/* DNI */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="dni" className={labelClass}>DNI</label>
+                <label htmlFor="dni" className={labelClass}>{tf("dni")}</label>
                 <input
                   id="dni"
                   type="text"
-                  placeholder="00000000X"
+                  placeholder={tf("dniPlaceholder")}
                   {...register("dni")}
                   className={`${inputBase} ${errors.dni ? "border-red-500" : "border-[#cac4d0]"}`}
                 />
@@ -187,7 +196,7 @@ function OnRampBookingContent() {
 
               {/* Fecha de nacimiento */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="fechaNacimiento" className={labelClass}>Fecha de nacimiento</label>
+                <label htmlFor="fechaNacimiento" className={labelClass}>{tf("birthDate")}</label>
                 <input
                   id="fechaNacimiento"
                   type="date"
@@ -199,11 +208,11 @@ function OnRampBookingContent() {
 
               {/* Mensaje */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="mensaje" className={labelClass}>Mensaje</label>
+                <label htmlFor="mensaje" className={labelClass}>{tf("message")}</label>
                 <textarea
                   id="mensaje"
                   rows={4}
-                  placeholder="Escribe tu mensaje aquí..."
+                  placeholder={tf("messagePlaceholder")}
                   suppressHydrationWarning
                   {...register("mensaje")}
                   className={`w-full resize-none rounded-lg border bg-white px-4 py-2 font-body text-sm text-nexo-dark placeholder:text-[#cac4d0] focus:border-nexo-orange focus:outline-none ${errors.mensaje ? "border-red-500" : "border-[#cac4d0]"
@@ -229,7 +238,7 @@ function OnRampBookingContent() {
                     />
                   </button>
                   <p className="font-body text-base leading-5 text-nexo-dark">
-                    Al hacer clic, acepto las condiciones de privacidad.
+                    {tf("privacy")}
                   </p>
                 </div>
                 {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}
@@ -242,10 +251,10 @@ function OnRampBookingContent() {
             {/* ── Mobile: método de pago ── */}
             <div className="flex flex-col gap-4 lg:hidden">
               <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
-                Método de pago
+                {tf("paymentMethod")}
               </h2>
               <p className="font-body text-base leading-5 text-nexo-dark">
-                Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
+                {tf("paymentDescription")}
               </p>
 
               {/* Bloque oscuro solo con datos bancarios */}
@@ -255,7 +264,7 @@ function OnRampBookingContent() {
                   ES92 0081 0297 1800 0179 5488
                 </p>
                 <p className="font-body text-base leading-5 text-[#fbfbfb]">
-                  <span className="font-semibold">Nombre: </span>
+                  <span className="font-semibold">{tf("paymentData.name")}: </span>
                   TURIA BOX SOCIEDAD LIMITADA
                 </p>
                 <p className="font-body text-base leading-5 text-[#fbfbfb]">
@@ -263,15 +272,15 @@ function OnRampBookingContent() {
                   BSAB ESBB
                 </p>
                 <p className="font-body text-base leading-5 text-[#fbfbfb]">
-                  <span className="font-semibold">Concepto: </span>
-                  On Ramp – mes elegido
+                  <span className="font-semibold">{tf("paymentData.concept")}: </span>
+                  {tf("paymentData.conceptValue")}
                 </p>
               </div>
 
               {/* Upload comprobante */}
               <div className="flex flex-col gap-2">
                 <p className="font-body text-base leading-5 text-nexo-dark">
-                  Adjunta el comprobante de pago
+                  {tf("uploadProof")}
                 </p>
                 <FileUploadField
                   fileName={fileName}
@@ -287,15 +296,7 @@ function OnRampBookingContent() {
               </div>
 
               <p className="font-body text-sm leading-5 text-nexo-dark">
-                Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-                <a href="mailto:info@nexocrossfit.es" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
-                  info@nexocrossfit.es
-                </a>{" "}
-                o háblanos por WhatsApp{" "}
-                <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
-                  661 388 984
-                </a>{" "}
-                y te ayudaremos lo antes posible.
+                {paymentContactRich}
               </p>
             </div>
 
@@ -303,10 +304,10 @@ function OnRampBookingContent() {
             <div className="hidden lg:flex flex-col gap-4 rounded-lg border border-[#262626] bg-white p-6 lg:w-[480px] lg:shrink-0">
               <div className="flex flex-col gap-4">
                 <h2 className="font-heading text-[22px] font-bold uppercase tracking-wide text-nexo-orange lg:text-2xl">
-                  Método de pago
+                  {tf("paymentMethod")}
                 </h2>
                 <p className="font-body text-base leading-5 text-nexo-dark">
-                  Para confirmar tu plaza en el curso, el pago se realiza mediante transferencia bancaria al siguiente número de cuenta. Después deberás adjuntar el justificante de pago para que tu inscripción quede confirmada.
+                  {tf("paymentDescription")}
                 </p>
                 <div className="flex flex-col gap-2 rounded-lg bg-[#262626] p-[10px]">
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
@@ -314,7 +315,7 @@ function OnRampBookingContent() {
                     ES92 0081 0297 1800 0179 5488
                   </p>
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
-                    <span className="font-semibold">Nombre: </span>
+                    <span className="font-semibold">{tf("paymentData.name")}: </span>
                     TURIA BOX SOCIEDAD LIMITADA
                   </p>
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
@@ -322,15 +323,15 @@ function OnRampBookingContent() {
                     BSAB ESBB
                   </p>
                   <p className="font-body text-base leading-5 text-[#fbfbfb]">
-                    <span className="font-semibold">Concepto: </span>
-                    On Ramp – mes elegido
+                    <span className="font-semibold">{tf("paymentData.concept")}: </span>
+                    {tf("paymentData.conceptValue")}
                   </p>
                 </div>
 
                 {/* Upload comprobante */}
                 <div className="flex flex-col gap-2">
                   <p className="font-body text-base font-semibold leading-6 text-nexo-dark">
-                    Adjunta el comprobante de pago
+                    {tf("uploadProof")}
                   </p>
                   <FileUploadField
                     fileName={fileName}
@@ -346,15 +347,7 @@ function OnRampBookingContent() {
                 </div>
 
                 <p className="font-body text-base leading-5 text-nexo-dark">
-                  Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-                  <a href="mailto:info@nexocrossfit.es" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
-                    info@nexocrossfit.es
-                  </a>{" "}
-                  o háblanos por WhatsApp{" "}
-                  <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="font-semibold text-nexo-orange underline underline-offset-2 transition-opacity hover:opacity-75">
-                    661 388 984
-                  </a>{" "}
-                  y te ayudaremos lo antes posible.
+                  {paymentContactRich}
                 </p>
               </div>
 
@@ -363,7 +356,7 @@ function OnRampBookingContent() {
                 disabled={isSubmitting}
                 className="flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {isSubmitting ? "Enviando..." : "Enviar"}
+                {isSubmitting ? tf("submitting") : tf("submit")}
                 {!isSubmitting && (
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -380,7 +373,7 @@ function OnRampBookingContent() {
             disabled={isSubmitting}
             className="lg:hidden mt-6 flex w-full items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2.5 font-body text-sm text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {isSubmitting ? "Enviando..." : "Enviar"}
+            {isSubmitting ? tf("submitting") : tf("submit")}
             {!isSubmitting && (
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />

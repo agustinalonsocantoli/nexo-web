@@ -34,8 +34,8 @@ export async function generateMetadata({
 }
 
 const sessions = [
-  { month: "ABRIL", dates: "30/03 al 22/04 del 2026", spots: 4, value: "abril" },
-  { month: "MAYO", dates: "27/04 al 24/05 del 2026", spots: 6, value: "mayo" },
+  { spots: 3, value: "abril" },
+  { spots: 6, value: "mayo" },
 ];
 
 const ArrowIcon = () => (
@@ -80,16 +80,16 @@ const ChevronRight = () => (
   </svg>
 );
 
-function SessionCard({ session, spotsText, bookText, className = "" }: { session: typeof sessions[0]; spotsText: string; bookText: string; className?: string }) {
+function SessionCard({ session, month, dates, spotsText, bookText, className = "" }: { session: typeof sessions[0]; month: string; dates: string; spotsText: string; bookText: string; className?: string }) {
   return (
     <div
       className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
     >
       <p className="font-heading text-[28px] font-bold leading-[100%] text-[#262626] text-center">
-        {session?.month}
+        {month}
       </p>
       <p className="font-body text-base leading-5 text-[#262626] text-center">
-        {session?.dates}
+        {dates}
       </p>
       <div className="flex items-center gap-1.5 justify-center">
         <PersonIcon />
@@ -156,10 +156,10 @@ export default async function OnRampPage() {
 
             <div className="sessions-carousel-wrapper">
               <div className="sessions-carousel-slide">
-                <SessionCard session={sessions[0]} spotsText={t('spotsAvailable', { spots: sessions[0].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
+                <SessionCard session={sessions[0]} month={t('sessions.0.month')} dates={t('sessions.0.dates')} spotsText={t('spotsAvailable', { spots: sessions[0].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
               </div>
               <div className="sessions-carousel-slide">
-                <SessionCard session={sessions[1]} spotsText={t('spotsAvailable', { spots: sessions[1].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
+                <SessionCard session={sessions[1]} month={t('sessions.1.month')} dates={t('sessions.1.dates')} spotsText={t('spotsAvailable', { spots: sessions[1].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
               </div>
             </div>
 
@@ -175,8 +175,8 @@ export default async function OnRampPage() {
           {/* Desktop: grid */}
           <div className="hidden md:grid grid-cols-2 gap-4 lg:grid-cols-2">
             {sessions.map((session, i) => (
-              <AnimateOnScroll key={session.month} from="up" delay={i * 100}>
-                <SessionCard session={session} spotsText={t('spotsAvailable', { spots: session.spots })} bookText={tc('bookSpot')} />
+              <AnimateOnScroll key={session.value} from="up" delay={i * 100}>
+                <SessionCard session={session} month={t(`sessions.${i}.month`)} dates={t(`sessions.${i}.dates`)} spotsText={t('spotsAvailable', { spots: session.spots })} bookText={tc('bookSpot')} />
               </AnimateOnScroll>
             ))}
           </div>

@@ -3,7 +3,7 @@
     "home": "Home",
     "classes": "Classes",
     "onramp": "On Ramp",
-    "plans": "Plans & Schedule",
+    "plans": "Prices & Schedule",
     "about": "About Us",
     "team": "Our Team",
     "contact": "Contact",
@@ -55,7 +55,7 @@
     },
     "plans": {
       "title": "Plans & Schedule",
-      "description": "CrossFit and HYROX prices in Valencia: monthly fee 110€, HYROX 75€, 20-class pass 180€ and quarterly, semi-annual and annual discounts. Check our schedule Monday to Saturday.",
+      "description": "CrossFit and HYROX prices in Valencia: monthly fee 110€, HYROX 75€, 20 sessions 180€ and quarterly, semi-annual and annual discounts. Check our schedule Monday to Saturday.",
       "ogTitle": "Plans & Schedule | Nexo CrossFit Valencia",
       "ogDescription": "Monthly CrossFit fee 110€, HYROX 75€, passes and discounts. Monday to Saturday schedule in Valencia."
     },
@@ -100,9 +100,9 @@
       "description": "In our box you will find a wide variety of classes and workouts adapted to your level, so you can push your limits, progress step by step and achieve your goals.",
       "onramp": {
         "bullet0": "Your foundation before takeoff.",
-        "bullet1": "In our introductory course you learn the fundamentals of CrossFit at your own pace.",
-        "bullet2": "After finishing, you join regular classes knowing exactly what you do and why you do it.",
-        "desktopDescription": "Your foundation before takeoff.\nIn our introductory course you learn the fundamentals of CrossFit at your own pace. Mainly gymnastic movements and with the weightlifting barbell. Each movement broken down until it feels natural.\nAfter finishing, you join regular classes knowing exactly what you do and why you do it."
+        "bullet1": "In our beginner course you will learn the fundamentals of CrossFit at your own pace.",
+        "bullet2": "After finishing the course, you will join the regular classes knowing exactly what you do and why you do it.",
+        "desktopDescription": "Your foundation before takeoff.\nIn our beginner course you will learn the fundamentals of CrossFit at your own pace. Mainly gymnastics and weightlifting movements.\nAfter finishing the course, you will join the regular classes knowing exactly what you do and why you do it."
       },
       "crossfit": {
         "bullet0": "Train with coaches who push you to achieve your goals.",
@@ -147,8 +147,8 @@
     "sectionTitle": "One step away from starting your new lifestyle",
     "introMobile": "Book your trial class and experience a real CrossFit or HYROX session. We adapt to your level and you will train in a motivating environment, with coaches who take care of your technique and progress.",
     "introDesktop": "Book your trial class and experience an authentic CrossFit or HYROX session at our box. Whatever your level, we adapt to you. You will train in an environment that motivates, connects and pushes you to give your best, always accompanied by our coaches, attentive to your technique and progress.",
-    "crossfitBullet": "CrossFit is a workout that combines strength, endurance and conditioning through functional movements like pushing, lifting, jumping or running. It also integrates disciplines such as gymnastics and weightlifting to develop complete physical fitness.",
-    "hyroxBullet": "HYROX is a workout focused on improving cardiovascular endurance and overall fitness, combining running with functional exercises. The sessions prepare for competition formats, but are also designed for anyone looking to improve their fitness."
+    "crossfitBullet": "CrossFit is a sport that combines strength, endurance and conditioning through functional movements like pushing, lifting, jumping or running. It also integrates disciplines such as gymnastics and weightlifting to develop complete physical fitness.",
+    "hyroxBullet": "HYROX is a training focused on improving cardiovascular endurance and overall fitness, combining running with functional exercises. The sessions prepare for competition formats, but are also designed for anyone looking to improve their fitness."
   },
   "crossfit": {
     "heroTitle": "Book your",
@@ -184,11 +184,12 @@
     "heroTitle": "Book your",
     "heroTitlePart2": "trial class",
     "title": "HYROX Classes",
-    "description": "No prior experience is needed to join HYROX classes. Our workouts adapt to all levels, from beginners to the most advanced. Each session is designed for you to enjoy, progress and surpass yourself at your own pace.",
+    "description": "No prior experience is needed to join the HYROX classes. Our workouts adapt to all levels, from beginners to the most advanced. Each session is designed for you to enjoy, progress and surpass yourself at your own pace.",
     "faqs": {
       "0": {
         "question": "How much do classes cost?",
-        "answerPrice": "75€/month",
+        "answerPrice1": "75€/month",
+        "answerPrice2": "with",
         "answerAccess": "unlimited access",
         "answerText": " exclusively to HYROX classes."
       },
@@ -217,9 +218,17 @@
     "heroTitle": "Start your",
     "heroTitlePart2": "new lifestyle today!",
     "whatIsTitle": "What is On Ramp?",
-    "whatIsDescription1": "At Nexo we always prioritize technique and care, so if you have never done CrossFit, you will start with our introductory course.",
-    "whatIsDescription2": "The ON RAMP is for you to learn the fundamentals of CrossFit at your own pace. After completing the course you will be able to start regular classes knowing exactly what you do and why you do it.",
+    "whatIsDescription1": "At Nexo we always prioritize technique and care, so if you have never done CrossFit, you will start with our beginner course.",
+    "whatIsDescription2": "The ON RAMP is for you to learn the fundamentals of CrossFit at your own pace. After completing the course you will be able to start the regular classes knowing exactly what you do and why you do it.",
     "upcomingDatesTitle": "Upcoming On Ramp dates",
+    "sessions": {
+      "0": { "month": "APRIL", "dates": "03/30 to 04/22, 2026", "label": "April (03/30 - 04/22)" },
+      "1": { "month": "MAY", "dates": "04/27 to 05/24, 2026", "label": "May (04/27 - 05/24)" }
+    },
+    "booking": {
+      "heroTitle": "Book your",
+      "heroTitlePart2": "On Ramp course spot"
+    },
     "spotsAvailable": "{spots} spots available",
     "costTitle": "How much does it cost?",
     "costDescription": "The course price is ",
@@ -231,7 +240,7 @@
     "detail3": "Personalized attention from our coaches to ensure safety and effective learning.",
     "detail4": "Attendance is mandatory for all classes, as they cannot be made up.",
     "detail5": "If a class falls on a public holiday, it will be moved to the next day or an alternative time will be arranged.",
-    "alternativeTitle": "Can't make the scheduled time for the next introductory course?",
+    "alternativeTitle": "Can't make the scheduled time for the next beginner course?",
     "alternativeDescription": "Don't worry, we offer the option of doing the course semi-privately or fully personalized: it consists of 8 one-hour sessions, scheduled according to your availability and convenience.",
     "alternativeSemiprivate": "The semi-private option (2 people) costs 190 euros per person.",
     "alternativePrivate": "The private option (1 person) costs 250 euros.",
@@ -243,38 +252,38 @@
     }
   },
   "plans": {
-    "heroTitle": "Find the plan",
+    "heroTitle": "Find the price",
     "heroTitlePart2": "that's right for you",
-    "ratesBadge": "PLANS",
+    "ratesBadge": "PRICES",
     "monthlyLabel": "MONTHLY FEE",
     "monthlyPrice": "110 €",
     "monthlyAccess": "| UNLIMITED ACCESS TO ALL ACTIVITIES |",
     "hyroxLabel": "HYROX",
     "hyroxPrice": "75 €",
     "hyroxAccess": "| UNLIMITED ACCESS TO ALL HYROX CLASSES |",
-    "pass20Label": "20-CLASS PASS",
+    "pass20Label": "20 SESSIONS",
     "pass20Validity": "| VALID FOR 2 MONTHS |",
     "pass20Price": "180 €",
     "pass20Ideal": "Ideal if you want to come ",
     "pass20Frequency": "2 or 3 times a week",
-    "pass10Label": "10-CLASS PASS",
+    "pass10Label": "10 SESSIONS",
     "pass10Validity": "| 3 MONTHS |",
     "pass10Price": "120 €",
     "onrampLabel": "ON RAMP",
-    "onrampSubtitle": "| INTRODUCTORY COURSE |",
+    "onrampSubtitle": "| BEGINNER COURSE |",
     "onrampPrice": "165 €",
     "dropinLabel": "DROP IN",
     "dropinPrice": "15 €",
     "discountsBadge": "DISCOUNTS",
-    "quarterlyLabel": "QUARTERLY FEE",
+    "quarterlyLabel": "3 MONTHS",
     "quarterlyDiscount": "10%",
     "quarterlyDetail": "3 MONTHS UPFRONT ",
     "quarterlyPrice": "297 €",
-    "semiannualLabel": "SEMI-ANNUAL FEE",
+    "semiannualLabel": "6 MONTHS",
     "semiannualDiscount": "15%",
     "semiannualDetail": "6 MONTHS UPFRONT ",
     "semiannualPrice": "561 €",
-    "annualLabel": "ANNUAL FEE",
+    "annualLabel": "1 YEAREn ",
     "annualDiscount": "20%",
     "annualDetail": "1 YEAR UPFRONT ",
     "annualPrice": "1056 €",
@@ -300,11 +309,11 @@
     "spaceDescription2": "Our facilities of over 500 m² offer spacious areas equipped with cutting-edge technology, Concept machines and all the resources you need for your training. We have areas specialized in CrossFit and HYROX, designed so that each session represents a challenge that pushes you to surpass your own limits.",
     "philosophyTitle": "Our Philosophy",
     "philosophyMobile": "Our methodology is based on physiological and biomechanical knowledge and also focuses on working with a spirit that seeks to move away from the senseless egos that surround the fitness world.",
-    "philosophyGym": "For this reason, gymnastic exercises are one of the pillars in our daily work. We use them to build the foundation for more complex movements.",
-    "philosophyDesktop": "Our methodology is based on physiological and biomechanical knowledge and also focuses on working with a spirit that seeks to move away from the senseless egos that surround the fitness world. For this reason, gymnastic exercises are one of the pillars in our daily work. We use them to build the foundation for more complex movements.",
+    "philosophyGym": "For this reason, gymnastics exercises are one of the pillars in our daily work. We use them to build the foundation for more complex movements.",
+    "philosophyDesktop": "Our methodology is based on physiological and biomechanical knowledge and also focuses on working with a spirit that seeks to move away from the senseless egos that surround the fitness world. For this reason, gymnastics exercises are one of the pillars in our daily work. We use them to build the foundation for more complex movements.",
     "philosophyQuote": "\"MORE IS NOT BETTER, BETTER IS BETTER\"",
     "historyTitle": "OUR STORY",
-    "historyDescription1": "Since we opened in 2017 and to this day, at Nexo we like to define ourselves as the space where the desire to learn and improve interacts with the capacity for effort. All of this, in an environment that is not only respectful, but fosters lasting bonds of friendship.",
+    "historyDescription1": "Since we opened in 2017 and to this day, at Nexo we like to define ourselves as the space where the desire to learn and improve, interacts with the capacity for effort. All of this, in an environment that is not only respectful, but fosters lasting bonds of friendship.",
     "historyDescription2": "We don't want to be just another CrossFit box. We have adapted our way of planning and understanding training so that, if you trust us, we can accompany you in your improvement process for a long time."
   },
   "team": {
@@ -319,20 +328,20 @@
         "desc2": "Nexo represents me completely. Every detail is taken care of with precision and passion. Behind it is a team based on humility, that understands this is not about us, it's about you."
       },
       "alan": {
-        "desc0": "I started CrossFit in 2017. For me CrossFit is not just sport, it's discipline, community and self-improvement. I started helping in classes whenever I could, and that's when I discovered I wanted to dedicate myself to this: spreading the same motivation that brought me here. Years later I started artistic gymnastics to improve my gymnastic skills. That's where I met Zoltan, who introduced me to Nexo and its methodology, and I knew from day one it was my place. A place where I can keep growing as a coach and as an athlete."
+        "desc0": "I started CrossFit in 2017. For me CrossFit is not just a sport, it's discipline, community and self-improvement. I started helping in classes whenever I could, and that's when I discovered I wanted to dedicate myself to this: spreading the same motivation that brought me here. Years later I started artistic gymnastics to improve my gymnastics skills. That's where I met Zoltan, who introduced me to Nexo and its methodology, and I knew from day one it was my place. A place where I can keep growing as a coach and as an athlete."
       },
       "dilian": {
         "desc0": "I always did sports, but at some point I lost motivation. Someone recommended CrossFit and from the first class I knew it was my place.",
         "desc1": "I got hooked on the variety and mix of disciplines. But when I got to know Nexo I understood that what I knew was only a small part of what CrossFit really is. I never thought about becoming a coach, but when something is your passion, you want to share it.",
-        "desc2": "Today I know this is what I want to do: learn, improve and help others do the same.",
+        "desc2": "Today I know this is what I want to do: learn, improve and help others to do the same.",
         "desc3": "See you at the box to keep growing, improving every day and, above all, having fun."
       },
       "toni": {
-        "desc0": "Passion for what I do and curiosity to understand the why. Those two things have taken me through the fitness world for over ten years, through various certifications and training models.",
+        "desc0": "Passion for what I do and curiosity to understand the why. These two things have taken me through the fitness world for over ten years, through various certifications and training models.",
         "desc1": "I've done sports all my life. Individual sports, team sports, anything. With one goal: to move better every time and enjoy it.",
-        "desc2": "In recent years I trained as a firefighter, and learned to combine that role with coaching, trying to get the best of both worlds.",
-        "desc3": "A few years ago I arrived at Nexo CrossFit, and here I've been able to keep growing professionally and athletically. But what I value most is the bond with teammates and athletes.",
-        "desc4": "I guess that's why it's called \"Nexo\" (Connection)."
+        "desc2": "In the recent years I was working to be a firefighter, and learned to combine that role with coaching, trying to get the best of both worlds.",
+        "desc3": "A few years ago I arrived at Nexo CrossFit, and here I've been able to keep growing professionally and athletically. But what I value the most is the bond with teammates and athletes.",
+        "desc4": "I guess that's why it's called \"Nexo\" (connection)."
       }
     },
     "physio": {
@@ -391,10 +400,15 @@
     "crossfitClassesTitle": "CrossFit Classes",
     "paymentMethod": "Payment method",
     "paymentDescription": "To confirm your spot in the course, payment is made via bank transfer to the following account number. You will then need to attach the proof of payment to confirm your registration.",
-    "paymentContact": "If you have any questions during the process, email us at {email} or message us on WhatsApp at {phone} and we will help you as soon as possible.",
-    "onRampDescriptionSi": "At Nexo we always prioritize technique and care, so if you have never done CrossFit, you will start with our introductory course. The ON RAMP is designed for you to learn the fundamentals of CrossFit at your own pace. After completing the course, you will be able to start regular classes knowing exactly what you are doing and why.",
+    "paymentContact": "If you have any questions during the process, email us at <email>info@nexocrossfit.es</email> or message us on WhatsApp at <phone>661 388 984</phone> and we will help you as soon as possible.",
+    "onRampDescriptionSi": "At Nexo we always prioritize technique and care, so if you have never done CrossFit, you will start with our beginner course. The ON RAMP is designed for you to learn the fundamentals of CrossFit at your own pace. After completing the course, you will be able to start the regular classes knowing exactly what you are doing and why.",
     "crossfitDescriptionNo": "If you already have CrossFit experience, this is your place to keep pushing yourself. Our workouts are designed to challenge you, improve your technique, and take your performance to the next level. Be part of our box and turn every session into a challenge that takes you further.",
-    "phoneError": "Phone must be valid and is required"
+    "phoneError": "Phone must be valid and is required",
+    "paymentData": {
+      "name": "Name",
+      "concept": "Concept",
+      "conceptValue": "On Ramp - chosen month"
+    }
   },
   "validation": {
     "nameMin": "Name is too short",
@@ -406,6 +420,7 @@
     "firstTimeRequired": "Select an option",
     "courseDateRequired": "Select a date",
     "dniRequired": "ID number required",
+    "dniInvalid": "Invalid ID number",
     "birthDateRequired": "Date required",
     "proofRequired": "Attach proof of payment",
     "fieldRequired": "Field required"

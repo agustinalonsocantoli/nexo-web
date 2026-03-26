@@ -228,13 +228,13 @@ export default function CrossfitPage() {
               <span className="font-semibold">IBAN: </span>ES92 0081 0297 1800 0179 5488
             </p>
             <p className="font-body text-base leading-5 text-[#fbfbfb]">
-              <span className="font-semibold">Nombre: </span>TURIA BOX SOCIEDAD LIMITADA
+              <span className="font-semibold">{tf("paymentData.name")}: </span>TURIA BOX SOCIEDAD LIMITADA
             </p>
             <p className="font-body text-base leading-5 text-[#fbfbfb]">
               <span className="font-semibold">Swift: </span>BSAB ESBB
             </p>
             <p className="font-body text-base leading-5 text-[#fbfbfb]">
-              <span className="font-semibold">Concepto: </span>On Ramp – mes elegido
+              <span className="font-semibold">{tf("paymentData.concept")}: </span>{tf("paymentData.conceptValue")}
             </p>
           </div>
           <div className="flex flex-col gap-2">
@@ -254,15 +254,10 @@ export default function CrossfitPage() {
             )}
           </div>
           <p className="font-body text-sm leading-5 text-nexo-dark">
-            Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-            <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">
-              info@nexocrossfit.es
-            </a>{" "}
-            o háblanos por WhatsApp{" "}
-            <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">
-              661 388 984
-            </a>{" "}
-            y te ayudaremos lo antes posible.
+            {tf.rich("paymentContact", {
+              email: (chunks) => <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">{chunks}</a>,
+              phone: (chunks) => <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">{chunks}</a>,
+            })}
           </p>
         </div>
       )}
@@ -491,9 +486,9 @@ export default function CrossfitPage() {
                 </p>
                 <div className="flex flex-col gap-2 rounded-lg bg-[#262626] p-[10px]">
                   <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">IBAN: </span>ES92 0081 0297 1800 0179 5488</p>
-                  <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">Nombre: </span>TURIA BOX SOCIEDAD LIMITADA</p>
+                  <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">{tf("paymentData.name")}: </span>TURIA BOX SOCIEDAD LIMITADA</p>
                   <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">Swift: </span>BSAB ESBB</p>
-                  <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">Concepto: </span>On Ramp – mes elegido</p>
+                  <p className="font-body text-base leading-5 text-[#fbfbfb]"><span className="font-semibold">{tf("paymentData.concept")}: </span>{tf("paymentData.conceptValue")}</p>
                 </div>
                 <div className="flex flex-col gap-2">
                   <p className="font-body text-base leading-5 text-nexo-dark">{tf("uploadProof")}</p>
@@ -506,11 +501,10 @@ export default function CrossfitPage() {
                   {errors.comprobante && <p className="font-body text-sm text-red-500">{errors.comprobante.message as string}</p>}
                 </div>
                 <p className="font-body text-sm leading-5 text-nexo-dark">
-                  Si tienes cualquier duda durante el proceso, escríbenos a{" "}
-                  <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">info@nexocrossfit.es</a>{" "}
-                  o háblanos por WhatsApp{" "}
-                  <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">661 388 984</a>{" "}
-                  y te ayudaremos lo antes posible.
+                  {tf.rich("paymentContact", {
+                    email: (chunks) => <a href="mailto:info@nexocrossfit.es" className="underline decoration-solid">{chunks}</a>,
+                    phone: (chunks) => <a href="https://wa.me/34661388984" target="_blank" rel="noopener noreferrer" className="underline decoration-solid">{chunks}</a>,
+                  })}
                 </p>
               </div>
             )}

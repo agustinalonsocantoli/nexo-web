@@ -165,7 +165,7 @@ const scheduleData: ScheduleRow[] = [
     M: null,
     X: { name: "HYROX", type: "hyrox" },
     J: { name: "WL / GYM", type: "wlgym" },
-    V: null,
+    V: { name: "HYROX", type: "hyrox" },
     S: null,
   },
   {
@@ -414,7 +414,7 @@ export default async function PlansPage() {
                     {days.map((day) => (
                       <th
                         key={day}
-                        className="h-7 border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]"
+                        className="h-7 border border-black bg-[#757575] px-0.5 text-center font-body text-[5px] font-semibold text-white sm:text-[7px] lg:h-9 lg:px-3 lg:text-[11px]"
                       >
                         {day}
                       </th>

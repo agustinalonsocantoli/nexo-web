@@ -40,7 +40,7 @@ export default async function HyroxPage() {
       question: t('faqs.0.question'),
       answer: (
         <>
-          <span className="font-semibold">{t('faqs.0.answerPrice')}</span> con{" "}
+          <span className="font-semibold">{t('faqs.0.answerPrice1')}</span> {t('faqs.0.answerPrice2')}{" "}
           <span className="font-semibold">{t('faqs.0.answerAccess')}</span>{t('faqs.0.answerText')}
         </>
       ),
