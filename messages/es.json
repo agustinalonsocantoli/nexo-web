@@ -15,7 +15,8 @@
     "quickLinks": "Enlaces Rápidos",
     "followUs": "Síguenos",
     "instagramLabel": "Instagram de Nexo CrossFit",
-    "copyright": "© 2026 NEXO CrossFit. Todos los derechos reservados."
+    "copyright": "© 2026 NEXO CrossFit. Todos los derechos reservados.",
+    "privacy": "Política de privacidad"
   },
   "metadata": {
     "default": {
@@ -375,7 +376,7 @@
     "phone": "Teléfono",
     "message": "Mensaje",
     "messagePlaceholder": "Escribe tu mensaje aquí...",
-    "privacy": "Al hacer clic, acepto las condiciones de privacidad.",
+    "privacy": "Al hacer clic, acepto la <link>política de privacidad</link>.",
     "submit": "Enviar",
     "submitting": "Enviando...",
     "apiError": "Ha ocurrido un error al enviar el formulario. Inténtalo de nuevo.",
@@ -424,5 +425,50 @@
     "birthDateRequired": "Fecha requerida",
     "proofRequired": "Adjunta el comprobante de pago",
     "fieldRequired": "Campo requerido"
+  },
+  "privacy": {
+    "title": "Política de Privacidad y Cookies",
+    "intro": "En NEXO CrossFit (TURIA BOX SOCIEDAD LIMITADA) nos comprometemos a proteger tu privacidad y tus datos personales. Esta política describe cómo recopilamos, utilizamos y protegemos la información que nos proporcionas a través de nuestra web y formularios.",
+    "responsibleTitle": "Responsable del tratamiento",
+    "responsibleText": "TURIA BOX SOCIEDAD LIMITADA es la entidad responsable del tratamiento de tus datos personales. Puedes contactarnos en info@nexocrossfit.es o en nuestra dirección: Arzobispo Fabián y Fuero, 21. Valencia, 46009.",
+    "dataCollectedTitle": "Datos que recopilamos",
+    "dataCollectedText": "A través de nuestros formularios de contacto, reserva de clases de prueba e inscripción al curso On Ramp, podemos recopilar los siguientes datos:",
+    "dataCollectedItems": {
+      "0": "Nombre completo",
+      "1": "Correo electrónico",
+      "2": "Número de teléfono",
+      "3": "DNI o documento de identidad",
+      "4": "Fecha de nacimiento",
+      "5": "Comprobante de pago (en caso de inscripción al curso On Ramp)"
+    },
+    "purposeTitle": "Finalidad del tratamiento",
+    "purposeText": "Utilizamos tus datos personales para las siguientes finalidades:",
+    "purposeItems": {
+      "0": "Gestionar tu solicitud de contacto y responder a tus consultas.",
+      "1": "Procesar tu reserva de clase de prueba de CrossFit o HYROX.",
+      "2": "Gestionar tu inscripción y pago del curso On Ramp.",
+      "3": "Enviarte comunicaciones relacionadas con los servicios solicitados."
+    },
+    "legalBasisTitle": "Base legal",
+    "legalBasisText": "El tratamiento de tus datos se basa en tu consentimiento expreso, otorgado al aceptar esta política de privacidad en nuestros formularios, así como en la ejecución del contrato de prestación de servicios deportivos.",
+    "retentionTitle": "Conservación de los datos",
+    "retentionText": "Tus datos personales se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos y para determinar las posibles responsabilidades que pudieran derivarse. Una vez cumplidas estas finalidades, los datos serán eliminados.",
+    "rightsTitle": "Tus derechos",
+    "rightsText": "Puedes ejercer los siguientes derechos en cualquier momento escribiéndonos a info@nexocrossfit.es:",
+    "rightsItems": {
+      "0": "Derecho de acceso a tus datos personales.",
+      "1": "Derecho de rectificación de datos inexactos.",
+      "2": "Derecho de supresión de tus datos.",
+      "3": "Derecho de limitación del tratamiento.",
+      "4": "Derecho de portabilidad de los datos.",
+      "5": "Derecho de oposición al tratamiento."
+    },
+    "securityTitle": "Seguridad de los datos",
+    "securityText": "Adoptamos las medidas técnicas y organizativas necesarias para proteger tus datos personales contra el acceso no autorizado, la alteración, la divulgación o la destrucción.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Nuestra web utiliza cookies técnicas y funcionales necesarias para el correcto funcionamiento del sitio. Estas cookies no recopilan información personal identificable. No utilizamos cookies de seguimiento ni de publicidad de terceros.",
+    "changesTitle": "Cambios en esta política",
+    "changesText": "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Cualquier cambio será publicado en esta misma página con la fecha de última actualización.",
+    "lastUpdated": "Última actualización: marzo 2026"
   }
 }

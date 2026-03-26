@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
 import FileUploadField from "@/components/FileUploadField";
@@ -238,7 +239,9 @@ function OnRampBookingContent() {
                     />
                   </button>
                   <p className="font-body text-base leading-5 text-nexo-dark">
-                    {tf("privacy")}
+                    {tf.rich("privacy", {
+                      link: (chunks) => <Link href="/privacy" className="underline hover:text-nexo-orange">{chunks}</Link>,
+                    })}
                   </p>
                 </div>
                 {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}

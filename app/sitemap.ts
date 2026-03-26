@@ -14,6 +14,7 @@ const paths = [
   { path: "/about-us", changeFrequency: "yearly" as const, priority: 0.7 },
   { path: "/team", changeFrequency: "yearly" as const, priority: 0.7 },
   { path: "/contact", changeFrequency: "yearly" as const, priority: 0.6 },
+  { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

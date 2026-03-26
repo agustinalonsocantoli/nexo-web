@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import PhoneField from "@/components/PhoneField";
 
 function createClassBookingSchema(t: (key: string) => string) {
@@ -169,7 +170,9 @@ export default function ClassBookingForm({
                 />
               </button>
               <p className="font-body text-base leading-5 text-nexo-dark">
-                {tf("privacy")}
+                {tf.rich("privacy", {
+                  link: (chunks) => <Link href="/privacy" className="underline hover:text-nexo-orange">{chunks}</Link>,
+                })}
               </p>
             </div>
             {errors.privacidad && <p className="font-body text-sm text-red-500">{errors.privacidad.message}</p>}

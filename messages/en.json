@@ -15,7 +15,8 @@
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
     "instagramLabel": "Nexo CrossFit Instagram",
-    "copyright": "© 2026 NEXO CrossFit. All rights reserved."
+    "copyright": "© 2026 NEXO CrossFit. All rights reserved.",
+    "privacy": "Privacy policy"
   },
   "metadata": {
     "default": {
@@ -375,7 +376,7 @@
     "phone": "Phone",
     "message": "Message",
     "messagePlaceholder": "Write your message here...",
-    "privacy": "By clicking, I accept the privacy policy.",
+    "privacy": "By clicking, I accept the <link>privacy policy</link>.",
     "submit": "Submit",
     "submitting": "Submitting...",
     "apiError": "An error occurred while submitting the form. Please try again.",
@@ -424,5 +425,50 @@
     "birthDateRequired": "Date required",
     "proofRequired": "Attach proof of payment",
     "fieldRequired": "Field required"
+  },
+  "privacy": {
+    "title": "Privacy Policy and Cookies",
+    "intro": "At NEXO CrossFit (TURIA BOX SOCIEDAD LIMITADA), we are committed to protecting your privacy and personal data. This policy describes how we collect, use and protect the information you provide through our website and forms.",
+    "responsibleTitle": "Data controller",
+    "responsibleText": "TURIA BOX SOCIEDAD LIMITADA is the entity responsible for processing your personal data. You can contact us at info@nexocrossfit.es or at our address: Arzobispo Fabián y Fuero, 21. Valencia, 46009.",
+    "dataCollectedTitle": "Data we collect",
+    "dataCollectedText": "Through our contact forms, trial class bookings and On Ramp course registration, we may collect the following data:",
+    "dataCollectedItems": {
+      "0": "Full name",
+      "1": "Email address",
+      "2": "Phone number",
+      "3": "ID number or identity document",
+      "4": "Date of birth",
+      "5": "Proof of payment (for On Ramp course registration)"
+    },
+    "purposeTitle": "Purpose of data processing",
+    "purposeText": "We use your personal data for the following purposes:",
+    "purposeItems": {
+      "0": "Managing your contact request and responding to your inquiries.",
+      "1": "Processing your CrossFit or HYROX trial class booking.",
+      "2": "Managing your On Ramp course registration and payment.",
+      "3": "Sending you communications related to the requested services."
+    },
+    "legalBasisTitle": "Legal basis",
+    "legalBasisText": "The processing of your data is based on your explicit consent, given by accepting this privacy policy in our forms, as well as on the execution of the sports service contract.",
+    "retentionTitle": "Data retention",
+    "retentionText": "Your personal data will be kept for the time necessary to fulfill the purpose for which it was collected and to determine any possible liabilities that may arise. Once these purposes are fulfilled, the data will be deleted.",
+    "rightsTitle": "Your rights",
+    "rightsText": "You can exercise the following rights at any time by writing to us at info@nexocrossfit.es:",
+    "rightsItems": {
+      "0": "Right of access to your personal data.",
+      "1": "Right to rectification of inaccurate data.",
+      "2": "Right to erasure of your data.",
+      "3": "Right to restriction of processing.",
+      "4": "Right to data portability.",
+      "5": "Right to object to processing."
+    },
+    "securityTitle": "Data security",
+    "securityText": "We adopt the necessary technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure or destruction.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Our website uses technical and functional cookies necessary for the proper functioning of the site. These cookies do not collect personally identifiable information. We do not use third-party tracking or advertising cookies.",
+    "changesTitle": "Changes to this policy",
+    "changesText": "We reserve the right to modify this privacy policy at any time. Any changes will be published on this page with the date of the last update.",
+    "lastUpdated": "Last updated: March 2026"
   }
 }
