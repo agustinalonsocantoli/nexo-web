@@ -129,13 +129,13 @@ export default function ContactForm() {
 
       {/* Toggle privacidad */}
       <div className="flex flex-col gap-1">
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <button
             type="button"
             role="switch"
             aria-checked={privacidad}
             onClick={() => setValue("privacidad", !privacidad, { shouldValidate: isSubmitted })}
-            className={`relative mt-0.5 h-[26px] w-[42px] shrink-0 overflow-hidden rounded-full transition-colors duration-200 ${privacidad ? "bg-nexo-orange" : "bg-[#cac4d0]"
+            className={`relative h-[26px] w-[42px] shrink-0 overflow-hidden rounded-full transition-colors duration-200 ${privacidad ? "bg-nexo-orange" : "bg-[#cac4d0]"
               }`}
           >
             <span

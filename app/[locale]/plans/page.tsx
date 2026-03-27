@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { getPrices, getDiscounts, getScheduleSlots } from "@/lib/queries";
 
 const BASE_URL = "https://www.nexocrossfit.es";
 
@@ -40,181 +41,6 @@ interface ScheduleCell {
   type: ClassType;
 }
 
-interface ScheduleRow {
-  time: string;
-  L: ScheduleCell | null;
-  M: ScheduleCell | null;
-  X: ScheduleCell | null;
-  J: ScheduleCell | null;
-  V: ScheduleCell | null;
-  S: ScheduleCell | null;
-}
-
-const scheduleData: ScheduleRow[] = [
-  {
-    time: "7:00",
-    L: { name: "HYROX", type: "hyrox" },
-    M: null,
-    X: { name: "HYROX", type: "hyrox" },
-    J: null,
-    V: { name: "HYROX", type: "hyrox" },
-    S: null,
-  },
-  {
-    time: "7:45",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "STRENGTH", type: "strength" },
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: null,
-  },
-  {
-    time: "",
-    L: null,
-    M: null,
-    X: null,
-    J: null,
-    V: null,
-    S: { name: "CROSSFIT 9:30", type: "crossfit" },
-  },
-  {
-    time: "11:00",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "CROSSFIT", type: "crossfit" },
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: { name: "CROSSFIT 10:30", type: "crossfit" },
-  },
-  {
-    time: "",
-    L: null,
-    M: null,
-    X: null,
-    J: { name: "WL / GYM", type: "wlgym" },
-    V: null,
-    S: null,
-  },
-  {
-    time: "12:00",
-    L: null,
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: null,
-    J: { name: "STRENGTH", type: "strength" },
-    V: null,
-    S: null,
-  },
-  {
-    time: "12:15",
-    L: { name: "HYROX", type: "hyrox" },
-    M: null,
-    X: { name: "HYROX", type: "hyrox" },
-    J: null,
-    V: { name: "HYROX", type: "hyrox" },
-    S: null,
-  },
-  {
-    time: "13:00",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "CROSSFIT", type: "crossfit" },
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: null,
-  },
-  {
-    time: "",
-    L: null,
-    M: null,
-    X: null,
-    J: null,
-    V: null,
-    S: null,
-  },
-  {
-    time: "17:00",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: null,
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: null,
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: null,
-  },
-  {
-    time: "17:30",
-    L: null,
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: null,
-    J: { name: "CROSSFIT", type: "crossfit" },
-    V: null,
-    S: null,
-  },
-  {
-    time: "18:00",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "STRENGTH", type: "strength" },
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: null,
-  },
-  {
-    time: "18:15",
-    L: { name: "HYROX", type: "hyrox" },
-    M: null,
-    X: { name: "HYROX", type: "hyrox" },
-    J: { name: "WL / GYM", type: "wlgym" },
-    V: { name: "HYROX", type: "hyrox" },
-    S: null,
-  },
-  {
-    time: "18:30",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "CROSSFIT", type: "crossfit" },
-    V: null,
-    S: null,
-  },
-  {
-    time: "19:00",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "STRENGTH", type: "strength" },
-    V: { name: "CROSSFIT", type: "crossfit" },
-    S: null,
-  },
-  {
-    time: "19:15",
-    L: { name: "HYROX", type: "hyrox" },
-    M: null,
-    X: { name: "HYROX", type: "hyrox" },
-    J: null,
-    V: null,
-    S: null,
-  },
-  {
-    time: "19:30",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "CROSSFIT", type: "crossfit" },
-    V: null,
-    S: null,
-  },
-  {
-    time: "20:30",
-    L: { name: "CROSSFIT", type: "crossfit" },
-    M: { name: "CROSSFIT", type: "crossfit" },
-    X: { name: "CROSSFIT", type: "crossfit" },
-    J: { name: "STRENGTH", type: "strength" },
-    V: null,
-    S: null,
-  },
-];
-
 function cellStyle(type: ClassType): string {
   switch (type) {
     case "hyrox":
@@ -230,7 +56,7 @@ function cellStyle(type: ClassType): string {
   }
 }
 
-function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
+function ScheduleCellComponent({ cell }: { cell: ScheduleCell | null }) {
   if (!cell)
     return <td className="h-7 border border-black bg-white lg:h-9" />;
   return (
@@ -242,12 +68,79 @@ function ScheduleCell({ cell }: { cell: ScheduleCell | null }) {
   );
 }
 
+interface ScheduleRow {
+  time: string;
+  L: ScheduleCell | null;
+  M: ScheduleCell | null;
+  X: ScheduleCell | null;
+  J: ScheduleCell | null;
+  V: ScheduleCell | null;
+  S: ScheduleCell | null;
+}
+
+// Build schedule grid — multiple classes at same time+day produce sub-rows with empty time
+function buildScheduleGrid(slots: { time: string; dayOfWeek: string; className: string; classType: string }[]): ScheduleRow[] {
+  const DAYS = ["L", "M", "X", "J", "V", "S"] as const;
+  const timeOrder: string[] = [];
+  const grid = new Map<string, Map<string, ScheduleCell[]>>();
+
+  for (const slot of slots) {
+    if (!grid.has(slot.time)) {
+      timeOrder.push(slot.time);
+      grid.set(slot.time, new Map());
+    }
+    const dayMap = grid.get(slot.time)!;
+    const existing = dayMap.get(slot.dayOfWeek) ?? [];
+    existing.push({ name: slot.className, type: slot.classType as ClassType });
+    dayMap.set(slot.dayOfWeek, existing);
+  }
+
+  const rows: ScheduleRow[] = [];
+
+  for (const time of timeOrder) {
+    const dayMap = grid.get(time)!;
+    // How many rows does this time slot need?
+    let maxLayers = 1;
+    for (const day of DAYS) {
+      const cells = dayMap.get(day);
+      if (cells && cells.length > maxLayers) maxLayers = cells.length;
+    }
+
+    for (let layer = 0; layer < maxLayers; layer++) {
+      const row: ScheduleRow = {
+        time: layer === 0 ? time : "",
+        L: null, M: null, X: null, J: null, V: null, S: null,
+      };
+      for (const day of DAYS) {
+        const cells = dayMap.get(day);
+        if (cells && cells[layer]) {
+          row[day] = cells[layer];
+        }
+      }
+      rows.push(row);
+    }
+  }
+
+  return rows;
+}
+
 export default async function PlansPage() {
+  const locale = await getLocale();
   const t = await getTranslations('plans');
   const tc = await getTranslations('common');
 
+  const [prices, discounts, scheduleSlots] = await Promise.all([
+    getPrices(),
+    getDiscounts(),
+    getScheduleSlots(),
+  ]);
+
+  const scheduleData = buildScheduleGrid(scheduleSlots);
+
   const dayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const;
   const days = dayKeys.map((k) => t(`days.${k}`));
+
+  const isEs = locale === "es";
 
   return (
     <main className="bg-[#fbfbfb]">
@@ -269,68 +162,23 @@ export default async function PlansPage() {
             </span>
 
             <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
-              {/* Cuota mensual */}
-              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <div className="flex items-center justify-between">
-                  <p className="font-body text-base text-white">{t('monthlyLabel')}</p>
-                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('monthlyPrice')}</p>
-                </div>
-                <p className="mt-1 font-body text-[11px] text-white/70">
-                  {t('monthlyAccess')}
-                </p>
-              </div>
-
-              {/* Hyrox */}
-              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <div className="flex items-center justify-between">
-                  <p className="font-body text-base text-white">{t('hyroxLabel')}</p>
-                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('hyroxPrice')}</p>
-                </div>
-                <p className="mt-1 font-body text-[11px] text-white/70 whitespace-nowrap">
-                  {t('hyroxAccess')}
-                </p>
-              </div>
-
-              {/* Bono 20 clases */}
-              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="font-body text-[15px] font-semibold text-white">{t('pass20Label')}</p>
-                    <p className="font-body text-[12px] text-white/70">{t('pass20Validity')}</p>
+              {prices.map((p) => (
+                <div key={p.id} className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-body text-base text-white">{isEs ? p.labelEs : p.labelEn}</p>
+                      {(isEs ? p.subtitleEs : p.subtitleEn) && (
+                        <p className="font-body text-[11px] text-white/70">
+                          {isEs ? p.subtitleEs : p.subtitleEn}
+                        </p>
+                      )}
+                    </div>
+                    <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">
+                      {p.amount} €
+                    </p>
                   </div>
-                  <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">{t('pass20Price')}</p>
                 </div>
-                <p className="mt-1 font-body text-[12px] text-white font-bold">
-                  {t('pass20Ideal')}{" "}
-                  <span>{t('pass20Frequency')}</span>.
-                </p>
-              </div>
-
-              {/* Bono 10 clases */}
-              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <div>
-                  <p className="font-body text-base text-white">{t('pass10Label')}</p>
-                  <p className="font-body text-[12px] text-white/70">{t('pass10Validity')}</p>
-                </div>
-                <p className="font-heading text-[28px] font-bold leading-none text-white">{t('pass10Price')}</p>
-              </div>
-
-              {/* On Ramp */}
-              <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-body text-base text-white">{t('onrampLabel')}</p>
-                    <p className="font-body text-[11px] text-white/70">{t('onrampSubtitle')}</p>
-                  </div>
-                  <p className="font-heading text-[28px] font-bold leading-none text-white">{t('onrampPrice')}</p>
-                </div>
-              </div>
-
-              {/* Drop In */}
-              <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-6 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                <p className="font-body text-base text-white">{t('dropinLabel')}</p>
-                <p className="font-heading text-[28px] font-bold leading-none text-white">{t('dropinPrice')}</p>
-              </div>
+              ))}
             </div>
           </section>
         </AnimateOnScroll>
@@ -343,52 +191,19 @@ export default async function PlansPage() {
             </span>
 
             <div className="grid w-full grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-4">
-              {/* Cuota trimestral */}
-              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
-                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                  {t('quarterlyLabel')}
-                </p>
-                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('quarterlyDiscount')}</p>
-                <p className="mt-1 font-body text-[9px] text-[#878787]">
-                  {t('quarterlyDetail')}{" "}
-                  <span className="font-semibold">{t('quarterlyPrice')}</span>
-                </p>
-              </div>
-
-              {/* Cuota semestral */}
-              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
-                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                  {t('semiannualLabel')}
-                </p>
-                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('semiannualDiscount')}</p>
-                <p className="mt-1 font-body text-[9px] text-[#878787]">
-                  {t('semiannualDetail')}{" "}
-                  <span className="font-semibold">{t('semiannualPrice')}</span>
-                </p>
-              </div>
-
-              {/* Cuota anual */}
-              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
-                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                  {t('annualLabel')}
-                </p>
-                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('annualDiscount')}</p>
-                <p className="mt-1 font-body text-[9px] text-[#878787]">
-                  {t('annualDetail')}{" "}
-                  <span className="font-semibold">{t('annualPrice')}</span>
-                </p>
-              </div>
-
-              {/* Cuota mensual pareja */}
-              <div className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
-                <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
-                  {t('coupleLabel')}
-                </p>
-                <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{t('coupleDiscount')}</p>
-                <p className="mt-1 font-body text-[9px] font-semibold uppercase text-[#878787]">
-                  {t('coupleDetail')}
-                </p>
-              </div>
+              {discounts.map((d) => (
+                <div key={d.id} className="rounded-lg border border-nexo-orange p-2 shadow-md lg:p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
+                  <p className="font-body text-[12px] font-semibold leading-tight text-[#262626]">
+                    {isEs ? d.labelEs : d.labelEn}
+                  </p>
+                  <p className="font-heading text-2xl font-bold leading-none text-[#262626] lg:text-3xl">{d.percentage}</p>
+                  {(isEs ? d.subtitleEs : d.subtitleEn) && (
+                    <p className="mt-1 font-body text-[9px] text-[#878787]">
+                      {isEs ? d.subtitleEs : d.subtitleEn}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </section>
         </AnimateOnScroll>
@@ -427,12 +242,12 @@ export default async function PlansPage() {
                       <td className="h-7 whitespace-nowrap border border-black bg-[#757575] px-1 text-center font-body text-[7px] font-semibold text-white lg:h-9 lg:px-3 lg:text-[11px]">
                         {row.time}
                       </td>
-                      <ScheduleCell cell={row.L} />
-                      <ScheduleCell cell={row.M} />
-                      <ScheduleCell cell={row.X} />
-                      <ScheduleCell cell={row.J} />
-                      <ScheduleCell cell={row.V} />
-                      <ScheduleCell cell={row.S} />
+                      <ScheduleCellComponent cell={row.L} />
+                      <ScheduleCellComponent cell={row.M} />
+                      <ScheduleCellComponent cell={row.X} />
+                      <ScheduleCellComponent cell={row.J} />
+                      <ScheduleCellComponent cell={row.V} />
+                      <ScheduleCellComponent cell={row.S} />
                     </tr>
                   ))}
                 </tbody>

@@ -15,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
           "/en/contact/confirm",
           "/es/on-ramp/booking",
           "/en/on-ramp/booking",
+          "/admin",
         ],
       },
     ],

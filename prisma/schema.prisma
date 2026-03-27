@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+model User {
+  id           String @id @default(cuid())
+  email        String @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model Price {
+  id         String  @id @default(cuid())
+  key        String  @unique
+  amount     Float
+  labelEs    String
+  labelEn    String
+  subtitleEs String?
+  subtitleEn String?
+  sortOrder  Int     @default(0)
+}
+
+model Discount {
+  id         String  @id @default(cuid())
+  key        String  @unique
+  percentage String
+  labelEs    String
+  labelEn    String
+  subtitleEs String?
+  subtitleEn String?
+  sortOrder  Int     @default(0)
+}
+
+model ScheduleSlot {
+  id        String @id @default(cuid())
+  time      String
+  dayOfWeek String // L, M, X, J, V, S
+  className String
+  classType String // crossfit, hyrox, strength, wlgym
+  sortOrder Int    @default(0)
+}
+
+model OnRampSession {
+  id      String  @id @default(cuid())
+  slug    String  @unique
+  monthEs String
+  monthEn String
+  datesEs String
+  datesEn String
+  spots   Int
+  active  Boolean @default(true)
+}

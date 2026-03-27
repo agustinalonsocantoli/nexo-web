@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { OnRampEmailTemplate } from "@/components/templates/OnRampEmailTemplate";
+import { prisma } from "@/lib/prisma";
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
@@ -32,6 +33,21 @@ export async function POST(request: Request) {
 
     if (error) {
       return Response.json({ error }, { status: 500 });
+    }
+
+    // Decrement spots for the selected session
+    if (fecha) {
+      const session = await prisma.onRampSession.findUnique({ where: { slug: fecha } });
+      if (session && session.spots > 0) {
+        const newSpots = session.spots - 1;
+        await prisma.onRampSession.update({
+          where: { slug: fecha },
+          data: {
+            spots: newSpots,
+            active: newSpots > 0,
+          },
+        });
+      }
     }
 
     return Response.json(data);

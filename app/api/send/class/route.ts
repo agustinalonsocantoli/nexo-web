@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { ClassEmailTemplate } from "@/components/templates/ClassEmailTemplate";
+import { prisma } from "@/lib/prisma";
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
@@ -27,6 +28,21 @@ export async function POST(request: Request) {
 
     if (error) {
       return Response.json({ error }, { status: 500 });
+    }
+
+    // Decrement on-ramp spots if a course date was selected (first-timer)
+    if (fechaCurso) {
+      const session = await prisma.onRampSession.findUnique({ where: { slug: fechaCurso } });
+      if (session && session.spots > 0) {
+        const newSpots = session.spots - 1;
+        await prisma.onRampSession.update({
+          where: { slug: fechaCurso },
+          data: {
+            spots: newSpots,
+            active: newSpots > 0,
+          },
+        });
+      }
     }
 
     return Response.json(data);

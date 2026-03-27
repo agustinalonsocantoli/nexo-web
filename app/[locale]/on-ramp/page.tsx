@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { getActiveOnRampSessions } from "@/lib/queries";
 
 const BASE_URL = "https://www.nexocrossfit.es";
 
@@ -32,11 +33,6 @@ export async function generateMetadata({
     },
   };
 }
-
-const sessions = [
-  { spots: 3, value: "abril" },
-  { spots: 6, value: "mayo" },
-];
 
 const ArrowIcon = () => (
   <svg
@@ -80,7 +76,9 @@ const ChevronRight = () => (
   </svg>
 );
 
-function SessionCard({ session, month, dates, spotsText, bookText, className = "" }: { session: typeof sessions[0]; month: string; dates: string; spotsText: string; bookText: string; className?: string }) {
+function SessionCard({ slug, month, dates, spots, spotsLabel, bookText, className = "" }: {
+  slug: string; month: string; dates: string; spots: number; spotsLabel: string; bookText: string; className?: string;
+}) {
   return (
     <div
       className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
@@ -94,11 +92,11 @@ function SessionCard({ session, month, dates, spotsText, bookText, className = "
       <div className="flex items-center gap-1.5 justify-center">
         <PersonIcon />
         <p className="font-body text-base leading-5 text-[#1e1e1e] text-center">
-          {spotsText}
+          {spotsLabel}
         </p>
       </div>
       <Link
-        href={`/on-ramp/booking?fecha=${session?.value}`}
+        href={`/on-ramp/booking?fecha=${slug}`}
         className="mt-1 flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
       >
         {bookText}
@@ -109,8 +107,12 @@ function SessionCard({ session, month, dates, spotsText, bookText, className = "
 }
 
 export default async function OnRampPage() {
+  const locale = await getLocale();
   const t = await getTranslations('onramp');
   const tc = await getTranslations('common');
+
+  const sessions = await getActiveOnRampSessions();
+  const isEs = locale === "es";
 
   return (
     <main className="bg-[#fbfbfb]">
@@ -151,32 +153,51 @@ export default async function OnRampPage() {
 
           {/* Mobile: CSS-only carousel */}
           <div className="sessions-carousel md:hidden">
-            <input type="radio" name="sessions" id="ses-1" className="carousel-radio" defaultChecked />
-            <input type="radio" name="sessions" id="ses-2" className="carousel-radio" />
+            {sessions.map((_, i) => (
+              <input key={i} type="radio" name="sessions" id={`ses-${i + 1}`} className="carousel-radio" defaultChecked={i === 0} />
+            ))}
 
-            <div className="sessions-carousel-wrapper">
-              <div className="sessions-carousel-slide">
-                <SessionCard session={sessions[0]} month={t('sessions.0.month')} dates={t('sessions.0.dates')} spotsText={t('spotsAvailable', { spots: sessions[0].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
-              </div>
-              <div className="sessions-carousel-slide">
-                <SessionCard session={sessions[1]} month={t('sessions.1.month')} dates={t('sessions.1.dates')} spotsText={t('spotsAvailable', { spots: sessions[1].spots })} bookText={tc('bookSpot')} className="w-[270px]" />
-              </div>
+            <div className="sessions-carousel-wrapper" style={{ width: `${sessions.length * 100}%` }}>
+              {sessions.map((s) => (
+                <div key={s.id} className="sessions-carousel-slide" style={{ width: `${100 / sessions.length}%` }}>
+                  <SessionCard
+                    slug={s.slug}
+                    month={isEs ? s.monthEs : s.monthEn}
+                    dates={isEs ? s.datesEs : s.datesEn}
+                    spots={s.spots}
+                    spotsLabel={t('spotsAvailable', { spots: s.spots })}
+                    bookText={tc('bookSpot')}
+                    className="w-[270px]"
+                  />
+                </div>
+              ))}
             </div>
 
-            {/* Prev arrows (wrap: 1→3, 2→1, 3→2) */}
-            <label htmlFor="ses-1" className="sessions-nav sessions-nav-prev sessions-prev-2"><ChevronLeft /></label>
-            <label htmlFor="ses-2" className="sessions-nav sessions-nav-prev sessions-prev-1"><ChevronLeft /></label>
-
-            {/* Next arrows (wrap: 1→2, 2→3, 3→1) */}
-            <label htmlFor="ses-2" className="sessions-nav sessions-nav-next sessions-next-1"><ChevronRight /></label>
-            <label htmlFor="ses-1" className="sessions-nav sessions-nav-next sessions-next-2"><ChevronRight /></label>
+            {/* Navigation arrows */}
+            {sessions.map((_, i) => (
+              <span key={`nav-${i}`}>
+                {i > 0 && (
+                  <label htmlFor={`ses-${i}`} className={`sessions-nav sessions-nav-prev sessions-prev-${i + 1}`}><ChevronLeft /></label>
+                )}
+                {i < sessions.length - 1 && (
+                  <label htmlFor={`ses-${i + 2}`} className={`sessions-nav sessions-nav-next sessions-next-${i + 1}`}><ChevronRight /></label>
+                )}
+              </span>
+            ))}
           </div>
 
           {/* Desktop: grid */}
           <div className="hidden md:grid grid-cols-2 gap-4 lg:grid-cols-2">
-            {sessions.map((session, i) => (
-              <AnimateOnScroll key={session.value} from="up" delay={i * 100}>
-                <SessionCard session={session} month={t(`sessions.${i}.month`)} dates={t(`sessions.${i}.dates`)} spotsText={t('spotsAvailable', { spots: session.spots })} bookText={tc('bookSpot')} />
+            {sessions.map((s, i) => (
+              <AnimateOnScroll key={s.id} from="up" delay={i * 100}>
+                <SessionCard
+                  slug={s.slug}
+                  month={isEs ? s.monthEs : s.monthEn}
+                  dates={isEs ? s.datesEs : s.datesEn}
+                  spots={s.spots}
+                  spotsLabel={t('spotsAvailable', { spots: s.spots })}
+                  bookText={tc('bookSpot')}
+                />
               </AnimateOnScroll>
             ))}
           </div>
