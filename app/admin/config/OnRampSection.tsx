@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { upsertOnRampSession, deleteOnRampSession } from "../actions";
-import type { OnRampSession } from "@/generated/prisma/client";
+import type { OnRampSession } from "@prisma/client";
 import Modal from "./Modal";
 
 const inputClass =

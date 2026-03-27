@@ -7,7 +7,7 @@ import PricesSection from "./PricesSection";
 import DiscountsSection from "./DiscountsSection";
 import ScheduleSection from "./ScheduleSection";
 import OnRampSection from "./OnRampSection";
-import type { Price, Discount, ScheduleSlot, OnRampSession } from "@/generated/prisma/client";
+import type { Price, Discount, ScheduleSlot, OnRampSession } from "@prisma/client";
 
 const TABS = [
   { id: "precios", label: "Precios" },

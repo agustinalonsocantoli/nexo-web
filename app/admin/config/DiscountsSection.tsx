@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { upsertDiscount, deleteDiscount } from "../actions";
-import type { Discount } from "@/generated/prisma/client";
+import type { Discount } from "@prisma/client";
 import Modal from "./Modal";
 
 const inputClass =

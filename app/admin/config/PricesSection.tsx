@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { upsertPrice, deletePrice } from "../actions";
-import type { Price } from "@/generated/prisma/client";
+import type { Price } from "@prisma/client";
 import Modal from "./Modal";
 
 const inputClass =

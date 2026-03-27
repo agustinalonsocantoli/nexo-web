@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { upsertScheduleSlot, deleteScheduleSlot } from "../actions";
-import type { ScheduleSlot } from "@/generated/prisma/client";
+import type { ScheduleSlot } from "@prisma/client";
 import Modal from "./Modal";
 
 const DAYS = ["L", "M", "X", "J", "V", "S"] as const;
