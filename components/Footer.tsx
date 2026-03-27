@@ -115,7 +115,7 @@ export default async function Footer() {
       {/* Copyright */}
       <div className="mt-8 border-t border-[#878787] pt-8 text-center">
         <div className="flex flex-col items-center gap-1">
-          <div className="flex flex-row items-center gap-1">
+          <div className="flex flex-col lg:flex-row items-center gap-1">
             <p className="font-body text-sm leading-5 text-[#99a1af]">
               {t("copyright")}
             </p>

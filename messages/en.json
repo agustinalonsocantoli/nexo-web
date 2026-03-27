@@ -224,7 +224,7 @@
     "upcomingDatesTitle": "Upcoming On Ramp dates",
     "sessions": {
       "0": { "month": "APRIL", "dates": "03/30 to 04/22, 2026", "label": "April (03/30 - 04/22)" },
-      "1": { "month": "MAY", "dates": "04/27 to 05/24, 2026", "label": "May (04/27 - 05/24)" }
+      "1": { "month": "MAY", "dates": "04/27 to 05/20, 2026", "label": "May (04/27 - 05/20)" }
     },
     "booking": {
       "heroTitle": "Book your",

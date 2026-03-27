@@ -224,7 +224,7 @@
     "upcomingDatesTitle": "Próximas fechas On Ramp",
     "sessions": {
       "0": { "month": "ABRIL", "dates": "30/03 al 22/04 del 2026", "label": "Abril (30/03 - 22/04)" },
-      "1": { "month": "MAYO", "dates": "27/04 al 24/05 del 2026", "label": "Mayo (27/04 - 24/05)" }
+      "1": { "month": "MAYO", "dates": "27/04 al 20/05 del 2026", "label": "Mayo (27/04 - 20/05)" }
     },
     "booking": {
       "heroTitle": "Reserva tu",
