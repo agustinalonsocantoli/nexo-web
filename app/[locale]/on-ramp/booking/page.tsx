@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import { getActiveOnRampSessions } from "@/lib/queries";
 import { getLocale } from "next-intl/server";
 import OnRampBookingPage from "./OnRampBookingForm";

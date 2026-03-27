@@ -5,6 +5,8 @@ import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { getPrices, getDiscounts, getScheduleSlots } from "@/lib/queries";
 
+export const revalidate = 60;
+
 const BASE_URL = "https://www.nexocrossfit.es";
 
 export async function generateMetadata({
