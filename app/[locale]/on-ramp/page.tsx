@@ -153,8 +153,18 @@ export default async function OnRampPage() {
             </h2>
           </AnimateOnScroll>
 
-          {/* Mobile: CSS-only carousel */}
+          {/* Mobile: CSS-only carousel (dynamic for N sessions) */}
           <div className="sessions-carousel md:hidden">
+            <style dangerouslySetInnerHTML={{ __html: sessions.map((_, i) => {
+              const pct = (100 / sessions.length).toFixed(6);
+              const offset = (i * 100 / sessions.length).toFixed(6);
+              return [
+                `.sessions-carousel:has(#ses-${i + 1}:checked) .sessions-carousel-wrapper { transform: translateX(-${offset}%); }`,
+                `.sessions-carousel:has(#ses-${i + 1}:checked) .sessions-prev-${i + 1} { display: flex; }`,
+                `.sessions-carousel:has(#ses-${i + 1}:checked) .sessions-next-${i + 1} { display: flex; }`,
+              ].join('\n');
+            }).join('\n') }} />
+
             {sessions.map((_, i) => (
               <input key={i} type="radio" name="sessions" id={`ses-${i + 1}`} className="carousel-radio" defaultChecked={i === 0} />
             ))}
@@ -167,7 +177,7 @@ export default async function OnRampPage() {
                     month={isEs ? s.monthEs : s.monthEn}
                     dates={isEs ? s.datesEs : s.datesEn}
                     spots={s.spots}
-                    spotsLabel={t('spotsAvailable', { spots: s.spots })}
+                    spotsLabel={s.spots === 1 ? t('spotAvailable') : t('spotsAvailable', { spots: s.spots })}
                     bookText={tc('bookSpot')}
                     className="w-[270px]"
                   />
@@ -197,7 +207,7 @@ export default async function OnRampPage() {
                   month={isEs ? s.monthEs : s.monthEn}
                   dates={isEs ? s.datesEs : s.datesEn}
                   spots={s.spots}
-                  spotsLabel={t('spotsAvailable', { spots: s.spots })}
+                  spotsLabel={s.spots === 1 ? t('spotAvailable') : t('spotsAvailable', { spots: s.spots })}
                   bookText={tc('bookSpot')}
                 />
               </AnimateOnScroll>

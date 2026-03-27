@@ -180,28 +180,14 @@ body {
 .sessions-carousel-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 300%;
   will-change: transform;
 }
 
 .sessions-carousel-slide {
-  width: 33.333333%;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   padding: 4px 0 8px;
-}
-
-.sessions-carousel:has(#ses-1:checked) .sessions-carousel-wrapper {
-  transform: translateX(0%);
-}
-
-.sessions-carousel:has(#ses-2:checked) .sessions-carousel-wrapper {
-  transform: translateX(-33.333333%);
-}
-
-.sessions-carousel:has(#ses-3:checked) .sessions-carousel-wrapper {
-  transform: translateX(-66.666666%);
 }
 
 .sessions-nav {
@@ -217,15 +203,6 @@ body {
 
 .sessions-nav-prev { left: 0; }
 .sessions-nav-next { right: 0; }
-
-.sessions-carousel:has(#ses-1:checked) .sessions-prev-1,
-.sessions-carousel:has(#ses-1:checked) .sessions-next-1 { display: flex; }
-
-.sessions-carousel:has(#ses-2:checked) .sessions-prev-2,
-.sessions-carousel:has(#ses-2:checked) .sessions-next-2 { display: flex; }
-
-.sessions-carousel:has(#ses-3:checked) .sessions-prev-3,
-.sessions-carousel:has(#ses-3:checked) .sessions-next-3 { display: flex; }
 
 /* Team expanded card animations */
 @keyframes coach-fade-in {

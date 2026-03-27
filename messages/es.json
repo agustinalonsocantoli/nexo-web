@@ -230,6 +230,7 @@
       "heroTitle": "Reserva tu",
       "heroTitlePart2": "plaza curso On Ramp"
     },
+    "spotAvailable": "1 plaza disponible",
     "spotsAvailable": "{spots} plazas disponibles",
     "costTitle": "¿Cuánto cuesta?",
     "costDescription": "El precio del curso es de ",
