@@ -52,6 +52,10 @@ export default function OnRampSection({ sessions }: { sessions: OnRampSession[] 
                 <span className="font-heading text-lg font-bold text-[#E94F1D]">{s.spots}</span>
               </div>
               <div className="flex items-center justify-between">
+                <span className="font-body text-xs text-[#99A1AF]">Orden</span>
+                <span className="font-heading text-sm font-bold text-white/60">{s.sortOrder}</span>
+              </div>
+              <div className="flex items-center justify-between">
                 <span className="font-body text-xs text-[#99A1AF]">Slug</span>
                 <span className="font-mono text-xs text-white/40">{s.slug}</span>
               </div>
@@ -111,8 +115,9 @@ function SessionForm({ session, onDone }: { session?: OnRampSession; onDone: () 
         <div><label className={labelClass}>Fechas (ES)</label><input name="datesEs" defaultValue={session?.datesEs} required placeholder="30/03 - 22/04" className={inputClass} /></div>
         <div><label className={labelClass}>Fechas (EN)</label><input name="datesEn" defaultValue={session?.datesEn} required placeholder="03/30 - 04/22" className={inputClass} /></div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         <div><label className={labelClass}>Plazas</label><input name="spots" type="number" defaultValue={session?.spots?.toString() ?? "8"} required className={inputClass} /></div>
+        <div><label className={labelClass}>Orden</label><input name="sortOrder" type="number" defaultValue={session?.sortOrder?.toString() ?? "0"} required className={inputClass} /></div>
         <div className="flex items-end pb-0.5">
           <label className="flex cursor-pointer items-center gap-2">
             <input type="checkbox" name="active" defaultChecked={session?.active ?? true} className="sr-only peer" />

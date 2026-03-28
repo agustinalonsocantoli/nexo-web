@@ -11,7 +11,7 @@ export default async function ConfigPage() {
     prisma.price.findMany({ orderBy: { sortOrder: "asc" } }),
     prisma.discount.findMany({ orderBy: { sortOrder: "asc" } }),
     prisma.scheduleSlot.findMany(),
-    prisma.onRampSession.findMany({ orderBy: { slug: "asc" } }),
+    prisma.onRampSession.findMany({ orderBy: { sortOrder: "asc" } }),
   ]);
 
   // Sort schedule by time numerically

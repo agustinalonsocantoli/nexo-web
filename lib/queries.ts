@@ -20,6 +20,6 @@ export async function getScheduleSlots() {
 export async function getActiveOnRampSessions() {
   return prisma.onRampSession.findMany({
     where: { active: true },
-    orderBy: { slug: "asc" },
+    orderBy: { sortOrder: "asc" },
   });
 }

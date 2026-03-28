@@ -4,8 +4,7 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DATABASE_URL_UNPOOLED")
+  url = env("DATABASE_URL")
 }
 
 model User {
@@ -47,12 +46,13 @@ model ScheduleSlot {
 }
 
 model OnRampSession {
-  id      String  @id @default(cuid())
-  slug    String  @unique
-  monthEs String
-  monthEn String
-  datesEs String
-  datesEn String
-  spots   Int
-  active  Boolean @default(true)
+  id        String  @id @default(cuid())
+  slug      String  @unique
+  monthEs   String
+  monthEn   String
+  datesEs   String
+  datesEn   String
+  spots     Int
+  active    Boolean @default(true)
+  sortOrder Int     @default(0)
 }

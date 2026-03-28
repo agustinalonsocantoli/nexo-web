@@ -113,6 +113,7 @@ export async function upsertOnRampSession(formData: FormData) {
     datesEn: formData.get("datesEn") as string,
     spots: parseInt(formData.get("spots") as string),
     active: formData.get("active") === "on",
+    sortOrder: parseInt(formData.get("sortOrder") as string) || 0,
   };
 
   if (id) {
