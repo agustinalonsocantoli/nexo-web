@@ -163,25 +163,77 @@ export default async function PlansPage() {
               {t('ratesBadge')}
             </span>
 
-            <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
-              {prices.map((p) => (
-                <div key={p.id} className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-body text-base text-white">{isEs ? p.labelEs : p.labelEn}</p>
-                      {(isEs ? p.subtitleEs : p.subtitleEn) && (
-                        <p className="font-body text-[11px] text-white/70">
-                          {isEs ? p.subtitleEs : p.subtitleEn}
-                        </p>
-                      )}
+            {(() => {
+              const pm = Object.fromEntries(prices.map((p) => [p.key, p]));
+              const sub = (p: typeof prices[number] | undefined) => isEs ? p?.subtitleEs : p?.subtitleEn;
+              const label = (p: typeof prices[number] | undefined) => isEs ? p?.labelEs : p?.labelEn;
+              return (
+                <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
+                  {/* Cuota mensual */}
+                  <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <div className="flex items-center justify-between">
+                      <p className="font-body text-base text-white">{label(pm.monthly)}</p>
+                      <p className="font-heading text-[28px] font-bold leading-none text-white">{pm.monthly?.amount} €</p>
                     </div>
-                    <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">
-                      {p.amount} €
+                    <p className="mt-1 font-body text-[11px] text-white/70">
+                      {sub(pm.monthly)}
                     </p>
                   </div>
+
+                  {/* Hyrox */}
+                  <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <div className="flex items-center justify-between">
+                      <p className="font-body text-base text-white">{label(pm.hyrox)}</p>
+                      <p className="font-heading text-[28px] font-bold leading-none text-white">{pm.hyrox?.amount} €</p>
+                    </div>
+                    <p className="mt-1 font-body text-[11px] text-white/70 whitespace-nowrap">
+                      {sub(pm.hyrox)}
+                    </p>
+                  </div>
+
+                  {/* Bono 20 clases */}
+                  <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <p className="font-body text-[15px] font-semibold text-white">{label(pm.pass20)}</p>
+                        <p className="font-body text-[12px] text-white/70">{sub(pm.pass20)}</p>
+                      </div>
+                      <p className="shrink-0 font-heading text-[28px] font-bold leading-none text-white">{pm.pass20?.amount} €</p>
+                    </div>
+                    <p className="mt-1 font-body text-[12px] font-bold text-white">
+                      {t('pass20Ideal')}{" "}
+                      <span>{t('pass20Frequency')}</span>.
+                    </p>
+                  </div>
+
+                  {/* Bono 10 clases */}
+                  <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <div>
+                      <p className="font-body text-base text-white">{label(pm.pass10)}</p>
+                      <p className="font-body text-[12px] text-white/70">{sub(pm.pass10)}</p>
+                    </div>
+                    <p className="font-heading text-[28px] font-bold leading-none text-white">{pm.pass10?.amount} €</p>
+                  </div>
+
+                  {/* On Ramp */}
+                  <div className="rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-body text-base text-white">{label(pm.onramp)}</p>
+                        <p className="font-body text-[11px] text-white/70">{sub(pm.onramp)}</p>
+                      </div>
+                      <p className="font-heading text-[28px] font-bold leading-none text-white">{pm.onramp?.amount} €</p>
+                    </div>
+                  </div>
+
+                  {/* Drop In */}
+                  <div className="flex items-center justify-between rounded-2xl bg-nexo-dark px-6 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]">
+                    <p className="font-body text-base text-white">{label(pm.dropin)}</p>
+                    <p className="font-heading text-[28px] font-bold leading-none text-white">{pm.dropin?.amount} €</p>
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </section>
         </AnimateOnScroll>
 
