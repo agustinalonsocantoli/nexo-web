@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import AffiliatesSection from "@/components/home/AffiliatesSection";
+import FaqSection from "@/components/home/FaqSection";
 import Hero from "@/components/home/Hero";
 import TrainingSection from "@/components/home/TrainingSection";
 import TeamSection from "@/components/home/TeamSection";
@@ -44,6 +45,7 @@ export default function Home() {
       <TrainingSection />
       <AffiliatesSection />
       <WhyChooseUs />
+      <FaqSection />
       <TeamSection />
     </main>
   );

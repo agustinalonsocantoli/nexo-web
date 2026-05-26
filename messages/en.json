@@ -134,6 +134,33 @@
         }
       }
     },
+    "faq": {
+      "badge": "FAQ",
+      "title": "QUESTIONS BEFORE STARTING",
+      "description": "We answer the most common questions so you know how to start, what to expect and how we train at Nexo.",
+      "items": {
+        "0": {
+          "question": "How can I start if I am a beginner?",
+          "answer": "We offer the introductory On Ramp course so you can learn the basics safely."
+        },
+        "1": {
+          "question": "What are the opening hours?",
+          "answer": "We are open from 7:00 to 21:30 Monday to Friday, and Saturdays from 9:30 to 11:30."
+        },
+        "2": {
+          "question": "Do I need to be fit before joining?",
+          "answer": "No, CrossFit is for everyone. We scale every exercise according to your current ability."
+        },
+        "3": {
+          "question": "What benefits will I get?",
+          "answer": "Improved strength, endurance, cardiovascular health and psychophysical balance."
+        },
+        "4": {
+          "question": "Do you offer personal training?",
+          "answer": "Yes, in addition to group classes, we offer Personal Training sessions for specific goals."
+        }
+      }
+    },
     "affiliates": {
       "badge": "AFFILIATES"
     },
