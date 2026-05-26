@@ -161,6 +161,81 @@
         }
       }
     },
+    "trainingGuide": {
+      "badge": "ENTRENAR EN NEXO",
+      "title": "Nexo CrossFit: entrenamientos, comunidad y progreso para todos los niveles",
+      "intro": "Supera tus límites en Nexo CrossFit, el lugar donde el deporte se transforma en diversión y el compromiso en bienestar duradero. Mejora tu salud física y mental, sumergiéndote en una comunidad motivadora y dinámica en el corazón de Valencia. Únete a la familia de Nexo y descubre cómo alcanzar tus objetivos paso a paso con el apoyo de nuestros coaches y compañeros del box.",
+      "links": {
+        "crossfit": "Clases de CrossFit",
+        "hyrox": "HYROX",
+        "onramp": "On Ramp",
+        "plans": "Tarifas y horarios",
+        "contact": "Ubicación"
+      },
+      "sections": {
+        "onramp": {
+          "title": "La programación para principiantes: cómo empezar CrossFit en Valencia",
+          "paragraphs": {
+            "0": "Nuestro curso básico, conocido como On Ramp, está diseñado para quienes se acercan al CrossFit por primera vez. En esta programación guiada aprenderás las técnicas fundamentales de los ejercicios, la importancia de la postura correcta y las formas de ejecución seguras para evitar lesiones. Durante las primeras semanas, el coach adaptará el estímulo a tu nivel físico, permitiéndote ganar confianza antes de entrar en las clases regulares. Este enfoque gradual facilita tu integración y garantiza que puedas afrontar cada WOD con conciencia y seguridad."
+          }
+        },
+        "crossfit": {
+          "title": "Nuestras clases de CrossFit",
+          "paragraphs": {
+            "0": "Nuestras clases de CrossFit duran 60 minutos y están diseñadas para equilibrar fuerza, resistencia, flexibilidad y técnica para cada atleta. La programación semanal se personaliza según tu nivel y progreso. Además del CrossFit tradicional, ofrecemos distintas especialidades para que puedas construir una forma física completa."
+          },
+          "bullets": {
+            "0": "HYROX: mejora de tu resistencia cardiovascular y preparación para competiciones de resistencia.",
+            "1": "Strength: trabajo específico para mejorar tu fuerza máxima.",
+            "2": "Gymnastics: desarrollo de habilidades de movimientos gimnásticos y control del peso corporal.",
+            "3": "Weightlifting: técnica específica de halterofilia, incluyendo Snatch, Clean y Jerk.",
+            "4": "Programación adaptada para que cada atleta entrene con seguridad, intensidad y progresión."
+          }
+        },
+        "hyrox": {
+          "title": "HYROX y entrenamiento de resistencia",
+          "paragraphs": {
+            "0": "Los entrenamientos de HYROX combinan varias disciplinas para mejorar la capacidad aeróbica y anaeróbica. Son ideales tanto para atletas que desean competir en Valencia o a nivel nacional como para quienes buscan un estado de forma óptimo, más resistencia y una rutina de entrenamiento funcional exigente pero adaptable."
+          }
+        },
+        "whyNexo": {
+          "title": "¿Por qué elegir Nexo CrossFit en Valencia?",
+          "paragraphs": {
+            "0": "En Nexo entrenas acompañado por coaches que cuidan la técnica, adaptan cada sesión a tu nivel y siguen tu evolución. Nuestro objetivo es que progreses de forma constante, evitando atajos que puedan comprometer tu seguridad o tu motivación a largo plazo."
+          },
+          "bullets": {
+            "0": "Certificación CrossFit Level 1 o superior.",
+            "1": "Experiencia en prevención de lesiones y técnica depurada.",
+            "2": "Formación en primeros auxilios y soporte atlético.",
+            "3": "Capacidad de motivación para seguir tu progreso individual."
+          }
+        },
+        "schedules": {
+          "title": "Variedad de clases, horarios y planes",
+          "paragraphs": {
+            "0": "Nuestro box ofrece una flexibilidad horaria pensada para adaptarse a tu ritmo de vida, desde primera hora de la mañana hasta la noche. Ofrecemos pases diarios, abonos mensuales con descuento para parejas o familiares y packs trimestrales, semestrales y anuales con descuento. La inscripción es sencilla, ya sea online o directamente en nuestro box en Valencia, donde podrás conocer al equipo y ver las instalaciones. También ofrecemos una primera sesión de prueba a precio reducido."
+          }
+        },
+        "community": {
+          "title": "La comunidad de Nexo CrossFit: más que un entrenamiento",
+          "paragraphs": {
+            "0": "La fuerza de Nexo CrossFit reside en su comunidad. Aquí no eres solo un atleta, sino parte de una familia. Organizamos eventos sociales, competiciones internas, workshops temáticos y sesiones de team building. Muchos de nuestros alumnos afirman que el aspecto social es la clave de su constancia. Formar parte de esta familia en Valencia significa encontrar motivación y amistades duraderas."
+          }
+        },
+        "events": {
+          "title": "Eventos especiales y community challenges",
+          "paragraphs": {
+            "0": "Periódicamente organizamos desafíos de grupo y competiciones amistosas. Estos momentos son oportunidades para poner a prueba tu rendimiento, compartir objetivos con otros atletas y celebrar el espíritu de equipo. Síguenos en nuestras redes sociales para estar al día de los próximos eventos en el box."
+          }
+        },
+        "facilities": {
+          "title": "Nuestras instalaciones y ubicación",
+          "paragraphs": {
+            "0": "Nexo CrossFit está situado en una ubicación estratégica de Valencia, fácilmente accesible tanto en transporte público como en coche. Además, tenemos una zona en el interior donde puedes guardar tu bicicleta o tu patinete. El box dispone de vestuarios equipados, taquillas personales y zona de relax para el post-entrenamiento."
+          }
+        }
+      }
+    },
     "affiliates": {
       "badge": "AFILIADOS"
     },

@@ -161,6 +161,81 @@
         }
       }
     },
+    "trainingGuide": {
+      "badge": "TRAIN AT NEXO",
+      "title": "Nexo CrossFit: training, community and progress for every level",
+      "intro": "Push your limits at Nexo CrossFit, the place where sport becomes fun and commitment turns into lasting well-being. Improve your physical and mental health while joining a motivating, dynamic community in the heart of Valencia. Become part of the Nexo family and discover how to reach your goals step by step with the support of our coaches and your training partners at the box.",
+      "links": {
+        "crossfit": "CrossFit classes",
+        "hyrox": "HYROX",
+        "onramp": "On Ramp",
+        "plans": "Plans and schedule",
+        "contact": "Location"
+      },
+      "sections": {
+        "onramp": {
+          "title": "Beginner programming: how to start CrossFit in Valencia",
+          "paragraphs": {
+            "0": "Our basic course, known as On Ramp, is designed for people approaching CrossFit for the first time. In this guided program, you will learn the fundamental exercise techniques, the importance of correct posture and safe execution patterns to help prevent injuries. During the first weeks, the coach adapts the stimulus to your physical level, allowing you to build confidence before joining regular classes. This gradual approach supports your integration and ensures you can face each WOD with awareness and safety."
+          }
+        },
+        "crossfit": {
+          "title": "Our CrossFit classes",
+          "paragraphs": {
+            "0": "Our CrossFit classes last 60 minutes and are designed to balance strength, endurance, flexibility and technique for every athlete. The weekly programming is adapted to your level and progress. In addition to traditional CrossFit, we offer several specialties so you can build complete fitness."
+          },
+          "bullets": {
+            "0": "HYROX: improve cardiovascular endurance and prepare for endurance competitions.",
+            "1": "Strength: focused work to improve your maximum strength.",
+            "2": "Gymnastics: development of gymnastic movement skills and bodyweight control.",
+            "3": "Weightlifting: specific Olympic lifting technique, including Snatch, Clean and Jerk.",
+            "4": "Adapted programming so every athlete can train with safety, intensity and progression."
+          }
+        },
+        "hyrox": {
+          "title": "HYROX and endurance training",
+          "paragraphs": {
+            "0": "HYROX workouts combine several disciplines to improve aerobic and anaerobic capacity. They are ideal both for athletes who want to compete in Valencia or nationally and for anyone looking for optimal fitness, better endurance and a demanding but adaptable functional training routine."
+          }
+        },
+        "whyNexo": {
+          "title": "Why choose Nexo CrossFit in Valencia?",
+          "paragraphs": {
+            "0": "At Nexo, you train alongside coaches who care about technique, adapt each session to your level and follow your progress. Our goal is for you to improve consistently, without shortcuts that could compromise your safety or long-term motivation."
+          },
+          "bullets": {
+            "0": "CrossFit Level 1 certification or higher.",
+            "1": "Experience in injury prevention and refined technique.",
+            "2": "Training in first aid and athletic support.",
+            "3": "Motivational ability to support your individual progress."
+          }
+        },
+        "schedules": {
+          "title": "Variety of classes, schedules and plans",
+          "paragraphs": {
+            "0": "Our box offers flexible schedules designed to fit your lifestyle, from early morning to evening. We offer day passes, monthly memberships with discounts for couples or family members, and quarterly, six-month and annual packs with discounts. Signing up is simple, either online or directly at our box in Valencia, where you can meet the team and see the facilities. We also offer a first trial session at a reduced price."
+          }
+        },
+        "community": {
+          "title": "The Nexo CrossFit community: more than a workout",
+          "paragraphs": {
+            "0": "The strength of Nexo CrossFit lies in its community. Here you are not just an athlete, but part of a family. We organize social events, internal competitions, themed workshops and team building sessions. Many of our members say the social side is the key to their consistency. Being part of this family in Valencia means finding motivation and lasting friendships."
+          }
+        },
+        "events": {
+          "title": "Special events and community challenges",
+          "paragraphs": {
+            "0": "We regularly organize group challenges and friendly competitions. These moments are opportunities to test your performance, share goals with other athletes and celebrate team spirit. Follow us on social media to stay up to date with upcoming events at the box."
+          }
+        },
+        "facilities": {
+          "title": "Our facilities and location",
+          "paragraphs": {
+            "0": "Nexo CrossFit is located in a strategic area of Valencia, easily accessible by public transport and by car. We also have an indoor area where you can store your bike or scooter. The box has equipped changing rooms, personal lockers and a relaxation area for post-workout recovery."
+          }
+        }
+      }
+    },
     "affiliates": {
       "badge": "AFFILIATES"
     },

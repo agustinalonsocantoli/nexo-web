@@ -32,11 +32,11 @@ export default async function FaqSection() {
       />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-8 lg:grid-cols-[1fr_1.35fr] lg:gap-14 lg:px-[72px]">
-        <AnimateOnScroll from="left" className="lg:sticky lg:top-24 lg:self-start">
+        <AnimateOnScroll from="left">
           <span className="mb-5 inline-flex rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold tracking-[0.08em] text-nexo-orange uppercase">
             {t('badge')}
           </span>
-          <h2 className="max-w-xl font-heading text-[28px] font-bold leading-[100%] tracking-[0.03em] uppercase sm:text-[34px] lg:text-[40px] lg:tracking-[1.08px] xl:text-[44px]">
+          <h2 className="max-w-xl font-heading text-[24px] font-bold leading-[100%] tracking-[0.03em] uppercase sm:text-[34px] lg:text-[36px] lg:tracking-[1.08px]">
             {t('title')}
           </h2>
           <p className="mt-5 max-w-md font-body text-base leading-7 text-nexo-gray">
@@ -44,13 +44,13 @@ export default async function FaqSection() {
           </p>
         </AnimateOnScroll>
 
-        <div className="border-t border-nexo-dark/15">
+        <div className="min-w-0 border-t border-nexo-dark/15">
           {faqs.map((faq, index) => (
-            <AnimateOnScroll key={faq.question} from="up" delay={index * 80}>
+            <AnimateOnScroll key={faq.question} from="up" delay={index * 80} className="min-w-0">
               <article
-                className="group grid gap-3 border-b border-nexo-dark/15 py-6 md:grid-cols-[1fr_auto] md:gap-5 lg:py-7"
+                className="group grid grid-cols-[1fr_auto] gap-3 border-b border-nexo-dark/15 py-6 md:gap-5 lg:py-7"
               >
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-body text-lg font-semibold leading-7 text-nexo-dark lg:text-[22px] lg:leading-8">
                     {faq.question}
                   </h3>

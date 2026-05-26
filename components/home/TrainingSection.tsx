@@ -70,7 +70,7 @@ export default function TrainingSection() {
           </AnimateOnScroll>
 
           <AnimateOnScroll from="up" delay={100}>
-            <h2 className="font-heading text-[20px] font-bold leading-[100%] tracking-[0.03em] text-nexo-orange uppercase lg:text-[36px] lg:tracking-[1.08px]">
+            <h2 className="font-heading text-[24px] font-bold leading-[100%] tracking-[0.03em] text-nexo-orange uppercase lg:text-[36px] lg:tracking-[1.08px]">
               {t('title')}
             </h2>
           </AnimateOnScroll>
