@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 export interface TeamCardType {
@@ -49,7 +48,7 @@ function ExpandedCard({ team }: { team: TeamCardType }) {
           ))}
 
           {team.button && (
-            <Link
+            <a
               href="https://wa.me/34651594523"
               target="_blank"
               rel="noopener noreferrer"
@@ -65,7 +64,7 @@ function ExpandedCard({ team }: { team: TeamCardType }) {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </Link>
+            </a>
           )}
         </div>
       </div>

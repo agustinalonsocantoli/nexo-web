@@ -286,6 +286,30 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: '/admin/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      ...[
+        '/:locale(es|en)/class/crossfit/confirm',
+        '/:locale(es|en)/class/hyrox/confirm',
+        '/:locale(es|en)/contact/confirm',
+        '/:locale(es|en)/on-ramp/booking',
+        '/:locale(es|en)/on-ramp/booking/confirm',
+      ].map((source) => ({
+        source,
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      })),
+      {
         source: '/fonts/:path*',
         headers: [
           {

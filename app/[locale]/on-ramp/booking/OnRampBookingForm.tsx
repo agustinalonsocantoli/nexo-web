@@ -1,13 +1,13 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
 import FileUploadField from "@/components/FileUploadField";

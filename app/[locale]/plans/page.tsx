@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { getPrices, getDiscounts, getScheduleSlots } from "@/lib/queries";

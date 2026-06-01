@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageHero from "@/components/PageHero";

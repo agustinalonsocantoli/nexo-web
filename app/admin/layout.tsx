@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { Zalando_Sans_Expanded, Public_Sans } from "next/font/google";
 import "../globals.css";
+
+export const metadata: Metadata = {
+  title: "Admin | Nexo CrossFit Valencia",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+};
 
 const zalandoSans = Zalando_Sans_Expanded({
   subsets: ["latin"],

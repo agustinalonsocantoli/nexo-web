@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://www.nexocrossfit.es";
+const LAST_MODIFIED = new Date("2026-05-26T00:00:00.000Z");
 
 const locales = ["es", "en"];
 
@@ -24,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of locales) {
       entries.push({
         url: `${BASE_URL}/${locale}${path}`,
-        lastModified: new Date(),
+        lastModified: LAST_MODIFIED,
         changeFrequency,
         priority,
         alternates: {

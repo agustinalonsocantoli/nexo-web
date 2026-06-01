@@ -46,8 +46,8 @@ export default function Home() {
       <TrainingSection />
       <AffiliatesSection />
       <WhyChooseUs />
-      <FaqSection />
       <HomeTrainingGuideSection />
+      <FaqSection />
       <TeamSection />
     </main>
   );

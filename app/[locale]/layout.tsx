@@ -4,6 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CloseDetailsOnOutsideClick from "@/components/CloseDetailsOnOutsideClick";
+import JsonLd from "@/components/JsonLd";
 import Image from "next/image";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -92,10 +93,57 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   const messages = await getMessages();
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ExerciseGym"],
+        "@id": `${BASE_URL}/#business`,
+        name: "Nexo CrossFit Valencia",
+        url: BASE_URL,
+        logo: `${BASE_URL}/logo-nexo.webp`,
+        image: `${BASE_URL}/og-image-old.png`,
+        telephone: "+34661388984",
+        email: "info@nexocrossfit.es",
+        priceRange: "€€",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Arzobispo Fabián y Fuero, 21",
+          addressLocality: "Valencia",
+          postalCode: "46009",
+          addressCountry: "ES",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "07:00",
+            closes: "21:30",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "09:30",
+            closes: "11:30",
+          },
+        ],
+        sameAs: ["https://instagram.com/nexocrossfit"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        name: "Nexo CrossFit Valencia",
+        url: BASE_URL,
+        inLanguage: locale === "es" ? "es-ES" : "en",
+        publisher: { "@id": `${BASE_URL}/#business` },
+      },
+    ],
+  };
 
   return (
     <html lang={locale} className={`${zalandoSans.variable} ${publicSans.variable}`}>
       <body className="font-body antialiased flex min-h-screen flex-col">
+        <JsonLd data={businessSchema} />
         <NextIntlClientProvider messages={messages}>
           <CloseDetailsOnOutsideClick />
           <Navbar />

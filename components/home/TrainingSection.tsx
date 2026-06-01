@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { useTranslations } from 'next-intl';
 
@@ -229,7 +229,7 @@ export function TrainingCard({
 
 export function TrainingCardDesktop({ training }: { training: TrainingCardType }) {
   return (
-    <a href={training.href ?? "/class"}>
+    <Link href={training.href ?? "/class"}>
       <div className="flex flex-1 flex-col gap-4 overflow-hidden rounded-2xl border border-nexo-dark bg-[#fbfbfb] px-4 py-6 transition-all duration-200 hover:shadow-lg hover:border-nexo-orange/80 h-full">
         {/* Imagen */}
         <div className="relative h-[131px] w-full overflow-hidden rounded-lg">
@@ -263,6 +263,6 @@ export function TrainingCardDesktop({ training }: { training: TrainingCardType }
           </ul>
         )}
       </div>
-    </a>
+    </Link>
   );
 }

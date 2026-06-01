@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import PageHero from "@/components/PageHero";
 import ClassBookingForm from "@/components/class/ClassBookingForm";
+import JsonLd from "@/components/JsonLd";
 
 const BASE_URL = "https://www.nexocrossfit.es";
 
@@ -63,9 +64,40 @@ export default async function HyroxPage() {
         <span>{t('faqs.2.answer')}</span>
     },
   ];
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: t('faqs.0.question'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${t('faqs.0.answerPrice1')} ${t('faqs.0.answerPrice2')} ${t('faqs.0.answerAccess')}${t('faqs.0.answerText')}`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t('faqs.1.question'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${t('faqs.1.answerIntro')}${t('faqs.1.answerDuration')}${t('faqs.1.answerMiddle')} ${t('faqs.1.answerBenefit')}${t('faqs.1.answerEnd')}`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t('faqs.2.question'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t('faqs.2.answer'),
+        },
+      },
+    ],
+  };
 
   return (
     <main className="bg-[#fbfbfb]">
+      <JsonLd data={faqSchema} />
       <PageHero title={t('heroTitle')} titlePart2={t('heroTitlePart2')} imageSrc="/bg-hyrox-des.jpg" />
 
       {/* Info + formulario */}

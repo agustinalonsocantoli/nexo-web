@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import JsonLd from "@/components/JsonLd";
 import { getActiveOnRampSessions } from "@/lib/queries";
 
 export const revalidate = 60;
@@ -115,9 +116,40 @@ export default async function OnRampPage() {
 
   const sessions = await getActiveOnRampSessions();
   const isEs = locale === "es";
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: t('whatIsTitle'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${t('whatIsDescription1')} ${t('whatIsDescription2')}`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t('costTitle'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${t('costDescription')} ${t('costAmount')}.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t('alternativeTitle'),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${t('alternativeDescription')} ${t('alternativeSemiprivate')} ${t('alternativePrivate')}`,
+        },
+      },
+    ],
+  };
 
   return (
     <main className="bg-[#fbfbfb]">
+      <JsonLd data={faqSchema} />
 
       <PageHero
         title={t('heroTitle')}

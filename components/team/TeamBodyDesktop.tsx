@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import OptimizedImage from '../OptimizedImage';
-import Link from 'next/link';
 import { TeamCardType } from './Card';
 import { useTranslations } from 'next-intl';
 
@@ -228,17 +227,17 @@ function JaviCardDesktop({
               </p>
             ))}
           </div>
-          <Link
+          <a
             href="https://wa.me/34651594523"
-              target="_blank"
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-auto flex w-fit items-center justify-center gap-4 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
           >
             {tc('bookAppointment')}
             <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

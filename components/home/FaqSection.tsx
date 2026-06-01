@@ -1,5 +1,6 @@
 import AnimateOnScroll from '../AnimateOnScroll';
 import { getTranslations } from 'next-intl/server';
+import JsonLd from '@/components/JsonLd';
 
 const faqKeys = ['0', '1', '2', '3', '4'] as const;
 
@@ -26,10 +27,7 @@ export default async function FaqSection() {
 
   return (
     <section className="bg-white py-12 text-nexo-dark lg:py-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={faqSchema} />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-8 lg:grid-cols-[1fr_1.35fr] lg:gap-14 lg:px-[72px]">
         <AnimateOnScroll from="left">

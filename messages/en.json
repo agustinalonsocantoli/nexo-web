@@ -22,59 +22,59 @@
     "default": {
       "title": "Nexo CrossFit Valencia | CrossFit & HYROX Box",
       "titleTemplate": "%s | Nexo CrossFit Valencia",
-      "description": "CrossFit and HYROX box in Valencia. Certified coaches, classes for all levels, flexible schedules and community. Transforming lives since 2017."
+      "description": "CrossFit and HYROX box in Valencia with certified coaches, flexible schedules and community. Train at Nexo whatever your level."
     },
     "home": {
       "title": "Nexo CrossFit Valencia | CrossFit & HYROX Box in Valencia",
-      "description": "Train at the best CrossFit and HYROX box in Valencia. Certified coaches, classes for all levels, morning and afternoon schedules. Book your free trial class!",
+      "description": "Train CrossFit and HYROX in Valencia with certified coaches, flexible schedules and community. Book your trial class at Nexo.",
       "ogTitle": "Nexo CrossFit Valencia | CrossFit & HYROX",
       "ogDescription": "Train at the best CrossFit and HYROX box in Valencia. Certified coaches, classes for all levels, morning and afternoon schedules."
     },
     "class": {
       "title": "Book Your Trial Class",
-      "description": "Book your CrossFit or HYROX trial class in Valencia. Certified coaches guide you from day one, regardless of your level. Come discover the Nexo community.",
+      "description": "Book your CrossFit or HYROX trial class in Valencia. Certified coaches guide you from day one. Discover the Nexo community.",
       "ogTitle": "Book Your Trial Class | Nexo CrossFit Valencia",
       "ogDescription": "Try CrossFit or HYROX in Valencia with certified coaches. No commitment, adapted to your level."
     },
     "crossfit": {
       "title": "CrossFit Classes in Valencia",
-      "description": "CrossFit classes in Valencia for all levels. Daily programmed WODs, certified coaches who care about your technique, and On Ramp course for beginners. Join Nexo box.",
+      "description": "CrossFit classes in Valencia for all levels. Daily WODs, technique-focused coaching and On Ramp for beginners. Join Nexo.",
       "ogTitle": "CrossFit Classes in Valencia | Nexo CrossFit",
       "ogDescription": "CrossFit in Valencia with certified coaches. Daily WODs, personalized attention and On Ramp course to start from scratch."
     },
     "hyrox": {
       "title": "HYROX Classes in Valencia",
-      "description": "HYROX classes in Valencia for all levels. Train endurance and strength with specialized coaches. No prior experience needed. Monthly fee from 75€.",
+      "description": "HYROX classes in Valencia for all levels. Train strength and endurance with specialized coaches. From 75€/month.",
       "ogTitle": "HYROX Classes in Valencia | Nexo CrossFit",
       "ogDescription": "HYROX in Valencia for all levels. Specialized coaches, adapted classes and motivating community. From 75€/month."
     },
     "onramp": {
       "title": "On Ramp CrossFit Course in Valencia",
-      "description": "Start CrossFit from scratch with the On Ramp course at Nexo in Valencia. 8 sessions in 4 weeks, small groups (2-6 people), personalized attention and price of 165€. Limited spots!",
+      "description": "Start CrossFit from scratch with the On Ramp course in Valencia. 8 sessions, small groups and personalized coaching. Limited spots.",
       "ogTitle": "On Ramp CrossFit Course in Valencia | Nexo CrossFit",
       "ogDescription": "Start CrossFit with our On Ramp course. 8 sessions, small groups and coaches who care about your technique from day one. 165€."
     },
     "plans": {
       "title": "Plans & Schedule",
-      "description": "CrossFit and HYROX prices in Valencia: monthly fee 110€, HYROX 75€, 20 sessions 180€ and quarterly, semi-annual and annual discounts. Check our schedule Monday to Saturday.",
+      "description": "Check CrossFit and HYROX prices and schedules in Valencia. Memberships, passes and discounts to train at Nexo Monday to Saturday.",
       "ogTitle": "Plans & Schedule | Nexo CrossFit Valencia",
       "ogDescription": "Monthly CrossFit fee 110€, HYROX 75€, passes and discounts. Monday to Saturday schedule in Valencia."
     },
     "about": {
       "title": "About Us",
-      "description": "Discover the story of Nexo CrossFit Valencia. Since 2017 we are a CrossFit affiliated box with passionate coaches, top-level facilities and a community that pushes you to improve every day.",
+      "description": "Discover Nexo CrossFit Valencia: affiliated box since 2017, certified coaches, quality facilities and a community that pushes you.",
       "ogTitle": "About Us | Nexo CrossFit Valencia",
       "ogDescription": "Discover the story of Nexo CrossFit Valencia. Since 2017 we are an affiliated box with passionate coaches and a unique community."
     },
     "team": {
       "title": "Our Team",
-      "description": "Meet the certified coaching team at Nexo CrossFit Valencia. Passionate professionals trained in CrossFit and HYROX who guide you with technique, safety and motivation in every session.",
+      "description": "Meet the certified coaches at Nexo CrossFit Valencia. Train CrossFit and HYROX with technique, safety and motivation.",
       "ogTitle": "Our Team | Nexo CrossFit Valencia",
       "ogDescription": "Certified CrossFit and HYROX coaches. Passionate professionals who guide you with technique and safety."
     },
     "contact": {
       "title": "Contact",
-      "description": "Contact Nexo CrossFit Valencia. We are at Arzobispo Fabián y Fuero 21, Valencia 46009. Write us via WhatsApp at 661 388 984, by email or through the form.",
+      "description": "Contact Nexo CrossFit Valencia at Arzobispo Fabián y Fuero 21. Write us via WhatsApp, email or the contact form.",
       "ogTitle": "Contact | Nexo CrossFit Valencia",
       "ogDescription": "Contact Nexo CrossFit. C/ Arzobispo Fabián y Fuero 21, Valencia. WhatsApp: 661 388 984."
     }
@@ -145,7 +145,7 @@
         },
         "1": {
           "question": "What are the opening hours?",
-          "answer": "We are open from 7:00 to 21:30 Monday to Friday, and Saturdays from 9:30 to 11:30."
+          "answer": "We open Monday and Wednesday from 7:00 to 21:30, Tuesday and Thursday from 7:45 to 21:30, and Friday from 7:00 to 20:00."
         },
         "2": {
           "question": "Do I need to be fit before joining?",

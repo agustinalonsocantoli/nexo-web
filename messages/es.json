@@ -22,59 +22,59 @@
     "default": {
       "title": "Nexo CrossFit Valencia | Box CrossFit y HYROX",
       "titleTemplate": "%s | Nexo CrossFit Valencia",
-      "description": "Box de CrossFit y HYROX en Valencia. Coaches certificados, clases para todos los niveles, horarios flexibles y comunidad. Desde 2017 transformando vidas."
+      "description": "Box de CrossFit y HYROX en Valencia con coaches certificados, horarios flexibles y comunidad. Entrena en Nexo desde cualquier nivel."
     },
     "home": {
       "title": "Nexo CrossFit Valencia | Box CrossFit y HYROX en Valencia",
-      "description": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde. ¡Reserva tu primera clase de prueba gratis!",
+      "description": "Entrena CrossFit y HYROX en Valencia con coaches certificados, horarios flexibles y comunidad. Reserva tu clase de prueba en Nexo.",
       "ogTitle": "Nexo CrossFit Valencia | Box CrossFit y HYROX",
       "ogDescription": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde."
     },
     "class": {
       "title": "Reserva tu Clase de Prueba",
-      "description": "Reserva tu clase de prueba de CrossFit o HYROX en Valencia. Coaches certificados te guían desde el primer día, sin importar tu nivel. Ven y descubre la comunidad Nexo.",
+      "description": "Reserva tu clase de prueba de CrossFit o HYROX en Valencia. Coaches certificados te guían desde el primer día. Descubre Nexo.",
       "ogTitle": "Reserva tu Clase de Prueba | Nexo CrossFit Valencia",
       "ogDescription": "Prueba CrossFit o HYROX en Valencia con coaches certificados. Sin compromiso, adaptado a tu nivel."
     },
     "crossfit": {
       "title": "Clases de CrossFit en Valencia",
-      "description": "Clases de CrossFit en Valencia para todos los niveles. WODs diarios programados, coaches certificados que cuidan tu técnica, y curso On Ramp para principiantes. Únete al box Nexo.",
+      "description": "Clases de CrossFit en Valencia para todos los niveles. WODs diarios, técnica cuidada y On Ramp para principiantes. Únete a Nexo.",
       "ogTitle": "Clases de CrossFit en Valencia | Nexo CrossFit",
       "ogDescription": "CrossFit en Valencia con coaches certificados. WODs diarios, atención personalizada y curso On Ramp para empezar desde cero."
     },
     "hyrox": {
       "title": "Clases de HYROX en Valencia",
-      "description": "Clases de HYROX en Valencia para todos los niveles. Entrena resistencia y fuerza con coaches especializados. Sin experiencia previa necesaria. Cuota mensual desde 75€.",
+      "description": "Clases de HYROX en Valencia para todos los niveles. Entrena fuerza y resistencia con coaches especializados. Desde 75€/mes.",
       "ogTitle": "Clases de HYROX en Valencia | Nexo CrossFit",
       "ogDescription": "HYROX en Valencia para todos los niveles. Coaches especializados, clases adaptadas y comunidad motivadora. Desde 75€/mes."
     },
     "onramp": {
       "title": "Curso On Ramp CrossFit en Valencia",
-      "description": "Empieza CrossFit desde cero con el curso On Ramp de Nexo en Valencia. 8 sesiones en 4 semanas, grupos reducidos (2-6 personas), atención personalizada y precio de 165€. ¡Plazas limitadas!",
+      "description": "Empieza CrossFit desde cero con el curso On Ramp en Valencia. 8 sesiones, grupos reducidos y atención personalizada. Plazas limitadas.",
       "ogTitle": "Curso On Ramp CrossFit en Valencia | Nexo CrossFit",
       "ogDescription": "Inicia en CrossFit con nuestro curso On Ramp. 8 sesiones, grupos reducidos y coaches que cuidan tu técnica desde el primer día. 165€."
     },
     "plans": {
       "title": "Tarifas y Horarios",
-      "description": "Tarifas de CrossFit y HYROX en Valencia: cuota mensual 110€, HYROX 75€, bono 20 clases 180€ y descuentos por trimestre, semestre y anual. Consulta nuestros horarios de lunes a sábado.",
+      "description": "Consulta tarifas y horarios de CrossFit y HYROX en Valencia. Cuotas, bonos y descuentos para entrenar en Nexo de lunes a sábado.",
       "ogTitle": "Tarifas y Horarios | Nexo CrossFit Valencia",
       "ogDescription": "Cuota mensual CrossFit 110€, HYROX 75€, bonos y descuentos. Horarios de lunes a sábado en Valencia."
     },
     "about": {
       "title": "Sobre Nosotros",
-      "description": "Conoce la historia de Nexo CrossFit Valencia. Desde 2017 somos un box afiliado a CrossFit con coaches apasionados, instalaciones de primer nivel y una comunidad que te empuja a superarte cada día.",
+      "description": "Conoce Nexo CrossFit Valencia: box afiliado desde 2017, coaches certificados, instalaciones cuidadas y una comunidad que te impulsa.",
       "ogTitle": "Sobre Nosotros | Nexo CrossFit Valencia",
       "ogDescription": "Conoce la historia de Nexo CrossFit Valencia. Desde 2017 somos un box afiliado con coaches apasionados y una comunidad única."
     },
     "team": {
       "title": "Nuestro Equipo",
-      "description": "Conoce al equipo de coaches certificados de Nexo CrossFit Valencia. Profesionales apasionados con formación en CrossFit y HYROX que te guían con técnica, seguridad y motivación en cada sesión.",
+      "description": "Conoce a los coaches certificados de Nexo CrossFit Valencia. Entrena CrossFit y HYROX con técnica, seguridad y motivación.",
       "ogTitle": "Nuestro Equipo | Nexo CrossFit Valencia",
       "ogDescription": "Coaches certificados en CrossFit y HYROX. Profesionales apasionados que te guían con técnica y seguridad."
     },
     "contact": {
       "title": "Contacto",
-      "description": "Contacta con Nexo CrossFit Valencia. Estamos en Arzobispo Fabián y Fuero 21, Valencia 46009. Escríbenos por WhatsApp al 661 388 984, por email o a través del formulario.",
+      "description": "Contacta con Nexo CrossFit Valencia en Arzobispo Fabián y Fuero 21. Escríbenos por WhatsApp, email o formulario.",
       "ogTitle": "Contacto | Nexo CrossFit Valencia",
       "ogDescription": "Contacta con Nexo CrossFit. C/ Arzobispo Fabián y Fuero 21, Valencia. WhatsApp: 661 388 984."
     }
@@ -145,7 +145,7 @@
         },
         "1": {
           "question": "¿Cuáles son los horarios?",
-          "answer": "Abrimos de 7:00 a 21:30 de lunes a viernes, y sábados de 9:30 a 11:30."
+          "answer": "Abrimos lunes y miércoles de 7:00 a 21:30, martes y jueves de 7:45 a 21:30, y viernes de 7:00 a 20:00."
         },
         "2": {
           "question": "¿Es necesario estar en forma para apuntarse?",

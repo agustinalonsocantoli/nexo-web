@@ -1,5 +1,5 @@
 import AnimateOnScroll from '../AnimateOnScroll';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
 
 const linkKeys = ['crossfit', 'hyrox', 'onramp', 'plans', 'contact'] as const;
@@ -33,7 +33,7 @@ export default async function HomeTrainingGuideSection() {
           <span className="mb-5 inline-flex rounded-full border border-nexo-orange px-3 py-1.5 font-body text-xs font-semibold tracking-[0.08em] text-nexo-orange uppercase">
             {t('badge')}
           </span>
-          <h2 className="max-w-md text-balance break-words font-heading text-[24px] font-bold leading-[0.95] tracking-[0.01em] uppercase sm:text-[32px] lg:text-[32px] lg:leading-[100%] lg:tracking-[0.02em] xl:text-[36px]">
+          <h2 className="max-w-md text-balance break-normal font-heading text-[24px] font-bold leading-[0.95] tracking-[0.01em] uppercase sm:text-[32px] lg:text-[30px] lg:leading-[100%] lg:tracking-[0.02em] xl:text-[32px]">
             {t('title')}
           </h2>
           <p className="mt-5 max-w-md font-body text-base leading-7 text-nexo-gray">
