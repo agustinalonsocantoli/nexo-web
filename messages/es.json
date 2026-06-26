@@ -31,10 +31,10 @@
       "ogDescription": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde."
     },
     "class": {
-      "title": "Reserva tu Clase de Prueba",
-      "description": "Reserva tu clase de prueba de CrossFit o HYROX en Valencia. Coaches certificados te guían desde el primer día. Descubre Nexo.",
-      "ogTitle": "Reserva tu Clase de Prueba | Nexo CrossFit Valencia",
-      "ogDescription": "Prueba CrossFit o HYROX en Valencia con coaches certificados. Sin compromiso, adaptado a tu nivel."
+      "title": "Clases de HYROX en Valencia | Nexo CrossFit",
+      "description": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!",
+      "ogTitle": "Clases de HYROX en Valencia | Nexo CrossFit",
+      "ogDescription": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!"
     },
     "crossfit": {
       "title": "Clases de CrossFit en Valencia",
@@ -90,7 +90,8 @@
   },
   "home": {
     "hero": {
-      "title": "SUPÉRATE en Nexo",
+      "title1": "SUPÉRATE en Nexo CrossFit",
+      "title2": "En el centro de Valencia",
       "subtitle1": "Donde el deporte se convierte en diversión y el esfuerzo en bienestar.",
       "subtitle2": "Mejora tu salud física y mental rodeado de una comunidad que te impulsa.",
       "subtitle3": "¡Únete a nosotros!"
@@ -245,13 +246,59 @@
     }
   },
   "class": {
-    "heroTitle": "Reserva tu",
-    "heroTitlePart2": "clase de prueba",
+    "heroTitle": "Clases de HYROX",
+    "heroTitlePart2": "en Valencia",
     "sectionTitle": "A un paso de empezar tu nuevo estilo de vida",
     "introMobile": "Reserva tu clase de prueba y vive una sesión real de CrossFit o HYROX. Nos adaptamos a tu nivel y entrenarás en un ambiente motivador, junto a coaches que cuidan tu técnica y tu progreso.",
     "introDesktop": "Reserva tu clase de prueba y experimenta una auténtica sesión de CrossFit o HYROX en nuestro box. Sea cual sea tu nivel, nos adaptamos a ti. Entrenarás en un ambiente que motiva, conecta y empuja a dar lo mejor de ti, siempre acompañado por nuestros coaches, atentos a tu técnica y a tu progreso.",
     "crossfitBullet": "CrossFit es un entrenamiento que combina fuerza, resistencia y acondicionamiento a través de movimientos funcionales como empujar, levantar, saltar o correr. Además, integra disciplinas como la gimnasia y la halterofilia para desarrollar una forma física completa.",
-    "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física."
+    "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física.",
+    "hyroxGuide": {
+      "badge": "HYROX VALENCIA",
+      "title": "Entrena HYROX en Valencia con fuerza, carrera y comunidad",
+      "intro": "En Nexo CrossFit adaptamos el deporte de moda a tus objetivos y a tu nivel actual, tanto si aspiras a colgarte la medalla de finisher como si solo quieres ponerte en la mejor forma de tu vida.",
+      "sections": {
+        "0": {
+          "title": "Un entrenamiento adaptado a tu nivel",
+          "text": "Si estás buscando un entrenamiento de HYROX en Valencia que combine resistencia cardiovascular y fuerza funcional, has llegado al lugar adecuado. Diseñamos sesiones donde puedes regular el peso, la intensidad y el ritmo para progresar de forma segura desde tu punto de partida."
+        },
+        "1": {
+          "title": "Running y estaciones funcionales",
+          "text": "Nuestras clases combinan los dos pilares del HYROX: la carrera y estaciones como SkiErg, trineos, zancadas con peso o burpees. Todo en un ambiente de comunidad y bajo la supervisión de coaches certificados que corrigen tu técnica en cada movimiento."
+        }
+      }
+    },
+    "hyroxFaq": {
+      "badge": "FAQS",
+      "title": "Preguntas frecuentes sobre nuestro box de HYROX",
+      "description": "Resolvemos las dudas más habituales para que sepas cómo entrenamos HYROX en Nexo, cuánto duran las clases y si este formato encaja contigo.",
+      "items": {
+        "0": {
+          "question": "¿Por qué entrenar HYROX en Nexo CrossFit?",
+          "answer": "Porque combinamos programación oficial y adaptada, instalaciones equipadas con material específico como trineos, remo y balones medicinales, y coaches especialistas que trabajan la eficiencia de carrera y la prevención de lesiones. El HYROX es un reto contra ti mismo, no contra los demás."
+        },
+        "1": {
+          "question": "¿Es para mí si nunca lo he probado?",
+          "answer": "Sí, rotundamente. HYROX se define como el deporte para todo el mundo. No necesitas levantar pesos olímpicos ni hacer acrobacias; trabajamos con movimientos naturales de tu cuerpo y adaptamos la intensidad a tu nivel."
+        },
+        "2": {
+          "question": "¿Cuánto duran las clases de HYROX?",
+          "answer": "Cada sesión dura 45 minutos. Estructuramos la clase con un calentamiento dinámico y un bloque principal de alta intensidad para trabajar resistencia, fuerza y capacidad aeróbica."
+        },
+        "3": {
+          "question": "¿Cuál es el precio de las clases de HYROX en Valencia?",
+          "answer": "En Nexo CrossFit ofrecemos tarifas flexibles que se adaptan a tu disponibilidad semanal, con bonos de clases y pases mensuales. Puedes consultar nuestra tabla de precios o rellenar el formulario de contacto para que te ayudemos a elegir la tarifa que mejor encaje contigo."
+        },
+        "4": {
+          "question": "¿La clase de prueba es gratis?",
+          "answer": "Tu primera clase de HYROX cuesta 10 euros, pero si luego te apuntas con nosotros, los descontamos de tu primera cuota. Así puedes conocer el box, sentir la energía de la comunidad y probar la dinámica del entrenamiento antes de decidirte."
+        },
+        "5": {
+          "question": "¿Es necesario competir para apuntarse a las clases?",
+          "answer": "Para nada. Aunque muchos atletas se preparan para HYROX Valencia, la mayoría viene para mejorar su capacidad aeróbica, quemar grasa, ganar fuerza y desconectar del estrés diario. El objetivo lo pones tú."
+        }
+      }
+    }
   },
   "crossfit": {
     "heroTitle": "Reserva tu",

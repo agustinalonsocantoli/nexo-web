@@ -31,10 +31,10 @@
       "ogDescription": "Train at the best CrossFit and HYROX box in Valencia. Certified coaches, classes for all levels, morning and afternoon schedules."
     },
     "class": {
-      "title": "Book Your Trial Class",
-      "description": "Book your CrossFit or HYROX trial class in Valencia. Certified coaches guide you from day one. Discover the Nexo community.",
-      "ogTitle": "Book Your Trial Class | Nexo CrossFit Valencia",
-      "ogDescription": "Try CrossFit or HYROX in Valencia with certified coaches. No commitment, adapted to your level."
+      "title": "HYROX Classes in Valencia | Nexo CrossFit",
+      "description": "Want to train for the HYROX Valencia race or improve your endurance? Train at our box with certified coaches. Book your trial class!",
+      "ogTitle": "HYROX Classes in Valencia | Nexo CrossFit",
+      "ogDescription": "Want to train for the HYROX Valencia race or improve your endurance? Train at our box with certified coaches. Book your trial class!"
     },
     "crossfit": {
       "title": "CrossFit Classes in Valencia",
@@ -90,7 +90,8 @@
   },
   "home": {
     "hero": {
-      "title": "PUSH YOURSELF at Nexo",
+      "title1": "PUSH YOURSELF at Nexo CrossFit",
+      "title2": "In central Valencia",
       "subtitle1": "Where sport becomes fun and effort becomes well-being.",
       "subtitle2": "Improve your physical and mental health surrounded by a community that drives you.",
       "subtitle3": "Join us!"
@@ -245,13 +246,59 @@
     }
   },
   "class": {
-    "heroTitle": "Book your",
-    "heroTitlePart2": "trial class",
+    "heroTitle": "HYROX Classes",
+    "heroTitlePart2": "in Valencia",
     "sectionTitle": "One step away from starting your new lifestyle",
     "introMobile": "Book your trial class and experience a real CrossFit or HYROX session. We adapt to your level and you will train in a motivating environment, with coaches who take care of your technique and progress.",
     "introDesktop": "Book your trial class and experience an authentic CrossFit or HYROX session at our box. Whatever your level, we adapt to you. You will train in an environment that motivates, connects and pushes you to give your best, always accompanied by our coaches, attentive to your technique and progress.",
     "crossfitBullet": "CrossFit is a sport that combines strength, endurance and conditioning through functional movements like pushing, lifting, jumping or running. It also integrates disciplines such as gymnastics and weightlifting to develop complete physical fitness.",
-    "hyroxBullet": "HYROX is a training focused on improving cardiovascular endurance and overall fitness, combining running with functional exercises. The sessions prepare for competition formats, but are also designed for anyone looking to improve their fitness."
+    "hyroxBullet": "HYROX is a training focused on improving cardiovascular endurance and overall fitness, combining running with functional exercises. The sessions prepare for competition formats, but are also designed for anyone looking to improve their fitness.",
+    "hyroxGuide": {
+      "badge": "HYROX VALENCIA",
+      "title": "Train HYROX in Valencia with running, strength and community",
+      "intro": "At Nexo CrossFit we adapt the sport everyone is talking about to your goals and your current level, whether you want that finisher medal or just want to get into the best shape of your life.",
+      "sections": {
+        "0": {
+          "title": "Training that meets you where you are",
+          "text": "If you are looking for HYROX training in Valencia that mixes cardio endurance with functional strength, you are in the right place. We build sessions where you can adjust the load, intensity and pace, so you can progress safely from your own starting point."
+        },
+        "1": {
+          "title": "Running and functional stations",
+          "text": "Our classes bring together the two pillars of HYROX: running and stations like the SkiErg, sleds, weighted lunges and burpees. You train with a strong community around you and certified coaches who help you clean up your technique in every movement."
+        }
+      }
+    },
+    "hyroxFaq": {
+      "badge": "FAQS",
+      "title": "Frequently asked questions about our HYROX box",
+      "description": "Here are the questions people ask most before joining HYROX at Nexo, from class length and pricing to whether it is right for beginners.",
+      "items": {
+        "0": {
+          "question": "Why train HYROX at Nexo CrossFit?",
+          "answer": "Because we combine official-style programming adapted to your level, fully equipped facilities with competition-specific material like sleds, rowers and wall balls, and specialist coaches focused on running efficiency and injury prevention. HYROX is a challenge against yourself, not against everyone else."
+        },
+        "1": {
+          "question": "Is it for me if I have never tried it before?",
+          "answer": "Yes, absolutely. HYROX calls itself the fitness competition for every body. You do not need Olympic lifts or acrobatics; we focus on natural body movements and adapt the intensity to your current level."
+        },
+        "2": {
+          "question": "How long are HYROX classes?",
+          "answer": "Each session lasts 45 minutes. We structure the class with a dynamic warm-up and a main high-intensity block to work endurance, strength and aerobic capacity."
+        },
+        "3": {
+          "question": "How much do HYROX classes cost in Valencia?",
+          "answer": "At Nexo CrossFit we offer flexible pricing options that fit your weekly availability, including class packs and monthly passes. You can check our current price table or fill in the contact form and we will help you choose the option that fits your goals."
+        },
+        "4": {
+          "question": "Is the trial class free?",
+          "answer": "Your first HYROX class costs 10 euros, but if you join us afterwards, we take it off your first monthly fee. That way you can see the box, feel the community and try the training flow before deciding."
+        },
+        "5": {
+          "question": "Do I need to compete to join the classes?",
+          "answer": "Not at all. Some athletes train for HYROX Valencia, but most people come to improve their engine, burn fat, build strength and switch off from daily stress. You set the goal."
+        }
+      }
+    }
   },
   "crossfit": {
     "heroTitle": "Book your",

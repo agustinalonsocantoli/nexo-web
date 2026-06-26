@@ -27,8 +27,13 @@ export default async function Hero({ backgroundImage = '/hero-home.jpg' }: HeroP
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 px-8 text-center">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="font-heading text-[36px] font-bold leading-[100%] tracking-[0.03em] text-white uppercase lg:text-[64px] lg:tracking-[1.92px]">
-            {t('hero.title')}
+          <h1 className="flex flex-col items-center font-heading font-bold tracking-[0.03em] text-white uppercase lg:tracking-[1.92px]">
+            <span className="text-balance text-[32px] leading-[0.95] sm:text-[36px] lg:text-[64px]">
+              {t('hero.title1')}
+            </span>
+            <span className="mt-2 text-[20px] leading-[1.1] tracking-[0.02em] sm:text-[24px] lg:mt-3 lg:text-[36px]">
+              {t('hero.title2')}
+            </span>
           </h1>
           <p className="font-body text-base leading-[20px] text-[#e5e7eb] lg:text-2xl lg:leading-8">
             {t('hero.subtitle1')}<br />
