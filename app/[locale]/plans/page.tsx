@@ -151,8 +151,8 @@ export default async function PlansPage() {
       <SeasonalBanner
         imageSrc="/horario.png"
         alt="Horario de verano Nexo CrossFit"
-        start={{ month: 6, day: 1 }}
-        end={{ month: 8, day: 30 }}
+        start={{ month: 6, day: 28 }}
+        end={{ month: 8, day: 28 }}
         storageKey="nexo-horario-2026"
       />
       <PageHero
