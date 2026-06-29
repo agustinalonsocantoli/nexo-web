@@ -7,6 +7,7 @@ import Hero from "@/components/home/Hero";
 import TrainingSection from "@/components/home/TrainingSection";
 import TeamSection from "@/components/home/TeamSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import SeasonalBanner from "@/components/SeasonalBanner";
 
 const BASE_URL = "https://www.nexocrossfit.es";
 
@@ -42,6 +43,14 @@ export async function generateMetadata({
 export default function Home() {
   return (
     <main>
+      {/* Banner promocional — solo durante julio */}
+      <SeasonalBanner
+        imageSrc="/promo.png"
+        alt="Promo de verano Nexo CrossFit"
+        start={{ month: 6, day: 1 }}
+        end={{ month: 7, day: 31 }}
+        storageKey="nexo-promo-2026"
+      />
       <Hero />
       <TrainingSection />
       <AffiliatesSection />

@@ -31,10 +31,10 @@
       "ogDescription": "Entrena en el mejor box de CrossFit y HYROX de Valencia. Coaches certificados, clases para todos los niveles, horarios de mañana y tarde."
     },
     "class": {
-      "title": "Clases de HYROX en Valencia | Nexo CrossFit",
-      "description": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!",
-      "ogTitle": "Clases de HYROX en Valencia | Nexo CrossFit",
-      "ogDescription": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!"
+      "title": "Reserva tu Clase de Prueba",
+      "description": "Reserva tu clase de prueba de CrossFit o HYROX en Valencia. Coaches certificados te guían desde el primer día. Descubre Nexo.",
+      "ogTitle": "Reserva tu Clase de Prueba | Nexo CrossFit Valencia",
+      "ogDescription": "Prueba CrossFit o HYROX en Valencia con coaches certificados. Sin compromiso, adaptado a tu nivel."
     },
     "crossfit": {
       "title": "Clases de CrossFit en Valencia",
@@ -43,10 +43,10 @@
       "ogDescription": "CrossFit en Valencia con coaches certificados. WODs diarios, atención personalizada y curso On Ramp para empezar desde cero."
     },
     "hyrox": {
-      "title": "Clases de HYROX en Valencia",
-      "description": "Clases de HYROX en Valencia para todos los niveles. Entrena fuerza y resistencia con coaches especializados. Desde 75€/mes.",
+      "title": "Clases de HYROX en Valencia | Nexo CrossFit",
+      "description": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!",
       "ogTitle": "Clases de HYROX en Valencia | Nexo CrossFit",
-      "ogDescription": "HYROX en Valencia para todos los niveles. Coaches especializados, clases adaptadas y comunidad motivadora. Desde 75€/mes."
+      "ogDescription": "¿Quieres preparar la carrera HYROX Valencia o mejorar tu resistencia? Entrena en nuestro box con coaches certificados. ¡Reserva tu clase de prueba!"
     },
     "onramp": {
       "title": "Curso On Ramp CrossFit en Valencia",
@@ -91,7 +91,7 @@
   "home": {
     "hero": {
       "title1": "SUPÉRATE en Nexo CrossFit",
-      "title2": "En el centro de Valencia",
+      "title2": "Valencia",
       "subtitle1": "Donde el deporte se convierte en diversión y el esfuerzo en bienestar.",
       "subtitle2": "Mejora tu salud física y mental rodeado de una comunidad que te impulsa.",
       "subtitle3": "¡Únete a nosotros!"
@@ -246,13 +246,71 @@
     }
   },
   "class": {
-    "heroTitle": "Clases de HYROX",
-    "heroTitlePart2": "en Valencia",
+    "heroTitle": "Reserva tu",
+    "heroTitlePart2": "clase de prueba",
     "sectionTitle": "A un paso de empezar tu nuevo estilo de vida",
     "introMobile": "Reserva tu clase de prueba y vive una sesión real de CrossFit o HYROX. Nos adaptamos a tu nivel y entrenarás en un ambiente motivador, junto a coaches que cuidan tu técnica y tu progreso.",
     "introDesktop": "Reserva tu clase de prueba y experimenta una auténtica sesión de CrossFit o HYROX en nuestro box. Sea cual sea tu nivel, nos adaptamos a ti. Entrenarás en un ambiente que motiva, conecta y empuja a dar lo mejor de ti, siempre acompañado por nuestros coaches, atentos a tu técnica y a tu progreso.",
     "crossfitBullet": "CrossFit es un entrenamiento que combina fuerza, resistencia y acondicionamiento a través de movimientos funcionales como empujar, levantar, saltar o correr. Además, integra disciplinas como la gimnasia y la halterofilia para desarrollar una forma física completa.",
-    "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física.",
+    "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física."
+  },
+  "crossfit": {
+    "heroTitle": "Reserva tu",
+    "heroTitlePart2": "clase de prueba",
+    "onrampFaqs": {
+      "0": {
+        "question": "¿Cuánto cuesta?",
+        "answer": "El precio del curso On Ramp es de 165 euros. Incluye todas las sesiones con atención personalizada de nuestros coaches."
+      },
+      "1": {
+        "question": "¿No puedes asistir al horario establecido?",
+        "answer": "No te preocupes. Ofrecemos la opción de realizarlo de forma semiprivada (2 personas, 190 € por persona) o totalmente personalizada (1 persona, 250 €), en el horario que mejor te venga."
+      }
+    },
+    "crossfitFaqs": {
+      "0": {
+        "question": "¿Cuánto duran las clases?",
+        "answer": "Clases diarias de 60 minutos. Se repite cada hora a lo largo del día y varía diariamente. Alternamos entre entrenamientos de fuerza y trabajo metabólico (cardio) para un entrenamiento equilibrado y efectivo."
+      },
+      "1": {
+        "question": "¿La clase de prueba es gratis?",
+        "answer": "Ofrecemos una clase de prueba para quienes ya tienen experiencia en CrossFit y quieren unirse a nuestra familia. El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
+      }
+    },
+    "confirm": {
+      "heroTitle": "Reserva tu",
+      "heroTitlePart2": "clase de prueba",
+      "title": "¡Hemos recibido tu formulario!",
+      "message": "Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte."
+    }
+  },
+  "hyrox": {
+    "heroTitle": "Clases de HYROX",
+    "heroTitlePart2": "en Valencia",
+    "title": "Clases HYROX",
+    "description": "No hace falta tener experiencia previa para unirte a las clases de HYROX. Nuestros entrenamientos se adaptan a todos los niveles, desde principiantes hasta los más avanzados. Cada sesión está diseñada para que disfrutes, avances y te superes a tu propio ritmo.",
+    "faqs": {
+      "0": {
+        "question": "¿Cuánto cuestan las clases?",
+        "answerPrice1": "75€/mes",
+        "answerPrice2": "con",
+        "answerAccess": "acceso ilimitado",
+        "answerText": " únicamente a las clases de HYROX."
+      },
+      "1": {
+        "question": "¿Cuánto duran las clases?",
+        "answerIntro": "Clase de cardio de ",
+        "answerDuration": "45 minutos",
+        "answerMiddle": " que utiliza principalmente máquinas, movimientos básicos y ocasionalmente carrera. Diseñada para ",
+        "answerBenefit": "mejorar la capacidad aeróbica y la resistencia cardiovascular",
+        "answerEnd": ". Ideal también para quienes desean mejorar su condición física general sin adentrarse aún en el CrossFit."
+      },
+      "2": {
+        "question": "¿La clase de prueba es gratis?",
+        "answer": "El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
+      }
+    },
+    "tipo": "Clases HYROX",
     "hyroxGuide": {
       "badge": "HYROX VALENCIA",
       "title": "Entrena HYROX en Valencia con fuerza, carrera y comunidad",
@@ -298,65 +356,7 @@
           "answer": "Para nada. Aunque muchos atletas se preparan para HYROX Valencia, la mayoría viene para mejorar su capacidad aeróbica, quemar grasa, ganar fuerza y desconectar del estrés diario. El objetivo lo pones tú."
         }
       }
-    }
-  },
-  "crossfit": {
-    "heroTitle": "Reserva tu",
-    "heroTitlePart2": "clase de prueba",
-    "onrampFaqs": {
-      "0": {
-        "question": "¿Cuánto cuesta?",
-        "answer": "El precio del curso On Ramp es de 165 euros. Incluye todas las sesiones con atención personalizada de nuestros coaches."
-      },
-      "1": {
-        "question": "¿No puedes asistir al horario establecido?",
-        "answer": "No te preocupes. Ofrecemos la opción de realizarlo de forma semiprivada (2 personas, 190 € por persona) o totalmente personalizada (1 persona, 250 €), en el horario que mejor te venga."
-      }
     },
-    "crossfitFaqs": {
-      "0": {
-        "question": "¿Cuánto duran las clases?",
-        "answer": "Clases diarias de 60 minutos. Se repite cada hora a lo largo del día y varía diariamente. Alternamos entre entrenamientos de fuerza y trabajo metabólico (cardio) para un entrenamiento equilibrado y efectivo."
-      },
-      "1": {
-        "question": "¿La clase de prueba es gratis?",
-        "answer": "Ofrecemos una clase de prueba para quienes ya tienen experiencia en CrossFit y quieren unirse a nuestra familia. El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
-      }
-    },
-    "confirm": {
-      "heroTitle": "Reserva tu",
-      "heroTitlePart2": "clase de prueba",
-      "title": "¡Hemos recibido tu formulario!",
-      "message": "Gracias por ponerte en contacto con nosotros. Pronto te responderemos por mail o nos pondremos en contacto contigo para ayudarte."
-    }
-  },
-  "hyrox": {
-    "heroTitle": "Reserva tu",
-    "heroTitlePart2": "clase de prueba",
-    "title": "Clases HYROX",
-    "description": "No hace falta tener experiencia previa para unirte a las clases de HYROX. Nuestros entrenamientos se adaptan a todos los niveles, desde principiantes hasta los más avanzados. Cada sesión está diseñada para que disfrutes, avances y te superes a tu propio ritmo.",
-    "faqs": {
-      "0": {
-        "question": "¿Cuánto cuestan las clases?",
-        "answerPrice1": "75€/mes",
-        "answerPrice2": "con",
-        "answerAccess": "acceso ilimitado",
-        "answerText": " únicamente a las clases de HYROX."
-      },
-      "1": {
-        "question": "¿Cuánto duran las clases?",
-        "answerIntro": "Clase de cardio de ",
-        "answerDuration": "45 minutos",
-        "answerMiddle": " que utiliza principalmente máquinas, movimientos básicos y ocasionalmente carrera. Diseñada para ",
-        "answerBenefit": "mejorar la capacidad aeróbica y la resistencia cardiovascular",
-        "answerEnd": ". Ideal también para quienes desean mejorar su condición física general sin adentrarse aún en el CrossFit."
-      },
-      "2": {
-        "question": "¿La clase de prueba es gratis?",
-        "answer": "El coste de la clase es de 10 €, que se descontarán de tu primera cuota si decides apuntarte."
-      }
-    },
-    "tipo": "Clases HYROX",
     "confirm": {
       "heroTitle": "Reserva tu",
       "heroTitlePart2": "clase de prueba",

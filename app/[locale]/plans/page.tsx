@@ -3,6 +3,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import SeasonalBanner from "@/components/SeasonalBanner";
 import { getPrices, getDiscounts, getScheduleSlots } from "@/lib/queries";
 
 export const revalidate = 60;
@@ -146,6 +147,14 @@ export default async function PlansPage() {
 
   return (
     <main className="bg-[#fbfbfb]">
+      {/* Banner de horario de verano — del 1 de julio al 30 de agosto */}
+      <SeasonalBanner
+        imageSrc="/horario.png"
+        alt="Horario de verano Nexo CrossFit"
+        start={{ month: 6, day: 1 }}
+        end={{ month: 8, day: 30 }}
+        storageKey="nexo-horario-2026"
+      />
       <PageHero
         title={t('heroTitle')}
         titlePart2={t('heroTitlePart2')}

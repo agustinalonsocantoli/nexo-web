@@ -31,7 +31,7 @@ export default async function Hero({ backgroundImage = '/hero-home.jpg' }: HeroP
             <span className="text-balance text-[32px] leading-[0.95] sm:text-[36px] lg:text-[64px]">
               {t('hero.title1')}
             </span>
-            <span className="mt-2 text-[20px] leading-[1.1] tracking-[0.02em] sm:text-[24px] lg:mt-3 lg:text-[36px]">
+            <span className="mt-2 text-[18px] leading-[1.1] tracking-[0.02em] sm:text-[20px] lg:mt-3 lg:text-[28px]">
               {t('hero.title2')}
             </span>
           </h1>
