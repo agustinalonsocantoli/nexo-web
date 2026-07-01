@@ -255,8 +255,8 @@
     "hyroxBullet": "HYROX is a training focused on improving cardiovascular endurance and overall fitness, combining running with functional exercises. The sessions prepare for competition formats, but are also designed for anyone looking to improve their fitness."
   },
   "crossfit": {
-    "heroTitle": "Book your",
-    "heroTitlePart2": "trial class",
+    "heroTitle": "CROSSFIT Classes",
+    "heroTitlePart2": "in Valencia",
     "onrampFaqs": {
       "0": {
         "question": "How much does it cost?",
@@ -519,6 +519,7 @@
     }
   },
   "forms": {
+    "bookingHeading": "Book your trial class",
     "name": "Full name",
     "namePlaceholder": "John Doe",
     "email": "Email address",

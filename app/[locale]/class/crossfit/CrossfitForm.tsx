@@ -264,6 +264,9 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
       <PageHero title={tc('heroTitle')} titlePart2={tc('heroTitlePart2')} imageSrc="/bg-form-des.jpg" />
 
       <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
+        <h2 className="mb-4 font-heading text-[16px] font-bold uppercase leading-[1.05] tracking-[0.02em] text-nexo-dark sm:text-[20px] lg:text-[24px]">
+          {tf("bookingHeading")}
+        </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_1fr] lg:grid-rows-[auto_1fr] lg:gap-x-12 lg:gap-y-0 lg:items-start"

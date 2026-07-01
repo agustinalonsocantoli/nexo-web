@@ -255,8 +255,8 @@
     "hyroxBullet": "HYROX es un entrenamiento enfocado en mejorar la resistencia cardiovascular y la capacidad física general, combinando carrera con ejercicios funcionales. Las sesiones preparan para los formatos de competición, pero también están pensadas para cualquier persona que quiera mejorar su condición física."
   },
   "crossfit": {
-    "heroTitle": "Reserva tu",
-    "heroTitlePart2": "clase de prueba",
+    "heroTitle": "Clases de CROSSFIT",
+    "heroTitlePart2": "en Valencia",
     "onrampFaqs": {
       "0": {
         "question": "¿Cuánto cuesta?",
@@ -519,6 +519,7 @@
     }
   },
   "forms": {
+    "bookingHeading": "Reserva tu clase de prueba",
     "name": "Nombre completo",
     "namePlaceholder": "Pedro Pérez",
     "email": "Correo electrónico",

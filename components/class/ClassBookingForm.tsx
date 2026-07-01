@@ -89,6 +89,9 @@ export default function ClassBookingForm({
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
+      <h2 className="mb-4 font-heading text-[16px] font-bold uppercase leading-[1.05] tracking-[0.02em] text-nexo-dark sm:text-[20px] lg:text-[24px]">
+        {tf("bookingHeading")}
+      </h2>
       <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-start lg:gap-12">
 
         {/* ── Columna izquierda (desktop): formulario ── */}

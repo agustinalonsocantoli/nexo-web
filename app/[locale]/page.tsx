@@ -45,7 +45,7 @@ export default function Home() {
     <main>
       {/* Banner promocional — solo durante julio */}
       <SeasonalBanner
-        imageSrc="/promo.png"
+        imageSrc="/promoRecorte.png"
         alt="Promo de verano Nexo CrossFit"
         start={{ month: 6, day: 28 }}
         end={{ month: 7, day: 31 }}
