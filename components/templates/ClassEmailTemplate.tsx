@@ -1,8 +1,15 @@
+import { documentLabel } from "@/lib/identity";
+
 interface ClassEmailTemplateProps {
   tipo: string;
   nombre: string;
   email: string;
   telefono: string;
+  tipoDocumento?: string;
+  documento?: string;
+  fechaNacimiento?: string;
+  lesion?: "si" | "no";
+  lesionDetalle?: string;
   mensaje: string;
   fechaCurso?: string;
   boxEntrenado?: string;
@@ -20,6 +27,11 @@ export function ClassEmailTemplate({
   nombre,
   email,
   telefono,
+  tipoDocumento,
+  documento,
+  fechaNacimiento,
+  lesion,
+  lesionDetalle,
   mensaje,
   fechaCurso,
   boxEntrenado,
@@ -48,6 +60,31 @@ export function ClassEmailTemplate({
               <a href={waLink(telefono)} style={{ color: "#1255cc" }}>{telefono}</a>
             </td>
           </tr>
+          {documento && (
+            <tr>
+              <td style={{ padding: "8px 0", fontWeight: "bold" }}>{documentLabel(tipoDocumento)}:</td>
+              <td style={{ padding: "8px 0" }}>{documento}</td>
+            </tr>
+          )}
+          {fechaNacimiento && (
+            <tr>
+              <td style={{ padding: "8px 0", fontWeight: "bold" }}>Fecha de nacimiento:</td>
+              <td style={{ padding: "8px 0" }}>{fechaNacimiento}</td>
+            </tr>
+          )}
+          {lesion && (
+            <tr>
+              <td style={{ padding: "8px 0", fontWeight: "bold", verticalAlign: "top" }}>Lesiones:</td>
+              <td style={{ padding: "8px 0", whiteSpace: "pre-wrap" }}>
+                {lesion === "si" ? (
+                  <strong style={{ color: "#e95826" }}>Sí</strong>
+                ) : (
+                  "No"
+                )}
+                {lesion === "si" && lesionDetalle ? ` — ${lesionDetalle}` : ""}
+              </td>
+            </tr>
+          )}
           {fechaCurso && (
             <tr>
               <td style={{ padding: "8px 0", fontWeight: "bold" }}>Fecha curso:</td>

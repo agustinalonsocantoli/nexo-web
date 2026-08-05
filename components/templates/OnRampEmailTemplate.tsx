@@ -1,10 +1,15 @@
+import { documentLabel } from "@/lib/identity";
+
 interface OnRampEmailTemplateProps {
   fecha: string;
   nombre: string;
   email: string;
   telefono: string;
-  dni: string;
+  tipoDocumento?: string;
+  documento?: string;
   fechaNacimiento: string;
+  lesion?: "si" | "no";
+  lesionDetalle?: string;
   mensaje: string;
 }
 
@@ -19,8 +24,11 @@ export function OnRampEmailTemplate({
   nombre,
   email,
   telefono,
-  dni,
+  tipoDocumento,
+  documento,
   fechaNacimiento,
+  lesion,
+  lesionDetalle,
   mensaje,
 }: OnRampEmailTemplateProps) {
   return (
@@ -47,13 +55,26 @@ export function OnRampEmailTemplate({
             </td>
           </tr>
           <tr>
-            <td style={{ padding: "8px 0", fontWeight: "bold" }}>DNI:</td>
-            <td style={{ padding: "8px 0" }}>{dni}</td>
+            <td style={{ padding: "8px 0", fontWeight: "bold" }}>{documentLabel(tipoDocumento)}:</td>
+            <td style={{ padding: "8px 0" }}>{documento}</td>
           </tr>
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold" }}>Fecha de nacimiento:</td>
             <td style={{ padding: "8px 0" }}>{fechaNacimiento}</td>
           </tr>
+          {lesion && (
+            <tr>
+              <td style={{ padding: "8px 0", fontWeight: "bold", verticalAlign: "top" }}>Lesiones:</td>
+              <td style={{ padding: "8px 0", whiteSpace: "pre-wrap" }}>
+                {lesion === "si" ? (
+                  <strong style={{ color: "#e95826" }}>Sí</strong>
+                ) : (
+                  "No"
+                )}
+                {lesion === "si" && lesionDetalle ? ` — ${lesionDetalle}` : ""}
+              </td>
+            </tr>
+          )}
           <tr>
             <td style={{ padding: "8px 0", fontWeight: "bold", verticalAlign: "top" }}>Mensaje:</td>
             <td style={{ padding: "8px 0", whiteSpace: "pre-wrap" }}>{mensaje}</td>

@@ -10,6 +10,9 @@ import { Link, useRouter } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
 import FileUploadField from "@/components/FileUploadField";
+import IdentityDocumentField from "@/components/forms/IdentityDocumentField";
+import InjuryField from "@/components/forms/InjuryField";
+import { identityFields, refineIdentity } from "@/lib/identitySchema";
 
 function createCrossfitSchema(t: (key: string) => string) {
   return z
@@ -18,25 +21,20 @@ function createCrossfitSchema(t: (key: string) => string) {
       nombre: z.string().min(2, t("nameMin")),
       email: z.string().email(t("emailInvalid")),
       telefono: z.string().min(1, t("phoneRequired")).refine(isValidPhoneNumber, t("phoneInvalid")),
+      ...identityFields(t),
       mensaje: z.string().min(10, t("messageMin")),
       privacidad: z.boolean().refine((v) => v, t("privacyRequired")),
       fechaCurso: z.string().optional(),
-      dni: z.string().optional(),
-      fechaNacimiento: z.string().optional(),
       comprobante: z.any().optional(),
       boxEntrenado: z.string().optional(),
       tiempoEntrenado: z.string().optional(),
     })
     .superRefine((data, ctx) => {
+      refineIdentity(data, ctx, t);
+
       if (data.firstTime === "si") {
         if (!data.fechaCurso) {
           ctx.addIssue({ code: "custom", path: ["fechaCurso"], message: t("courseDateRequired") });
-        }
-        if (!data.dni) {
-          ctx.addIssue({ code: "custom", path: ["dni"], message: t("dniRequired") });
-        }
-        if (!data.fechaNacimiento) {
-          ctx.addIssue({ code: "custom", path: ["fechaNacimiento"], message: t("birthDateRequired") });
         }
         if (!(data.comprobante instanceof FileList) || data.comprobante.length === 0) {
           ctx.addIssue({ code: "custom", path: ["comprobante"], message: t("proofRequired") });
@@ -72,6 +70,9 @@ function getCrossfitFaqs(t: (key: string) => string) {
 const inputBase =
   "w-full rounded-lg border bg-white px-4 py-2 font-body text-sm text-nexo-dark placeholder:text-[#cac4d0] focus:border-nexo-orange focus:outline-none";
 
+const headingBase =
+  "font-heading text-[16px] font-bold uppercase leading-[1.05] tracking-[0.02em] text-nexo-dark sm:text-[20px] lg:text-[24px]";
+
 export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: string; label: string }[] }) {
   const router = useRouter();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -97,12 +98,13 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
 
   const firstTime = watch("firstTime");
   const privacidad = watch("privacidad");
+  const lesion = watch("lesion");
   const comprobanteFiles = watch("comprobante") as FileList | undefined;
   const fileName = comprobanteFiles?.[0]?.name ?? "";
 
   function selectFirstTime(val: "si" | "no") {
     setValue("firstTime", val, { shouldValidate: isSubmitted });
-    clearErrors(["fechaCurso", "dni", "fechaNacimiento", "comprobante", "boxEntrenado", "tiempoEntrenado"]);
+    clearErrors(["fechaCurso", "comprobante", "boxEntrenado", "tiempoEntrenado"]);
     setOpenFaq(null);
   }
 
@@ -136,8 +138,11 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
             nombre: data.nombre,
             email: data.email,
             telefono: data.telefono,
-            dni: data.dni,
+            tipoDocumento: data.tipoDocumento,
+            documento: data.documento,
             fechaNacimiento: data.fechaNacimiento,
+            lesion: data.lesion,
+            lesionDetalle: data.lesion === "si" ? data.lesionDetalle : undefined,
             mensaje: data.mensaje,
             comprobante,
           }),
@@ -151,6 +156,11 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
             nombre: data.nombre,
             email: data.email,
             telefono: data.telefono,
+            tipoDocumento: data.tipoDocumento,
+            documento: data.documento,
+            fechaNacimiento: data.fechaNacimiento,
+            lesion: data.lesion,
+            lesionDetalle: data.lesion === "si" ? data.lesionDetalle : undefined,
             mensaje: data.mensaje,
             boxEntrenado: data.boxEntrenado,
             tiempoEntrenado: data.tiempoEntrenado,
@@ -264,7 +274,8 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
       <PageHero title={tc('heroTitle')} titlePart2={tc('heroTitlePart2')} imageSrc="/bg-form-des.jpg" />
 
       <div className="mx-auto max-w-7xl px-6 py-8 lg:px-[72px] lg:py-12">
-        <h2 className="mb-4 font-heading text-[16px] font-bold uppercase leading-[1.05] tracking-[0.02em] text-nexo-dark sm:text-[20px] lg:text-[24px]">
+        {/* Título — desktop: arriba de todo; móvil: se renderiza sobre los campos */}
+        <h2 className={`mb-4 hidden ${headingBase} lg:block`}>
           {tf("bookingHeading")}
         </h2>
         <form
@@ -309,6 +320,8 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
 
           {/* Campos del formulario — col 1, row 2 en desktop */}
           <div className="flex flex-col gap-4 lg:col-start-1 lg:row-start-2">
+
+            <h2 className={`${headingBase} lg:hidden`}>{tf("bookingHeading")}</h2>
 
             {/* ── SI: fecha inicio (primero, con ícono calendario) ── */}
             {firstTime === "si" && (
@@ -413,34 +426,34 @@ export default function CrossfitForm({ fechasOnRamp }: { fechasOnRamp: { value: 
               {errors.telefono && <p className="font-body text-sm text-red-500">{tf("phoneError")}</p>}
             </div>
 
-            {/* DNI — solo SI */}
-            {firstTime === "si" && (
-              <div className="flex flex-col gap-2">
-                <label htmlFor="dni" className="font-body text-base leading-5 text-nexo-dark">{tf("dni")}</label>
-                <input
-                  id="dni"
-                  type="text"
-                  placeholder={tf("dniPlaceholder")}
-                  {...register("dni")}
-                  className={`${inputBase} ${errors.dni ? "border-red-500" : "border-[#cac4d0]"}`}
-                />
-                {errors.dni && <p className="font-body text-sm text-red-500">{errors.dni.message}</p>}
-              </div>
-            )}
+            {/* Documento de identidad */}
+            <IdentityDocumentField
+              typeField={register("tipoDocumento")}
+              numberField={register("documento")}
+              typeError={errors.tipoDocumento}
+              numberError={errors.documento}
+            />
 
-            {/* Fecha de nacimiento — solo SI */}
-            {firstTime === "si" && (
-              <div className="flex flex-col gap-2">
-                <label htmlFor="fechaNacimiento" className="font-body text-base leading-5 text-nexo-dark">{tf("birthDate")}</label>
-                <input
-                  id="fechaNacimiento"
-                  type="date"
-                  {...register("fechaNacimiento")}
-                  className={`appearance-none ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
-                />
-                {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
-              </div>
-            )}
+            {/* Fecha de nacimiento */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="fechaNacimiento" className="font-body text-base leading-5 text-nexo-dark">{tf("birthDate")}</label>
+              <input
+                id="fechaNacimiento"
+                type="date"
+                {...register("fechaNacimiento")}
+                className={`appearance-none ${inputBase} ${errors.fechaNacimiento ? "border-red-500" : "border-[#cac4d0]"}`}
+              />
+              {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
+            </div>
+
+            {/* Lesiones */}
+            <InjuryField
+              value={lesion}
+              onSelect={(value) => setValue("lesion", value, { shouldValidate: isSubmitted })}
+              detailField={register("lesionDetalle")}
+              error={errors.lesion}
+              detailError={errors.lesionDetalle}
+            />
 
             {/* Mensaje */}
             <div className="flex flex-col gap-2">

@@ -7,11 +7,30 @@ const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { tipo, nombre, email, telefono, mensaje, fechaCurso, boxEntrenado, tiempoEntrenado } = body as {
+    const {
+      tipo,
+      nombre,
+      email,
+      telefono,
+      tipoDocumento,
+      documento,
+      fechaNacimiento,
+      lesion,
+      lesionDetalle,
+      mensaje,
+      fechaCurso,
+      boxEntrenado,
+      tiempoEntrenado,
+    } = body as {
       tipo: string;
       nombre: string;
       email: string;
       telefono: string;
+      tipoDocumento?: string;
+      documento?: string;
+      fechaNacimiento?: string;
+      lesion?: "si" | "no";
+      lesionDetalle?: string;
       mensaje: string;
       fechaCurso?: string;
       boxEntrenado?: string;
@@ -23,7 +42,21 @@ export async function POST(request: Request) {
       to: [process.env.NEXT_PUBLIC_EMAIL_TO!],
       replyTo: email,
       subject: `Solicitud ${tipo} - ${nombre}`,
-      react: ClassEmailTemplate({ tipo, nombre, email, telefono, mensaje, fechaCurso, boxEntrenado, tiempoEntrenado }),
+      react: ClassEmailTemplate({
+        tipo,
+        nombre,
+        email,
+        telefono,
+        tipoDocumento,
+        documento,
+        fechaNacimiento,
+        lesion,
+        lesionDetalle,
+        mensaje,
+        fechaCurso,
+        boxEntrenado,
+        tiempoEntrenado,
+      }),
     });
 
     if (error) {

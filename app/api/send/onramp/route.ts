@@ -7,13 +7,28 @@ const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fecha, nombre, email, telefono, dni, fechaNacimiento, mensaje, comprobante } = body as {
+    const {
+      fecha,
+      nombre,
+      email,
+      telefono,
+      tipoDocumento,
+      documento,
+      fechaNacimiento,
+      lesion,
+      lesionDetalle,
+      mensaje,
+      comprobante,
+    } = body as {
       fecha: string;
       nombre: string;
       email: string;
       telefono: string;
-      dni: string;
+      tipoDocumento?: string;
+      documento?: string;
       fechaNacimiento: string;
+      lesion?: "si" | "no";
+      lesionDetalle?: string;
       mensaje: string;
       comprobante?: { content: string; filename: string };
     };
@@ -27,7 +42,18 @@ export async function POST(request: Request) {
       to: [process.env.NEXT_PUBLIC_EMAIL_TO!],
       replyTo: email,
       subject: `Reserva On Ramp - ${nombre}`,
-      react: OnRampEmailTemplate({ fecha, nombre, email, telefono, dni, fechaNacimiento, mensaje }),
+      react: OnRampEmailTemplate({
+        fecha,
+        nombre,
+        email,
+        telefono,
+        tipoDocumento,
+        documento,
+        fechaNacimiento,
+        lesion,
+        lesionDetalle,
+        mensaje,
+      }),
       attachments,
     });
 

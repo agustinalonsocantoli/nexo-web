@@ -11,24 +11,28 @@ import { Link, useRouter } from "@/i18n/navigation";
 import PageHero from "@/components/PageHero";
 import PhoneField from "@/components/PhoneField";
 import FileUploadField from "@/components/FileUploadField";
+import IdentityDocumentField from "@/components/forms/IdentityDocumentField";
+import InjuryField from "@/components/forms/InjuryField";
+import { identityFields, refineIdentity } from "@/lib/identitySchema";
 
 function createOnRampSchema(t: (key: string) => string) {
-  return z.object({
-    fecha: z.string().min(1, t("courseDateRequired")),
-    nombre: z.string().min(2, t("nameMin")),
-    email: z.string().email(t("emailInvalid")),
-    telefono: z.string().min(1, t("phoneRequired")).refine(isValidPhoneNumber, t("phoneInvalid")),
-    dni: z.string().min(8, t("dniInvalid")),
-    fechaNacimiento: z.string().min(1, t("birthDateRequired")),
-    mensaje: z.string().min(10, t("messageMin")),
-    privacidad: z.boolean().refine((v) => v, t("privacyRequired")),
-    comprobante: z
-      .any()
-      .refine(
-        (files) => files instanceof FileList && files.length > 0,
-        t("proofRequired")
-      ),
-  });
+  return z
+    .object({
+      fecha: z.string().min(1, t("courseDateRequired")),
+      nombre: z.string().min(2, t("nameMin")),
+      email: z.string().email(t("emailInvalid")),
+      telefono: z.string().min(1, t("phoneRequired")).refine(isValidPhoneNumber, t("phoneInvalid")),
+      ...identityFields(t),
+      mensaje: z.string().min(10, t("messageMin")),
+      privacidad: z.boolean().refine((v) => v, t("privacyRequired")),
+      comprobante: z
+        .any()
+        .refine(
+          (files) => files instanceof FileList && files.length > 0,
+          t("proofRequired")
+        ),
+    })
+    .superRefine((data, ctx) => refineIdentity(data, ctx, t));
 }
 
 type FormData = z.infer<ReturnType<typeof createOnRampSchema>>;
@@ -62,6 +66,7 @@ function OnRampBookingContent({ fechasOnRamp }: { fechasOnRamp: { value: string;
   });
 
   const privacidad = watch("privacidad");
+  const lesion = watch("lesion");
   const comprobanteFiles = watch("comprobante") as FileList | undefined;
   const fileName = comprobanteFiles?.[0]?.name ?? "";
 
@@ -87,8 +92,11 @@ function OnRampBookingContent({ fechasOnRamp }: { fechasOnRamp: { value: string;
           nombre: data.nombre,
           email: data.email,
           telefono: data.telefono,
-          dni: data.dni,
+          tipoDocumento: data.tipoDocumento,
+          documento: data.documento,
           fechaNacimiento: data.fechaNacimiento,
+          lesion: data.lesion,
+          lesionDetalle: data.lesion === "si" ? data.lesionDetalle : undefined,
           mensaje: data.mensaje,
           comprobante: { content: base64, filename: file.name },
         }),
@@ -180,18 +188,13 @@ function OnRampBookingContent({ fechasOnRamp }: { fechasOnRamp: { value: string;
                 {errors.telefono && <p className="font-body text-sm text-red-500">{tf("phoneError")}</p>}
               </div>
 
-              {/* DNI */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="dni" className={labelClass}>{tf("dni")}</label>
-                <input
-                  id="dni"
-                  type="text"
-                  placeholder={tf("dniPlaceholder")}
-                  {...register("dni")}
-                  className={`${inputBase} ${errors.dni ? "border-red-500" : "border-[#cac4d0]"}`}
-                />
-                {errors.dni && <p className="font-body text-sm text-red-500">{errors.dni.message}</p>}
-              </div>
+              {/* Documento de identidad */}
+              <IdentityDocumentField
+                typeField={register("tipoDocumento")}
+                numberField={register("documento")}
+                typeError={errors.tipoDocumento}
+                numberError={errors.documento}
+              />
 
               {/* Fecha de nacimiento */}
               <div className="flex flex-col gap-2">
@@ -204,6 +207,15 @@ function OnRampBookingContent({ fechasOnRamp }: { fechasOnRamp: { value: string;
                 />
                 {errors.fechaNacimiento && <p className="font-body text-sm text-red-500">{errors.fechaNacimiento.message}</p>}
               </div>
+
+              {/* Lesiones */}
+              <InjuryField
+                value={lesion}
+                onSelect={(value) => setValue("lesion", value, { shouldValidate: isSubmitted })}
+                detailField={register("lesionDetalle")}
+                error={errors.lesion}
+                detailError={errors.lesionDetalle}
+              />
 
               {/* Mensaje */}
               <div className="flex flex-col gap-2">
