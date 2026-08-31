@@ -524,7 +524,7 @@
     "namePlaceholder": "John Doe",
     "email": "Email address",
     "emailPlaceholder": "johndoe@gmail.com",
-    "phone": "Phone",
+    "phone": "WhatsApp number",
     "message": "Message",
     "messagePlaceholder": "Write your message here...",
     "privacy": "By clicking, I accept the <link>privacy policy</link>.",
@@ -564,7 +564,7 @@
     "paymentContact": "If you have any questions during the process, email us at <email>info@nexocrossfit.es</email> or message us on WhatsApp at <phone>661 388 984</phone> and we will help you as soon as possible.",
     "onRampDescriptionSi": "At Nexo we always prioritize technique and care, so if you have never done CrossFit, you will start with our beginner course. The ON RAMP is designed for you to learn the fundamentals of CrossFit at your own pace. After completing the course, you will be able to start the regular classes knowing exactly what you are doing and why.",
     "crossfitDescriptionNo": "If you already have CrossFit experience, this is your place to keep pushing yourself. Our workouts are designed to challenge you, improve your technique, and take your performance to the next level. Be part of our box and turn every session into a challenge that takes you further.",
-    "phoneError": "Phone must be valid and is required",
+    "phoneError": "WhatsApp number must be valid and is required",
     "paymentData": {
       "name": "Name",
       "concept": "Concept",
@@ -574,8 +574,8 @@
   "validation": {
     "nameMin": "Name is too short",
     "emailInvalid": "Invalid email",
-    "phoneRequired": "Enter your phone number",
-    "phoneInvalid": "Invalid phone number",
+    "phoneRequired": "Enter your WhatsApp number",
+    "phoneInvalid": "Invalid WhatsApp number",
     "messageMin": "Message must be at least 10 characters",
     "privacyRequired": "You must accept the privacy policy",
     "firstTimeRequired": "Select an option",

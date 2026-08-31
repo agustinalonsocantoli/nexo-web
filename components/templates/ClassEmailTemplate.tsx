@@ -55,7 +55,7 @@ export function ClassEmailTemplate({
             <td style={{ padding: "8px 0" }}>{email}</td>
           </tr>
           <tr>
-            <td style={{ padding: "8px 0", fontWeight: "bold" }}>Teléfono:</td>
+            <td style={{ padding: "8px 0", fontWeight: "bold" }}>WhatsApp:</td>
             <td style={{ padding: "8px 0" }}>
               <a href={waLink(telefono)} style={{ color: "#1255cc" }}>{telefono}</a>
             </td>

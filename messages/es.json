@@ -524,7 +524,7 @@
     "namePlaceholder": "Pedro Pérez",
     "email": "Correo electrónico",
     "emailPlaceholder": "pedropérez@gmail.com",
-    "phone": "Teléfono",
+    "phone": "Número de WhatsApp",
     "message": "Mensaje",
     "messagePlaceholder": "Escribe tu mensaje aquí...",
     "privacy": "Al hacer clic, acepto la <link>política de privacidad</link>.",
@@ -564,7 +564,7 @@
     "paymentContact": "Si tienes cualquier duda durante el proceso, escríbenos a <email>info@nexocrossfit.es</email> o háblanos por WhatsApp <phone>661 388 984</phone> y te ayudaremos lo antes posible.",
     "onRampDescriptionSi": "En Nexo siempre damos prioridad a la técnica y el cuidado, por eso si nunca has hecho CrossFit, empezarás con nuestro curso de iniciación. El ON RAMP es para que aprendas los fundamentos del CrossFit sin prisa. Al terminar el curso podrás empezar a hacer clases regulares sabiendo exactamente qué haces y por qué lo haces.",
     "crossfitDescriptionNo": "Si ya tienes experiencia en CrossFit, este es tu sitio para seguir superándote. Nuestros entrenamientos están diseñados para desafiarte, mejorar tu técnica y llevar tu rendimiento al siguiente nivel. Sé parte de nuestro box y convierte cada sesión en un desafío que te lleva más lejos.",
-    "phoneError": "El teléfono debe ser válido y es obligatorio",
+    "phoneError": "El número de WhatsApp debe ser válido y es obligatorio",
     "paymentData": {
       "name": "Nombre",
       "concept": "Concepto",
@@ -574,8 +574,8 @@
   "validation": {
     "nameMin": "Nombre demasiado corto",
     "emailInvalid": "Email inválido",
-    "phoneRequired": "Introduce tu teléfono",
-    "phoneInvalid": "Teléfono inválido",
+    "phoneRequired": "Introduce tu número de WhatsApp",
+    "phoneInvalid": "Número de WhatsApp inválido",
     "messageMin": "El mensaje debe tener al menos 10 caracteres",
     "privacyRequired": "Debes aceptar la política de privacidad",
     "firstTimeRequired": "Selecciona una opción",
