@@ -639,5 +639,107 @@
     "changesTitle": "Cambios en esta política",
     "changesText": "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Cualquier cambio será publicado en esta misma página con la fecha de última actualización.",
     "lastUpdated": "Última actualización: marzo 2026"
+  },
+  "welcomeForm": {
+    "progress": "Paso {current} de {total}",
+    "start": "Empezar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "intro": {
+      "title": "¡Bienvenido/a a Nexo CrossFit!",
+      "text": "Queremos conocerte un poco mejor para recomendarte el entrenamiento que mejor se adapte a ti.",
+      "duration": "Solo te llevará 2 minutos."
+    },
+    "datos": {
+      "title": "Para empezar"
+    },
+    "modalidad": {
+      "title": "¿Qué tipo de entrenamiento estás buscando?",
+      "options": {
+        "crossfit": {
+          "label": "CrossFit",
+          "description": "Una disciplina que combina gimnasia, halterofilia, fuerza y cardio."
+        },
+        "strengthHyrox": {
+          "label": "Strength / Hyrox",
+          "description": "Entrenamiento que combina fuerza y cardio, orientado al rendimiento."
+        },
+        "hyrox": {
+          "label": "Hyrox",
+          "description": "Entrenamiento enfocado en resistencia y trabajo cardiovascular."
+        }
+      }
+    },
+    "cfExp": {
+      "title": "¿Tienes experiencia previa entrenando CrossFit?",
+      "detailLabel": "¿Cuánto tiempo has entrenado CrossFit y en qué box/boxes?",
+      "detailPlaceholder": "Ej: 2 años en Box X",
+      "availabilityLabel": "¿Qué días y horarios tienes disponibles para realizar el curso de iniciación?"
+    },
+    "prueba": {
+      "title": "¿Cuándo te vendría bien hacer una clase de prueba?",
+      "subtitle": "Indica los días y horarios que te vienen mejor."
+    },
+    "availability": {
+      "daysLabel": "Días",
+      "slotsLabel": "Horarios",
+      "days": {
+        "L": "L",
+        "M": "M",
+        "X": "X",
+        "J": "J",
+        "V": "V",
+        "S": "S"
+      },
+      "slots": {
+        "manana": "Mañana (7–12)",
+        "mediodia": "Mediodía (12–16)",
+        "tarde": "Tarde (16–21:30)"
+      },
+      "textLabel": "¿Algo más concreto?",
+      "textPlaceholder": "Ej: lunes a las 19:00"
+    },
+    "sobreTi1": {
+      "title": "Cuéntanos un poco más sobre ti",
+      "sport": "¿Qué deporte practicas actualmente o has practicado anteriormente?",
+      "sportPlaceholder": "Ej: running, fútbol, gym…",
+      "injury": "¿Tienes actualmente alguna lesión o has tenido alguna que debamos conocer?"
+    },
+    "sobreTi2": {
+      "title": "¿Cuál es tu principal objetivo con el entrenamiento?",
+      "subtitle": "Puedes elegir más de uno.",
+      "goals": {
+        "condicion": "Mejorar condición física",
+        "fuerza": "Ganar fuerza",
+        "grasa": "Perder grasa",
+        "resistencia": "Mejorar resistencia",
+        "competicion": "Preparar una competición",
+        "otro": "Otro"
+      },
+      "otherLabel": "¿Cuál es tu objetivo?",
+      "otherPlaceholder": "Cuéntanoslo brevemente",
+      "extraLabel": "¿Hay algo más que quieras contarnos?",
+      "extraPlaceholder": "Opcional"
+    },
+    "consent": {
+      "title": "Último paso",
+      "summary": "Te escribiremos por WhatsApp al {whatsapp}"
+    },
+    "gracias": {
+      "title": "¡Gracias por confiar en Nexo CrossFit!",
+      "text": "Muy pronto nos pondremos en contacto contigo 💪",
+      "close": "Ya puedes cerrar esta página."
+    },
+    "validation": {
+      "modalidadRequired": "Elige una modalidad para continuar",
+      "experienciaRequired": "Indica si tienes experiencia previa",
+      "expDetalleMin": "Cuéntanos cuánto tiempo y en qué box has entrenado",
+      "disponibilidadRequired": "Selecciona al menos un día y un horario, o escribe tu disponibilidad",
+      "deporteRequired": "Cuéntanos qué deporte practicas o has practicado",
+      "lesionRequired": "Selecciona una opción",
+      "lesionDetalleMin": "Detalla la lesión (mínimo 5 caracteres)",
+      "objetivosRequired": "Elige al menos un objetivo",
+      "objetivoOtroRequired": "Cuéntanos cuál es tu objetivo"
+    }
   }
 }

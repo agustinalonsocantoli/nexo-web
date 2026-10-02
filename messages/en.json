@@ -639,5 +639,107 @@
     "changesTitle": "Changes to this policy",
     "changesText": "We reserve the right to modify this privacy policy at any time. Any changes will be published on this page with the date of the last update.",
     "lastUpdated": "Last updated: March 2026"
+  },
+  "welcomeForm": {
+    "progress": "Step {current} of {total}",
+    "start": "Get started",
+    "back": "Back",
+    "next": "Next",
+    "intro": {
+      "title": "Welcome to Nexo CrossFit!",
+      "text": "We would like to get to know you a little better so we can recommend the training that suits you best.",
+      "duration": "It will only take 2 minutes."
+    },
+    "datos": {
+      "title": "Let's get started"
+    },
+    "modalidad": {
+      "title": "What kind of training are you looking for?",
+      "options": {
+        "crossfit": {
+          "label": "CrossFit",
+          "description": "A discipline that combines gymnastics, weightlifting, strength and cardio."
+        },
+        "strengthHyrox": {
+          "label": "Strength / Hyrox",
+          "description": "Performance-oriented training that combines strength and cardio."
+        },
+        "hyrox": {
+          "label": "Hyrox",
+          "description": "Training focused on endurance and cardiovascular work."
+        }
+      }
+    },
+    "cfExp": {
+      "title": "Do you have previous CrossFit experience?",
+      "detailLabel": "How long have you trained CrossFit and at which box(es)?",
+      "detailPlaceholder": "E.g.: 2 years at Box X",
+      "availabilityLabel": "Which days and times are you available for the beginner course?"
+    },
+    "prueba": {
+      "title": "When would suit you for a trial class?",
+      "subtitle": "Tell us the days and times that work best for you."
+    },
+    "availability": {
+      "daysLabel": "Days",
+      "slotsLabel": "Times",
+      "days": {
+        "L": "Mon",
+        "M": "Tue",
+        "X": "Wed",
+        "J": "Thu",
+        "V": "Fri",
+        "S": "Sat"
+      },
+      "slots": {
+        "manana": "Morning (7–12)",
+        "mediodia": "Midday (12–16)",
+        "tarde": "Afternoon (16–21:30)"
+      },
+      "textLabel": "Anything more specific?",
+      "textPlaceholder": "E.g.: Mondays at 19:00"
+    },
+    "sobreTi1": {
+      "title": "Tell us a bit more about yourself",
+      "sport": "Which sport do you currently practise, or have you practised in the past?",
+      "sportPlaceholder": "E.g.: running, football, gym…",
+      "injury": "Do you currently have any injury, or have you had one we should know about?"
+    },
+    "sobreTi2": {
+      "title": "What is your main goal with training?",
+      "subtitle": "You can pick more than one.",
+      "goals": {
+        "condicion": "Improve fitness",
+        "fuerza": "Build strength",
+        "grasa": "Lose fat",
+        "resistencia": "Improve endurance",
+        "competicion": "Prepare for a competition",
+        "otro": "Other"
+      },
+      "otherLabel": "What is your goal?",
+      "otherPlaceholder": "Tell us briefly",
+      "extraLabel": "Is there anything else you would like to tell us?",
+      "extraPlaceholder": "Optional"
+    },
+    "consent": {
+      "title": "Last step",
+      "summary": "We will message you on WhatsApp at {whatsapp}"
+    },
+    "gracias": {
+      "title": "Thank you for trusting Nexo CrossFit!",
+      "text": "We will be in touch with you very soon 💪",
+      "close": "You can now close this page."
+    },
+    "validation": {
+      "modalidadRequired": "Choose a training type to continue",
+      "experienciaRequired": "Tell us whether you have previous experience",
+      "expDetalleMin": "Tell us how long and at which box you have trained",
+      "disponibilidadRequired": "Select at least one day and one time, or type your availability",
+      "deporteRequired": "Tell us which sport you practise or have practised",
+      "lesionRequired": "Select an option",
+      "lesionDetalleMin": "Please describe the injury (at least 5 characters)",
+      "objetivosRequired": "Choose at least one goal",
+      "objetivoOtroRequired": "Tell us what your goal is"
+    }
   }
 }

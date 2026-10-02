@@ -1,14 +1,10 @@
+import { waLink } from "@/lib/waLink";
+
 interface ContactEmailTemplateProps {
   nombre: string;
   email: string;
   telefono: string;
   mensaje: string;
-}
-
-function waLink(telefono: string) {
-  const digits = telefono.replace(/\D/g, "");
-  const number = digits.startsWith("34") ? digits : `34${digits}`;
-  return `https://wa.me/${number}`;
 }
 
 export function ContactEmailTemplate({ nombre, email, telefono, mensaje }: ContactEmailTemplateProps) {

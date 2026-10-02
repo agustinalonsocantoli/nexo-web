@@ -347,3 +347,55 @@ body {
     display: flex;
   }
 }
+/* Formulario QR (main[data-flow]) — oculta Navbar, Footer y FAB del layout */
+body:has(main[data-flow]) {
+  background-color: #1a1a1a;
+}
+
+body:has(main[data-flow]) > :is(nav, footer, a[href^="https://wa.me"]) {
+  display: none;
+}
+
+/* Variante oscura del input de teléfono dentro del flujo (evita además el zoom de iOS) */
+main[data-flow] .nexo-phone-input {
+  background-color: #262626;
+  border-color: #3a3a3a;
+}
+
+main[data-flow] .nexo-phone-input.PhoneInput--focus {
+  border-color: #E94F1D;
+}
+
+main[data-flow] .nexo-phone-input.nexo-phone-input--error {
+  border-color: #ef4444;
+}
+
+main[data-flow] .nexo-phone-input .PhoneInputCountry {
+  border-right-color: #3a3a3a;
+}
+
+main[data-flow] .nexo-phone-input .PhoneInputInput {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+main[data-flow] .nexo-phone-input .PhoneInputInput::placeholder {
+  color: #7a7a7a;
+}
+
+@media (min-width: 768px) {
+  main[data-flow] .nexo-phone-input .PhoneInputInput {
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes flow-step-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flow-step-enter {
+    animation: flow-step-enter 0.2s ease-out both;
+  }
+}
