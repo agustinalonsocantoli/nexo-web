@@ -1,10 +1,10 @@
-import { getActiveOnRampSessions } from "@/lib/queries";
+import { getBookableOnRampSessions } from "@/lib/queries";
 import { getLocale } from "next-intl/server";
 import CrossfitForm from "./CrossfitForm";
 
 export default async function CrossfitPage() {
   const locale = await getLocale();
-  const sessions = await getActiveOnRampSessions();
+  const sessions = await getBookableOnRampSessions();
   const isEs = locale === "es";
 
   const fechasOnRamp = sessions.map((s) => ({

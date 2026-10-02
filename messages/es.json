@@ -381,6 +381,7 @@
     },
     "spotAvailable": "1 plaza disponible",
     "spotsAvailable": "{spots} plazas disponibles",
+    "full": "Completo",
     "costTitle": "¿Cuánto cuesta?",
     "costDescription": "El precio del curso es de ",
     "costAmount": "165 euros",

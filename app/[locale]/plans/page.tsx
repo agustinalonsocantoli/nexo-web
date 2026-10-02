@@ -177,14 +177,20 @@ export default async function PlansPage() {
               const label = (p: typeof prices[number]) => isEs ? p.labelEs : p.labelEn;
               return (
                 <div className="flex w-full flex-col gap-4 lg:grid lg:grid-cols-3">
-                  {prices.map((p) => {
+                  {prices.map((p, i) => {
                     const subtitle = sub(p);
                     const hasExtra = p.key === "pass20";
                     const isSingleLine = !subtitle && !hasExtra;
+                    // Última fila incompleta en desktop (3 cols): 1 sobrante → centro; 2 sobrantes → extremos
+                    const isLast = i === prices.length - 1;
+                    const remainder = prices.length % 3;
+                    const lastRowPos =
+                      isLast && remainder === 1 ? "lg:col-start-2" :
+                      isLast && remainder === 2 ? "lg:col-start-3" : "";
                     return (
                       <div
                         key={p.id}
-                        className={`flex ${isSingleLine ? "items-center" : "items-start"} justify-between gap-2 rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02]`}
+                        className={`flex ${isSingleLine ? "items-center" : "items-start"} justify-between gap-2 rounded-2xl bg-nexo-dark px-5 py-4 shadow-lg transition-transform duration-200 hover:scale-[1.02] ${lastRowPos}`}
                       >
                         <div>
                           <p className="font-body text-base text-white">{label(p)}</p>

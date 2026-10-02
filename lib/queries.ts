@@ -23,3 +23,11 @@ export async function getActiveOnRampSessions() {
     orderBy: { sortOrder: "asc" },
   });
 }
+
+/** Sesiones activas con plazas libres (para los selects de reserva). */
+export async function getBookableOnRampSessions() {
+  return prisma.onRampSession.findMany({
+    where: { active: true, spots: { gt: 0 } },
+    orderBy: { sortOrder: "asc" },
+  });
+}

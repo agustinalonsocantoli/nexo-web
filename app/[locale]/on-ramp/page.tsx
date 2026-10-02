@@ -79,13 +79,23 @@ const ChevronRight = () => (
   </svg>
 );
 
-function SessionCard({ slug, month, dates, spots, spotsLabel, bookText, className = "" }: {
-  slug: string; month: string; dates: string; spots: number; spotsLabel: string; bookText: string; className?: string;
+function SessionCard({ slug, month, dates, spots, spotsLabel, fullText, bookText, className = "" }: {
+  slug: string; month: string; dates: string; spots: number; spotsLabel: string; fullText: string; bookText: string; className?: string;
 }) {
+  const isFull = spots <= 0;
+  const buttonBase = "mt-1 flex w-full items-center justify-center gap-3 rounded-lg px-8 py-2 font-body text-sm text-white";
   return (
     <div
-      className={`rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-nexo-orange bg-white px-5 py-4 shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex flex-col items-center gap-3 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] ${className}`}
     >
+      {isFull && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[-58px] top-[31px] w-[200px] rotate-45 bg-red-600 py-1 text-center font-heading text-[11px] font-bold uppercase leading-[14px] tracking-[1.5px] text-white shadow-md"
+        >
+          {fullText}
+        </span>
+      )}
       <p className="font-heading text-[28px] font-bold leading-[100%] text-[#262626] text-center">
         {month}
       </p>
@@ -94,17 +104,28 @@ function SessionCard({ slug, month, dates, spots, spotsLabel, bookText, classNam
       </p>
       <div className="flex items-center gap-1.5 justify-center">
         <PersonIcon />
-        <p className="font-body text-base leading-5 text-[#1e1e1e] text-center">
+        <p className={`font-body text-base leading-5 text-center ${isFull ? "font-semibold text-red-600" : "text-[#1e1e1e]"}`}>
           {spotsLabel}
         </p>
       </div>
-      <Link
-        href={`/on-ramp/booking?fecha=${slug}`}
-        className="mt-1 flex w-full items-center justify-center gap-3 rounded-lg bg-nexo-orange px-8 py-2 font-body text-sm text-white transition-opacity hover:opacity-90"
-      >
-        {bookText}
-        <ArrowIcon />
-      </Link>
+      {isFull ? (
+        <span
+          role="button"
+          aria-disabled="true"
+          className={`${buttonBase} cursor-not-allowed bg-[#9a9a9a] opacity-80`}
+        >
+          {bookText}
+          <ArrowIcon />
+        </span>
+      ) : (
+        <Link
+          href={`/on-ramp/booking?fecha=${slug}`}
+          className={`${buttonBase} bg-nexo-orange transition-opacity hover:opacity-90`}
+        >
+          {bookText}
+          <ArrowIcon />
+        </Link>
+      )}
     </div>
   );
 }
@@ -210,6 +231,7 @@ export default async function OnRampPage() {
                     dates={isEs ? s.datesEs : s.datesEn}
                     spots={s.spots}
                     spotsLabel={s.spots === 1 ? t('spotAvailable') : t('spotsAvailable', { spots: s.spots })}
+                    fullText={t('full')}
                     bookText={tc('bookSpot')}
                     className="w-[270px]"
                   />
@@ -240,6 +262,7 @@ export default async function OnRampPage() {
                   dates={isEs ? s.datesEs : s.datesEn}
                   spots={s.spots}
                   spotsLabel={s.spots === 1 ? t('spotAvailable') : t('spotsAvailable', { spots: s.spots })}
+                  fullText={t('full')}
                   bookText={tc('bookSpot')}
                 />
               </AnimateOnScroll>

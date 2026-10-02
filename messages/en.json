@@ -381,6 +381,7 @@
     },
     "spotAvailable": "1 spot available",
     "spotsAvailable": "{spots} spots available",
+    "full": "Full",
     "costTitle": "How much does it cost?",
     "costDescription": "The course price is ",
     "costAmount": "165 euros",

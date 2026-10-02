@@ -68,10 +68,7 @@ export async function POST(request: Request) {
         const newSpots = session.spots - 1;
         await prisma.onRampSession.update({
           where: { slug: fecha },
-          data: {
-            spots: newSpots,
-            active: newSpots > 0,
-          },
+          data: { spots: newSpots },
         });
       }
     }
