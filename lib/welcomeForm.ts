@@ -3,8 +3,8 @@ import type { Modalidad, Objetivo, SiNo } from "./qrForm";
 export const MODALIDADES: readonly Modalidad[] = ["crossfit", "strength-hyrox", "hyrox"];
 export const SI_NO: readonly SiNo[] = ["si", "no"];
 export const OBJETIVOS: readonly Objetivo[] = ["condicion", "fuerza", "grasa", "resistencia", "competicion", "otro"];
-export const DIAS = ["L", "M", "X", "J", "V", "S"] as const;
-export const FRANJAS = ["manana", "mediodia", "tarde"] as const;
+export const DIAS = ["L", "M", "X", "J", "V"] as const;
+export const FRANJAS = ["manana", "tarde"] as const;
 
 export type Dia = (typeof DIAS)[number];
 export type Franja = (typeof FRANJAS)[number];
@@ -25,9 +25,8 @@ export const OBJETIVO_LABELS_ES: Record<Objetivo, string> = {
 };
 
 export const FRANJA_LABELS_ES: Record<Franja, string> = {
-  manana: "Mañana",
-  mediodia: "Mediodía",
-  tarde: "Tarde",
+  manana: "Mañana (9-14)",
+  tarde: "Tarde (17-21:30)",
 };
 
 export interface Disponibilidad {

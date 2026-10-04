@@ -46,8 +46,7 @@ export function createWelcomeSchema(tv: Translate, tw: Translate) {
 
       if (!d.modalidad) issue("modalidad", "modalidadRequired");
 
-      const needsDisponibilidad =
-        d.modalidad === "crossfit" ? d.experiencia === "no" : Boolean(d.modalidad);
+      const needsDisponibilidad = d.modalidad === "crossfit" ? Boolean(d.experiencia) : Boolean(d.modalidad);
 
       if (d.modalidad === "crossfit" && !d.experiencia) issue("experiencia", "experienciaRequired");
       if (d.modalidad === "crossfit" && d.experiencia === "si" && d.expDetalle.trim().length < EXP_DETALLE_MIN) {
@@ -98,7 +97,6 @@ export function buildWelcomePayload(
 
   const isCrossfit = values.modalidad === "crossfit";
   const hasExperience = isCrossfit && values.experiencia === "si";
-  const needsDisponibilidad = !isCrossfit || values.experiencia === "no";
   const hasOtro = values.objetivos.includes("otro");
 
   return {
@@ -109,7 +107,7 @@ export function buildWelcomePayload(
     modalidad: values.modalidad,
     experiencia: isCrossfit ? values.experiencia : undefined,
     expDetalle: hasExperience ? values.expDetalle.trim() : undefined,
-    disponibilidad: needsDisponibilidad ? serializeDisponibilidad(values.disponibilidad) : undefined,
+    disponibilidad: serializeDisponibilidad(values.disponibilidad),
     deporte: values.deporte.trim(),
     lesion: values.lesion,
     lesionDetalle: values.lesion === "si" ? values.lesionDetalle.trim() : undefined,

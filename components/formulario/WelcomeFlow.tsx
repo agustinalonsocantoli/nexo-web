@@ -3,7 +3,7 @@
 import type { ComponentType, FormEvent } from "react";
 import { FormProvider } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { TOTAL_INPUT_STEPS, useWelcomeFlow, type StepId } from "./useWelcomeFlow";
+import { useWelcomeFlow, type StepId } from "./useWelcomeFlow";
 import FlowHeader from "./FlowHeader";
 import FlowNavBar from "./FlowNavBar";
 import IntroStep from "./steps/IntroStep";
@@ -35,7 +35,7 @@ interface WelcomeFlowProps {
 export default function WelcomeFlow({ hash }: WelcomeFlowProps) {
   const tw = useTranslations("welcomeForm");
   const tf = useTranslations("forms");
-  const { form, stepId, stepNumber, apiError, isSending, canGoBack, goNext, goBack, stepRef } =
+  const { form, stepId, stepNumber, totalSteps, apiError, isSending, canGoBack, goNext, goBack, stepRef } =
     useWelcomeFlow(hash);
 
   const StepComponent = STEP_COMPONENTS[stepId];
@@ -53,7 +53,7 @@ export default function WelcomeFlow({ hash }: WelcomeFlowProps) {
   return (
     <FormProvider {...form}>
       <form onSubmit={handleSubmit} noValidate aria-busy={isSending} className="flex min-h-dvh flex-col">
-        {stepNumber !== undefined && <FlowHeader current={stepNumber} total={TOTAL_INPUT_STEPS} />}
+        {stepNumber !== undefined && <FlowHeader current={stepNumber} total={totalSteps} />}
 
         <div
           key={stepId}

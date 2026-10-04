@@ -39,8 +39,12 @@ function trainingRows(p: WelcomeFormPayload): EmailRow[] {
   }
 
   rows.push(row("Experiencia previa", p.experiencia === "si" ? "Sí" : "No"));
-  if (p.experiencia === "si") rows.push(row("Tiempo y box", p.expDetalle?.trim() || EMPTY));
-  else rows.push(row("Disponibilidad curso de iniciación", p.disponibilidad || EMPTY));
+  if (p.experiencia === "si") {
+    rows.push(row("Tiempo y box", p.expDetalle?.trim() || EMPTY));
+    rows.push(row("Disponibilidad clase de prueba", p.disponibilidad || EMPTY));
+  } else {
+    rows.push(row("Disponibilidad curso de iniciación", p.disponibilidad || EMPTY));
+  }
   return rows;
 }
 

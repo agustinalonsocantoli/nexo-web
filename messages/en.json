@@ -688,13 +688,11 @@
         "M": "Tue",
         "X": "Wed",
         "J": "Thu",
-        "V": "Fri",
-        "S": "Sat"
+        "V": "Fri"
       },
       "slots": {
-        "manana": "Morning (7–12)",
-        "mediodia": "Midday (12–16)",
-        "tarde": "Afternoon (16–21:30)"
+        "manana": "Morning (9–14)",
+        "tarde": "Afternoon (17–21:30)"
       },
       "textLabel": "Anything more specific?",
       "textPlaceholder": "E.g.: Mondays at 19:00"

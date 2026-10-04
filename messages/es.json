@@ -688,13 +688,11 @@
         "M": "M",
         "X": "X",
         "J": "J",
-        "V": "V",
-        "S": "S"
+        "V": "V"
       },
       "slots": {
-        "manana": "Mañana (7–12)",
-        "mediodia": "Mediodía (12–16)",
-        "tarde": "Tarde (16–21:30)"
+        "manana": "Mañana (9–14)",
+        "tarde": "Tarde (17–21:30)"
       },
       "textLabel": "¿Algo más concreto?",
       "textPlaceholder": "Ej: lunes a las 19:00"
